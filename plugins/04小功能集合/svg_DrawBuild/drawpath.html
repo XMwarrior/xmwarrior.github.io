@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>svg依赖线条</title>
+
+		<body>
+			<svg id="svg" width="1200" height="1300">
+				<!--<path d="M50 50,
+				 L55 50,
+				 A5 5, 45,0,1,60 55,
+				 L60 60,
+				 A5 5,45,0,1,55 65,
+				 L45 65,
+				 A5 5,45,0,0,40,70,
+				 L40 75,
+				 A5 5,45,0,0,45 80,
+				 L50 80" stroke="#000000" fill="none" style="stroke-width: 2px;"></path>-->
+				<!--<path d="M50 50,
+				 L55 50,
+				 A5 5, 45,0,1,60 55,
+				 L60 80,
+				 A5 5,45,0,0,65,85,
+				 L70 85" stroke="#000000"  fill="none" style="stroke-width: 2px;"></path>-->
+				<!--<polygon points="50,50 45,45 45,55" style="fill:lime;stroke:none;stroke-width:1" />-->
+			</svg>
+			<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				$(function() {
+					var $svg = $('#svg');
+					var From_x = 50,
+						From_y = 50,
+						To_x = 60,
+						To_y = 100,
+						dif_x = Math.abs(To_x - From_x),
+						dif_y = Math.abs(To_y - From_y);
+					switch(true) {
+						case To_x - From_x <= 10:
+							var pathHtml = '<path d="';
+							pathHtml += 'M' + From_x + ' ' + From_y;
+							pathHtml += ',L' + (From_x + 5) + ' ' + From_y;
+							pathHtml += ',A5 5,45,0,1,' + (From_x + 10) + ' ' + (From_y + 5);
+							pathHtml += ',L' + (From_x + 10) + ' ' + (From_y + 10);
+							pathHtml += ',A5 5,45,0,1,' + (From_x + 5) + ' ' + (From_y + 15);
+							pathHtml += ',L' + (To_x - 5) + ' ' + (From_y + 15);
+							pathHtml += ',A5 5,45,0,0,' + (To_x - 10) + ' ' + (From_y + 20);
+							pathHtml += ',L' + (To_x - 10) + ' ' + (To_y - 5);
+							pathHtml += ',A5 5,45,0,0,' + (To_x - 5) + ' ' + To_y;
+							pathHtml += ',L' + To_x + ' ' + To_y;
+							pathHtml += '" stroke="#000000" fill="none" style="stroke-width: 2px;"></path>';
+							break;
+						case To_x - From_x > 10 && To_x - From_x <= 20:
+							var pathHtml = '<path d="';
+							pathHtml += 'M' + From_x + ' ' + From_y;
+							pathHtml += ',L' + (From_x + 5) + ' ' + From_y;
+							pathHtml += ',A5 5,45,0,1,' + (From_x + 10) + ' ' + (From_y + 5);
+							pathHtml += ',L' + (From_x + 10) + ' ' + ((dif_y - 20) / 2 + (From_y + 5));
+							pathHtml += ',A5 5,45,0,1,' + (From_x + 5) + ' ' + ((dif_y - 20) / 2 + (From_y + 10));
+							pathHtml += ',L' + (To_x - 5 - (dif_x / 2)) + ' ' + ((dif_y - 20) / 2 + (From_y + 10));
+							pathHtml += ',A5 5,45,0,0,' + (To_x - 10 - (dif_x / 2)) + ' ' + ((dif_y - 20) / 2 + (From_y + 15));
+							pathHtml += ',L' + (To_x - 10 - (dif_x / 2)) + ' ' + (To_y - 5);
+							pathHtml += ',A5 5,45,0,0,' + (To_x - 5 - (dif_x / 2)) + ' ' + To_y;
+							pathHtml += ',L' + To_x + ' ' + To_y;
+							pathHtml += '" stroke="#000000" fill="none" style="stroke-width: 2px;"></path>';
+							break;
+						case To_x - From_x > 20:
+							var pathHtml = '<path d="';
+							pathHtml += 'M' + From_x + ' ' + From_y;
+							pathHtml += ',L' + (From_x + (dif_x / 2) - 5) + ' ' + From_y;
+							pathHtml += ',A5 5,45,0,1,' + (From_x + (dif_x / 2)) + ' ' + (From_y + 5);
+							pathHtml += ',L' + (From_x + (dif_x / 2)) + ' ' + (To_y - 5);
+							pathHtml += ',A5 5,45,0,0,' + (To_x - (dif_x / 2) + 5) + ' ' + To_y;
+							pathHtml += ',L' + To_x + ' ' + To_y;
+							pathHtml += '" stroke="#000000" fill="none" style="stroke-width: 2px;"></path>';
+							break;
+						default:
+							break;
+					}
+					$svg.html(pathHtml);
+				});
+			</script>
+		</body>
+
+</html>

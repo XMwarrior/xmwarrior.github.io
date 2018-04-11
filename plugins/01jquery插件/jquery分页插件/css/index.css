@@ -1,0 +1,82 @@
+/*reset*/
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	height: 100%;
+}
+
+.x-pagination * {
+	padding: 0;
+	margin: 0;
+}
+#model{
+	padding: 20px;
+	margin: 0 auto !important;
+}
+/*plugins*/
+.x-pagination {
+	height: 40px;
+	margin: 0;
+	text-align: right;
+	line-height: 40px;
+	border-top: 1px solid #C9C6D8;
+	margin-top: -7px;
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.x-pagination ul {
+	display: inline-block;
+}
+
+.x-pagination li {
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	width: 20px;
+	margin: 10px;
+	color: #D0CDDE;
+	text-align: center;
+	background-size: contain;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.x-pagination li:first-child {
+	background: url(../img/left.png) #0E9CFF no-repeat center center;
+	color: white;
+}
+
+.x-pagination li:last-child {
+	background: url(../img/right.png) #0E9CFF no-repeat center center;
+	margin-right: 0;
+	color: white;
+}
+
+.x-pagination .x-pageActive {
+	color: #0E9CFF;
+}
+
+.xInputControl {
+	width: 30px;
+	height: 20px;
+	border: 1px solid gainsboro;
+	vertical-align: middle;
+	margin: 0 5px;
+}
+
+.xBtnControl {
+	height: 24px;
+	color: white;
+	border: 1px solid #0E9CFF;
+	background-color: #0E9CFF;
+	vertical-align: middle;
+	padding: 0 5px;
+}

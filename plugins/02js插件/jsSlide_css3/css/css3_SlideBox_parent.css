@@ -1,0 +1,101 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+#SlideBox ul,
+#SlideBox ol,
+#SlideBox dl {
+	list-style-type: none;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-start: 0;
+}
+
+#SlideBox {
+	/*width: 100%;*/
+	height: 200px;
+	background-color: gray;
+	overflow-x: hidden;
+	position: relative;
+	/*-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;*/
+	
+}
+
+.Slide_ImgBox {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	-webkit-transition-property: transform;
+	-moz-transition-property: transform;
+	-ms-transition-property: transform;
+	-o-transition-property: transform;
+	transition-duration: 0ms;
+	-webkit-transition-duration: 0ms;
+	-moz-transition-duration: 0ms;
+	-ms-transition-duration: 0ms;
+	-o-transition-duration: 0ms;
+}
+
+.Slide_ImgBox li {
+	height: 100%;
+	float: left;
+	list-style: none;
+	background: no-repeat center center;
+	background-size: cover;
+}
+
+.Slide_IconBox {
+	position: absolute;
+	left: 50%;
+	height: 10px;
+	bottom: 0;
+}
+
+.Slide_IconBox li {
+	vertical-align: top;
+	display: inline-block;
+	width: 20px;
+	height: 10px;
+	/*margin: 0 10px;*/
+	float: left;
+	background: red;
+	cursor: pointer;
+}
+
+.Slide_Prev,
+.Slide_Next {
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	background: yellow;
+	display: block;
+}
+
+.Slide_Next {
+	left: auto;
+	right: 0px;
+	background: green;
+}

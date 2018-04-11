@@ -1,0 +1,84 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+.slideBox,.slideIn,.slideIn li{
+	width: 100%;
+	height: 400px;
+}
+.slideBox {
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+.slideIn li {
+	list-style: none;
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+.slideIn img {
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.slideBox dd{
+	display: block;
+	position: absolute;
+	z-index: 10;
+	text-align: center;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	margin-top: -25px;
+	top: 50%;
+	background: url(../img/Slider_arrow.png) no-repeat;
+}
+.slideBox .prev{
+	background-position:-125px 7px;
+	left: 0;
+}
+.slideBox .next{
+	background-position: -0px 7px;
+	right: 0;
+}
+.slideBox .prev:hover{
+	background-position:-185px 7px;
+}
+.slideBox .next:hover{
+	background-position:-60px 7px;
+}
+.slideIcon {
+	position: absolute;
+	cursor: pointer;
+	width: 100%;
+	bottom: 5%;
+	text-align: center;
+}
+.slideIcon li{
+	list-style: none;
+	float: left;
+}
+.slideIcon ul{
+	margin: 0 auto;
+	display: inline-block;
+}
+.iconStyle{
+	display: inline-block;
+	width: 30px;
+	height: 10px;
+	margin: 0 5px;
+	background-color: lightgray;
+}
