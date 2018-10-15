@@ -126,6 +126,7 @@ function myVideo(id) {
 		};
 	//video@loadedmetadata
 	$videoBox.on('loadedmetadata', function() {
+		
 		durationTime = video.duration;
 		var t = video.duration.toFixed(0),
 			h = Math.floor(t / 3600),
