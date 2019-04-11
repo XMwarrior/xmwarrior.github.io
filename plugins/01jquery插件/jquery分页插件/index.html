@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>pagination</title>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
 	</head>
 
 	<body>
@@ -13,102 +13,125 @@
 		</div>
 		<script src="js/jquery.3.2.1.js"></script>
 		<script type="text/javascript">
-			var page = 4,
-				total = 16;
-			var xm_pagination = function(len) {
-				xhtml = '';
-				xhtml += '<div class="x-pagination xSecond"><ul>';
-				xhtml += '<li></li>';
-				switch(true) {
-					case len <= 5:
-						for(var i = 1; i <= len; i++) {
-							xhtml += '<li ' + (i === page ? 'class="x-pageActive"' : '') + '>' + i + '</li>';
-						}
-						break;
-					case len > 5:
+			(function($) {
+				var XM = function(ele) {
+					return XM.prototype.init(ele);
+				};
+				XM.prototype = {
+					init: function(ele) {
+						this.$event = $(ele);
+						return this;
+					},
+					initPagination: function(pageNumber, totalNumber, fn) {
+						var res = [];
+						res.push('<div class="x-pagination xSecond"><ul>');
+						res.push('<li></li>');
 						switch(true) {
-							case page <= 3:
-								for(var i = 1, length = 4; i <= length; i++) {
-									xhtml += '<li ' + (i === page ? 'class="x-pageActive"' : '') + '>' + i + '</li>';
+							case totalNumber <= 5:
+								for(var i = 1; i <= totalNumber; i++) {
+									res.push('<li ' + (i === pageNumber ? 'class="x-pageActive"' : '') + '>' + i + '</li>');
 								}
-								xhtml += '<li class="x-Dots">···</li>';
-								xhtml += '<li>' + (len - 1) + '</li>';
 								break;
-							case page >= len - 2:
-								xhtml += '<li>1</li>';
-								xhtml += '<li class="x-Dots">···</li>';
-								for(var i = len - 2; i <= len; i++) {
-									xhtml += '<li ' + (i === page ? 'class="x-pageActive"' : '') + '>' + i + '</li>';
+							case totalNumber > 5:
+								switch(true) {
+									case pageNumber <= 3:
+										for(var i = 1, length = 4; i <= length; i++) {
+											res.push('<li ' + (i === pageNumber ? 'class="x-pageActive"' : '') + '>' + i + '</li>');
+										}
+										res.push('<li class="x-Dots">···</li>');
+										res.push('<li>' + (totalNumber - 1) + '</li>');
+										break;
+									case pageNumber >= totalNumber - 2:
+										res.push('<li>1</li>');
+										res.push('<li class="x-Dots">···</li>');
+										for(var i = totalNumber - 2; i <= totalNumber; i++) {
+											res.push('<li ' + (i === pageNumber ? 'class="x-pageActive"' : '') + '>' + i + '</li>');
+										}
+										break;
+									default:
+										res.push('<li>1</li>');
+										res.push('<li class="x-Dots">···</li>');
+										for(var i = pageNumber - 1, length = pageNumber + 1; i <= length; i++) {
+											res.push('<li ' + (i === pageNumber ? 'class="x-pageActive"' : '') + '>' + i + '</li>');
+										}
+										res.push('<li class="x-Dots">···</li>');
+										res.push('<li>' + totalNumber + '</li>');
+										break;
 								}
 								break;
 							default:
-								xhtml += '<li>1</li>';
-								xhtml += '<li class="x-Dots">···</li>';
-								for(var i = page - 1, length = page + 1; i <= length; i++) {
-									xhtml += '<li ' + (i === page ? 'class="x-pageActive"' : '') + '>' + i + '</li>';
-								}
-								xhtml += '<li class="x-Dots">···</li>';
-								xhtml += '<li>' + len + '</li>';
 								break;
 						}
-						break;
-					default:
-						break;
-				}
-				xhtml += '<li></li>';
-				xhtml += '</ul>';
-				xhtml += '<input class="xInputControl" type="text" id="" value="' + page + '" /><button class="xBtnControl">跳转</button></div>';
-				$('#model').html(xhtml);
-				//跳转按钮
-				var $xBtnControl = $('.xBtnControl'),
-					$xInputControl = $('.xInputControl');
-				$xBtnControl.on('click', function() {
-					if(isNaN(~~$xInputControl.val()) || ~~$xInputControl.val() === page || ~~$xInputControl.val() < 1 || ~~$xInputControl.val() > total) {
-						$xInputControl.val(page);
-						return false
-					};
-					page = ~~$xInputControl.val(),
-						xm_pagination(total);
-				});
-				$xInputControl.on('keydown', function(e) {
-					if(e.keyCode === 13) {
-						if(isNaN(~~$xInputControl.val()) || ~~$xInputControl.val() === page || ~~$xInputControl.val() < 1 || ~~$xInputControl.val() > total) {
-							$xInputControl.val(page);
-							return false
-						};
-						page = ~~$xInputControl.val(),
-						xm_pagination(total);
-					}
-				});
-				//分页按钮点击事件
-				var $pagination = $('.x-pagination');
-				$pagination.on('click', 'li', function() {
-					var index = $(this).index(),
-						lastIndex = $pagination.find('li').length - 1,
-						isDots = $(this).is('.x-Dots');
-					if(isDots) return false;
-					switch(index) {
-						case 0:
-							if(page !== 1) {
-								page--;
-								xm_pagination(total);
+						res.push('<li></li>');
+						res.push('</ul>');
+						res.push('<input class="xInputControl" type="text" id="" value="' + pageNumber + '" /><button class="xBtnControl">跳转</button></div>');
+						this.$event.html(res.join(''));
+						fn&&fn(pageNumber);
+						return this;
+					},
+					xmPagination: function(pageNumber, totalNumber,fn) {
+						var that=this;
+						var $event=that.$event;
+						that.initPagination(pageNumber, totalNumber,fn);
+						//翻页按钮@click
+						$event.on('click', '.xBtnControl', function() {
+							var page = ~~$event.find('.x-pageActive').text();
+							var $xInput = $event.find('.xInputControl');
+							if(isNaN(~~$xInput.val()) || ~~$xInput.val() === page || ~~$xInput.val() < 1 || ~~$xInput.val() > totalNumber) {
+								$xInput.val(page);
+								return false;
+							};
+							page = ~~$xInput.val();
+							that.initPagination(page, totalNumber,fn);
+						});
+						//跳转按钮@click
+						$event.on('keydown', '.xInputControl', function(e) {
+							var page = ~~$event.find('.x-pageActive').text();
+							var $xInput = $event.find('.xInputControl');
+							if(e.keyCode === 13) {
+								if(isNaN(~~$xInput.val()) || ~~$xInput.val() === page || ~~$xInput.val() < 1 || ~~$xInput.val() > totalNumber) {
+									$xInput.val(page);
+									return false;
+								};
+								page = ~~$xInput.val();
+								that.initPagination(page, totalNumber,fn);
 							}
-							break;
-						case lastIndex:
-							if(page !== len) {
-								page++;
-								xm_pagination(total);
+						});
+						//分页按钮@click
+						$event.on('click', '.x-pagination li', function() {
+							var index = $(this).index(),
+								lastIndex = $event.find('.x-pagination li').length - 1,
+								isDots = $(this).is('.x-Dots'),
+								page = ~~$event.find('.x-pageActive').text();
+							if(isDots) return false;
+							switch(index) {
+								case 0:
+									if(page !== 1) {
+										page--;
+										that.initPagination(page, totalNumber,fn);
+									}
+									break;
+								case lastIndex:
+									if(page !== totalNumber) {
+										page++;
+										that.initPagination(page, totalNumber,fn);
+									}
+									break;
+								default:
+									console.log(~~$(this).index())
+									page = ~~$(this).text();
+									that.initPagination(page, totalNumber,fn);
+									break;
 							}
-							break;
-						default:
-							console.log(~~$(this).index())
-							page = ~~$(this).text();
-							xm_pagination(total);
-							break;
+						});
 					}
-				});
-			};
-			xm_pagination(total);
+				};
+				XM.prototype.init.prototype = XM.prototype;
+				window.XM = XM;
+			})(jQuery);
+			XM('#model').xmPagination(4, 16,function (page) {
+				console.log(page);
+			});
 		</script>
 	</body>
 
