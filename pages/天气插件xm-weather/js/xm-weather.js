@@ -42,7 +42,7 @@
 		 */
 		getLocation: function(fn) {
 			$.ajax({
-				url: "http://api.map.baidu.com/location/ip?ak=OyLlhcqIbwA8nY5WgZCIMezstiin3UGM&coor=bd09ll",
+				url: "https://api.map.baidu.com/location/ip?ak=OyLlhcqIbwA8nY5WgZCIMezstiin3UGM&coor=bd09ll",
 				type: "POST",
 				dataType: "jsonp",
 				success: function(data) {
@@ -57,7 +57,7 @@
 		 */
 		getDirectName: function(cityLocation, fn) {
 			$.ajax({
-				url: 'http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=' + cityLocation + '&output=json&pois=1&latest_admin=1&ak=OyLlhcqIbwA8nY5WgZCIMezstiin3UGM',
+				url: 'https://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=' + cityLocation + '&output=json&pois=1&latest_admin=1&ak=OyLlhcqIbwA8nY5WgZCIMezstiin3UGM',
 				type: "get",
 				async: true,
 				dataType: "jsonp",
