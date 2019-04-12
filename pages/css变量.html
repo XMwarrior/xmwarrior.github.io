@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>css变量</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		li{
+			line-height: 900px;
+			font-size: 200px;
+			text-align: center;
+			font-family: var(--font-family-monospace);			
+		}
+	</style>
+</head>
+<body>
+	本例应用bootstrap的自定义:root<br>
+	滚动页面，查看css变量应用的字体颜色
+	<ul>
+		<li style="color: var(--blue);">1</li>
+		<li style="color: var(--indigo);">2</li>
+		<li style="color: var(--pink);">3</li>
+		<li style="color: var(--red);">4</li>
+		<li style="color: var(--orange);">5</li>
+		<li style="color: var(--yellow);">6</li>
+		<li style="color: var(--green);">7</li>
+		<li style="color: var(--teal);">8</li>
+		<li style="color: var(--cyan);">9</li>
+		<li style="color: var(--gray);">10</li>
+		<li style="color: var(--graydark);">11</li>
+		<li style="color: var(--info);">12</li>
+		<li style="color: var(--dark);">13</li>
+		<li style="color: var(--danger);">14</li>
+	</ul>
+	<a href="#" style="position: fixed;bottom: 0;right: 0;display: none;">回到顶部</a>
+	<script type="text/javascript">
+		window.onscroll=function () {
+			var containerHeight=window.innerHeight;
+			var bScrollTop=document.scrollingElement.scrollTop||document.documentElement.scrollTop||document.body.scrollTop;//注意
+			console.log('请注意:document.scrollingElement.scrollTop='+bScrollTop);
+			if (bScrollTop>=containerHeight) {
+				document.getElementsByTagName('a')[0].style.display='block';
+			}else{
+				document.getElementsByTagName('a')[0].style.display='none';
+			}
+		}
+	</script>
+</body>
+</html>

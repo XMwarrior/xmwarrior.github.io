@@ -1,3 +1,0 @@
-个人网站地址：xmwarrior.club 
-持续完善更新中......
-备忘pages地址：XMwarrior.github.io

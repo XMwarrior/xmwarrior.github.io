@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>bootstrap-Modal组件封装</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style type="text/css">
+			button:focus {
+				outline: none;
+			}
+			/*loading-line-spin样式*/
+			
+			.loaders .loader {
+				box-sizing: border-box;
+				display: flex;
+				flex: 0 1 auto;
+				flex-direction: column;
+				flex-grow: 1;
+				flex-shrink: 0;
+				flex-basis: 25%;
+				max-width: 25%;
+				height: 200px;
+				align-items: center;
+				justify-content: center
+			}
+			
+			.line-spin-fade-loader {
+				position: relative
+			}
+			
+			@-webkit-keyframes line-spin-fade-loader {
+				50% {
+					opacity: .3
+				}
+				100% {
+					opacity: 1
+				}
+			}
+			
+			@keyframes line-spin-fade-loader {
+				50% {
+					opacity: .3
+				}
+				100% {
+					opacity: 1
+				}
+			}
+			
+			.line-spin-fade-loader {
+				position: relative;
+				transform: scale(0.6);
+			}
+			
+			.line-spin-fade-loader>div:nth-child(1) {
+				top: 20px;
+				left: 0;
+				-webkit-animation: line-spin-fade-loader 1.2s .12s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .12s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(2) {
+				top: 13.63636px;
+				left: 13.63636px;
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .24s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .24s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(3) {
+				top: 0;
+				left: 20px;
+				-webkit-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				transform: rotate(90deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .36s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .36s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(4) {
+				top: -13.63636px;
+				left: 13.63636px;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .48s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .48s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(5) {
+				top: -20px;
+				left: 0;
+				-webkit-animation: line-spin-fade-loader 1.2s .6s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .6s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(6) {
+				top: -13.63636px;
+				left: -13.63636px;
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .72s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .72s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(7) {
+				top: 0;
+				left: -20px;
+				-webkit-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				transform: rotate(90deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .84s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .84s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(8) {
+				top: 13.63636px;
+				left: -13.63636px;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .96s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .96s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div {
+				background-color: #E9E9E9;
+				width: 4px;
+				height: 35px;
+				border-radius: 2px;
+				margin: 2px;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+				position: absolute;
+				width: 5px;
+				height: 15px
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>属性</h1>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>默认</div>'});">默认</button>
+		<h5>zIndex</h5>
+		<pre>弹窗层级。*默认10000</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>zIndex:200</div>',zIndex:200});">zIndex:200</button>
+		<h5>classes</h5>
+		<pre>modal-sm，modal-md，modal-lg，modal-xl 此处默认使用bootstrap四种modal大小。*默认modal-sm</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>classes:modal-sm</div>',classes:'modal-sm'});">classes:modal-sm</button>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>classes:modal-md</div>',classes:'modal-md'});">classes:modal-md</button>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>classes:modal-lg</div>',classes:'modal-lg'});">classes:modal-lg</button>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>classes:modal-xl</div>',classes:'modal-xl'});">classes:modal-xl</button>
+		<h5>headerStyles</h5>
+		<pre>modal-header容器内联样式。*默认{}</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>headerStyles:{background-color:gray}</div>',headerStyles:{'background-color':'gray'}});">headerStyles:{'background-color':'gray'}</button>
+		<h5>title</h5>
+		<pre>弹窗标题title。*默认''</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>title:标题</div>',title:'标题'});">title:'标题'</button>
+		<h5>bodyStyles</h5>
+		<pre>modal-body容器内联样式。*默认{}</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>bodyStyles:{min-height:200px}</div>',bodyStyles:{'min-height':'200px'}});">bodyStyles:{'min-height':'200px'}</button>
+		<h5>content</h5>
+		<pre>显示内容。*默认''</pre>
+		<button onclick="$.xmDialog.init({content: '<span class=\'text-center d-block\'>内容示例</span>'});">content:<span class="text-center">内容示例</span></button>
+		<h5>showFooter</h5>
+		<pre>true：显示底部按钮栏，false：不显示。 * 默认true</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>showFooter:false</div>',showFooter:false});">showFooter:false</button>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>showFooter:true *默认</div>',showFooter:true});">showFooter:true</button>
+		<h5>type</h5>
+		<pre>tip:消息框，confirm:确认框。 *默认confirm</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>type:tip</div>',type:'tip'});">type:tip</button>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>type:confirm *默认</div>',type:'confirm'});">type:confirm</button>
+		<h5>footerAlign</h5>
+		<pre>footerAlign底部按钮对其方式(flex-start|flex-end|center|space-between|space-around|initial|inherit)。 *默认center</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>footerAlign:space-between</div>',footerAlign:'space-between'});">footerAlign:space-between</button>
+		<h1>方法</h1>
+		<pre>ok:确认，cancel:取消，confirm:提示框确认。提示：如需绑定事件，需在回调函数内添加关闭窗口函数that.$el.modal('hide')</pre>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>ok:确认,cancel:取消</div>',ok:function(that){alert('确认');that.$el.modal('hide')},cancel:function(that){alert('取消');that.$el.modal('hide')}});">ok:确认，cancel:取消</button>
+		<button onclick="$.xmDialog.init({content: '<div class=\'text-center\'>confirm:提示框确认</div>',type:'tip',confirm:function(that){alert('提示框确认');that.$el.modal('hide')}});">confirm:提示框确认</button>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			(function() {
+				$.extend({
+					xmDialog: {
+						init: function(option) {
+							var that = this;
+							var base = {
+								el: '#xmCustomModal',
+								classes: option.classes || 'modal-sm',
+								zIndex:option.zIndex||10000,
+								styles: option.styles || {},//临时没用到
+								modalHeader: {
+									title: option.title || '',
+									styles: option.headerStyles||{}
+								},
+								modalBody: {
+									content: option.content || '',
+									styles: option.bodyStyles || {},
+									loading: '<div id="spinLoading" class="bg-white w-100 h-100 position-absolute row align-items-center justify-content-center m-0 spin-loading" style="top:0;left:0;"><div class="loader"><div class="loader-inner line-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>',
+								},
+								modalFooter: {
+									show: typeof option.showFooter === 'boolean' ? option.showFooter : true,
+									styles: {
+										'justify-content': option.footerAlign||'center'
+									},
+									type: option.type || 'confirm',
+									buttons: {
+										'confirm': [{
+											type: 'ok',
+											classes: 'btn-primary',
+											text: option.okText || '确认',
+											fn: function() {
+												option.ok ? option.ok(that) : that.$el.modal('hide');
+											}
+										}, {
+											type: 'cancel',
+											classes: 'btn-secondary',
+											text: '取消',
+											fn: function() {
+												option.cancel ? option.cancel(that) : that.$el.modal('hide');
+											}
+										}],
+										'tip': [{
+											type: 'tip',
+											classes: 'btn-info',
+											text: '我知道了',
+											fn: function() {
+												option.confirm ? option.confirm(that) : that.$el.modal('hide');
+											}
+										}]
+									}
+								},
+								formatStyle: function(obj) {
+									if(!obj || $.isEmptyObject(obj)) {
+										return '';
+									} else {
+										var res = [];
+										for(var key in obj) {
+											res.push(key + ':' + obj[key]);
+										}
+										return res.join(';');
+									}
+								},
+								shown: function() {
+									option.shown ? option.shown(that) : that.hideLoading();
+								},
+								hidden: function() {
+									option.hidden && option.hidden(that);
+								}
+							};
+							if(!$(base.el).length) {
+								$('body').append('<div id="' + base.el.substring(1) + '" class="modal fade" style="z-index:10000;" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static"></div>');
+							}
+							that.$el = $(base.el);
+							var templete = [];
+							if(base.style) {
+								that.$el.attr('style', base.style);
+							}
+							templete.push('<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ' + base.classes + '" role="document" style="' + base.formatStyle(base.styles) + '">');
+							templete.push('    <div class="modal-content">');
+							templete.push('        <div class="modal-header border-0 py-2" style="' + base.formatStyle(base.modalHeader.styles) + '">');
+							templete.push('            <h5 class="modal-title pr-3 text-nowrap overflow-hidden" style="text-overflow:ellipsis;">' + base.modalHeader.title + '</h5>');
+							templete.push('            <button type="button" class="close" style="margin:-0.5rem -1rem;padding:0.5rem 0.75rem;" data-dismiss="modal" aria-label="Close">');
+							templete.push('                <span aria-hidden="true">&times;</span>');
+							templete.push('            </button>');
+							templete.push('        </div>');
+							templete.push('        <div class="modalBody modal-body relative" style="' + base.formatStyle(base.modalBody.styles) + '">');
+							templete.push('            <!--提示内容-->');
+							templete.push(base.modalBody.content + base.modalBody.loading);
+							templete.push('        </div>');
+							if(base.modalFooter.show) {
+								templete.push('    <div class="modal-footer border-0" style="' + base.formatStyle(base.modalFooter.styles) + '">');
+								base.modalFooter.buttons[base.modalFooter.type].forEach(function(item, index) {
+									$['xmCustomModal' + index] = item.fn;
+									templete.push('    <button type="button" class="btn ' + item.classes + ' px-4" onclick="' + '$.xmCustomModal' + index + '();">' + item.text + '</button>');
+								});
+								templete.push('    </div>');
+							}
+							templete.push('    </div>');
+							templete.push('</div>');
+							that.$el.html(templete.join(''));
+
+							that.$el.off('hidden.bs.modal').on('hidden.bs.modal', function() {
+								base.hidden && base.hidden(this);
+							});
+							that.$el.off('shown.bs.modal').on('shown.bs.modal', function() {
+								base.shown && base.shown(that);
+							});
+							that.$el.modal('show');
+							return this;
+						},
+						hideLoading: function() {
+							$('#spinLoading').hide();
+							return this;
+						}
+					}
+				});
+
+			})();
+			$('#openModel').on('click', function() {
+				$.xmDialog.init({
+					content: '<div class="text-center">tip内容<div>',
+					type: 'tip'
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes" />
+		<title>美化title属性，使title成为提示框</title>
+		<script src="../js/jquery.min.js"></script>
+		<style type="text/css">
+			.tipsy-tooltip {
+				font-size: 12px;
+				font-family: \5b8b\4f53;
+				line-height: 1.5;
+				position: absolute;
+				padding: 5px;
+				z-index: 100003;
+				opacity: 1
+			}
+			
+			.tipsy-arrow {
+				position: absolute;
+				width: 0;
+				height: 0;
+				line-height: 0;
+				border: 6px dashed #FFA500;
+				top: 0;
+				left: 20%;
+				margin-left: -5px;
+				border-bottom-style: solid;
+				border-top: 0;
+				border-left-color: transparent;
+				border-right-color: transparent
+			}
+			
+			.tipsy-arrow-n {
+				border-bottom-color: #FFA500;
+			}
+			
+			.tipsy-inner {
+				background-color: #FFA500;
+				color: #fff;
+				max-width: 200px;
+				padding: 5px 8px 4px 8px;
+				text-align: center;
+				border-radius: 3px
+			}
+		</style>
+
+		<body>
+			<p>提示：利用title属性制作的提示框效果，不是真正的提示弹出框</p>
+			<div>
+				<a href="#" title="我是提示文字">提示文字
+					<span style="padding: 0 10px 0 0;">-子元素</span>
+				</a>
+				<a href="#" title="<p>我是提示文字1</p><p>我是提示文字2</p>">提示文字可换行</a>
+			</div>
+			<script>
+				(function() {
+					$.extend({
+						sweetTitles: {
+							x: 10,
+							y: 20,
+							tipElements: "a,span,img,div",
+							noTitle: false,
+							isTarget: true,
+							init: function() {
+								var that = this;
+								$(this.tipElements).each(function() {
+									$(this).mouseover(function(e) {
+										if(that.isTarget && !$(e.target).is(this)) {
+											return;
+										}
+										if(that.noTitle) {
+											isTitle = true;
+										} else {
+											isTitle = $.trim(this.title) != '';
+										}
+										if(isTitle) {
+											this.myTitle = this.title;
+											this.title = "";
+											var tooltip = "<div class='tipsy-tooltip'><div class='tipsy-arrow tipsy-arrow-n'></div><div class='tipsy-inner'>" +this.myTitle +"</div></div>";
+											$('body').append(tooltip);
+											$('.tipsy-tooltip').css({
+												"top": (e.pageY + 20) + "px",
+												"left": (e.pageX - 20) + "px"
+											}).show('fast');
+										}
+									}).mouseout(function() {
+										if(this.myTitle != null) {
+											this.title = this.myTitle;
+											$('.tipsy-tooltip').remove();
+										}
+									}).mousemove(function(e) {
+										$('.tipsy-tooltip').css({
+											"top": (e.pageY + 20) + "px",
+											"left": (e.pageX - 20) + "px"
+										});
+									});
+								});
+							}
+						}
+					});
+				})();
+				//调用
+				$.sweetTitles.init();
+			</script>
+		</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<img src="" alt="新年快乐" />
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function($, document) {
+				$.extend({
+					//16进制颜色转换为rgba颜色
+					colorRgb: function(str, opacity) {
+						var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+						var sColor = str.toLowerCase();
+						if(sColor && reg.test(sColor)) {
+							if(sColor.length === 4) {
+								var sColorNew = "#";
+								for(var i = 1; i < 4; i++) {
+									sColorNew += sColor.slice(i, i + 1).concat(sColor.slice(i, i + 1));
+								}
+								sColor = sColorNew;
+							}
+							//处理六位的颜色值  
+							var sColorChange = [];
+							for(var i = 1; i < 7; i += 2) {
+								sColorChange.push(parseInt("0x" + sColor.slice(i, i + 2)));
+							}
+							return "rgba(" + sColorChange.join(",") + "," + opacity; //透明度
+						} else {
+							return sColor;
+						}
+					},
+					svgToPng: function(opts) {
+						var options = {
+							color: opts.color || '#ff0000',
+							opacity: opts.opacity || 0.3,
+							txt: opts.txt || '生',
+							width: opts.width || 30,
+							height: opts.height || 30,
+							fn: opts.fn || function(res) {
+								console.log(res);
+							}
+						};
+						var svgArr = [];
+						svgArr.push('<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="' + options.width + '" height="' + options.height + '" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">');
+						svgArr.push('    <path fill="' + $.colorRgb(options.color, options.opacity) + '" d="M45.301,24.094c0,11.741-9.519,21.26-21.26,21.26c-11.741,0-21.26-9.519-21.26-21.26 c0-11.741,9.519-21.259,21.26-21.259C35.782,2.834,45.301,12.353,45.301,24.094z" />');
+						svgArr.push('    <path fill="' + options.color + '" d="M8.45,24.096c0,8.608,6.98,15.588,15.59,15.588c8.611,0,15.59-6.98,15.59-15.588 c0-8.612-6.979-15.592-15.59-15.592C15.43,8.504,8.45,15.484,8.45,24.096z" />');
+						svgArr.push('</svg>');
+						var svgXml = svgArr.join('');
+						var img = new Image();
+						img.crossOrigin = 'Anonymous';
+						//给图片对象写入base64编码的svg流
+						img.src = 'data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(svgXml)));
+						img.onload = function() {
+							var canvas = document.createElement('canvas'); //准备空画布
+							var context = canvas.getContext('2d');
+							canvas.width = options.width;
+							canvas.height = options.height;
+							context.drawImage(img, 0, 0);
+							context.fillStyle = '#fff';
+							context.font = "bold 13px '微软雅黑','宋体'";
+							context.textBaseline = 'middle';
+							context.fillText(options.txt, (options.width - 13) / 2, (options.height / 2));
+							var imagePng = canvas.toDataURL('image/png');
+							options.fn && options.fn(imagePng);
+						}
+					}
+				});
+			})(jQuery, document);
+		</script>
+		<script type="text/javascript">
+			$.svgToPng({
+				color: '#ff0000',
+				txt: '年',
+				fn: function(res) {
+					$('img').attr('src', res);
+				}
+			});
+		</script>
+	</body>
+
+</html>

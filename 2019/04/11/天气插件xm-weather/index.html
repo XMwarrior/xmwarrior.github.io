@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="日常积累收录">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="XMwarrior">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="天气插件改造之Free初探">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="日常积累收录">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="小浣熊熊采坑录">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>天气插件改造之Free初探 - 小浣熊熊采坑录</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/04/11/天气插件xm-weather/">
+                天气插件改造之Free初探
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-11</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>此处不宜多说（露出一个高深莫测的微笑！），精华自取：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">(function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) &#123;</span><br><span class="line">	$.extend(&#123;</span><br><span class="line">		smartDefaultOption: &#123;</span><br><span class="line">			&quot;flavor&quot;: &quot;bubble&quot;, //样式选择：bubble浮动气泡，slim固定极简</span><br><span class="line">			&quot;positionMode&quot;: &quot;static&quot;,//浮动气泡所需属性：默认fixed</span><br><span class="line">			&quot;location&quot;: [</span><br><span class="line">				&quot;北京市&quot;,</span><br><span class="line">				&quot;54511&quot;,</span><br><span class="line">				&quot;110101&quot;,</span><br><span class="line">				&quot;101010100&quot;</span><br><span class="line">			],</span><br><span class="line">			&quot;geolocation&quot;: &quot;disabled&quot;, //城市定位：enabled启用，disabled不启用。 默认免费版不能开启定位</span><br><span class="line">			&quot;theme&quot;: &quot;chameleon&quot;, //浮层背景：chameleon随天气变化，white白色，black黑色</span><br><span class="line">			&quot;container&quot;: &quot;wp-container&quot;, //dom元素id开头</span><br><span class="line">			&quot;color&quot;: &quot;#FFFFFF&quot;, //字体颜色</span><br><span class="line">			&quot;background&quot;: &quot;#C6C6C6&quot;, //背景色：不需要设置时删掉此属性</span><br><span class="line">			&quot;bubble&quot;: &quot;disabled&quot;, //slim模式下：启用浮层显示天气详情和预报：enabled启用，disabled不启用。</span><br><span class="line">			&quot;uuid&quot;: &quot;b93a5df5-4925-42a9-a202-5564d7495237&quot;, //下面这两项时4Dsmart网站的账号的id、hash</span><br><span class="line">			&quot;hash&quot;: &quot;F494D79972E3122A99CA36C4BC8A9713&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		//封装同步ajax</span><br><span class="line">		getAsyncData: function(url, data, datatype) &#123;</span><br><span class="line">			var res = &apos;&apos;;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">				url: url,</span><br><span class="line">				data: data,</span><br><span class="line">				type: &quot;get&quot;,</span><br><span class="line">				dataType: datatype || &quot;json&quot;,</span><br><span class="line">				async: false, //同步请求</span><br><span class="line">				timeout: 30000,</span><br><span class="line">				error: function(e) &#123;</span><br><span class="line">					res = e.responseText;</span><br><span class="line">				&#125;,</span><br><span class="line">				success: function(r) &#123;</span><br><span class="line">					res = r;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			return res;</span><br><span class="line">		&#125;,</span><br><span class="line">		/*调用百度API获取“城市中心经纬度” </span><br><span class="line">		 * return lat,lng</span><br><span class="line">		 */</span><br><span class="line">		getLocation: function(fn) &#123;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">				url: &quot;http://api.map.baidu.com/location/ip?ak=0V85NTruj3YuZa44xCiOP3MqiokuqoWr&amp;coor=bd09ll&quot;,</span><br><span class="line">				type: &quot;POST&quot;,</span><br><span class="line">				dataType: &quot;jsonp&quot;,</span><br><span class="line">				success: function(data) &#123;</span><br><span class="line">					//console.log(data);</span><br><span class="line">					var cityLocation = data.content.point.y + &apos;,&apos; + data.content.point.x;</span><br><span class="line">					fn &amp;&amp; fn(cityLocation);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;,</span><br><span class="line">		/*调用百度API根据经纬度反查“城市名、区号”，根据城市名查询“城市气象台号、天气城市编号”</span><br><span class="line">		 * return &quot;城市名、城市气象台号、区号、天气城市编号&quot;</span><br><span class="line">		 */</span><br><span class="line">		getDirectName: function(cityLocation, fn) &#123;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">				url: &apos;http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=&apos; + cityLocation + &apos;&amp;output=json&amp;pois=1&amp;latest_admin=1&amp;ak=0V85NTruj3YuZa44xCiOP3MqiokuqoWr&apos;,</span><br><span class="line">				type: &quot;get&quot;,</span><br><span class="line">				async: true,</span><br><span class="line">				dataType: &quot;jsonp&quot;,</span><br><span class="line">				success: function(res) &#123;</span><br><span class="line">					//console.log(res);</span><br><span class="line">					var cityName = res.result.addressComponent.city.replace(&apos;市&apos;, &apos;&apos;);</span><br><span class="line">					var cityObservatoryCode = $.getAsyncData(jsonurl)[&apos;observatory&apos;][cityName];</span><br><span class="line">					var directAreaCode = res.result.addressComponent.adcode;</span><br><span class="line">					var cityWeatherCode = $.getAsyncData(jsonurl)[&apos;weathercity&apos;][cityName];</span><br><span class="line">					//console.log(&apos;城市名：&apos;+cityName+&apos;\n&apos;,&apos;城市气象台号：&apos;+cityObservatoryCode+&apos;\n&apos;,&apos;区号：&apos;+directAreaCode+&apos;\n&apos;,&apos;天气城市编号：&apos;+cityWeatherCode);</span><br><span class="line">					fn &amp;&amp; fn(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;,</span><br><span class="line">		//根据城市名、城市气象台号、区号、天气城市编号，调用smart-weather查询天气</span><br><span class="line">		getWeather: function(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode) &#123;</span><br><span class="line">			//smart-weather天气具体参数配置</span><br><span class="line">			var data = $.smartDefaultOption;</span><br><span class="line">			data.location = [</span><br><span class="line">				cityName,</span><br><span class="line">				cityObservatoryCode,</span><br><span class="line">				directAreaCode,</span><br><span class="line">				cityWeatherCode</span><br><span class="line">			];</span><br><span class="line">			wp(&quot;init&quot;, data);</span><br><span class="line">			wp(&quot;show&quot;);</span><br><span class="line">		&#125;,</span><br><span class="line">		//封装完的基于4Dsmart的免费获取天气方法</span><br><span class="line">		getFreeWeather: function(data) &#123;</span><br><span class="line">			if(data&amp;&amp;!$.isEmptyObject(data))&#123;</span><br><span class="line">				for (var key in data) &#123;</span><br><span class="line">					$.smartDefaultOption[key]=data[key];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;;</span><br><span class="line">			$.getLocation(function(cityLocation) &#123;</span><br><span class="line">				$.getDirectName(cityLocation, function(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode) &#123;</span><br><span class="line">					$.getWeather(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode);</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	//天气插件依赖</span><br><span class="line">	initScript = function() &#123;</span><br><span class="line">		scriptNode = document.createElement(&quot;script&quot;);</span><br><span class="line">		originalNode = document.getElementsByTagName(&quot;script&quot;)[0];</span><br><span class="line">		scriptNode.src = url;</span><br><span class="line">		scriptNode.async = 1;</span><br><span class="line">		originalNode.parentNode.insertBefore(scriptNode, originalNode)</span><br><span class="line">	&#125;;</span><br><span class="line">	window[&quot;wpObjectName&quot;] = &quot;wp&quot;;</span><br><span class="line">	window[&quot;wp&quot;] || (window[&quot;wp&quot;] = function() &#123;</span><br><span class="line">		(window[&quot;wp&quot;].arg = window[&quot;wp&quot;].arg || []).push(arguments)</span><br><span class="line">	&#125;);</span><br><span class="line">	window[&quot;wp&quot;].l = +new Date();</span><br><span class="line">	if(window.attachEvent) &#123;</span><br><span class="line">		window.attachEvent(&quot;onload&quot;, initScript)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		window.addEventListener(&quot;load&quot;, initScript, false)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;(window, document, &quot;script&quot;, &quot;wp&quot;, &quot;js/smart-weather.js&quot;,&quot;js/weather-city.json&quot;));</span><br></pre></td></tr></table></figure></p>
+<p>参考文档：<br><a href="http://www.4dsmart.cn/weatherEnvironmental/plugin.action" target="_blank" rel="noopener">四维智城数据</a><br><a href="http://lbsyun.baidu.com/" target="_blank" rel="noopener">百度开放平台</a><br>示例：<a href="/pages/天气插件xm-weather/index.html">请点这里</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/js/">#js</a> <a href="/tags/jquery/">#jquery</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://xmwarrior.github.io/">XMwarrior</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/11/天气插件xm-weather/">天气插件改造之Free初探</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/02/高阶函数缓存应用之斐波那契数列/">高阶函数缓存应用之斐波那契数列</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/27/清除cookie稳妥做法/">清除cookie稳妥做法</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/18/色调旋转滤镜按钮-在线生成/">色调旋转滤镜按钮-在线生成</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://xmwarrior.github.io/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:644210375@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="https://xmwarrior.github.io/">XMwarrior</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

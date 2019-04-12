@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="日常积累收录">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="XMwarrior">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="基于CSS3 column多栏布局实现水平滑页翻页交互">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="日常积累收录">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="小浣熊熊采坑录">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>基于CSS3 column多栏布局实现水平滑页翻页交互 - 小浣熊熊采坑录</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/03/12/基于CSS3column多栏布局实现水平滑页翻页交互/">
+                基于CSS3 column多栏布局实现水平滑页翻页交互
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-12</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>今天看大神张鑫旭的文章，有一篇  <a href="https://www.zhangxinxu.com/wordpress/2017/02/css3-multiple-column-layout-read-horizontal/" target="_blank" rel="noopener">基于CSS3 column多栏布局实现水平滑页翻页交互</a> ，<br>为熟悉column多栏布局写法，模仿 <a href="https://m.qidian.com" target="_blank" rel="noopener">起点中文网</a> 封装了个jquery拓展方法。如下：</p>
+<h4 id="css"><a href="#css" class="headerlink" title="css"></a><strong>css</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">html,body &#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">	height: 100%;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">	background: #C4B399;</span><br><span class="line">&#125;</span><br><span class="line">html,</span><br><span class="line">body,</span><br><span class="line">ul,</span><br><span class="line">li &#123;</span><br><span class="line">	padding: 0;</span><br><span class="line">	margin: 0;</span><br><span class="line">&#125;</span><br><span class="line">ul &#123;</span><br><span class="line">	-webkit-columns: calc(100vw - 32px) 1;</span><br><span class="line">	-webkit-column-gap: 16px;</span><br><span class="line">	columns: calc(100vw - 32px) 1;</span><br><span class="line">	column-gap: 16px;</span><br><span class="line">	overflow: visible;</span><br><span class="line">	height: 100%;</span><br><span class="line">	transition: all 0.2s;</span><br><span class="line">&#125;</span><br><span class="line">ul li &#123;</span><br><span class="line">	list-style: none;</span><br><span class="line">	padding: 1em;</span><br><span class="line">	margin: 1em;</span><br><span class="line">	-webkit-column-break-inside: avoid;</span><br><span class="line">	page-break-inside: avoid;</span><br><span class="line">	background: #FFFFFF;</span><br><span class="line">	break-inside: avoid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="html"><a href="#html" class="headerlink" title="html"></a><strong>html</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;&lt;/ul&gt;</span><br><span class="line">&lt;div style=&quot;display: flex;justify-content: space-between;position: absolute;bottom: 0;width: 100%;&quot;&gt;</span><br><span class="line">	&lt;button&gt;前一页&lt;/button&gt;</span><br><span class="line">	&lt;button&gt;后一页&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="js"><a href="#js" class="headerlink" title="js"></a><strong>js</strong></h4><p>依赖：jquery.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;</span><br><span class="line">	$.extend(&#123;</span><br><span class="line">		pageColumns: &#123;</span><br><span class="line">			init: function(options) &#123;</span><br><span class="line">				var that = this;</span><br><span class="line">				options=options||&#123;&#125;;</span><br><span class="line">				//默认参数</span><br><span class="line">				that.el = options.el || $(&apos;ul&apos;);</span><br><span class="line">				that.prevBtn = options.prevBtn || $(&apos;button&apos;).eq(0);</span><br><span class="line">				that.nextBtn = options.nextBtn || $(&apos;button&apos;).eq(1);</span><br><span class="line">				that.columnGap = options.columnGap || 16;</span><br><span class="line">				that.currentPage = options.currentPage || 0;</span><br><span class="line">				that.sectionIndex = options.sectionIndex || 0;</span><br><span class="line">				that.direction = options.direction || 1;</span><br><span class="line">				that.totalWidth = that.el[0].scrollWidth;</span><br><span class="line">				that.pageWidth = that.el.outerWidth();</span><br><span class="line">				that.page = that.totalWidth / (that.pageWidth + that.columnGap * 2);</span><br><span class="line">				//前一页</span><br><span class="line">				that.prevBtn.on(&apos;click&apos;, function() &#123;</span><br><span class="line">					if(that.currentPage) &#123;</span><br><span class="line">						that.currentPage--;</span><br><span class="line">						that.el.css(&apos;transform&apos;, &apos;translateX(-&apos; + (that.currentPage * (that.pageWidth + that.columnGap)) + &apos;px)&apos;);</span><br><span class="line">						return;</span><br><span class="line">					&#125;</span><br><span class="line">					that.direction = 0;</span><br><span class="line">					that.sectionIndex--;</span><br><span class="line">					that.filContent();</span><br><span class="line">					that.slidePosition();</span><br><span class="line">				&#125;);</span><br><span class="line">				//后一页</span><br><span class="line">				that.nextBtn.on(&apos;click&apos;, function() &#123;</span><br><span class="line">					if(that.currentPage &lt; that.page - 1) &#123;</span><br><span class="line">						that.currentPage++;</span><br><span class="line">						that.el.css(&apos;transform&apos;, &apos;translateX(-&apos; + (that.currentPage * (that.pageWidth + that.columnGap)) + &apos;px)&apos;);</span><br><span class="line">						return;</span><br><span class="line">					&#125;</span><br><span class="line">					that.direction = 1;</span><br><span class="line">					that.sectionIndex++;</span><br><span class="line">					that.filContent();</span><br><span class="line">					that.slidePosition();</span><br><span class="line">				&#125;);</span><br><span class="line">				//初始化</span><br><span class="line">				that.filContent();</span><br><span class="line">			    that.slidePosition();</span><br><span class="line">			&#125;,</span><br><span class="line">			filContent: function() &#123;</span><br><span class="line">				var templete = &apos;很长很长的内容......&apos;;</span><br><span class="line">				var repeatText = &apos;&lt;li&gt;&apos; + templete.repeat(3) + &apos;&lt;/li&gt;&apos;;</span><br><span class="line">				var title = &apos;&lt;li&gt;第&apos; + this.sectionIndex + &apos;章&lt;/li&gt;&apos;;</span><br><span class="line">				this.el.html(title + repeatText.repeat(30));</span><br><span class="line">			&#125;,</span><br><span class="line">			slidePosition: function() &#123;</span><br><span class="line">				var that = this;</span><br><span class="line">				that.el.css(&apos;transition&apos;, &apos;unset&apos;);</span><br><span class="line">				that.totalWidth = that.el[0].scrollWidth;</span><br><span class="line">				that.page = that.totalWidth / (that.pageWidth + that.columnGap * 2);</span><br><span class="line">				if(that.direction) &#123;</span><br><span class="line">					that.currentPage = 0;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					that.currentPage = Math.ceil(that.page - 1);</span><br><span class="line">				&#125;</span><br><span class="line">				that.el.css(&apos;transform&apos;, &apos;translateX(-&apos; + (that.currentPage * (that.pageWidth + that.columnGap)) + &apos;px)&apos;);</span><br><span class="line">				setTimeout(function() &#123;</span><br><span class="line">					that.el.css(&apos;transition&apos;, &apos;all 0.2s&apos;);</span><br><span class="line">				&#125;, 200);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>示例：<a href="/pages/基于CSS3column多栏布局实现水平滑页翻页交互.html">请点这里</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/js/">#js</a> <a href="/tags/jquery/">#jquery</a> <a href="/tags/css3/">#css3</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://xmwarrior.github.io/">XMwarrior</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/11/天气插件xm-weather/">天气插件改造之Free初探</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/02/高阶函数缓存应用之斐波那契数列/">高阶函数缓存应用之斐波那契数列</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/27/清除cookie稳妥做法/">清除cookie稳妥做法</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/18/色调旋转滤镜按钮-在线生成/">色调旋转滤镜按钮-在线生成</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://xmwarrior.github.io/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:644210375@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="https://xmwarrior.github.io/">XMwarrior</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
