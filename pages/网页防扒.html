@@ -16,7 +16,13 @@
 				var e = window.event || arguments[0];
 				if(e.keyCode == 123) {
 					return false;
-				} else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)) {
+				} 
+				//ctrl + shift + i
+				if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)) {
+					return false;
+				}
+				//ctrl + shift + j
+				if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 74)) {
 					return false;
 				}
 			};
