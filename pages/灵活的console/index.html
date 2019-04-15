@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			small {
+				color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ol>
+			<li id="a1">
+				<h4>console.log</h4>
+				<small>普通消息</small>
+				<p>参数：信息</p>
+			</li>
+			<li id="a2">
+				<h4>console.warn</h4>
+				<small>警告信息，附带警告代码位置</small>
+				<p>参数：信息</p>
+			</li>
+			<li id="a3">
+				<h4>console.dir</h4>
+				<small>打印html标签的dom树信息</small>
+				<p>参数：dom对象</p>
+			</li>
+			<li id="a4">
+				<h4>console.table</h4>
+				<small>打印数据列表。默认无参数2时，显示所有列</small>
+				<p>参数1：数据列表[{},{}...]</p>
+				<p>参数2：需要显示的列名['name','age']</p>
+				<p></p>
+			</li>
+			<li id="a5">
+				<h4>console.assert</h4>
+				<small>断言false时,打印信息。</small>
+				<p>参数1：判断语句</p>
+				<p>参数2：信息</p>
+			</li>
+			<li id="a6">
+				<h4>console.count</h4>
+				<small>打印计数</small>
+				<p>参数：计数名称，console.countReset()重置计数器</p>
+				<button onclick="listenerAdd()">绑定次数+1</button>
+				<button id="countAdd">计数</button>
+			</li>
+			<li id="a7">
+				<h4>console.time，console.timeEnd</h4>
+				<small>打印操作时间</small>
+				<p>参数：名称</p>
+			</li>
+			<li id="a8">
+				<h4>console.group</h4>
+				<small>组合打印信息,console.groupEnd()</small>
+			</li>
+		</ol>
+		<script type="text/javascript">
+			//a1
+			//打印信息。注：%s字符串，%d数字，%c添加css样式
+			console.log('console.log');
+			//a2
+			//打印警告
+			console.warn('console.warn');
+			//a3
+			//打印dom
+			console.dir(document.getElementById('a3'));
+			//a4
+			//打印表格
+			console.table([{
+				id: '1',
+				name: '小明',
+				age: '18',
+				weight: '55kg'
+			}, {
+				id: '1',
+				name: '小红',
+				age: '17',
+				weight: '65kg'
+			}], ['name', 'age']);
+			//a5
+			//打印非匹配。应用场景：查找差异、ajax请求数据格式差异提示。
+			var arr = ['1', '2', {
+				id: '3'
+			}];
+			arr.forEach(function(item, index) {
+				console.assert(typeof item === 'string', item);
+			});
+			//a6
+			//打印计数。应用场景：dom绑定事件次数监测
+			listenerAdd(true);
+			function listenerAdd(isfirst) {
+				!isfirst&&console.countReset('click');
+				document.querySelector('#countAdd').addEventListener('click', function() {
+					console.count('click');
+				});
+			}
+			//a7
+			//打印操作时间
+			getRunTime();
+			function getRunTime() {
+				console.time('t');
+				setTimeout(function () {
+					console.timeEnd('t');
+					console.log('发现没有，时间t大于%c600ms','color:red')
+				},600);
+			}
+			//a8
+			//组合打印信息
+			group();
+			function group() {
+				var res=[];
+				console.group('logGroup');
+				for (var i=0,length=10;i<length;i++) {
+					console.log('<li>'+i+'</li>');
+				}
+				console.groupEnd();
+			}
+		</script>
+	</body>
+
+</html>
