@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>天气插件改造之Free初探</title>
+      <link href="/2019/04/11/tian-qi-cha-jian-xm-weather/"/>
+      <url>/2019/04/11/tian-qi-cha-jian-xm-weather/</url>
+      
+        <content type="html"><![CDATA[<p>此处不宜多说（露出一个高深莫测的微笑！），精华自取：</p><pre><code>(function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) {    $.extend({        smartDefaultOption: {            &quot;flavor&quot;: &quot;bubble&quot;, //样式选择：bubble浮动气泡，slim固定极简            &quot;positionMode&quot;: &quot;static&quot;,//浮动气泡所需属性：默认fixed            &quot;location&quot;: [                &quot;北京市&quot;,                &quot;54511&quot;,                &quot;110101&quot;,                &quot;101010100&quot;            ],            &quot;geolocation&quot;: &quot;disabled&quot;, //城市定位：enabled启用，disabled不启用。 默认免费版不能开启定位            &quot;theme&quot;: &quot;chameleon&quot;, //浮层背景：chameleon随天气变化，white白色，black黑色            &quot;container&quot;: &quot;wp-container&quot;, //dom元素id开头            &quot;color&quot;: &quot;#FFFFFF&quot;, //字体颜色            &quot;background&quot;: &quot;#C6C6C6&quot;, //背景色：不需要设置时删掉此属性            &quot;bubble&quot;: &quot;disabled&quot;, //slim模式下：启用浮层显示天气详情和预报：enabled启用，disabled不启用。            &quot;uuid&quot;: &quot;b93a5df5-4925-42a9-a202-5564d7495237&quot;, //下面这两项时4Dsmart网站的账号的id、hash            &quot;hash&quot;: &quot;F494D79972E3122A99CA36C4BC8A9713&quot;        },        //封装同步ajax        getAsyncData: function(url, data, datatype) {            var res = &#39;&#39;;            $.ajax({                url: url,                data: data,                type: &quot;get&quot;,                dataType: datatype || &quot;json&quot;,                async: false, //同步请求                timeout: 30000,                error: function(e) {                    res = e.responseText;                },                success: function(r) {                    res = r;                }            });            return res;        },        /*调用百度API获取“城市中心经纬度”          * return lat,lng         */        getLocation: function(fn) {            $.ajax({                url: &quot;http://api.map.baidu.com/location/ip?ak=0V85NTruj3YuZa44xCiOP3MqiokuqoWr&amp;coor=bd09ll&quot;,                type: &quot;POST&quot;,                dataType: &quot;jsonp&quot;,                success: function(data) {                    //console.log(data);                    var cityLocation = data.content.point.y + &#39;,&#39; + data.content.point.x;                    fn &amp;&amp; fn(cityLocation);                }            });        },        /*调用百度API根据经纬度反查“城市名、区号”，根据城市名查询“城市气象台号、天气城市编号”         * return &quot;城市名、城市气象台号、区号、天气城市编号&quot;         */        getDirectName: function(cityLocation, fn) {            $.ajax({                url: &#39;http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=&#39; + cityLocation + &#39;&amp;output=json&amp;pois=1&amp;latest_admin=1&amp;ak=0V85NTruj3YuZa44xCiOP3MqiokuqoWr&#39;,                type: &quot;get&quot;,                async: true,                dataType: &quot;jsonp&quot;,                success: function(res) {                    //console.log(res);                    var cityName = res.result.addressComponent.city.replace(&#39;市&#39;, &#39;&#39;);                    var cityObservatoryCode = $.getAsyncData(jsonurl)[&#39;observatory&#39;][cityName];                    var directAreaCode = res.result.addressComponent.adcode;                    var cityWeatherCode = $.getAsyncData(jsonurl)[&#39;weathercity&#39;][cityName];                    //console.log(&#39;城市名：&#39;+cityName+&#39;\n&#39;,&#39;城市气象台号：&#39;+cityObservatoryCode+&#39;\n&#39;,&#39;区号：&#39;+directAreaCode+&#39;\n&#39;,&#39;天气城市编号：&#39;+cityWeatherCode);                    fn &amp;&amp; fn(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode);                }            });        },        //根据城市名、城市气象台号、区号、天气城市编号，调用smart-weather查询天气        getWeather: function(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode) {            //smart-weather天气具体参数配置            var data = $.smartDefaultOption;            data.location = [                cityName,                cityObservatoryCode,                directAreaCode,                cityWeatherCode            ];            wp(&quot;init&quot;, data);            wp(&quot;show&quot;);        },        //封装完的基于4Dsmart的免费获取天气方法        getFreeWeather: function(data) {            if(data&amp;&amp;!$.isEmptyObject(data)){                for (var key in data) {                    $.smartDefaultOption[key]=data[key];                }            };            $.getLocation(function(cityLocation) {                $.getDirectName(cityLocation, function(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode) {                    $.getWeather(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode);                });            });        }    });    //天气插件依赖    initScript = function() {        scriptNode = document.createElement(&quot;script&quot;);        originalNode = document.getElementsByTagName(&quot;script&quot;)[0];        scriptNode.src = url;        scriptNode.async = 1;        originalNode.parentNode.insertBefore(scriptNode, originalNode)    };    window[&quot;wpObjectName&quot;] = &quot;wp&quot;;    window[&quot;wp&quot;] || (window[&quot;wp&quot;] = function() {        (window[&quot;wp&quot;].arg = window[&quot;wp&quot;].arg || []).push(arguments)    });    window[&quot;wp&quot;].l = +new Date();    if(window.attachEvent) {        window.attachEvent(&quot;onload&quot;, initScript)    } else {        window.addEventListener(&quot;load&quot;, initScript, false)    }}(window, document, &quot;script&quot;, &quot;wp&quot;, &quot;js/smart-weather.js&quot;,&quot;js/weather-city.json&quot;));</code></pre><p>参考文档：<br><a href="http://www.4dsmart.cn/weatherEnvironmental/plugin.action" target="_blank" rel="noopener">四维智城数据</a><br><a href="http://lbsyun.baidu.com/" target="_blank" rel="noopener">百度开放平台</a><br>示例：<a href="/pages/天气插件xm-weather/index.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> jquery </tag>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>高阶函数缓存应用之斐波那契数列</title>
+      <link href="/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/"/>
+      <url>/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/</url>
+      
+        <content type="html"><![CDATA[<p>合理的利用js缓存，能有效提升复杂运算效率，此处有两种概念：<br>1.闭包-（指有权访问另一个函数作用域中的变量的函数）<br>2.高阶函数-（接受其他函数作为参数或返回其他函数的函数）<br>此处以斐波那契数列为例，演示了运用缓存与不运用缓存计算的效率差别。</p><p>斐波那契数列是一组数字，以1 或 0 开头，后面跟着1，然后根据每个数字等于前两个数字之和规则进行。如</p><pre><code>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …]</code></pre><p>根据此规律，编写一个函数返回斐波那契数列中的 n 元素，可解：</p><pre><code>function fibonacci(n) {    if(n &lt;= 1) {        return 1;    }    return fibonacci(n - 1) + fibonacci(n - 2);};</code></pre><p>运用高阶函数缓存改写此方法，可封装函数：</p><pre><code>var memoizer = function(fun) {    var cache = {};    return function(n) {        if(cache[n] != undefined) {            return cache[n];        } else {            var result = fun(n);            cache[n] = result;            return result;        }    }};var fibonacciUseCache = memoizer(fibonacciMemorizer);var fibonacciMemorizer = function(n) {    if(n &lt;= 1) {        return 1;    }    return fibonacciUseCache(n - 1) + fibonacciUseCache(n - 2);}</code></pre><p>下面是写给自己看的，此处用jquery拓展封装下，备用：</p><pre><code>(function() {    $.extend({        memoizer:function(fun) {            var cache = {};            return function(n) {                if(cache[n] != undefined) {                    return cache[n];                } else {                    var result = fun(n);                    cache[n] = result;                    return result;                }            }        }    });})();</code></pre><p>参考文档：<br><a href="https://segmentfault.com/a/1190000018589996" target="_blank" rel="noopener">Web 性能优化：理解及使用 JavaScript 缓存-前端小智</a><br><a href="http://www.ruanyifeng.com/blog/2018/07/web-worker.html" target="_blank" rel="noopener">Web Worker 使用教程-阮一峰</a><br>示例：<a href="/pages/高阶函数缓存应用之斐波那契数列/index.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>清除cookie稳妥做法</title>
+      <link href="/2019/03/27/qing-chu-cookie-wen-tuo-zuo-fa/"/>
+      <url>/2019/03/27/qing-chu-cookie-wen-tuo-zuo-fa/</url>
+      
+        <content type="html"><![CDATA[<p>清除cookie稳妥做法就是设置cookie与清除cookie写法一致，cookie清除不了的问题，主要出现在设置与清除cookie并非一端操作的情况下，此时需要注意path、domain的设置必须保持一致，注意下文中注释<code>//warning</code>处代码，如下：</p><pre><code>/*Days默认输入number或string格式数字=day；s10、m10、h10、d10分别代表秒、分、小时、天*/function setCookie(name, value, Days) {    var cookieString = name + &#39;=&#39; + escape(value),        checkTime, checkMark;    if (!isNaN(+Days)) {        checkTime = +Days    } else {        checkTime = Days.substr(1);        checkMark = Days.substr(0, 1)    } if (checkTime &gt; 0) {        var setDate = new Date();        setDate.setTime(setDate.getTime() + checkstr(checkMark, checkTime));        cookieString = name + &#39;=&#39; + escape(value) + &#39;; expires=&#39; + setDate.toGMTString() + &#39;;path=/;domain=&#39; + location.hostname    }    document.cookie = cookieString}function getCookie(name) {    var strCookie = document.cookie,        arrCookie = strCookie.split(&#39;;&#39;);    for (var i = 0, len = arrCookie.length; i &lt; len; i++) {        var Arr_keyvalue = arrCookie[i].split(&#39;=&#39;);        if (Arr_keyvalue[0].replace(/(^\s*)|(\s*$)/g, &quot;&quot;) == name) {            return unescape(Arr_keyvalue[1])        }    }    return &#39;&#39;}function deleteCookie(name) {    var setDate = new Date();    setDate.setTime(setDate.getTime() - 10000);    var value = getCookie(name);    if (value) {        document.cookie = name + &#39;=&#39; + value + &#39;; expires=&#39; + setDate.toGMTString() + &#39;;path=/;domain=&#39; + location.hostname    }}function checkstr(mark, Time) {    if (!mark) {        return Time * 24 * 60 * 60 * 1000    } else {        switch (mark) {            case &#39;s&#39;:                return Time * 1000;                break;            case &#39;m&#39;:                return Time * 60 * 1000;                break;            case &#39;h&#39;:                return Time * 60 * 60 * 1000;                break;            case &#39;d&#39;:                return Time * 24 * 60 * 60 * 1000;                break;            default:                return false;                break        }    }}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>色调旋转滤镜按钮-在线生成</title>
+      <link href="/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/"/>
+      <url>/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/</url>
+      
+        <content type="html"><![CDATA[<p>本例应用颜色拾取插件 <a href="https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html" target="_blank" rel="noopener">https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html</a><br>直接放源码，有兴趣的点击例子查看：</p><pre><code>&lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh&quot;&gt;    &lt;head&gt;        &lt;meta charset=&quot;UTF-8&quot; /&gt;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;        &lt;title&gt;色调旋转滤镜下的按钮&lt;/title&gt;        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css&quot; integrity=&quot;sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm&quot; crossorigin=&quot;anonymous&quot;&gt;        &lt;link href=&quot;css/bootstrap-colorpicker.css&quot; rel=&quot;stylesheet&quot;&gt;        &lt;style type=&quot;text/css&quot;&gt;            html,            body {                height: 100%;            }        &lt;/style&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;div class=&quot;container jumbotron h-100&quot;&gt;            &lt;h1&gt;选择颜色&lt;/h1&gt;            &lt;div id=&quot;demo&quot; class=&quot;input-group&quot; title=&quot;Using input value&quot;&gt;                &lt;input type=&quot;text&quot; class=&quot;form-control input-lg&quot; value=&quot;&quot; /&gt;                &lt;span class=&quot;input-group-append&quot;&gt;&lt;span class=&quot;input-group-text colorpicker-input-addon&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;            &lt;/div&gt;            &lt;h4 class=&quot;pt-3&quot;&gt;色调旋转滤镜下的按钮&lt;/h4&gt;            &lt;div id=&quot;hueBtnBox&quot;&gt;&lt;/div&gt;            &lt;h4 class=&quot;pt-3&quot;&gt;css&lt;/h4&gt;            &lt;div id=&quot;css&quot;&gt;&lt;/div&gt;        &lt;/div&gt;        &lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;        &lt;script src=&quot;js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;        &lt;script src=&quot;js/bootstrap-colorpicker.js&quot;&gt;&lt;/script&gt;        &lt;script&gt;            $(function() {                $(&#39;#demo&#39;).colorpicker({                    &quot;color&quot;: &quot;#ff0000&quot;                });                $(&#39;#demo&#39;).on(&#39;colorpickerChange&#39;, function(event) {                    initColor(event.color);                });                //初始化                initColor(&#39;#ff0000&#39;);                //生成36种旋转滤镜颜色                function initColor(color) {                    color = String(color).indexOf(&#39;#&#39;) &gt;= 0 ? color : hexify(String(color));                    var templeteStyle = &#39;.ui-button-primary{border: 1px solid &#39; + color + &#39;;background-color: &#39; + color + &#39;;color: #fff;}.ui-button-primary:hover {background-color: &#39; + LightenDarkenColor(color, -20) + &#39;;border-color: &#39; + LightenDarkenColor(color, -20) + &#39;;}&#39;;                    var res = [];                    if(!$(&#39;#colorPickerStyle&#39;).length) {                        $(document.head).append(&#39;&lt;style id=&quot;colorPickerStyle&quot;&gt;&#39; + templeteStyle + &#39;&lt;/style&gt;&#39;);                    } else {                        $(&#39;#colorPickerStyle&#39;).html(templeteStyle);                    }                    for(var i = 0, len = 36; i &lt; len; i++) {                        res.push(&#39;&lt;button class=&quot;btn ui-button-primary m-1&quot; style=&quot;filter:hue-rotate(&#39; + i + &#39;0deg);&quot;&gt;其它色按钮&lt;/button&gt;&#39;)                    }                    $(&#39;#hueBtnBox&#39;).html(res.join(&#39;&#39;));                    $(&#39;#css&#39;).html(templeteStyle);                }            });            //十六进制转为RGB            function hex2Rgb(hex) {                var rgb = [];                if(/^\#[0-9A-F]{3}$/i.test(hex)) { //判断传入是否为#三位十六进制数                    let sixHex = &#39;#&#39;;                    hex.replace(/[0-9A-F]/ig, function(kw) {                        sixHex += kw + kw; //把三位16进制数转化为六位                    });                    hex = sixHex; //保存回hex                }                if(/^#[0-9A-F]{6}$/i.test(hex)) { //判断传入是否为#六位十六进制数                    hex.replace(/[0-9A-F]{2}/ig, function(kw) {                        rgb.push(eval(&#39;0x&#39; + kw)); //十六进制转化为十进制并存如数组                    });                    return `rgb(${rgb.join(&#39;,&#39;)})`; //输出RGB格式颜色                } else {                    console.log(`Input ${hex} is wrong!`);                    return &#39;rgb(0,0,0)&#39;;                }            }            //rgb转换十六进制            function hexify(color) {                var values = color                    .replace(/rgba?\(/, &#39;&#39;)                    .replace(/\)/, &#39;&#39;)                    .replace(/[\s+]/g, &#39;&#39;)                    .split(&#39;,&#39;);                var a = parseFloat(values[3] || 1),                    r = Math.floor(a * parseInt(values[0]) + (1 - a) * 255),                    g = Math.floor(a * parseInt(values[1]) + (1 - a) * 255),                    b = Math.floor(a * parseInt(values[2]) + (1 - a) * 255);                return &quot;#&quot; +                    (&quot;0&quot; + r.toString(16)).slice(-2) +                    (&quot;0&quot; + g.toString(16)).slice(-2) +                    (&quot;0&quot; + b.toString(16)).slice(-2);            }            //转换颜色变亮、变暗            function LightenDarkenColor(col, amt) {                var usePound = false;                if(col[0] == &quot;#&quot;) {                    col = col.slice(1);                    usePound = true;                }                var num = parseInt(col, 16);                var r = (num &gt;&gt; 16) + amt;                if(r &gt; 255) r = 255;                else if(r &lt; 0) r = 0;                var b = ((num &gt;&gt; 8) &amp; 0x00FF) + amt;                if(b &gt; 255) b = 255;                else if(b &lt; 0) b = 0;                var g = (num &amp; 0x0000FF) + amt;                if(g &gt; 255) g = 255;                else if(g &lt; 0) g = 0;                return(usePound ? &quot;#&quot; : &quot;&quot;) + (g | (b &lt;&lt; 8) | (r &lt;&lt; 16)).toString(16);            }        &lt;/script&gt;    &lt;/body&gt;</code></pre><p>示例：<a href="/pages/色调旋转滤镜按钮在线生成/index.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> jquery </tag>
+            
+            <tag> js </tag>
+            
+            <tag> css3 </tag>
+            
+            <tag> bootstrap </tag>
+            
+            <tag> colorpicker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>百度分享-设置缩略图及标题</title>
+      <link href="/2019/03/14/bai-du-fen-xiang-she-zhi-suo-lue-tu-ji-biao-ti/"/>
+      <url>/2019/03/14/bai-du-fen-xiang-she-zhi-suo-lue-tu-ji-biao-ti/</url>
+      
+        <content type="html"><![CDATA[<h4 id="一不小心走进你的锅…"><a href="#一不小心走进你的锅…" class="headerlink" title="一不小心走进你的锅…"></a><strong>一不小心走进你的锅…</strong></h4><p>当你工作中用到  <a href="http://share.baidu.com/code" target="_blank" rel="noopener"> 百度分享 </a> ，<br>百度官方提供了两种方式，如图：</p><p>一定会毫不犹豫点金百度分享官网，<br>按其提示的两种方式选择一种来用，那么问题来了…,当你真的把网页分享出去时，你可能提出类似这种问题：<br><a href="http://tieba.baidu.com/p/5657545534" target="_blank" rel="noopener">…无法正常显示分享缩略图和介绍?</a>。<br>说到这里吐出一口老血！<br>直接讲重点：<br>1.按照官方<code>自由选择版</code>，获取到代码后。黏贴到需要分享的网页的js里。下面这是展开的样子：</p><pre><code>window._bd_share_config = {    &quot;common&quot;: {        &quot;bdSnsKey&quot;: {},        &quot;bdText&quot;: &quot;&quot;,//标题        &quot;bdDesc&quot;:&quot;&quot;,//官方解释：“分享的摘要”，此处就是附带分享发出去的文字，你可以尝试加上自行体会...        &quot;bdMini&quot;: &quot;2&quot;,        &quot;bdMiniList&quot;: false,        &quot;bdPic&quot;: &quot;&quot;,//缩略图        &quot;bdStyle&quot;: &quot;0&quot;,        &quot;bdSize&quot;: &quot;16&quot;    },    &quot;slide&quot;: {        &quot;type&quot;: &quot;slide&quot;,        &quot;bdImg&quot;: &quot;1&quot;,        &quot;bdPos&quot;: &quot;right&quot;,        &quot;bdTop&quot;: &quot;157.5&quot;    }};with(document) 0[(getElementsByTagName(&#39;head&#39;)[0] || body).appendChild(createElement(&#39;script&#39;)).src = &#39;http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=&#39; + ~(-new Date() / 36e5)];            </code></pre><p>2.打开官方<code>专业开发版</code>文档。关于各个参数的解释文档里该跟你说的都说了，说到这里本该结束了。但我还是多加一句，官方不想跟你说的没说…。<br>比如：当你分享出去自己的网页，再分享出去一个百度百科。此处的差异临时没去研究，有时间再去深究吧。</p><p>示例：<a href="/pages/百度分享-设置缩略图及标题.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>position-sticky</title>
+      <link href="/2019/03/14/position-sticky/"/>
+      <url>/2019/03/14/position-sticky/</url>
+      
+        <content type="html"><![CDATA[<h2 id="position-sticky简介"><a href="#position-sticky简介" class="headerlink" title="position:sticky简介"></a>position:sticky简介</h2><p>单词sticky的中文意思是“粘性的”，position:sticky表现也符合这个粘性的表现。<br>基本上，可以看出是position:relative和position:fixed的结合体——当元素在屏幕内，表现为relative，就要滚出显示器屏幕的时候，表现为fixed。<br>你可以点击 <a href="/pages/position-sticky.html">此处</a> 感受一下。</p><p>不过应用此属性需要注意html布局配合，以下是css样式及html结构，具体体会你将在使用时，切身体会到：</p><p><strong>css</strong></p><pre><code>h4 {    position: sticky;    z-index: 1;    top: 0;}div {    position: relative;    background-color: #7FDBFF;}span {    display: block;    position: sticky;    bottom: 50%;    z-index: -1;    background: #2ECC40;}</code></pre><p><strong>html</strong></p><pre><code>&lt;ul&gt;    &lt;li&gt;        &lt;h4&gt;我是标题1&lt;/h4&gt;        &lt;div&gt;            &lt;p&gt;我是内容......&lt;/p&gt;            &lt;p&gt;我是内容......&lt;/p&gt;            &lt;p&gt;我是内容......&lt;/p&gt;            &lt;p&gt;我是内容......&lt;/p&gt;            &lt;p&gt;我是内容......&lt;/p&gt;            &lt;p&gt;我是内容......&lt;/p&gt;            &lt;p&gt;我是内容......&lt;/p&gt;        &lt;/div&gt;        &lt;span&gt;我是footer&lt;/span&gt;    &lt;/li&gt;&lt;/ul&gt;</code></pre><p>示例：<a href="/pages/position-sticky.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+            <tag> css3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>css变量</title>
+      <link href="/2019/03/13/css-bian-liang/"/>
+      <url>/2019/03/13/css-bian-liang/</url>
+      
+        <content type="html"><![CDATA[<h4 id="CSS变量var-语法"><a href="#CSS变量var-语法" class="headerlink" title="CSS变量var()语法"></a><strong>CSS变量var()语法</strong></h4><p>CSS中原生的变量定义语法是：<code>--*</code>，<br>变量使用语法是：<code>var(--*)</code>，<br>其中*表示我们的变量名称。<br>下面是bootstrap使用的<code>:root</code>定义：</p><pre><code>:root {    --blue: #007bff;    --indigo: #6610f2;    --purple: #6f42c1;    --pink: #e83e8c;    --red: #dc3545;    --orange: #fd7e14;    --yellow: #ffc107;    --green: #28a745;    --teal: #20c997;    --cyan: #17a2b8;    --white: #fff;    --gray: #6c757d;    --gray-dark: #343a40;    --primary: #007bff;    --secondary: #6c757d;    --success: #28a745;    --info: #17a2b8;    --warning: #ffc107;    --danger: #dc3545;    --light: #f8f9fa;    --dark: #343a40;    --breakpoint-xs: 0;    --breakpoint-sm: 576px;    --breakpoint-md: 768px;    --breakpoint-lg: 992px;    --breakpoint-xl: 1200px;    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;;    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,&quot;Liberation Mono&quot;,&quot;Courier New&quot;,monospace;}</code></pre><p>相信用不了多久，你就可以不考虑此用法的兼容性。CSS中原生的变量的应用场景你可以自己探索，在我看来，此不失为一种定制一套皮肤风格的好办法。示例里顺便试了下document.scrollingElement,如有兴趣请自行F2查看。</p><p>示例：<a href="/pages/css变量.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基于CSS3 column多栏布局实现水平滑页翻页交互</title>
+      <link href="/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/"/>
+      <url>/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/</url>
+      
+        <content type="html"><![CDATA[<p>今天看大神张鑫旭的文章，有一篇  <a href="https://www.zhangxinxu.com/wordpress/2017/02/css3-multiple-column-layout-read-horizontal/" target="_blank" rel="noopener">基于CSS3 column多栏布局实现水平滑页翻页交互</a> ，<br>为熟悉column多栏布局写法，模仿 <a href="https://m.qidian.com" target="_blank" rel="noopener">起点中文网</a> 封装了个jquery拓展方法。如下：</p><h4 id="css"><a href="#css" class="headerlink" title="css"></a><strong>css</strong></h4><pre><code>html,body {    width: 100%;    height: 100%;    overflow: hidden;    background: #C4B399;}html,body,ul,li {    padding: 0;    margin: 0;}ul {    -webkit-columns: calc(100vw - 32px) 1;    -webkit-column-gap: 16px;    columns: calc(100vw - 32px) 1;    column-gap: 16px;    overflow: visible;    height: 100%;    transition: all 0.2s;}ul li {    list-style: none;    padding: 1em;    margin: 1em;    -webkit-column-break-inside: avoid;    page-break-inside: avoid;    background: #FFFFFF;    break-inside: avoid;}</code></pre><h4 id="html"><a href="#html" class="headerlink" title="html"></a><strong>html</strong></h4><pre><code>&lt;ul&gt;&lt;/ul&gt;&lt;div style=&quot;display: flex;justify-content: space-between;position: absolute;bottom: 0;width: 100%;&quot;&gt;    &lt;button&gt;前一页&lt;/button&gt;    &lt;button&gt;后一页&lt;/button&gt;&lt;/div&gt;</code></pre><h4 id="js"><a href="#js" class="headerlink" title="js"></a><strong>js</strong></h4><p>依赖：jquery.js</p><pre><code>(function() {    $.extend({        pageColumns: {            init: function(options) {                var that = this;                options=options||{};                //默认参数                that.el = options.el || $(&#39;ul&#39;);                that.prevBtn = options.prevBtn || $(&#39;button&#39;).eq(0);                that.nextBtn = options.nextBtn || $(&#39;button&#39;).eq(1);                that.columnGap = options.columnGap || 16;                that.currentPage = options.currentPage || 0;                that.sectionIndex = options.sectionIndex || 0;                that.direction = options.direction || 1;                that.totalWidth = that.el[0].scrollWidth;                that.pageWidth = that.el.outerWidth();                that.page = that.totalWidth / (that.pageWidth + that.columnGap * 2);                //前一页                that.prevBtn.on(&#39;click&#39;, function() {                    if(that.currentPage) {                        that.currentPage--;                        that.el.css(&#39;transform&#39;, &#39;translateX(-&#39; + (that.currentPage * (that.pageWidth + that.columnGap)) + &#39;px)&#39;);                        return;                    }                    that.direction = 0;                    that.sectionIndex--;                    that.filContent();                    that.slidePosition();                });                //后一页                that.nextBtn.on(&#39;click&#39;, function() {                    if(that.currentPage &lt; that.page - 1) {                        that.currentPage++;                        that.el.css(&#39;transform&#39;, &#39;translateX(-&#39; + (that.currentPage * (that.pageWidth + that.columnGap)) + &#39;px)&#39;);                        return;                    }                    that.direction = 1;                    that.sectionIndex++;                    that.filContent();                    that.slidePosition();                });                //初始化                that.filContent();                that.slidePosition();            },            filContent: function() {                var templete = &#39;很长很长的内容......&#39;;                var repeatText = &#39;&lt;li&gt;&#39; + templete.repeat(3) + &#39;&lt;/li&gt;&#39;;                var title = &#39;&lt;li&gt;第&#39; + this.sectionIndex + &#39;章&lt;/li&gt;&#39;;                this.el.html(title + repeatText.repeat(30));            },            slidePosition: function() {                var that = this;                that.el.css(&#39;transition&#39;, &#39;unset&#39;);                that.totalWidth = that.el[0].scrollWidth;                that.page = that.totalWidth / (that.pageWidth + that.columnGap * 2);                if(that.direction) {                    that.currentPage = 0;                } else {                    that.currentPage = Math.ceil(that.page - 1);                }                that.el.css(&#39;transform&#39;, &#39;translateX(-&#39; + (that.currentPage * (that.pageWidth + that.columnGap)) + &#39;px)&#39;);                setTimeout(function() {                    that.el.css(&#39;transition&#39;, &#39;all 0.2s&#39;);                }, 200);            }        }    });})();</code></pre><p>示例：<a href="/pages/基于CSS3column多栏布局实现水平滑页翻页交互.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> jquery </tag>
+            
+            <tag> js </tag>
+            
+            <tag> css3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>相邻算法</title>
+      <link href="/2019/03/11/xiang-lin-suan-fa/"/>
+      <url>/2019/03/11/xiang-lin-suan-fa/</url>
+      
+        <content type="html"><![CDATA[<p>参照“猫眼电影”购票选座规则：</p><pre><code>/** 影院选座验证* param {Array} arr* param {Object} options.ok验证成功回调函数，options.cancel验证失败回调函数* return {Boolean} 验证成功返回true,失败返回false*/function getAdjacentItem(arr,options) {    var arrLength=arr.length;    var nextItems=[];    if(!arrLength){return false;}    if(arrLength===1){options.ok&amp;&amp;options.ok(arr);return true;}    arr.sort(function(a,b){        if(a.y===b.y&amp;&amp;Math.abs(a.x-b.x)===1){            nextItems.push({                a:a,                b:b            });        }        return a.y-b.y;    });    if(arrLength%2){        if(Math.floor(arrLength/2)===nextItems.length){            options.ok&amp;&amp;options.ok(arr);            return true;        }    }else{        if(arrLength/2===nextItems.length){            options.ok&amp;&amp;options.ok(arr);            return true;        }    }    options.cancel&amp;&amp;options.cancel(arr);    return false;}</code></pre><p>示例：<a href="/pages/相邻算法.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网页防扒</title>
+      <link href="/2019/03/06/wang-ye-fang-ba/"/>
+      <url>/2019/03/06/wang-ye-fang-ba/</url>
+      
+        <content type="html"><![CDATA[<p>所谓防火防盗防大佬，虽然我们提倡开源，但是有时也会用到“网页防扒”，在<a href="https://www.sojson.com" target="_blank" rel="noopener">https://www.sojson.com</a> 被挡了一会感觉很蓝瘦，顺便研究了下如何“防扒”，代码如下：</p><pre><code>document.onkeydown=function(){    var e=window.event||arguments[0];    if(e.keyCode==123){        return false;    }else if((e.ctrlKey)&amp;&amp;(e.shiftKey)&amp;&amp;(e.keyCode==73)){        return false;    }};document.oncontextmenu=function(){    return false;}</code></pre><p>示例：<a href="/pages/网页防扒.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>bootstrap-Modal组件封装</title>
+      <link href="/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/"/>
+      <url>/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/</url>
+      
+        <content type="html"><![CDATA[<p>bootstrap-Modal组件封装：</p><pre><code>(function() {    $.extend({        xmDialog: {        init: function(option) {            var that = this;            var base = {                el: &#39;#xmCustomModal&#39;,                classes: option.classes || &#39;modal-sm&#39;,                zIndex:option.zIndex||10000,                styles: option.styles || {},//临时没用到                modalHeader: {                    title: option.title || &#39;&#39;,                    styles: option.headerStyles||{}                },                modalBody: {                    content: option.content || &#39;&#39;,                    styles: option.bodyStyles || {},                    loading: &#39;&lt;div id=&quot;spinLoading&quot; class=&quot;bg-white w-100 h-100 position-absolute row align-items-center justify-content-center m-0 spin-loading&quot; style=&quot;top:0;left:0;&quot;&gt;&lt;div class=&quot;loader&quot;&gt;&lt;div class=&quot;loader-inner line-spin-fade-loader&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&#39;,                },                modalFooter: {                    show: typeof option.showFooter === &#39;boolean&#39; ? option.showFooter : true,                    styles: {                        &#39;justify-content&#39;: option.footerAlign||&#39;center&#39;                    },                    type: option.type || &#39;confirm&#39;,                    buttons: {                        &#39;confirm&#39;: [{                            type: &#39;ok&#39;,                            classes: &#39;btn-primary&#39;,                            text: option.okText || &#39;确认&#39;,                            fn: function() {                                option.ok ? option.ok(that) : that.$el.modal(&#39;hide&#39;);                            }                        }, {                            type: &#39;cancel&#39;,                            classes: &#39;btn-secondary&#39;,                            text: &#39;取消&#39;,                            fn: function() {                                option.cancel ? option.cancel(that) : that.$el.modal(&#39;hide&#39;);                            }                        }],                        &#39;tip&#39;: [{                            type: &#39;tip&#39;,                            classes: &#39;btn-info&#39;,                            text: &#39;我知道了&#39;,                            fn: function() {                                option.confirm ? option.confirm(that) : that.$el.modal(&#39;hide&#39;);                            }                        }]                    }                },                formatStyle: function(obj) {                    if(!obj || $.isEmptyObject(obj)) {                        return &#39;&#39;;                    } else {                        var res = [];                        for(var key in obj) {                            res.push(key + &#39;:&#39; + obj[key]);                        }                        return res.join(&#39;;&#39;);                    }                },                shown: function() {                    option.shown ? option.shown(that) : that.hideLoading();                },                hidden: function() {                    option.hidden &amp;&amp; option.hidden(that);                }            };            if(!$(base.el).length) {                $(&#39;body&#39;).append(&#39;&lt;div id=&quot;&#39; + base.el.substring(1) + &#39;&quot; class=&quot;modal fade&quot; style=&quot;z-index:10000;&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalCenterTitle&quot; aria-hidden=&quot;true&quot; data-backdrop=&quot;static&quot;&gt;&lt;/div&gt;&#39;);            }            that.$el = $(base.el);            var templete = [];            if(base.style) {                that.$el.attr(&#39;style&#39;, base.style);            }            templete.push(&#39;&lt;div class=&quot;modal-dialog modal-dialog-centered modal-dialog-scrollable &#39; + base.classes + &#39;&quot; role=&quot;document&quot; style=&quot;&#39; + base.formatStyle(base.styles) + &#39;&quot;&gt;&#39;);            templete.push(&#39;    &lt;div class=&quot;modal-content&quot;&gt;&#39;);            templete.push(&#39;        &lt;div class=&quot;modal-header border-0 py-2&quot; style=&quot;&#39; + base.formatStyle(base.modalHeader.styles) + &#39;&quot;&gt;&#39;);            templete.push(&#39;            &lt;h5 class=&quot;modal-title pr-3 text-nowrap overflow-hidden&quot; style=&quot;text-overflow:ellipsis;&quot;&gt;&#39; + base.modalHeader.title + &#39;&lt;/h5&gt;&#39;);            templete.push(&#39;            &lt;button type=&quot;button&quot; class=&quot;close&quot; style=&quot;margin:-0.5rem -1rem;padding:0.5rem 0.75rem;&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&#39;);            templete.push(&#39;                &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&#39;);            templete.push(&#39;            &lt;/button&gt;&#39;);            templete.push(&#39;        &lt;/div&gt;&#39;);            templete.push(&#39;        &lt;div class=&quot;modalBody modal-body relative&quot; style=&quot;&#39; + base.formatStyle(base.modalBody.styles) + &#39;&quot;&gt;&#39;);            templete.push(&#39;            &lt;!--提示内容--&gt;&#39;);            templete.push(base.modalBody.content + base.modalBody.loading);            templete.push(&#39;        &lt;/div&gt;&#39;);            if(base.modalFooter.show) {                templete.push(&#39;    &lt;div class=&quot;modal-footer border-0&quot; style=&quot;&#39; + base.formatStyle(base.modalFooter.styles) + &#39;&quot;&gt;&#39;);                base.modalFooter.buttons[base.modalFooter.type].forEach(function(item, index) {                    $[&#39;xmCustomModal&#39; + index] = item.fn;                    templete.push(&#39;    &lt;button type=&quot;button&quot; class=&quot;btn &#39; + item.classes + &#39; px-4&quot; onclick=&quot;&#39; + &#39;$.xmCustomModal&#39; + index + &#39;();&quot;&gt;&#39; + item.text + &#39;&lt;/button&gt;&#39;);                });                templete.push(&#39;    &lt;/div&gt;&#39;);            }            templete.push(&#39;    &lt;/div&gt;&#39;);            templete.push(&#39;&lt;/div&gt;&#39;);            that.$el.html(templete.join(&#39;&#39;));            that.$el.off(&#39;hidden.bs.modal&#39;).on(&#39;hidden.bs.modal&#39;, function() {                base.hidden &amp;&amp; base.hidden(this);            });            that.$el.off(&#39;shown.bs.modal&#39;).on(&#39;shown.bs.modal&#39;, function() {                base.shown &amp;&amp; base.shown(that);            });            that.$el.modal(&#39;show&#39;);            return this;        },        hideLoading: function() {            $(&#39;#spinLoading&#39;).hide();            return this;        }    }});})();</code></pre><p>示例：<a href="/pages/bootstrap-Modal组件封装.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> jquery </tag>
+            
+            <tag> bootstrap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>title美化提示框</title>
+      <link href="/2019/02/25/title-mei-hua-ti-shi-kuang/"/>
+      <url>/2019/02/25/title-mei-hua-ti-shi-kuang/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;!DOCTYPE HTML&gt;&lt;html&gt;    &lt;head&gt;        &lt;meta charset=&quot;utf-8&quot;&gt;        &lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes&quot; /&gt;        &lt;title&gt;美化title属性，使title成为提示框&lt;/title&gt;        &lt;script src=&quot;../js/jquery.min.js&quot;&gt;&lt;/script&gt;        &lt;style type=&quot;text/css&quot;&gt;            .tipsy-tooltip {                font-size: 12px;                font-family: \5b8b\4f53;                line-height: 1.5;                position: absolute;                padding: 5px;                z-index: 100003;                opacity: 1            }            .tipsy-arrow {                position: absolute;                width: 0;                height: 0;                line-height: 0;                border: 6px dashed #FFA500;                top: 0;                left: 20%;                margin-left: -5px;                border-bottom-style: solid;                border-top: 0;                border-left-color: transparent;                border-right-color: transparent            }            .tipsy-arrow-n {                border-bottom-color: #FFA500;            }            .tipsy-inner {                background-color: #FFA500;                color: #fff;                max-width: 200px;                padding: 5px 8px 4px 8px;                text-align: center;                border-radius: 3px            }        &lt;/style&gt;        &lt;body&gt;            &lt;p&gt;提示：利用title属性制作的提示框效果，不是真正的提示弹出框&lt;/p&gt;            &lt;div&gt;                &lt;a href=&quot;#&quot; title=&quot;我是提示文字&quot;&gt;提示文字                    &lt;span style=&quot;padding: 0 10px 0 0;&quot;&gt;-子元素&lt;/span&gt;                &lt;/a&gt;                &lt;a href=&quot;#&quot; title=&quot;&lt;p&gt;我是提示文字1&lt;/p&gt;&lt;p&gt;我是提示文字2&lt;/p&gt;&quot;&gt;提示文字可换行&lt;/a&gt;            &lt;/div&gt;            &lt;script&gt;                (function() {                    $.extend({                        sweetTitles: {                            x: 10,                            y: 20,                            tipElements: &quot;a,span,img,div&quot;,                            noTitle: false,                            isTarget: true,                            init: function() {                                var that = this;                                $(this.tipElements).each(function() {                                    $(this).mouseover(function(e) {                                        if(that.isTarget &amp;&amp; !$(e.target).is(this)) {                                            return;                                        }                                        if(that.noTitle) {                                            isTitle = true;                                        } else {                                            isTitle = $.trim(this.title) != &#39;&#39;;                                        }                                        if(isTitle) {                                            this.myTitle = this.title;                                            this.title = &quot;&quot;;                                            var tooltip = &quot;&lt;div class=&#39;tipsy-tooltip&#39;&gt;&lt;div class=&#39;tipsy-arrow tipsy-arrow-n&#39;&gt;&lt;/div&gt;&lt;div class=&#39;tipsy-inner&#39;&gt;&quot; +this.myTitle +&quot;&lt;/div&gt;&lt;/div&gt;&quot;;                                            $(&#39;body&#39;).append(tooltip);                                            $(&#39;.tipsy-tooltip&#39;).css({                                                &quot;top&quot;: (e.pageY + 20) + &quot;px&quot;,                                                &quot;left&quot;: (e.pageX - 20) + &quot;px&quot;                                            }).show(&#39;fast&#39;);                                        }                                    }).mouseout(function() {                                        if(this.myTitle != null) {                                            this.title = this.myTitle;                                            $(&#39;.tipsy-tooltip&#39;).remove();                                        }                                    }).mousemove(function(e) {                                        $(&#39;.tipsy-tooltip&#39;).css({                                            &quot;top&quot;: (e.pageY + 20) + &quot;px&quot;,                                            &quot;left&quot;: (e.pageX - 20) + &quot;px&quot;                                        });                                    });                                });                            }                        }                    });                })();                //调用                $.sweetTitles.init();            &lt;/script&gt;        &lt;/body&gt;&lt;/html&gt;</code></pre><p>示例：<a href="/pages/title美化提示框.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> jquery </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js运算精度_decimal插件</title>
+      <link href="/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/"/>
+      <url>/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/</url>
+      
+        <content type="html"><![CDATA[<p>收藏备用：</p><pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;    &lt;head&gt;        &lt;meta charset=&quot;UTF-8&quot;&gt;        &lt;title&gt;解决JS运算和精度问题-decimal.js&lt;/title&gt;        &lt;script src=&quot;../js/decimal.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;script type=&quot;text/javascript&quot;&gt;            /*示例*/            var dc=function (r) {                return new Decimal(r);            }            //加法 add            var a = dc(0.1).add(dc(0.2));            //减法 sub            var b = dc(0.3).sub(dc(0.1));            //乘法 mul            var c = dc(37.5).mul(dc(5.5));            //除法 div            var d = dc(10).div(dc(3));            console.log(a);            console.log(b);            console.log(c);            console.log(d);        &lt;/script&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre><p>示例：<a href="/pages/js运算精度_decimal插件.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>input-range自定义</title>
+      <link href="/2019/02/01/input-range-zi-ding-yi/"/>
+      <url>/2019/02/01/input-range-zi-ding-yi/</url>
+      
+        <content type="html"><![CDATA[<p>input-range自定义样式</p><pre><code>&lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh&quot;&gt;    &lt;head&gt;        &lt;meta charset=&quot;UTF-8&quot; /&gt;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;        &lt;title&gt;Document&lt;/title&gt;        &lt;style type=&quot;text/css&quot;&gt;            /*去除默认样式*/            input[type=range] {                -webkit-appearance: none;                width: 300px;                background: -webkit-linear-gradient(#059CFA, #059CFA) no-repeat;                background-size: 0% 100%;                border-radius: 10px;                /*这个属性设置使填充进度条时的图形为圆角*/            }            input[type=range]::-webkit-slider-thumb {                -webkit-appearance: none;                /*隐藏滑块*/            }            /*轨道自定义样式*/            input[type=range]::-webkit-slider-runnable-track {                height: 15px;                border-radius: 10px;                /*将轨道设为圆角的*/                box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;                /*轨道内置阴影效果*/            }            input[type=range]:focus {                outline: none;                /*原始的控件获取到焦点时，会显示包裹整个控件的边框，所以还需要把边框取消。*/            }            /*滑块自定义样式*/            input[type=range]::-webkit-slider-thumb {                -webkit-appearance: none;                height: 25px;                width: 25px;                margin-top: -5px;                /*使滑块超出轨道部分的偏移量相等*/                background: #ffffff;                border-radius: 50%;                /*外观设置为圆形*/                border: solid 0.125em rgba(205, 224, 230, 0.5);                /*设置边框*/                box-shadow: 0 .125em .125em #3b4547;                /*添加底部阴影*/            }        &lt;/style&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;input id=&quot;snrPollInterval&quot; type=&quot;range&quot; value=&quot;10&quot; min=&quot;1&quot; max=&quot;30&quot;&gt;        &lt;script src=&quot;js/jquery-2.1.0.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;        &lt;script type=&quot;text/javascript&quot;&gt;            //滑动时的样式            $.fn.RangeSlider = function(cfg) {                this.sliderCfg = {                    min: cfg &amp;&amp; !isNaN(parseFloat(cfg.min)) ? Number(cfg.min) : null,                    max: cfg &amp;&amp; !isNaN(parseFloat(cfg.max)) ? Number(cfg.max) : null,                    step: cfg &amp;&amp; Number(cfg.step) ? cfg.step : 1,                    callback: cfg &amp;&amp; cfg.callback ? cfg.callback : null                };                var $input = $(this);                var min = this.sliderCfg.min;                var max = this.sliderCfg.max;                var step = this.sliderCfg.step;                var callback = this.sliderCfg.callback;                $input.attr(&#39;min&#39;, min).attr(&#39;max&#39;, max).attr(&#39;step&#39;, step);                $input.on(&quot;input&quot;, function(e) {                    $input.attr(&#39;value&#39;, this.value);                    $input.css(&#39;background&#39;, &#39;linear-gradient(to right, #059CFA, #ebeff4 &#39; + this.value + &#39;%, #ebeff4)&#39;);                    if($.isFunction(callback)) {                        callback(this);                    }                });                $input.trigger(&#39;input&#39;);            };            $(&#39;#snrPollInterval&#39;).RangeSlider({                min: 0,                max: 100,                step: 1,                callback: &#39;&#39;            });        &lt;/script&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre><p>示例：<a href="/pages/input_range自定义.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+            <tag> jquery </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>canvas转换svg合成图片</title>
+      <link href="/2019/02/01/canvas-zhuan-huan-svg-he-cheng-tu-pian/"/>
+      <url>/2019/02/01/canvas-zhuan-huan-svg-he-cheng-tu-pian/</url>
+      
+        <content type="html"><![CDATA[<p>此函数应用场景为：百度地图生成自定义标志</p><pre><code>(function ($, document) {    $.extend({        //16进制颜色转换为rgba颜色        colorRgb: function (str, opacity) {            var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;            var sColor = str.toLowerCase();            if (sColor &amp;&amp; reg.test(sColor)) {                if (sColor.length === 4) {                    var sColorNew = &quot;#&quot;;                    for (var i = 1; i &lt; 4; i++) {                        sColorNew += sColor.slice(i, i + 1).concat(sColor.slice(i, i + 1));                    }                    sColor = sColorNew;                }                //处理六位的颜色值                  var sColorChange = [];                for (var i = 1; i &lt; 7; i += 2) {                    sColorChange.push(parseInt(&quot;0x&quot; + sColor.slice(i, i + 2)));                }                return &quot;rgba(&quot; + sColorChange.join(&quot;,&quot;) + &quot;,&quot; + opacity; //透明度            } else {                return sColor;            }        },        svgToPng: function (opts) {            var options = {                color: opts.color || &#39;#ff0000&#39;,                opacity: opts.opacity || 0.3,                txt: opts.txt || &#39;生&#39;,                width: opts.width || 30,                height: opts.height || 30,                fn: opts.fn || function (res) {                    console.log(res);                }            };            var svgArr = [];            svgArr.push(&#39;&lt;svg version=&quot;1.1&quot; id=&quot;图层_1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot; width=&quot;&#39; + options.width + &#39;&quot; height=&quot;&#39; + options.height + &#39;&quot; viewBox=&quot;0 0 48 48&quot; enable-background=&quot;new 0 0 48 48&quot; xml:space=&quot;preserve&quot;&gt;&#39;);            svgArr.push(&#39;    &lt;path fill=&quot;&#39; + $.colorRgb(options.color, options.opacity) + &#39;&quot; d=&quot;M45.301,24.094c0,11.741-9.519,21.26-21.26,21.26c-11.741,0-21.26-9.519-21.26-21.26 c0-11.741,9.519-21.259,21.26-21.259C35.782,2.834,45.301,12.353,45.301,24.094z&quot; /&gt;&#39;);            svgArr.push(&#39;    &lt;path fill=&quot;&#39; + options.color + &#39;&quot; d=&quot;M8.45,24.096c0,8.608,6.98,15.588,15.59,15.588c8.611,0,15.59-6.98,15.59-15.588 c0-8.612-6.979-15.592-15.59-15.592C15.43,8.504,8.45,15.484,8.45,24.096z&quot; /&gt;&#39;);            svgArr.push(&#39;&lt;/svg&gt;&#39;);            var svgXml = svgArr.join(&#39;&#39;);            var img = new Image();            img.crossOrigin = &#39;Anonymous&#39;;            //给图片对象写入base64编码的svg流            img.src = &#39;data:image/svg+xml;base64,&#39; + window.btoa(unescape(encodeURIComponent(svgXml)));            img.onload = function () {                var canvas = document.createElement(&#39;canvas&#39;); //准备空画布                var context = canvas.getContext(&#39;2d&#39;);                canvas.width = options.width;                canvas.height = options.height;                context.drawImage(img, 0, 0);                context.fillStyle = &#39;#fff&#39;;                context.font = &quot;bold 13px &#39;微软雅黑&#39;,&#39;宋体&#39;&quot;;                context.textBaseline = &#39;middle&#39;;                context.fillText(options.txt, (options.width - 13) / 2, (options.height / 2));                var imagePng = canvas.toDataURL(&#39;image/png&#39;);                options.fn &amp;&amp; options.fn(imagePng);            }        }    });})(jQuery, document);</code></pre><p>示例：<a href="/pages/canvas转换svg合成图片.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> jquery </tag>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>前端实现懒加载</title>
+      <link href="/2018/12/05/qian-duan-shi-xian-lan-jia-zai/"/>
+      <url>/2018/12/05/qian-duan-shi-xian-lan-jia-zai/</url>
+      
+        <content type="html"><![CDATA[<pre><code>&lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh&quot;&gt;    &lt;head&gt;        &lt;meta charset=&quot;UTF-8&quot; /&gt;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;        &lt;title&gt;Document&lt;/title&gt;        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/bootstrap.min.css&quot;/&gt;        &lt;style type=&quot;text/css&quot;&gt;            .page-scroll-container&gt;div{position:relative;margin-bottom:20px}            .page-scroll-container a{overflow:hidden;display:block}            .mask{background-color:rgba(0,0,0,0.6);position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;filter:alpha(opacity=0);transition:all .5s;-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;text-align:center;color:#ffffff}            .mask h4{transform:translateY(10px);opacity:0.5;transition-duration:0.8s;transition-delay:.2s;margin-top:28%;font-size:36px;line-height:42px}            .page-scroll-container&gt;div:hover .mask h4{opacity:1;transform:translateY(-10px)}            .mask strong{transform:translateY(10px);opacity:0.8;transition-duration:1s;transition-delay:.3s;display:block}            .page-scroll-container&gt;div:hover .mask strong{transform:translateY(-10px);opacity:1;transition-duration:opacity 1s}            .mask span{color:#fff;transform:translateY(10px);opacity:0.5;transition-duration:.8s;transition-delay:.4s;display:block;font-size:14px}            .page-scroll-container&gt;div:hover span{opacity:1;transform:translateY(-10px)}            .page-scroll-container&gt;div:hover .mask{opacity:1;filter:alpha(opacity=100);transform:scale(1)}            .page-scroll-container img{width:100%;height:100%;transition:all .5s;-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;overflow:hidden}            .page-scroll-container a:hover img{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-o-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2)}            .more{width:280px;height:55px;line-height:55px;background:#d7000f;margin:20px auto 50px auto;text-align:center;border-radius:26px}            .more a{color:#ffffff;font-size:18px}        &lt;/style&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;div class=&quot;page-scroll-container row&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;more&quot;&gt;            &lt;a id=&quot;itemMore&quot;&gt;查看更多造势案例+&lt;/a&gt;        &lt;/div&gt;        &lt;script src=&quot;./js/jquery.min.js&quot;&gt;&lt;/script&gt;        &lt;script&gt;            (function($, document) {                /*前端实现-懒加载插件pageScroll                 * param el       {object} jquery对象,默认： $(&#39;.page-scroll-container&#39;)                 * param datas    {array } 数据数组,格式：[{img:&#39;&#39;,title:&#39;&#39;,content:&#39;&#39;},...],默认：示例                 * param pageSize {number} 每页显示数量,默认： 6                 * param currentPage {number} 当前页,默认： 0                 * param addButton {object} jquery对象,默认： $(&#39;#itemMore&#39;)                 * param bottom {number} 距底部距离,默认： 0                 * param loadingTime {number} 加载时间,默认： 200ms                 * */                $.pageScroll = function(option) {                    option = option || {};                    var defaultOption = {                        el: $(&#39;.page-scroll-container&#39;),                        arr: option.datas || JSON.parse((&#39;[&#39; + new String(&#39;,{&quot;img&quot;:&quot;img/index3_1.png&quot;,&quot;title&quot;:&quot;Brand&quot;,&quot;content&quot;:&quot;内容&quot;}&#39;).repeat(20).substring(1) + &#39;]&#39;)),                        pagesize: option.pageSize || 6,                        currentPage: option.currentPage || 0,                        $loadText: option.addButton || $(&#39;#itemMore&#39;),                        loadTxt: {                            more: &#39;查看更多造势案例+&#39;,                            loading: &#39;&lt;span&gt;加载中...&lt;/span&gt;&#39;,                            end: &#39;没有更多了&#39;                        },                        bottom: option.bottom || 0,                        loadingTime: option.loadingTime || 200,                        isloading: false                    };                    Object.defineProperty(defaultOption, &quot;page&quot;, {                        get: function() {                            if(option.page) {                                return option.page                            }                            return this.arr.length % this.pagesize ? (parseInt(this.arr.length / this.pagesize) + 1) : this.arr.length / this.pagesize;                        }                    });                    defaultOption.toPage = function() {                        var that = this;                        if(!this.isloading) {                            this.isloading = true;                            var res = [];                            for(var i = this.currentPage * this.pagesize, len = ((i + this.pagesize &lt; this.arr.length) ? i + this.pagesize : this.arr.length); i &lt; len; i++) {                                res.push(&#39;&lt;div class=&quot;imgitem col-md-4 col-sm-4 col-xs-6&quot; style=&quot;display:none;&quot;&gt;&#39;);                                res.push(&#39;    &lt;a href=&quot;#&quot;&gt;&#39;);                                res.push(&#39;        &lt;img src=&quot;&#39; + this.arr[i].img + &#39;&quot; class=&quot;img-responsive&quot;&gt;&#39;);                                res.push(&#39;        &lt;div class=&quot;mask&quot;&gt;&#39;);                                res.push(&#39;            &lt;h4&gt;&#39; + this.arr[i].title + &#39;&lt;/h4&gt;&#39;);                                res.push(&#39;            &lt;strong&gt;&#39; + this.arr[i].content + &#39;&lt;/strong&gt;&#39;);                                res.push(&#39;            &lt;span class=&quot;qwe&quot;&gt;查看该案例详情&lt;/span&gt;&#39;);                                res.push(&#39;        &lt;/div&gt;&#39;);                                res.push(&#39;    &lt;/a&gt;&#39;);                                res.push(&#39;&lt;/div&gt;&#39;);                            }                            $(this.el).append(res.join(&#39;&#39;));                            $(&#39;.imgitem:not(:visible)&#39;).fadeIn(1500);                            this.$loadText.html(this.loadTxt.more);                            this.currentPage++;                            setTimeout(function() {                                that.isloading = false;                            }, 1000);                        }                    };                    defaultOption.init = function() {                        var that = this;                        this.toPage();                        //点击展开更多                        this.$loadText.on(&#39;click&#39;, function() {                            if(that.currentPage &lt; that.page) {                                that.$loadText.html(that.loadTxt.loading);                                setTimeout(function() {                                    that.toPage();                                }, that.loadingTime);                            } else {                                that.$loadText.html(that.loadTxt.end);                            }                            that.toPage();                            return false;                        });                        //页面滚动到距底部x距离时展开更多                        $(window).on(&#39;scroll&#39;, function() {                            var wHeight = $(window).innerHeight();                            var dHeight = $(document).height();                            var sHeight = $(document).scrollTop();                            var bottomLength = dHeight - wHeight - sHeight;                            if(bottomLength &lt;= that.bottom) { //距底部高度                                if(that.currentPage &lt; that.page) {                                    that.$loadText.html(that.loadTxt.loading);                                    setTimeout(function() {                                        that.toPage();                                    }, that.loadingTime);                                } else {                                    that.$loadText.html(that.loadTxt.end);                                }                            }                        });                    }                    defaultOption.init();                    return defaultOption;                }            })(jQuery, document);            //调用方式            $.pageScroll();        &lt;/script&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> jquery </tag>
+            
+            <tag> bootstrap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js规范</title>
+      <link href="/2018/04/13/js-gui-fan/"/>
+      <url>/2018/04/13/js-gui-fan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h4 id="原则"><a href="#原则" class="headerlink" title="原则"></a><strong>原则</strong></h4><p>As short as possible（如无必要，勿增注释）：尽量提高代码本身的清晰性、可读性。</p><p>As long as necessary（如有必要，尽量详尽）：合理的注释、空行排版等，可以让代码更易阅读、更具美感。</p><h4 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a><strong>单行注释</strong></h4><p>必须独占一行。<code>//</code> 后跟一个空格，缩进与下一行被注释说明的代码一致。</p><h4 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a><strong>多行注释</strong></h4><p>避免使用 <code>/*...*/</code> 这样的多行注释。有多行注释内容时，使用多个单行注释。</p><h4 id="函数-方法注释"><a href="#函数-方法注释" class="headerlink" title="函数/方法注释"></a><strong>函数/方法注释</strong></h4><p>函数/方法注释必须包含函数说明，有参数和返回值时必须使用注释标识。；<br>参数和返回值注释必须包含类型信息和说明；<br>当函数是内部函数，外部不可访问时，可以使用 <code>@inner</code> 标识；</p><pre><code>/** * 函数描述 * * @param {string} p1 参数1的说明 * @param {string} p2 参数2的说明，比较长 *     那就换行了. * @param {number=} p3 参数3的说明（可选） * @return {Object} 返回值描述 */function foo(p1, p2, p3) {    var p3 = p3 || 10;    return {        p1: p1,        p2: p2,        p3: p3    };}</code></pre><h4 id="文件注释"><a href="#文件注释" class="headerlink" title="文件注释"></a><strong>文件注释</strong></h4><p>文件注释用于告诉不熟悉这段代码的读者这个文件中包含哪些东西。 应该提供文件的大体内容, 它的 <strong><code>作者</code></strong> , <strong><code>依赖关系</code></strong> 和 <strong><code>兼容性信息</code></strong> 。如下:</p><pre><code>/** * @fileoverview Description of file, its uses and information * about its dependencies. * @author user@meizu.com (Firstname Lastname) * Copyright 2009 Meizu Inc. All Rights Reserved. */</code></pre><h2 id="命名语法"><a href="#命名语法" class="headerlink" title="命名语法"></a>命名语法</h2><p>类名，使用名词。<br><code>function Engine(options) {}</code></p><p>函数名，使用动宾短语。<br><code>function getStyle(element) {}</code></p><p>boolean 类型的变量使用 is 或 has 开头。</p><pre><code>var isReady = false;var hasMoreCommands = false;</code></pre><p>Promise 对象用动宾短语的进行时表达。</p><pre><code>var loadingData = ajax.get(&#39;url&#39;);loadingData.then(callback);</code></pre><h4 id="接口命名规范"><a href="#接口命名规范" class="headerlink" title="接口命名规范"></a><strong>接口命名规范</strong></h4><p>可读性强，见名晓义；<br>尽量不与 jQuery 社区已有的习惯冲突；<br>尽量写全。不用缩写，除非是下面列表中约定的；（变量以表达清楚为目标，uglify 会完成压缩体积工作）</p><table><thead><tr><th>常用词</th><th>说明：</th></tr></thead><tbody><tr><td>options</td><td>表示选项，与 jQuery 社区保持一致，不要用 config, opts 等</td></tr><tr><td>active</td><td>表示当前，不要用 current 等</td></tr><tr><td>index</td><td>表示索引，不要用 idx 等</td></tr><tr><td>trigger</td><td>触点元素</td></tr><tr><td>triggerType</td><td>触发类型、方式</td></tr><tr><td>context</td><td>表示传入的 this 对象</td></tr><tr><td>object</td><td>推荐写全，不推荐简写为 o, obj 等</td></tr><tr><td>element</td><td>推荐写全，不推荐简写为 el, elem 等</td></tr><tr><td>length</td><td>不要写成 len, l</td></tr><tr><td>prev</td><td>previous 的缩写</td></tr><tr><td>next</td><td>next 下一个</td></tr><tr><td>constructor</td><td>不能写成 ctor</td></tr><tr><td>easing</td><td>示动画平滑函数</td></tr><tr><td>min</td><td>minimize 的缩写</td></tr><tr><td>max</td><td>maximize 的缩写</td></tr><tr><td>DOM</td><td>不要写成 dom, Dom</td></tr><tr><td>.hbs</td><td>使用 hbs 后缀表示模版</td></tr><tr><td>btn</td><td>button 的缩写</td></tr><tr><td>link</td><td>超链接</td></tr><tr><td>title</td><td>主要文本</td></tr><tr><td>img</td><td>图片路径（img标签src属性)</td></tr><tr><td>dataset</td><td>html5 data-xxx 数据接口</td></tr><tr><td>theme</td><td>主题</td></tr><tr><td>className</td><td>类名</td></tr><tr><td>classNameSpace</td><td>class 命名空间</td></tr></tbody></table><p><strong> </strong>建议jquery对象命名采用 <code>$element</code>格式**</p><h2 id="True-和-False-布尔表达式"><a href="#True-和-False-布尔表达式" class="headerlink" title="True 和 False 布尔表达式"></a>True 和 False 布尔表达式</h2><p>类型检测优先使用 typeof。对象类型检测使用 instanceof。null 或 undefined 的检测使用 == null。<br>下面的布尔表达式都返回 false:</p><ul><li>null</li><li>undefined</li><li>‘’ 空字符串</li><li>0 数字0</li><li>但小心下面的, 可都返回 true:</li><li>‘0’ 字符串0</li><li>[] 空数组</li><li>{} 空对象</li></ul><h2 id="不要在-Array-上使用-for-in-循环"><a href="#不要在-Array-上使用-for-in-循环" class="headerlink" title="不要在 Array 上使用 for-in 循环"></a>不要在 Array 上使用 for-in 循环</h2><p>for-in 循环只用于 object/map/hash 的遍历, 对 Array 用 for-in 循环有时会出错. 因为它并不是从 0 到 length - 1 进行遍历, 而是所有出现在对象及其原型链的键值。</p><h2 id="条件-三元-操作符"><a href="#条件-三元-操作符" class="headerlink" title="条件(三元)操作符 (?:)"></a>条件(三元)操作符 (?:)</h2><p>三元操作符用于替代 if 条件判断语句。</p><pre><code>// Not recommendedif (val != 0) {  return foo();} else {  return bar();}// Recommendedreturn val ? foo() : bar();</code></pre><h2 id="amp-amp-和"><a href="#amp-amp-和" class="headerlink" title="&amp;&amp; 和 ||"></a>&amp;&amp; 和 ||</h2><p>二元布尔操作符是可短路的, 只有在必要时才会计算到最后一项。</p><pre><code>// Not recommendedfunction foo(opt_win) {  var win;  if (opt_win) {    win = opt_win;  } else {    win = window;  }  // ...}if (node) {  if (node.kids) {    if (node.kids[index]) {      foo(node.kids[index]);    }  }}// Recommendedfunction foo(opt_win) {  var win = opt_win || window;  // ...}var kid = node &amp;&amp; node.kids &amp;&amp; node.kids[index];if (kid) {  foo(kid);}</code></pre><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><p><strong>避免不必要的 DOM 操作</strong></p><p>浏览器遍历 DOM 元素的代价是昂贵的。最简单优化 DOM 树查询的方案是，当一个元素出现多次时，将它保存在一个变量中，就避免多次查询 DOM 树了。</p><pre><code>// goodvar myList = &quot;&quot;;var myListHTML = document.getElementById(&quot;myList&quot;).innerHTML;for (var i = 0; i &lt; 100; i++) {  myList += &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;;}myListHTML = myList;// badfor (var i = 0; i &lt; 100; i++) {  document.getElementById(&quot;myList&quot;).innerHTML += &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;;}</code></pre><p><strong>缓存数组长度</strong></p><p>循环无疑是和 JavaScript 性能非常相关的一部分。通过存储数组的长度，可以有效避免每次循环重新计算。<br>注: 虽然现代浏览器引擎会自动优化这个过程，但是不要忘记还有旧的浏览器。</p><pre><code>var arr = new Array(1000),    len, i;// goodfor (i = 0, len = arr.length; i &lt; len; i++) {}// badfor (i = 0; i &lt; arr.length; i++) {}</code></pre><p><strong>异步加载第三方内容</strong></p><p>当你无法保证嵌入第三方内容比如 Youtube 视频或者一个 like/tweet 按钮可以正常工作的时候，你需要考虑用异步加载这些代码，避免阻塞整个页面加载。</p><pre><code>(function() {    var script,        scripts = document.getElementsByTagName(&#39;script&#39;)[0];    function load(url) {      script = document.createElement(&#39;script&#39;);      script.async = true;      script.src = url;      scripts.parentNode.insertBefore(script, scripts);    }    load(&#39;//apis.google.com/js/plusone.js&#39;);    load(&#39;//platform.twitter.com/widgets.js&#39;);    load(&#39;//s.widgetsite.com/widget.js&#39;);}());</code></pre><p><strong>避免使用 jQuery 实现动画</strong></p><p>禁止使用 slideUp/Down() fadeIn/fadeOut() 等方法；尽量不使用 animate() 方法；</p><p>在确保产品兼容性的前提下，能利用requestAnimationFrame方式、css3方式实现的动画，就尽量用以上两种方式代替jQuery实现。</p><p>requestAnimationFrame使用方法请参考：<a href="http://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-%E5%8A%A8%E7%94%BB%E7%AE%97%E6%B3%95/" target="_blank" rel="noopener">CSS3动画那么强，requestAnimationFrame还有毛线用？-赵鑫旭</a></p><p><strong>备注：</strong></p><ol><li>开发环境统一严格模式，所有js文件头部统一添加<code>/*use strict*/</code>;</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>css规范</title>
+      <link href="/2018/04/13/css-gui-fan/"/>
+      <url>/2018/04/13/css-gui-fan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p> id采用驼峰式命名；<br> 类名使用小写字母，以中划线分隔。</p><h2 id="正确使用-Display-的属性"><a href="#正确使用-Display-的属性" class="headerlink" title="正确使用 Display 的属性"></a>正确使用 Display 的属性</h2><p>Display 属性会影响页面的渲染，请合理使用。</p><ul><li>display: inline后不应该再使用 width、height、margin、padding 以及 float；</li><li>display: inline-block 后不应该再使用 float；</li><li>display: block 后不应该再使用 vertical-align；</li><li>display: table-* 后不应该再使用 margin 或者 float；</li></ul><h2 id="不滥用-Float"><a href="#不滥用-Float" class="headerlink" title="不滥用 Float"></a>不滥用 Float</h2><p>Float在渲染时计算量比较大，尽量减少使用。</p><h2 id="多利用硬件能力，如通过-3D-变形开启-GPU-加速"><a href="#多利用硬件能力，如通过-3D-变形开启-GPU-加速" class="headerlink" title="多利用硬件能力，如通过 3D 变形开启 GPU 加速"></a>多利用硬件能力，如通过 3D 变形开启 GPU 加速</h2><p>一般在 Chrome 中，3D或透视变换（perspective transform）CSS属性和对 opacity 进行 CSS 动画会创建新的图层，在硬件加速渲染通道的优化下，GPU 完成 3D 变形等操作后，将图层进行复合操作（Compesite Layers），从而避免触发浏览器大面积重绘和重排。<br>注：3D 变形会消耗更多的内存和功耗。<br>使用 translate3d 右移 500px 的动画流畅度要明显优于直接使用 left：</p><pre><code>.ball-1 {  transition: -webkit-transform .5s ease;  -webkit-transform: translate3d(0, 0, 0);}.ball-1.slidein{  -webkit-transform: translate3d(500px, 0, 0);}.ball-2 {  transition: left .5s ease; left：0;}.ball-2.slidein {  left：500px;}</code></pre><h2 id="提升-CSS-选择器性能"><a href="#提升-CSS-选择器性能" class="headerlink" title="提升 CSS 选择器性能"></a>提升 CSS 选择器性能</h2><p>CSS 选择器对性能的影响源于浏览器匹配选择器和文档元素时所消耗的时间，所以优化选择器的原则是应尽量避免使用消耗更多匹配时间的选择器。而在这之前我们需要了解 CSS 选择器匹配的机制， 如子选择器规则：<br><code>#header &gt; a {font-weight:blod;}</code><br>我们中的大多数人都是从左到右的阅读习惯，会习惯性的设定浏览器也是从左到右的方式进行匹配规则，推测这条规则的开销并不高。<br>我们会假设浏览器以这样的方式工作：寻找 id 为 header 的元素，然后将样式规则应用到直系子元素中的 a 元素上。我们知道文档中只有一个 id 为 header 的元素，并且它只有几个 a 元素的子节点，所以这个 CSS 选择器应该相当高效。<br>事实上，却恰恰相反，CSS 选择器是从右到左进行规则匹配。了解这个机制后，例子中看似高效的选择器在实际中的匹配开销是很高的，浏览器必须遍历页面中所有的 a 元素并且确定其父元素的 id 是否为 header 。<br>如果把例子的子选择器改为后代选择器则会开销更多，在遍历页面中所有 a 元素后还需向其上级遍历直到根节点。<br><code>#header  a {font-weight:blod;}</code><br>理解了CSS选择器从右到左匹配的机制后，明白只要当前选择符的左边还有其他选择符，样式系统就会继续向左移动，直到找到和规则匹配的选择符，或者因为不匹配而退出。我们把最右边选择符称之为关键选择器。——更多详情</p><ol><li><strong>避免使用通用选择器</strong><br>浏览器匹配文档中所有的元素后分别向上逐级匹配 class 为 content 的元素，直到文档的根节点。因此其匹配开销是非常大的，所以应避免使用关键选择器是通配选择器的情况。<pre><code>/* bad */.content * {color: red;}</code></pre></li><li><strong>避免使用标签或 class 选择器限制 id 选择器</strong><pre><code>/* bad */button#backButton {…}/* good */#newMenuIcon {…}</code></pre></li><li><p>避免使用标签限制 class 选择器</p><pre><code>/* bad */treecell.indented {…}/* good */.treecell-indented {…}/* better */.hierarchy-deep {…}</code></pre></li><li><p>避免使用多层标签选择器。使用 class 选择器替换，减少css查找</p><pre><code>/* bad */treeitem[mailfolder=&quot;true&quot;] &gt; treerow &gt; treecell {…}/* good */.treecell-mailfolder {…}</code></pre></li><li><p>避免使用子选择器</p><pre><code>/* bad */treehead treerow treecell {…}/* good */treehead &gt; treerow &gt; treecell {…}/* better */.treecell-header {…}</code></pre></li><li><p>使用继承</p><pre><code>/* bad */#bookmarkMenuItem &gt; .menu-left { list-style-image: url(blah) }/* good */#bookmarkMenuItem { list-style-image: url(blah) }</code></pre></li></ol><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul><li>不允许有空的规则；</li><li>元素选择器用小写字母；</li><li>去掉数字中不必要的小数点和末尾的0；</li><li>属性值’0’后面不要加单位；</li><li>同个属性不同前缀的写法需要在垂直方向保持对齐；</li><li>无前缀的标准属性应该写在有前缀的属性后面；</li><li>不要在同个规则里出现重复的属性，如果重复的属性是连续的则没关系；</li><li>不要在一个文件里出现两个相同的规则；</li><li>用 border: 0; 代替 border: none;；</li><li>选择器不要超过4层（在scss中如果超过4层应该考虑用嵌套的方式来写）；</li><li>发布的代码中不要有 @import；</li><li>尽量少用’*’选择器。<h3 id="nec-网易-的reset"><a href="#nec-网易-的reset" class="headerlink" title="nec(网易) 的reset"></a>nec(网易) 的reset</h3></li></ul><pre><code>/* reset */html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}table{border-collapse:collapse;border-spacing:0;}caption,th{text-align:left;font-weight:normal;}html,body,fieldset,img,iframe,abbr{border:0;}i,cite,em,var,address,dfn{font-style:normal;}[hidefocus],summary{outline:0;}li{list-style:none;}h1,h2,h3,h4,h5,h6,small{font-size:100%;}sup,sub{font-size:83%;}pre,code,kbd,samp{font-family:inherit;}q:before,q:after{content:none;}textarea{overflow:auto;resize:none;}label,summary{cursor:default;}a,button{cursor:pointer;}h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}del,ins,u,s,a,a:hover{text-decoration:none;}body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}body{background:#fff;}a,a:hover{color:#333;}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>html规范</title>
+      <link href="/2018/04/13/html-gui-fan/"/>
+      <url>/2018/04/13/html-gui-fan/</url>
+      
+        <content type="html"><![CDATA[<hr><h2 id="head"><a href="#head" class="headerlink" title="head"></a>head</h2><p>head基本内容：</p><pre><code>&lt;!--字符编码：--&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;!--页面标题：--&gt;&lt;title&gt;青岛乘正科技有限公司&lt;/title&gt;&lt;!--页面关键词：--&gt;&lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;&lt;!--页面描述内容：--&gt;&lt;meta name=&quot;Description&quot; content=&quot;不超过150个字符&quot; /&gt;&lt;!--移动端及响应式网站：--&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no&quot; /&gt;&lt;!--favicon 图标：--&gt;&lt;link rel=&quot;shortcut icon&quot; href=&quot;img/favicon.ico&quot; type=&quot;img/x-icon&quot; /&gt;&lt;!--bookmark 图标：--&gt;&lt;link rel=&quot;bookmark&quot; href=&quot;img/favicon.ico&quot; type=&quot;img/x-icon&quot; /&gt;&lt;!--网页作者：--&gt;&lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;</code></pre><h4 id="可以选择加入的标签："><a href="#可以选择加入的标签：" class="headerlink" title="可以选择加入的标签："></a><strong><em>可以选择加入的标签</em></strong>：</h4><ol><li><p>设定网页的到期时间。一旦网页过期，必须到服务器上重新调阅。</p><pre><code>&lt;meta http-equiv=&quot;expires&quot; content=&quot;Wed, 26 Feb 1997 08：21：57 GMT&quot;&gt;</code></pre></li><li><p>禁止浏览器从本地机的缓存中调阅页面内容。</p><pre><code>&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;</code></pre></li><li><p>用来防止别人在框架里调用你的页面。</p><pre><code>&lt;meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;&gt;</code></pre></li><li><p>自动跳转(5 指时间停留 5 秒)。</p><pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=http://www.baidu.com&quot;&gt;</code></pre></li></ol><p><strong><em>备注</em></strong><br>http缓存机制深入理解推荐文章：</p><ol><li><a href="https://www.cnblogs.com/chenqf/p/6386163.html" target="_blank" rel="noopener">彻底弄懂HTTP缓存机制及原理</a></li><li><a href="https://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">浅谈浏览器http的缓存机制</a></li></ol><h2 id="body"><a href="#body" class="headerlink" title="body"></a>body</h2><ol><li>请不要在网页中连续出现多于一个的空格，也尽量少使用全角空格（英文字符集下，全角空格会变成乱码），空白应该尽量使用 <code>text-indent</code> <code>padding</code> <code>margin</code>实现。</li><li><p>a标签无文字提示时设置title属性，img标签设置alt属性。a标签默认占位符’###’。</p><pre><code>&lt;a href=&quot;###&quot; title=&quot;给链接文字提示&quot;&gt;&lt;img src=&quot;图片.gif&quot; alt=&quot;给图片提示&quot;&gt;&lt;/a&gt;</code></pre></li><li><p>尽量遵循HTML标准和语义。基本的H5语义标签：</p><pre><code>`header` `nav` `section` `artical` `aside` `dialog` `footer`</code></pre></li><li><p>标签属性定义推荐顺序依次为：</p><pre><code>`id class name data-*`</code></pre></li><li>尽量避免多余的父节点、注释节点。例：<pre><code>&lt;div&gt;&lt;!--多余父节点--&gt;&lt;!--&lt;span&gt;无用注释节点&lt;/span&gt;--&gt;&lt;div class=&quot;container&quot;&gt;...&lt;/div&gt;&lt;/div&gt;</code></pre></li></ol><h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a><strong>补充</strong>：</h3><ul><li>尽量采用外链css样式，避免内部及内联样式。</li><li>script统一放至body标签内最后。（此引用js方式，无需document.ready检测）</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>灵活的console</title>
+      <link href="/2017/10/15/ling-huo-de-console/"/>
+      <url>/2017/10/15/ling-huo-de-console/</url>
+      
+        <content type="html"><![CDATA[<pre><code>//打印信息。注：%s字符串，%d数字，%c添加css样式console.log(&#39;console.log&#39;);//打印警告console.warn(&#39;console.warn&#39;);//打印domconsole.dir(document.getElementById(&#39;a3&#39;));//打印表格console.table([{    id: &#39;1&#39;,    name: &#39;小明&#39;,    age: &#39;18&#39;,    weight: &#39;55kg&#39;}, {    id: &#39;1&#39;,    name: &#39;小红&#39;,    age: &#39;17&#39;,    weight: &#39;65kg&#39;}], [&#39;name&#39;, &#39;age&#39;]);//打印非匹配。应用场景：查找差异、ajax请求数据格式差异提示。var arr = [&#39;1&#39;, &#39;2&#39;, {    id: &#39;3&#39;}];arr.forEach(function(item, index) {    console.assert(typeof item === &#39;string&#39;, item);});//打印计数。应用场景：dom绑定事件次数监测listenerAdd(true);function listenerAdd(isfirst) {    !isfirst&amp;&amp;console.countReset(&#39;click&#39;);    document.querySelector(&#39;#countAdd&#39;).addEventListener(&#39;click&#39;, function() {        console.count(&#39;click&#39;);    });}//打印操作时间getRunTime();function getRunTime() {    console.time(&#39;t&#39;);    setTimeout(function () {         console.timeEnd(&#39;t&#39;);        console.log(&#39;发现没有，时间t大于%c600ms&#39;,&#39;color:red&#39;)    },600);}//组合打印信息group();function group() {    var res=[];    console.group(&#39;logGroup&#39;);    for (var i=0,length=10;i&lt;length;i++) {        console.log(&#39;&lt;li&gt;&#39;+i+&#39;&lt;/li&gt;&#39;);    }    console.groupEnd();}</code></pre><p>参考文档：<br><a href="https://segmentfault.com/a/1190000018756503" target="_blank" rel="noopener">灵活使用 console 让 js 调试更简单</a><br>示例：<a href="/pages/灵活的console/index.html">请点这里</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>typora-vue-theme主题介绍</title>
+      <link href="/2017/07/20/hello-world/"/>
+      <url>/2017/07/20/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>入坑以来个人插件、练习整理收藏</title>
+      <link href="/2017/07/20/ri-qian-zheng-li/"/>
+      <url>/2017/07/20/ri-qian-zheng-li/</url>
+      
+        <content type="html"><![CDATA[<p><a href="/plugins/01jquery插件/xmGantt/index.html"><br>    甘特图<br></a><br><a href="/plugins/01jquery插件/图层选择/index.html"><br>    图层选择<br></a><br><a href="/plugins/01jquery插件/大转盘/index.html"><br>    大转盘<br></a><br><a href="/plugins/01jquery插件/红包雨/index.html"><br>    红包雨<br></a><br><a href="/plugins/01jquery插件/连连看/index.html"><br>    连连看<br></a><br><a href="/plugins/01jquery插件/轮播图/index.html"><br>    轮播图<br></a><br><a href="/plugins/01jquery插件/视频播放器/index.html"><br>    视频播放器<br></a><br><a href="/plugins/01jquery插件/月签到/index.html"><br>    月签到<br></a><br><a href="/plugins/02js插件/canvas五子棋/index.html"><br>    canvas五子棋<br></a><br><a href="/plugins/02js插件/Audio播放器/index.html"><br>    Audio播放器<br></a><br><a href="/plugins/02js插件/canvas时钟/index.html"><br>    canvas时钟<br></a><br><a href="/plugins/02js插件/canvastab/index.html"><br>    canvastab<br></a><br><a href="/plugins/02js插件/canvas贪吃蛇/index.html"><br>    canvas贪吃蛇<br></a><br><a href="/plugins/02js插件/贪吃蛇_dom/index.html"><br>    贪吃蛇_Dom版<br></a><br><a href="/plugins/02js插件/canvas俄罗斯方块/index.html"><br>    canvas俄罗斯方块<br></a><br><a href="/plugins/02js插件/canvas投篮/index.html"><br>    canvas投篮<br></a><br><a href="/plugins/02js插件/jquery框架封装原理示例/index.html"><br>    jquery框架封装原理示例<br></a><br><a href="/plugins/02js插件/jsSlide_css3/index.html"><br>    jsSlide_css3<br></a><br><a href="/plugins/02js插件/jsSlide_css3&amp;toucher/index.html"><br>    jsSlide_css3&amp;toucher<br></a><br><a href="/plugins/02js插件/jsSlide_multiRow&amp;toucher/index.html"><br>    jsSlide_multiRow&amp;toucher<br></a><br><a href="/plugins/02js插件/jsSlide_setInterval/index.html"><br>    jsSlide_setInterval<br></a><br><a href="/plugins/02js插件/jsSlide_setInterval&amp;toucher/index.html"><br>    jsSlide_setInterval&amp;toucher<br></a><br><a href="/plugins/02js插件/zindexSlide1/index.html"><br>    zindexSlide1<br></a><br><a href="/plugins/02js插件/zindexSlide2/index.html"><br>    zindexSlide2<br></a><br><a href="/plugins/02js插件/checkTime插件/index.html"><br>    Mobile_checkTime<br></a><br><a href="/plugins/02js插件/ajax封装/index.html"><br>    ajax封装<br></a><br><a href="/plugins/02js插件/documentReady封装/index.html"><br>    documentReady封装<br></a><br><a href="/plugins/02js插件/增删获取cookie/index.html"><br>    增删获取cookie<br></a><br><a href="/plugins/04小功能集合/canvas图片合成/index.html"><br>    canvas图片合成<br></a><br><a href="/plugins/04小功能集合/css3_3d旋转/index.html"><br>    css3_3d旋转<br></a><br><a href="/plugins/04小功能集合/css3_animation晃动/index.html"><br>    css3_animation晃动<br></a><br><a href="/plugins/04小功能集合/css3_transition旋转/index.html"><br>    css3_transition旋转<br></a><br><a href="/plugins/04小功能集合/css3_倒影/index.html"><br>    css3_倒影<br></a><br><a href="/plugins/04小功能集合/css3_下雪/index.html"><br>    css3_下雪<br></a><br><a href="/plugins/04小功能集合/div&amp;img_5px差解决方式/index.html"><br>    div&amp;img_5px差解决方式<br></a><br><a href="/plugins/04小功能集合/rem布局/index.html"><br>    rem布局<br></a><br><a href="/plugins/04小功能集合/scrollIntoView方法/index.html"><br>    scrollIntoView方法<br></a><br><a href="/plugins/04小功能集合/判断浏览器版本&amp;&amp;型号version/index.html"><br>    判断浏览器版本&amp;&amp;型号version<br></a><br><a href="/plugins/04小功能集合/网址生成二维码/index.html"><br>    网址生成二维码<br></a><br><a href="/plugins/04小功能集合/颜色转换_rgb与16进制/index.html"><br>    颜色转换_rgb与16进制<br></a><br><a href="/plugins/04小功能集合/一键复制copy/index.html"><br>    一键复制copy<br></a><br><a href="/plugins/04小功能集合/汉字自定义sort/index.html"><br>    汉字自定义sort<br></a><br><a href="/plugins/04小功能集合/禁止微信上下拉黑边/index.html"><br>    禁止微信上下拉黑边<br></a><br><a href="/plugins/04小功能集合/快速排序/index.html"><br>    快速排序<br></a><br><a href="/plugins/04小功能集合/微信跳转浏览器查看中间页/index.html"><br>    微信跳转浏览器查看中间页<br></a><br><a href="/plugins/04小功能集合/新浪接口获取地理位置&amp;服务器/index.html"><br>    新浪接口获取地理位置&amp;服务器<br></a><br><a href="/plugins/04小功能集合/页面无刷新跳转history_pushState/index.html"><br>    页面无刷新跳转history_pushState<br></a><br><a href="/plugins/04小功能集合/svg_DrawBuild/index.html"><br>    svg_逐步绘制建筑<br></a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 收藏 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
