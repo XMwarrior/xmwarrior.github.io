@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小浣熊熊采坑录</title>
+  <title>XMwarrior</title>
   
-  <subtitle>Never too old to learn</subtitle>
+  <subtitle>每天进步一点点</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
@@ -106,7 +106,7 @@
     <link href="http://xmwarrior.github.io/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/"/>
     <id>http://xmwarrior.github.io/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/</id>
     <published>2019-03-18T09:41:00.000Z</published>
-    <updated>2019-04-16T03:06:54.532Z</updated>
+    <updated>2019-04-16T06:31:54.057Z</updated>
     
     <summary type="html">
     
@@ -130,8 +130,6 @@
       <category term="css3" scheme="http://xmwarrior.github.io/tags/css3/"/>
     
       <category term="bootstrap" scheme="http://xmwarrior.github.io/tags/bootstrap/"/>
-    
-      <category term="colorpicker" scheme="http://xmwarrior.github.io/tags/colorpicker/"/>
     
   </entry>
   
