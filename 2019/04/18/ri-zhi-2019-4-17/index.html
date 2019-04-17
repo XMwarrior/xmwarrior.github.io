@@ -4,10 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="天气插件改造之Free初探, xmwarrior,xmsniper">
-    <meta name="description" content="此处不宜多说（露出一个高深莫测的微笑！），精华自取：
-(function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) {
- ">
+    <meta name="keywords" content="搭建hexo博客体会, xmwarrior,xmsniper">
+    <meta name="description" content="历程虽然此前也搭建过博客，并且尝试写过markdown博客文章，但也没有深入了解过hexo博客的搭建。一切只能从一个合并博客内容的想法开始…因为本人日前做过两个博客，XMwarrior跟xmsniper。XMwarrior是纯手撸的博客，设">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>天气插件改造之Free初探 | XMwarrior</title>
+    <title>搭建hexo博客体会 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -259,13 +257,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        天气插件改造之Free初探
+                        搭建hexo博客体会
                     </div>
                 </div>
             </div>
@@ -376,12 +374,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
-                            </a>
-                        
-                            <a href="/tags/jquery/" target="_blank">
-                                <span class="chip bg-color">jquery</span>
+                            <a href="/tags/观点与感想/" target="_blank">
+                                <span class="chip bg-color">观点与感想</span>
                             </a>
                         
                     </div>
@@ -392,8 +386,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/日志/" class="post-category" target="_blank">
+                                日志
                             </a>
                         
                     </div>
@@ -404,21 +398,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-11
+                    2019-04-18
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        778
+                        734
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        2 分
                     </div>
                     
                 
@@ -434,128 +428,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>此处不宜多说（露出一个高深莫测的微笑！），精华自取：</p>
-<pre><code>(function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) {
-    $.extend({
-        smartDefaultOption: {
-            &quot;flavor&quot;: &quot;bubble&quot;, //样式选择：bubble浮动气泡，slim固定极简
-            &quot;positionMode&quot;: &quot;static&quot;,//浮动气泡所需属性：默认fixed
-            &quot;location&quot;: [
-                &quot;北京市&quot;,
-                &quot;54511&quot;,
-                &quot;110101&quot;,
-                &quot;101010100&quot;
-            ],
-            &quot;geolocation&quot;: &quot;disabled&quot;, //城市定位：enabled启用，disabled不启用。 默认免费版不能开启定位
-            &quot;theme&quot;: &quot;chameleon&quot;, //浮层背景：chameleon随天气变化，white白色，black黑色
-            &quot;container&quot;: &quot;wp-container&quot;, //dom元素id开头
-            &quot;color&quot;: &quot;#FFFFFF&quot;, //字体颜色
-            &quot;background&quot;: &quot;#C6C6C6&quot;, //背景色：不需要设置时删掉此属性
-            &quot;bubble&quot;: &quot;disabled&quot;, //slim模式下：启用浮层显示天气详情和预报：enabled启用，disabled不启用。
-            &quot;uuid&quot;: &quot;b93a5df5-4925-42a9-a202-5564d7495237&quot;, //下面这两项时4Dsmart网站的账号的id、hash
-            &quot;hash&quot;: &quot;F494D79972E3122A99CA36C4BC8A9713&quot;
-        },
-        //封装同步ajax
-        getAsyncData: function(url, data, datatype) {
-            var res = &#39;&#39;;
-            $.ajax({
-                url: url,
-                data: data,
-                type: &quot;get&quot;,
-                dataType: datatype || &quot;json&quot;,
-                async: false, //同步请求
-                timeout: 30000,
-                error: function(e) {
-                    res = e.responseText;
-                },
-                success: function(r) {
-                    res = r;
-                }
-            });
-            return res;
-        },
-        /*调用百度API获取“城市中心经纬度” 
-         * return lat,lng
-         */
-        getLocation: function(fn) {
-            $.ajax({
-                url: &quot;http://api.map.baidu.com/location/ip?ak=0V85NTruj3YuZa44xCiOP3MqiokuqoWr&amp;coor=bd09ll&quot;,
-                type: &quot;POST&quot;,
-                dataType: &quot;jsonp&quot;,
-                success: function(data) {
-                    //console.log(data);
-                    var cityLocation = data.content.point.y + &#39;,&#39; + data.content.point.x;
-                    fn &amp;&amp; fn(cityLocation);
-                }
-            });
-        },
-        /*调用百度API根据经纬度反查“城市名、区号”，根据城市名查询“城市气象台号、天气城市编号”
-         * return &quot;城市名、城市气象台号、区号、天气城市编号&quot;
-         */
-        getDirectName: function(cityLocation, fn) {
-            $.ajax({
-                url: &#39;http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=&#39; + cityLocation + &#39;&amp;output=json&amp;pois=1&amp;latest_admin=1&amp;ak=0V85NTruj3YuZa44xCiOP3MqiokuqoWr&#39;,
-                type: &quot;get&quot;,
-                async: true,
-                dataType: &quot;jsonp&quot;,
-                success: function(res) {
-                    //console.log(res);
-                    var cityName = res.result.addressComponent.city.replace(&#39;市&#39;, &#39;&#39;);
-                    var cityObservatoryCode = $.getAsyncData(jsonurl)[&#39;observatory&#39;][cityName];
-                    var directAreaCode = res.result.addressComponent.adcode;
-                    var cityWeatherCode = $.getAsyncData(jsonurl)[&#39;weathercity&#39;][cityName];
-                    //console.log(&#39;城市名：&#39;+cityName+&#39;\n&#39;,&#39;城市气象台号：&#39;+cityObservatoryCode+&#39;\n&#39;,&#39;区号：&#39;+directAreaCode+&#39;\n&#39;,&#39;天气城市编号：&#39;+cityWeatherCode);
-                    fn &amp;&amp; fn(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode);
-                }
-            });
-        },
-        //根据城市名、城市气象台号、区号、天气城市编号，调用smart-weather查询天气
-        getWeather: function(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode) {
-            //smart-weather天气具体参数配置
-            var data = $.smartDefaultOption;
-            data.location = [
-                cityName,
-                cityObservatoryCode,
-                directAreaCode,
-                cityWeatherCode
-            ];
-            wp(&quot;init&quot;, data);
-            wp(&quot;show&quot;);
-        },
-        //封装完的基于4Dsmart的免费获取天气方法
-        getFreeWeather: function(data) {
-            if(data&amp;&amp;!$.isEmptyObject(data)){
-                for (var key in data) {
-                    $.smartDefaultOption[key]=data[key];
-                }
-            };
-            $.getLocation(function(cityLocation) {
-                $.getDirectName(cityLocation, function(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode) {
-                    $.getWeather(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode);
-                });
-            });
-        }
-    });
-    //天气插件依赖
-    initScript = function() {
-        scriptNode = document.createElement(&quot;script&quot;);
-        originalNode = document.getElementsByTagName(&quot;script&quot;)[0];
-        scriptNode.src = url;
-        scriptNode.async = 1;
-        originalNode.parentNode.insertBefore(scriptNode, originalNode)
-    };
-    window[&quot;wpObjectName&quot;] = &quot;wp&quot;;
-    window[&quot;wp&quot;] || (window[&quot;wp&quot;] = function() {
-        (window[&quot;wp&quot;].arg = window[&quot;wp&quot;].arg || []).push(arguments)
-    });
-    window[&quot;wp&quot;].l = +new Date();
-    if(window.attachEvent) {
-        window.attachEvent(&quot;onload&quot;, initScript)
-    } else {
-        window.addEventListener(&quot;load&quot;, initScript, false)
-    }
-}(window, document, &quot;script&quot;, &quot;wp&quot;, &quot;js/smart-weather.js&quot;,&quot;js/weather-city.json&quot;));
-</code></pre><p>参考文档：<br><a href="http://www.4dsmart.cn/weatherEnvironmental/plugin.action" target="_blank" rel="noopener">四维智城数据</a><br><a href="http://lbsyun.baidu.com/" target="_blank" rel="noopener">百度开放平台</a><br>示例：<a href="/pages/天气插件xm-weather/index.html">请点这里</a></p>
+                <h2 id="历程"><a href="#历程" class="headerlink" title="历程"></a>历程</h2><p>虽然此前也搭建过博客，并且尝试写过markdown博客文章，但也没有深入了解过hexo博客的搭建。一切只能从一个合并博客内容的想法开始…<br>因为本人日前做过两个博客，XMwarrior跟xmsniper。<br>XMwarrior是纯手撸的博客，设计到呈现、布局到逻辑都是自己大体借鉴别的博客做出来的，哈哈，这也是术业不专攻造成的失败原因，自己看着都别扭。<br>XMsniper一开始采用了一个简单的hexo theme皮肤yilla。还是能满足程序员的审美的。<br>本来两个项目，互不相干也就相安无事了，但不规范，不正规，老旧不更新的东西，总是免不了淘汰或升级的命运。<br>这不，导火索就是个人精力有限，两个博客我都不想放弃，但是同时维护两个博客除了浪费时间，自己的资源分散不集中外，实在是没啥好处。<br>但合并并不是如我预料的那般简单：</p>
+<ol>
+<li>基于github的开放式代码管理模式，让个人资料完全没有自己的隐私。</li>
+<li>个人博客如果仅作自我娱乐，归纳总结的话。为何不直接用更简单的方式，如：segmentfault，博客园，CSDN，知乎等等。</li>
+<li>每天读过，看过的优质文章找个什么地方分类，整理，收藏才好。</li>
+<li>文章到底有没有人来看?别人看过后，是否有建议?</li>
+<li>我需要一个带有锚点目录，方便查看文章的功能。<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2></li>
+<li>我的文章源码markdown，个人的hexo皮肤配置，源码同步至码云个人项目；生成的博客文章网站代码，同步至github。</li>
+<li>其实我要的是在个人归纳总结的基础上，分享经验。归纳总结不仅在文字表达，而且需要带可运行实例。也是个人资源积累的地方。</li>
+<li>增加横向分类“日常优质文章收录”，目录下分“扎实基础”，“观点与感想”…<br>过程不是那么一番风顺，在尝试同类的3个hexo theme皮肤中，对自己之前资料的整理，重构，码云嵌套github代码管理，<br>更新静态文件需要重新绑定git,在别人皮肤基础上替换自己的个人信息、样式调整，首屏加载过慢优化，依赖插件加载过慢等等问题，真是揪心， 这真是个体力活…</li>
+</ol>
+<p>好在功夫不负有心人，磕磕绊绊的路，也让自己对博客搭建这个套路，理解个七七八八。<br>个人博客平台终于搭建好了。心底着实松了一口气。<br>哈哈，终于回归正轨！<br>下一步要抓紧进行es6,vue的回顾熟悉，vue-element,vue-element-admin框架的学习，练习。备战下个项目。</p>
 
             </div>
             <hr>
@@ -703,7 +587,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/11/tian-qi-cha-jian-xm-weather/" class="b-link-green">天气插件改造之Free初探</a>
+                    <a href="/2019/04/18/ri-zhi-2019-4-17/" class="b-link-green">搭建hexo博客体会</a>
                 </p>
             </div>
         </div>
@@ -725,7 +609,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-04-11T19-18-19',
+        id: '2019-04-18T00-29-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -748,28 +632,75 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/17/zha-shi-ji-chu/">
+                <a href="/2019/04/18/ri-zhi-2019-4-17/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="扎实基础">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="搭建hexo博客体会">
                         
-                        <span class="card-title">扎实基础</span>
+                        <span class="card-title">搭建hexo博客体会</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">历程虽然此前也搭建过博客，并且尝试写过markdown博客文章，但也没有深入了解过hexo博客的搭建。一切只能从一个合并博客内容的想法开始…因为本人日前做过两个博客，XMwarrior跟xmsniper。XMwarrior是纯手撸的博客，设</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/日志/" class="post-category" target="_blank">
+                                    日志
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/观点与感想/" target="_blank">
+                        <span class="chip bg-color">观点与感想</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/04/17/guan-dian-yu-gan-xiang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="观点与感想">
+                        
+                        <span class="card-title">观点与感想</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
-长期收集整理资源 -2018年02月23日
-debounce(防抖)和throttle(节流) -2016年07月10日
-javascript 总结（常用工具类的封装） -2018年01月30日
+必须知道的程序员思维 -2019年04月15日
+写给工程师的十条精进原则 -2018年09月13日
+《未来世界的幸存者》 -2018年07月09日
 
 </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -785,70 +716,8 @@ javascript 总结（常用工具类的封装） -2018年01月30日
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
-                    </a>
-                    
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                    <a href="/tags/html/" target="_blank">
-                        <span class="chip bg-color">html</span>
-                    </a>
-                    
-                    <a href="/tags/扎实基础/" target="_blank">
-                        <span class="chip bg-color">扎实基础</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="高阶函数缓存应用之斐波那契数列">
-                        
-                        <span class="card-title">高阶函数缓存应用之斐波那契数列</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">合理的利用js缓存，能有效提升复杂运算效率，此处有两种概念：1.闭包-（指有权访问另一个函数作用域中的变量的函数）2.高阶函数-（接受其他函数作为参数或返回其他函数的函数）此处以斐波那契数列为例，演示了运用缓存与不运用缓存计算的效率差别。
-</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
-                    </a>
-                    
-                    <a href="/tags/算法/" target="_blank">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/观点与感想/" target="_blank">
+                        <span class="chip bg-color">观点与感想</span>
                     </a>
                     
                 </div>

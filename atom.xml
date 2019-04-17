@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2019-04-17T13:21:37.813Z</updated>
+  <updated>2019-04-17T16:29:17.100Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建hexo博客体会</title>
+    <link href="http://xmwarrior.github.io/2019/04/18/ri-zhi-2019-4-17/"/>
+    <id>http://xmwarrior.github.io/2019/04/18/ri-zhi-2019-4-17/</id>
+    <published>2019-04-17T16:29:55.000Z</published>
+    <updated>2019-04-17T16:29:17.100Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;历程&quot;&gt;&lt;a href=&quot;#历程&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>观点与感想</title>
@@ -580,33 +606,6 @@
     
     
       <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css规范</title>
-    <link href="http://xmwarrior.github.io/2018/04/13/css-gui-fan/"/>
-    <id>http://xmwarrior.github.io/2018/04/13/css-gui-fan/</id>
-    <published>2018-04-13T01:55:09.000Z</published>
-    <updated>2019-04-17T13:21:37.806Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h2&gt;&lt;p&gt; id采用驼峰式命名；&lt;br&gt; 类名使用小写字母，以中划线分隔。&lt;/p&gt;
-&lt;h2 id=&quot;正确使用-Display-的属性&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
     
   </entry>
   
