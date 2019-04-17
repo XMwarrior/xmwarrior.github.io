@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery库分解</title>
+		<script src="js/jquery库分解.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="on" class="on" style="background: orange;cursor: pointer;">
+			on事件绑定
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var on = document.getElementById('on');
+			$('.on').on('click', function(e) {
+				$(this).css('fontSize','30px')
+//				$(this).css({
+//					color:'green',
+//					fontSize:'25px',
+//					backgroundColor:'rgba(0,0,0,0.2)'
+//				});
+			})
+		}
+	</script>
+
+</html>

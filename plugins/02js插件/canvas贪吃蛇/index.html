@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<canvas id="snakeGame" width="400" height="400" style="background: black;"></canvas>
+		<script type="text/javascript">
+			var snakeArr = [[20, 20],[30, 20],[40, 20]],
+				foodX = Math.floor(Math.random() * 400 / 10) * 10,
+				foodY = Math.floor(Math.random() * 400 / 10) * 10,
+				itemW = 10,
+				direction = 'right',
+				context = document.getElementById('snakeGame').getContext('2d'),
+				fillstyle = 'orange',
+				autoMove;
+			var draw = function() {
+				context.clearRect(0, 0, 400, 400);
+				context.fillStyle = fillstyle;
+				snakeArr.forEach(function(item, index) {
+					context.fillRect(item[0], item[1], itemW - 2, itemW - 2);
+				});
+				context.fillStyle = 'yellow';
+				context.fillRect(foodX, foodY, itemW - 2, itemW - 2);
+			};
+			var $ = function(ele) {
+				ele = ele === document ? document : document.getElementById(ele);
+				return {
+					addhandler: function(prop, fn) {
+						if(ele.addEventListener) {
+							ele.addEventListener(prop, fn);
+						} else if(ele.attachEvent) {
+							ele.attachEvent('on' + prop, fn);
+						} else {
+							ele['on' + prop] = fn;
+						}
+					}
+				}
+			};
+			var snakeMove = function() {
+				clearInterval(autoMove);
+				var hX = snakeArr[snakeArr.length - 1][0],
+					hY = snakeArr[snakeArr.length - 1][1];
+				hX=direction==='left'?hX - itemW:direction==='right'?hX + itemW:hX;
+				hY=direction==='up'?hY - itemW:direction==='down'?hY + itemW:hY;
+				var isEatSelf = (''+snakeArr).indexOf('['+[hX, hY]+']') >= 0;
+				if(hX < 0 || hX >= 400 || hY < 0 || hY >= 400 || isEatSelf) {
+					console.log('end Game');
+					resetGame();
+				} else {
+					if(hX === foodX && hY === foodY) {
+						snakeArr.push([hX, hY]);
+						foodX = Math.floor(Math.random() * 400 / 10) * 10;
+				        foodY = Math.floor(Math.random() * 400 / 10) * 10;
+					} else {
+						snakeArr.push([hX, hY]);
+						snakeArr.shift();
+					}
+					draw();
+					autoMove=setInterval(snakeMove,500);
+				}
+			};
+			var resetGame=function () {
+				snakeArr = [[20, 20],[30, 20],[40, 20]];
+				foodX = Math.floor(Math.random() * 400 / 10) * 10;
+				foodY = Math.floor(Math.random() * 400 / 10) * 10;
+				draw();
+			};
+			draw();
+			autoMove=setInterval(snakeMove,500);
+			$(document).addhandler('keydown', function(e) {
+				switch(e.keyCode) {
+					case 38: //up
+						if(direction !== 'down') {
+							direction='up';
+							snakeMove();
+						}
+						break;
+					case 40: //down
+						if(direction !== 'up') {
+							direction='down';
+							snakeMove();
+						}
+						break;
+					case 37: //left
+						if(direction !== 'right') {
+							direction='left';
+							snakeMove();
+						}
+						break;
+					case 39: //right
+						if(direction !== 'left') {
+							direction='right';
+							snakeMove();
+						}
+						break;
+					default:
+						break;
+				}
+			});
+		</script>
+	</body>
+</html>

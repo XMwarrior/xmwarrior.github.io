@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*函数柯里化*/
+			function curry(fn) {
+				var args = Array.prototype.slice.call(arguments, 1);
+				return function() {
+					var innerArgs = Array.prototype.slice.call(arguments);
+					var finalArgs = args.concat(innerArgs);
+					return fn.apply(null, finalArgs);
+				};
+			}
+			var add=function(n1,n2){
+				return n1+n2;
+			}
+			var addCu=curry(add,10);
+			addCu(5);
+			addCu(6)
+			/*ajax封装*/
+			function myAjax() {
+				var ajax = {
+					_xhr: function() {
+						if(typeof XMLHttpRequest !== 'undefined') {
+							return new XMLHttpRequest();
+							/* 放弃兼容ie7以下版本*/
+							/*}else if(typeof ActiveXObject!="undefined"){var versions=["MSXML2.XMLHttp.6.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp"],xhr;for(var i=0;i<versions.length;i++){try{xhr=new ActiveXObject(versions[i]);break}catch(e){}}return xhr;*/
+						} else {
+							throw new Error("No XHR object available.");
+						}
+					},
+					_datasForGet: function(datas) {
+						return {
+							data: datas.data || null,
+							url: function() {
+								var query = [];
+								for(var key in datas.data) {
+									query.push(encodeURIComponent(key) + '=' + encodeURIComponent(datas.data[key]));
+								}
+								return datas.url + (query.length ? '?' + query.join('&') : '');
+							}(),
+							method: 'GET',
+							success: datas.success || null,
+							fail: datas.fail || null,
+							always: datas.always || null,
+							beforesend: datas.beforesend || null,
+							async: datas.async || true,
+							datatype: datas.datatype || 'json'
+						};
+					},
+					_InheritObject: function(o) {
+						function F() {}
+						F.prototype = o;
+						return new F();
+					},
+					get: function(datas) {
+						ajax._send(ajax._datasForGet(datas));
+					},
+					post: function(datas) {
+						var datasForPost;
+						if(typeof Object.create === 'function') {
+							datasForPost = Object.create(datas, {
+								method: {
+									value: 'POST'
+								}
+							});
+						} else { //兼容ie9以下版本
+							datasForPost = _InheritObject(datas);
+							datasForPost.method = 'POST';
+						}
+						ajax._send(datasForPost);
+					},
+					_send: function(datas) {
+						switch(datas.datatype) {
+							case 'jsonp':
+								//jsonp跨域方式
+								var script = document.createElement('script'),
+									jsonp = 'jsonp';
+								window[jsonp] = datas.success;
+								if(datas.beforesend) {
+									datas.beforesend();
+								}
+								if(datas.method === 'GET') {
+									script.src = datas.url + '?jsoncallback=' + jsonp;
+								} else {
+									if(datas.data) {
+										var query = [];
+										for(var key in datas.data) {
+											query.push(encodeURIComponent(key) + '=' + encodeURIComponent(datas.data[key]));
+										}
+										script.src = datas.url + '?' + query.join('&') + '?jsoncallback=' + jsonp;
+									} else {
+										script.src = datas.url + '?jsoncallback=' + jsonp;
+									}
+								}
+								document.body.appendChild(script);
+								break;
+							case 'CORS':
+
+								break;
+							default:
+								var xhr = ajax._xhr();
+								datas.beforesend && datas.beforesend();
+
+								xhr.onreadystatechange = function() {
+									if(xhr.readyState == 4) {
+										if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+											datas.success && datas.success(xhr.responseText, xhr.responseXML)
+										} else {
+											datas.fail && datas.fail(xhr.status);
+										}
+										datas.always && datas.always(xhr.responseText);
+									}
+								};
+								xhr.open(datas.method, datas.url, datas.async);
+								datas.method === 'POST' && xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+								xhr._send(datas.data);
+								break;
+						}
+					}
+				};
+				return ajax;
+			}
+			//调用方法
+			/*myAjax().post({
+				url: '/ajax/Index.ashx?DataType=Index5',
+				data: {
+					c_id: c_id,
+					template: t_code
+				},
+				beforesend: function() {
+					console.log('开始')
+				},
+				success: function(r) {
+					console.log(r)
+				},
+				always: function(R) {
+					console.log('结束')
+				}
+			});*/
+		</script>
+	</body>
+
+</html>

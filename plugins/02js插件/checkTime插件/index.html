@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>time_checker</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript">
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			#timer {
+				/*width: 6.4rem;*/
+				border: 1px solid black;
+				height: 4rem;
+				margin: 0 auto;
+				overflow: hidden;
+				background: lightblue;
+			}
+			
+			#timer li {
+				width: 15%;
+				height: 4rem;
+				float: left;
+			}
+			
+			#timer li:nth-child(4),
+			#timer li:nth-child(5) {
+				width: 5%;
+			}
+			
+			#timer li div {
+				width: 100%;
+				height: 0.96rem;
+				margin: 1.5rem 0;
+				position: relative;
+				font-size: 0.24rem;
+				text-align: center;
+				color: black;
+				border-top: 0.02rem solid lightgray;
+				border-bottom: 0.02rem solid lightgray;
+			}
+			
+			#timer li {
+				position: relative;
+			}
+			
+			#timer li:before {
+				content: ' ';
+				position: absolute;
+				width: 100%;
+				height: 1.5rem;
+				left: 0;
+				top: 0;
+				background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+				background: -o-linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+				background: -moz-linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+				background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+				z-index: 5;
+			}
+			
+			#timer li:after {
+				content: ' ';
+				position: absolute;
+				width: 100%;
+				height: 1.5rem;
+				background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+				background: -o-linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+				background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+				background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+				bottom: 0;
+				left: 0;
+			}
+			
+			#timer dd {
+				line-height: 0.96rem;
+			}
+			
+			#timer dl {
+				position: absolute;
+				width: 100%;
+				transition: top 200ms;
+				-webkit-transition: top 200ms;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul id="timer" class="clearfix">
+			<li>
+				<div>
+					<dl>
+						<dd>上午</dd>
+						<dd>下午</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div>
+					<dl>
+						<dd>01</dd>
+						<dd>02</dd>
+						<dd>03</dd>
+						<dd>04</dd>
+						<dd>05</dd>
+						<dd>06</dd>
+						<dd>07</dd>
+						<dd>08</dd>
+						<dd>09</dd>
+						<dd>10</dd>
+						<dd>11</dd>
+						<dd>12</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div>
+					<dl>
+						<dd>00</dd>
+						<dd>01</dd>
+						<dd>02</dd>
+						<dd>03</dd>
+						<dd>04</dd>
+						<dd>05</dd>
+						<dd>06</dd>
+						<dd>07</dd>
+						<dd>08</dd>
+						<dd>09</dd>
+						<dd>10</dd>
+						<dd>11</dd>
+						<dd>12</dd>
+						<dd>13</dd>
+						<dd>14</dd>
+						<dd>15</dd>
+						<dd>16</dd>
+						<dd>17</dd>
+						<dd>18</dd>
+						<dd>19</dd>
+						<dd>20</dd>
+						<dd>21</dd>
+						<dd>22</dd>
+						<dd>23</dd>
+						<dd>24</dd>
+						<dd>25</dd>
+						<dd>26</dd>
+						<dd>27</dd>
+						<dd>28</dd>
+						<dd>29</dd>
+						<dd>30</dd>
+						<dd>31</dd>
+						<dd>32</dd>
+						<dd>33</dd>
+						<dd>34</dd>
+						<dd>35</dd>
+						<dd>36</dd>
+						<dd>37</dd>
+						<dd>38</dd>
+						<dd>39</dd>
+						<dd>40</dd>
+						<dd>41</dd>
+						<dd>42</dd>
+						<dd>43</dd>
+						<dd>44</dd>
+						<dd>45</dd>
+						<dd>46</dd>
+						<dd>47</dd>
+						<dd>48</dd>
+						<dd>49</dd>
+						<dd>50</dd>
+						<dd>51</dd>
+						<dd>52</dd>
+						<dd>53</dd>
+						<dd>54</dd>
+						<dd>55</dd>
+						<dd>56</dd>
+						<dd>57</dd>
+						<dd>58</dd>
+						<dd>59</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div>
+					<dl>
+						<dd>—</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div>
+					<dl>
+						<dd>—</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div>
+					<dl>
+						<dd>上午</dd>
+						<dd>下午</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div>
+					<dl>
+						<dd>01</dd>
+						<dd>02</dd>
+						<dd>03</dd>
+						<dd>04</dd>
+						<dd>05</dd>
+						<dd>06</dd>
+						<dd>07</dd>
+						<dd>08</dd>
+						<dd>09</dd>
+						<dd>10</dd>
+						<dd>11</dd>
+						<dd>12</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div>
+					<dl>
+						<dd>00</dd>
+						<dd>01</dd>
+						<dd>02</dd>
+						<dd>03</dd>
+						<dd>04</dd>
+						<dd>05</dd>
+						<dd>06</dd>
+						<dd>07</dd>
+						<dd>08</dd>
+						<dd>09</dd>
+						<dd>10</dd>
+						<dd>11</dd>
+						<dd>12</dd>
+						<dd>13</dd>
+						<dd>14</dd>
+						<dd>15</dd>
+						<dd>16</dd>
+						<dd>17</dd>
+						<dd>18</dd>
+						<dd>19</dd>
+						<dd>20</dd>
+						<dd>21</dd>
+						<dd>22</dd>
+						<dd>23</dd>
+						<dd>24</dd>
+						<dd>25</dd>
+						<dd>26</dd>
+						<dd>27</dd>
+						<dd>28</dd>
+						<dd>29</dd>
+						<dd>30</dd>
+						<dd>31</dd>
+						<dd>32</dd>
+						<dd>33</dd>
+						<dd>34</dd>
+						<dd>35</dd>
+						<dd>36</dd>
+						<dd>37</dd>
+						<dd>38</dd>
+						<dd>39</dd>
+						<dd>40</dd>
+						<dd>41</dd>
+						<dd>42</dd>
+						<dd>43</dd>
+						<dd>44</dd>
+						<dd>45</dd>
+						<dd>46</dd>
+						<dd>47</dd>
+						<dd>48</dd>
+						<dd>49</dd>
+						<dd>50</dd>
+						<dd>51</dd>
+						<dd>52</dd>
+						<dd>53</dd>
+						<dd>54</dd>
+						<dd>55</dd>
+						<dd>56</dd>
+						<dd>57</dd>
+						<dd>58</dd>
+						<dd>59</dd>
+					</dl>
+				</div>
+			</li>
+		</ul>
+		<input type="text" name="" id="show_time" value="" style="height: 0.4rem;width: 2.8rem;" /><br />
+		<div id="btn" style="width: 1.4rem;height: 0.6rem;margin-left: 0.2rem;font-size: 0.24rem;background: gray;">获取时间段</div>
+	</body>
+	<script type="text/javascript">
+		//调用方法-timeChecker
+		//获取时间-全局getTime
+		(function(window) {
+			var eUntil = function(el, prop, fn) {
+				if(el.addEventListener) {
+					el.addEventListener(prop, fn);
+				} else if(el.attachEvent) {
+					el.attachEvent('on' + prop, fn);
+				} else {
+					el['on' + prop] = fn;
+				}
+			}
+			var timeChecker = function(el) {
+				el = document.getElementById(el);
+				var newDate = new Date(),
+					h = newDate.getHours(),
+					m = newDate.getMinutes(),
+					am_pm = h <= 12 ? 0 : 1,
+					trueHours = h <= 12 ? h - 1 : h - 12 - 1,
+					Final_TimeArr = [];
+				var Obj = {
+					li: el.querySelectorAll('li'),
+					dd_height: el.querySelector('dd').clientHeight,
+					div_top: el.querySelector('li>div').offsetTop,
+					div_height: el.querySelector('li>div').offsetHeight,
+					timeArr: [{
+						index: am_pm,
+						value: am_pm === 0 ? '上午' : '下午'
+					}, {
+						index: trueHours,
+						value: trueHours + 1 < 10 ? '0' + (trueHours + 1) : trueHours + 1
+					}, {
+						index: m,
+						value: m
+					}, '-', '-', {
+						index: am_pm,
+						value: am_pm === 0 ? '上午' : '下午'
+					}, {
+						index: trueHours,
+						value: trueHours + 1 < 10 ? '0' + (trueHours + 1) : trueHours + 1
+					}, {
+						index: m,
+						value: m
+					}],
+					isok: true
+				};
+				for(var i = 0, len = Obj.li.length; i < len; i++) {
+					if(i === 3 || i === 4) {
+						continue;
+					}
+					(function(i) {
+						var start_Y,
+							move_Y,
+							move_Length,
+							bottom_Y,
+							positionY = Obj.timeArr[i].index * Obj.dd_height * -1; //预加载样式
+						//预加载样式
+						Obj.li[i].querySelector('dl').style.top = positionY + 'px';
+						eUntil(Obj.li[i], 'touchstart', function(e) {
+							start_Y = e.touches[0].pageY;
+						});
+						eUntil(Obj.li[i], 'touchmove', function(e) {
+							if(Obj.isok) {
+								Obj.isok = false;
+								var el_dl = this.querySelector('dl'),
+									el_dd = el_dl.querySelectorAll('dd');
+								move_Y = e.touches[0].pageY;
+								move_Length = move_Y - start_Y >= 0 ? Obj.dd_height : -Obj.dd_height;
+								bottom_Y = Obj.div_top - Obj.div_height - el_dl.offsetHeight;
+								if(positionY + move_Length >= bottom_Y && positionY + move_Length <= 0) {
+									positionY = positionY + move_Length;
+									el_dl.style.top = positionY + 'px';
+									Obj.timeArr[i].value = el_dd[Math.round(positionY / Obj.dd_height) * -1].textContent;
+									//输出时间段样式
+									window.getTime = Obj.timeArr[0].value +
+										Obj.timeArr[1].value + ':' +
+										Obj.timeArr[2].value + '-' +
+										Obj.timeArr[5].value +
+										Obj.timeArr[6].value + ':' +
+										Obj.timeArr[7].value;
+								}
+								setTimeout(function() {
+									Obj.isok = true;
+								}, 100);
+							}
+						});
+					})(i);
+				}
+			}
+			window.timeChecker = timeChecker;
+			window.eUntil = eUntil;
+		})(window);
+		//调用方法
+		window.onload = function() {
+			timeChecker('timer');
+			var btn = document.getElementById('btn'),
+				f_input = document.getElementById('show_time');
+			eUntil(btn, 'click', function() {
+				if(window.getTime) {
+					f_input.value = getTime;
+				} else {
+					f_input.value = '请滑动屏幕选择时间段...';
+				}
+			});
+		}
+	</script>
+
+</html>

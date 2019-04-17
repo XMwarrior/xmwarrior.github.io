@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>页面无刷新跳转</title>
+		<style type="text/css">
+			li {
+				background: orange;
+				margin: 10px 0;
+				height: 40px;
+				cursor: pointer;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button>切换1</button>
+		<button>切换2</button>
+		<button>切换3</button>
+		<button>切换4</button>
+		<ul>
+			<li>01</li>
+			<li>02</li>
+			<li>03</li>
+			<li>04</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var btn = document.querySelectorAll('button'),
+				li = document.querySelectorAll('li');
+			for(var i = 0; i < btn.length; i++) {
+				(function(i) {
+					btn[i].addEventListener('click', function() {
+						if(location.search!=='?page='+i) {
+							history.pushState({
+								name: 'page' + i
+							}, '', '00.html?page=' + i);
+							for(var key = 0; key < li.length; key++) {
+								li[key].style.display = 'none';
+							}
+							li[i].style.display = 'block';
+						}
+					});
+				})(i)
+			}
+			window.addEventListener('popstate', function(e) {
+				if(e.state) {
+					for(var key = 0; key < li.length; key++) {
+						li[key].style.display = 'none';
+					}
+					li[e.state.name.split('page')[1]].style.display = 'block';
+				} else {
+					for(var key = 0; key < li.length; key++) {
+						li[key].style.display = 'none';
+					}
+				}
+			});
+		}
+	</script>
+
+</html>

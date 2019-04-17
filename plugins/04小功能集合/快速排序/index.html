@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>快速排序</title>
+		<style type="text/css">
+			p {
+				height: 30px;
+				background: gainsboro;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="demo">
+			<p></p>
+			<button>快速排序</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//方法
+		var quickSort = function(arr) {　　
+			if(arr.length <= 1) {
+				return arr;
+			}　　
+			var middleIndex = Math.floor(arr.length / 2),
+				middleItem = arr.splice(middleIndex, 1)[0],
+				left = [],
+				right = [];　　
+			for(var i = arr.length - 1; i >= 0; i--) {　　　　
+				if(arr[i] < middleItem) {　　　　　　
+					left.push(arr[i]);　　　　
+				} else {　　　　　　
+					right.push(arr[i]);　　　　
+				}　　
+			}　　
+			return quickSort(left).concat([middleItem], quickSort(right));
+		};
+		//实例
+		var p = document.querySelector('#demo p'),
+			btn = document.querySelector('#demo button');
+		var arr = [1, 99, 98, 5, 87, 16, 3496, 941, 9, 1, 478, 68, 459, 26, 56];
+		p.innerHTML = arr;
+		btn.onclick = function() {
+			arr = quickSort(arr);
+			p.innerHTML = arr;
+		}
+	</script>
+
+</html>
