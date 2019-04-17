@@ -1,4 +1,4 @@
-﻿window.onload = function() {
+window.onload = function() {
 	var data = ['img/lunbo1.jpg', 'img/lunbo2.jpg', 'img/lunbo3.jpg'];
 	mySlide('SlideBox', data, 5000, 400, 'css3');
 }

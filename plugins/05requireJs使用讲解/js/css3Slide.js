@@ -1,4 +1,4 @@
-﻿//window.onload = function() {
+//window.onload = function() {
 //	var data = ['img/sale.png', 'img/sale.png', 'img/sale.png'];
 //	mySlide('SlideBox', data, 2000, 700);
 //}

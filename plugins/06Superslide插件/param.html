@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-<meta property="wb:webmaster" content="125d4c886033b1d0" />
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta name="generator" content="Hexo 3.8.0">
+<meta property="wb:webmaster" content="125d4c886033b1d0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="Keywords" content="SuperSlide,jQuery万能特效,jQuery幻灯片,jQuery焦点图,jQuery Tab切换,jQuery图片滚动,jQuery无缝滚动">
@@ -8,7 +8,7 @@
 <title>SuperSlide - 查看参数</title>
 <script type="text/javascript" src="js/jquery1.42.min.js"></script>
 <link href="css/default.css" rel="stylesheet" type="text/css">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
 
 <!-- header S -->
@@ -82,7 +82,7 @@
 		    <td class="t">switchLoad</td>
 			<td class="t">2.0 &gt; 2.1</td>
 			<td class="t">null</td>
-		    <td class="intro">内容切换加载，暂时只支持图片，必须配合后台程序使用。当为图片的时候switchLoad为图片实际路径的属性名称，例如switchLoad:"_src"<br/>
+		    <td class="intro">内容切换加载，暂时只支持图片，必须配合后台程序使用。当为图片的时候switchLoad为图片实际路径的属性名称，例如switchLoad:"_src"<br>
 				[v2.1] 修复当scroll>1时，switchLoad无效的bug。
 			</td>
 			<td class="t"><a class="link" target="_blank" href="http://www.superslide2.com/otherDemo/T2.5/switchLoad.html">详解</a></td>
@@ -91,15 +91,15 @@
 		    <td class="t">easing</td>
 			<td class="t">2.0 &gt; 2.1</td>
 			<td class="t">"swing"</td>
-		    <td class="intro">缓动效果；</br>[v2.1]更改默认效果为“swing”，使效果更流畅</td>
+		    <td class="intro">缓动效果；<br>[v2.1]更改默认效果为“swing”，使效果更流畅</td>
 			<td class="t"><a class="link" target="_blank" href="http://www.superslide2.com/otherDemo/T2.1/easing.html">所有</a></td>
 		  </tr>
 		  <tr>
 		    <td class="t">startFun</td>
 			<td class="t">2.0 &gt; 2.1</td>
 			<td class="t">null</td>
-		    <td class="intro">每次切换效果开始时执行函数，用于处理特殊情况或创建更多效果。用法 satrtFun:function(i,c){ }； 其中i为当前分页，c为总页数<br/>
-				[v2.1]增加传递参数，startFun:function( i, c, slider, titCell, mainCell, targetCell, prevCell, nextCell ){}，这样简写就方便了。</br>
+		    <td class="intro">每次切换效果开始时执行函数，用于处理特殊情况或创建更多效果。用法 satrtFun:function(i,c){ }； 其中i为当前分页，c为总页数<br>
+				[v2.1]增加传递参数，startFun:function( i, c, slider, titCell, mainCell, targetCell, prevCell, nextCell ){}，这样简写就方便了。<br>
 				例如 jQuery(".slideBox").slide({ startFun:function( i,c,s ){ s.show() } }); 这里的 s.show() 相当于 jQuery(".slideBox").show() 
 			</td>
 			<td class="t"><a class="link" target="_blank" href="http://www.superslide2.com/otherDemo/T2.2/funIntro.html">详解</a></td>
@@ -108,7 +108,7 @@
 		    <td class="t">endFun</td>
 			<td class="t">2.0 &gt; 2.1</td>
 			<td class="t">null</td>
-		    <td class="intro">每次切换效果结束时执行函数，用法和startFun一致<br/>
+		    <td class="intro">每次切换效果结束时执行函数，用法和startFun一致<br>
 			</td>
 			<td class="t"><a class="link" target="_blank" href="http://www.superslide2.com/otherDemo/T2.2/funIntro.html">详解</a></td>
 		  </tr>
@@ -123,7 +123,7 @@
 		    <td class="t">targetCell</td>
 			<td class="t">2.0 &gt; 2.1</td>
 			<td class="t">null</td>
-		    <td class="intro">切换元素对象，处理内容切换元素非包裹状态下等情况，实现更多效果，处理更多情况，能和titCell、mainCell同时使用。只支持fade效果。<br/>
+		    <td class="intro">切换元素对象，处理内容切换元素非包裹状态下等情况，实现更多效果，处理更多情况，能和titCell、mainCell同时使用。只支持fade效果。<br>
 				[v2.1] 增加支持slideDown效果。
 			</td>
 			<td class="t"><a class="link" target="_blank" href="http://www.superslide2.com/otherDemo/T2.3/targetCell.html">详解</a></td>
@@ -154,7 +154,7 @@
 		    <td class="t">1.2 &gt; 2.1</td>
 			<td class="t">false</td>
 		    <td class="intro">
-				[v1.2] 程序自动分页，<i>需结合titCell使用，若为true，则titCell为导航元素的包裹层对象。ps：scroll>1时，记得设置autoPage:true，否则分页错误</i>。<br/>
+				[v1.2] 程序自动分页，<i>需结合titCell使用，若为true，则titCell为导航元素的包裹层对象。ps：scroll>1时，记得设置autoPage:true，否则分页错误</i>。<br>
 				[v2.1] 支持自定义分页html，$为数字替换位置。例如autoPage:"&lt;li&gt;&lt;a&gt;$&lt;/a&gt;&lt;/li&gt;"，如果不想输出数字：autoPage:"&lt;li&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;"。
 			</td>
 			<td class="t"><a class="link" target="_blank" href="images/autoPage.png">图解</a></td>
@@ -180,9 +180,9 @@
 		    <td class="t">effect</td>
 			<td class="t">1.0 > 2.0 >2.1</td>
 			<td class="t">"fade"</td>
-		    <td class="intro">动画效果<br/>
-			[v1.0] fade：渐显； ||   top：上滚动；||   left：左滚动；||  topLoop：上循环滚动；||   leftLoop：左循环滚动；||  topMarquee：上无缝循环滚动；||   leftMarquee：左无缝循环滚动；<br/> 
-			[v2.0] fold：淡入淡出<br/> 
+		    <td class="intro">动画效果<br>
+			[v1.0] fade：渐显； ||   top：上滚动；||   left：左滚动；||  topLoop：上循环滚动；||   leftLoop：左循环滚动；||  topMarquee：上无缝循环滚动；||   leftMarquee：左无缝循环滚动；<br> 
+			[v2.0] fold：淡入淡出<br> 
 			[v2.1] slideDown：下拉效果</td>
 			<td class="t"></td>
 		  </tr>

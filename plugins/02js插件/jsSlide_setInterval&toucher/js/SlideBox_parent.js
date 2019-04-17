@@ -1,4 +1,4 @@
-﻿window.onload = function() {
+window.onload = function() {
 	var data = ['img/A.png', 'img/B.png', 'img/C.png'];
 	var linkdata = ['#', '#', '#'];
 	mySlide('SlideBox', data, linkdata, 2000, 300);
