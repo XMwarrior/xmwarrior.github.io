@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>基于CSS3 column多栏布局实现水平滑页翻页交互</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background: #C4B399;
+			}
+			
+			html,
+			body,
+			ul,
+			li {
+				padding: 0;
+				margin: 0;
+			}
+			
+			ul {
+				-webkit-columns: calc(100vw - 32px) 1;
+				-webkit-column-gap: 16px;
+				columns: calc(100vw - 32px) 1;
+				column-gap: 16px;
+				overflow: visible;
+				height: 100%;
+				transition: all 0.2s;
+			}
+			
+			ul li {
+				list-style: none;
+				padding: 1em;
+				margin: 1em;
+				-webkit-column-break-inside: avoid;
+				page-break-inside: avoid;
+				background: #FFFFFF;
+				break-inside: avoid;
+			}
+		</style>
+	</head>
+
+	<body style="width: 500px; margin: 0 auto;position: relative;">
+		<ul>
+			<li>第一章</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+			<li>打发时间开国皇帝激活工具开始的风格好的给大家看发给单号发给就看东方国家的封建快攻和地方机关和的封建快攻和多发几个多发几个东方国家的后方根据地回复冠军的光环对接开发规划的房间更好的肌肤光滑的非结构化大幅改建后的覆盖</li>
+		</ul>
+		<div style="display: flex;justify-content: space-between;position: absolute;bottom: 0;width: 100%;">
+			<button>前一页</button>
+			<button>后一页</button>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function() {
+				$.extend({
+					pageColumns: {
+						init: function(options) {
+							var that = this;
+							options=options||{};
+							//默认参数
+							that.el = options.el || $('ul');
+							that.prevBtn = options.prevBtn || $('button').eq(0);
+							that.nextBtn = options.nextBtn || $('button').eq(1);
+							that.columnGap = options.columnGap || 16;
+							that.currentPage = options.currentPage || 0;
+							that.sectionIndex = options.sectionIndex || 0;
+							that.direction = options.direction || 1;
+							that.totalWidth = that.el[0].scrollWidth;
+							that.pageWidth = that.el.outerWidth();
+							that.page = that.totalWidth / (that.pageWidth + that.columnGap * 2);
+							//前一页
+							that.prevBtn.on('click', function() {
+								if(that.currentPage) {
+									that.currentPage--;
+									that.el.css('transform', 'translateX(-' + (that.currentPage * (that.pageWidth + that.columnGap)) + 'px)');
+									return;
+								}
+								that.direction = 0;
+								that.sectionIndex--;
+								that.filContent();
+								that.slidePosition();
+							});
+							//后一页
+							that.nextBtn.on('click', function() {
+								if(that.currentPage < that.page - 1) {
+									that.currentPage++;
+									that.el.css('transform', 'translateX(-' + (that.currentPage * (that.pageWidth + that.columnGap)) + 'px)');
+									return;
+								}
+								that.direction = 1;
+								that.sectionIndex++;
+								that.filContent();
+								that.slidePosition();
+							});
+							//初始化
+							that.filContent();
+						    that.slidePosition();
+						},
+						filContent: function() {
+							var templete = '很长很长的内容......';
+							var repeatText = '<li>' + templete.repeat(3) + '</li>';
+							var title = '<li>第' + this.sectionIndex + '章</li>';
+							this.el.html(title + repeatText.repeat(30));
+
+						},
+						slidePosition: function() {
+							var that = this;
+							that.el.css('transition', 'unset');
+							that.totalWidth = that.el[0].scrollWidth;
+							that.page = that.totalWidth / (that.pageWidth + that.columnGap * 2);
+							if(that.direction) {
+								that.currentPage = 0;
+							} else {
+								that.currentPage = Math.ceil(that.page - 1);
+							}
+							that.el.css('transform', 'translateX(-' + (that.currentPage * (that.pageWidth + that.columnGap)) + 'px)');
+							setTimeout(function() {
+								that.el.css('transition', 'all 0.2s');
+							}, 200);
+						}
+					}
+				});
+			})();
+			//示例
+			$.pageColumns.init();
+		</script>
+	</body>
+
+</html>
