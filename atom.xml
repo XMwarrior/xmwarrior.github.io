@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2019-04-16T03:06:58.639Z</updated>
+  <updated>2019-04-17T08:30:19.170Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>扎实基础</title>
+    <link href="http://xmwarrior.github.io/2019/04/17/zha-shi-ji-chu/"/>
+    <id>http://xmwarrior.github.io/2019/04/17/zha-shi-ji-chu/</id>
+    <published>2019-04-17T09:54:55.000Z</published>
+    <updated>2019-04-17T08:30:19.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000013331105&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;长期收集整理资源&lt;/a&gt; -2018年02月23日&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="日常优质文章收录" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%B8%B8%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
+    
+    
+      <category term="html" scheme="http://xmwarrior.github.io/tags/html/"/>
+    
+      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+      <category term="扎实基础" scheme="http://xmwarrior.github.io/tags/%E6%89%8E%E5%AE%9E%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>观点与感想</title>
+    <link href="http://xmwarrior.github.io/2019/04/17/guan-dian-yu-gan-xiang/"/>
+    <id>http://xmwarrior.github.io/2019/04/17/guan-dian-yu-gan-xiang/</id>
+    <published>2019-04-17T09:54:55.000Z</published>
+    <updated>2019-04-17T08:13:03.323Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000018868172&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;必须知道的程序员思维&lt;/a&gt; -2019年04月15日&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="日常优质文章收录" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%B8%B8%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
+    
+    
+      <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>天气插件改造之Free初探</title>
@@ -545,66 +607,6 @@
     
     
       <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html规范</title>
-    <link href="http://xmwarrior.github.io/2018/04/13/html-gui-fan/"/>
-    <id>http://xmwarrior.github.io/2018/04/13/html-gui-fan/</id>
-    <published>2018-04-13T01:54:55.000Z</published>
-    <updated>2019-04-16T03:06:00.339Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h2 id=&quot;head&quot;&gt;&lt;a href=&quot;#head&quot; class=&quot;headerlink&quot; title=&quot;head&quot;&gt;&lt;/a&gt;head&lt;/h2&gt;&lt;p&gt;head基本内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!--字符编码：--&amp;gt;
-&amp;lt;meta
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="html" scheme="http://xmwarrior.github.io/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>灵活的console</title>
-    <link href="http://xmwarrior.github.io/2017/10/15/ling-huo-de-console/"/>
-    <id>http://xmwarrior.github.io/2017/10/15/ling-huo-de-console/</id>
-    <published>2017-10-15T04:46:19.000Z</published>
-    <updated>2019-04-16T03:06:38.316Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre&gt;&lt;code&gt;//打印信息。注：%s字符串，%d数字，%c添加css样式
-console.log(&amp;#39;console.log&amp;#39;);
-//打印警告
-console.warn(&amp;#39;console.warn&amp;#39;);
-//打印dom
-console.di
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
     
   </entry>
   

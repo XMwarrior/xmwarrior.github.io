@@ -4,13 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="title美化提示框, xmwarrior,xmsniper">
-    <meta name="description" content="&amp;lt;!DOCTYPE HTML&amp;gt;
-&amp;lt;html&amp;gt;
+    <meta name="keywords" content="扎实基础, xmwarrior,xmsniper">
+    <meta name="description" content="
+长期收集整理资源 -2018年02月23日
+debounce(防抖)和throttle(节流) -2016年07月10日
+javascript 总结（常用工具类的封装） -2018年01月30日
 
-    &amp;lt;head&amp;gt;
-        &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
-        &amp;lt;meta nam">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>title美化提示框 | XMwarrior</title>
+    <title>扎实基础 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        title美化提示框
+                        扎实基础
                     </div>
                 </div>
             </div>
@@ -379,8 +379,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/jquery/" target="_blank">
-                                <span class="chip bg-color">jquery</span>
+                            <a href="/tags/html/" target="_blank">
+                                <span class="chip bg-color">html</span>
+                            </a>
+                        
+                            <a href="/tags/css/" target="_blank">
+                                <span class="chip bg-color">css</span>
+                            </a>
+                        
+                            <a href="/tags/js/" target="_blank">
+                                <span class="chip bg-color">js</span>
+                            </a>
+                        
+                            <a href="/tags/扎实基础/" target="_blank">
+                                <span class="chip bg-color">扎实基础</span>
                             </a>
                         
                     </div>
@@ -391,8 +403,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/日常优质文章收录/" class="post-category" target="_blank">
+                                日常优质文章收录
                             </a>
                         
                     </div>
@@ -403,21 +415,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-25
+                    2019-04-17
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        525
+                        38
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        1 分
                     </div>
                     
                 
@@ -433,118 +445,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;
-        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes&quot; /&gt;
-        &lt;title&gt;美化title属性，使title成为提示框&lt;/title&gt;
-        &lt;script src=&quot;../js/jquery.min.js&quot;&gt;&lt;/script&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
-            .tipsy-tooltip {
-                font-size: 12px;
-                font-family: \5b8b\4f53;
-                line-height: 1.5;
-                position: absolute;
-                padding: 5px;
-                z-index: 100003;
-                opacity: 1
-            }
-
-            .tipsy-arrow {
-                position: absolute;
-                width: 0;
-                height: 0;
-                line-height: 0;
-                border: 6px dashed #FFA500;
-                top: 0;
-                left: 20%;
-                margin-left: -5px;
-                border-bottom-style: solid;
-                border-top: 0;
-                border-left-color: transparent;
-                border-right-color: transparent
-            }
-
-            .tipsy-arrow-n {
-                border-bottom-color: #FFA500;
-            }
-
-            .tipsy-inner {
-                background-color: #FFA500;
-                color: #fff;
-                max-width: 200px;
-                padding: 5px 8px 4px 8px;
-                text-align: center;
-                border-radius: 3px
-            }
-        &lt;/style&gt;
-
-        &lt;body&gt;
-            &lt;p&gt;提示：利用title属性制作的提示框效果，不是真正的提示弹出框&lt;/p&gt;
-            &lt;div&gt;
-                &lt;a href=&quot;#&quot; title=&quot;我是提示文字&quot;&gt;提示文字
-                    &lt;span style=&quot;padding: 0 10px 0 0;&quot;&gt;-子元素&lt;/span&gt;
-                &lt;/a&gt;
-                &lt;a href=&quot;#&quot; title=&quot;&lt;p&gt;我是提示文字1&lt;/p&gt;&lt;p&gt;我是提示文字2&lt;/p&gt;&quot;&gt;提示文字可换行&lt;/a&gt;
-            &lt;/div&gt;
-            &lt;script&gt;
-                (function() {
-                    $.extend({
-                        sweetTitles: {
-                            x: 10,
-                            y: 20,
-                            tipElements: &quot;a,span,img,div&quot;,
-                            noTitle: false,
-                            isTarget: true,
-                            init: function() {
-                                var that = this;
-                                $(this.tipElements).each(function() {
-                                    $(this).mouseover(function(e) {
-                                        if(that.isTarget &amp;&amp; !$(e.target).is(this)) {
-                                            return;
-                                        }
-                                        if(that.noTitle) {
-                                            isTitle = true;
-                                        } else {
-                                            isTitle = $.trim(this.title) != &#39;&#39;;
-                                        }
-                                        if(isTitle) {
-                                            this.myTitle = this.title;
-                                            this.title = &quot;&quot;;
-                                            var tooltip = &quot;&lt;div class=&#39;tipsy-tooltip&#39;&gt;&lt;div class=&#39;tipsy-arrow tipsy-arrow-n&#39;&gt;&lt;/div&gt;&lt;div class=&#39;tipsy-inner&#39;&gt;&quot; +this.myTitle +&quot;&lt;/div&gt;&lt;/div&gt;&quot;;
-                                            $(&#39;body&#39;).append(tooltip);
-                                            $(&#39;.tipsy-tooltip&#39;).css({
-                                                &quot;top&quot;: (e.pageY + 20) + &quot;px&quot;,
-                                                &quot;left&quot;: (e.pageX - 20) + &quot;px&quot;
-                                            }).show(&#39;fast&#39;);
-                                        }
-                                    }).mouseout(function() {
-                                        if(this.myTitle != null) {
-                                            this.title = this.myTitle;
-                                            $(&#39;.tipsy-tooltip&#39;).remove();
-                                        }
-                                    }).mousemove(function(e) {
-                                        $(&#39;.tipsy-tooltip&#39;).css({
-                                            &quot;top&quot;: (e.pageY + 20) + &quot;px&quot;,
-                                            &quot;left&quot;: (e.pageX - 20) + &quot;px&quot;
-                                        });
-                                    });
-                                });
-                            }
-                        }
-                    });
-                })();
-                //调用
-                $.sweetTitles.init();
-            &lt;/script&gt;
-        &lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre><p>示例：<a href="/pages/title美化提示框.html">请点这里</a></p>
+                <ul>
+<li><a href="https://segmentfault.com/a/1190000013331105" target="_blank" rel="noopener">长期收集整理资源</a> -2018年02月23日</li>
+<li><a href="https://segmentfault.com/a/1190000005926579" target="_blank" rel="noopener">debounce(防抖)和throttle(节流)</a> -2016年07月10日</li>
+<li><a href="https://segmentfault.com/a/1190000013041329" target="_blank" rel="noopener">javascript 总结（常用工具类的封装）</a> -2018年01月30日</li>
+</ul>
 
             </div>
             <hr>
@@ -692,7 +597,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/25/title-mei-hua-ti-shi-kuang/" class="b-link-green">title美化提示框</a>
+                    <a href="/2019/04/17/zha-shi-ji-chu/" class="b-link-green">扎实基础</a>
                 </p>
             </div>
         </div>
@@ -714,7 +619,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-02-25T17-18-00',
+        id: '2019-04-17T17-54-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -737,49 +642,59 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/">
+                <a href="/2019/04/17/zha-shi-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="bootstrap-Modal组件封装">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="扎实基础">
                         
-                        <span class="card-title">bootstrap-Modal组件封装</span>
+                        <span class="card-title">扎实基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">bootstrap-Modal组件封装：
-(function() {
-    $.extend({
-        xmDialog: {
-        init: function(option) {
-            var t</div>
+                    <div class="summary block-with-text">
+长期收集整理资源 -2018年02月23日
+debounce(防抖)和throttle(节流) -2016年07月10日
+javascript 总结（常用工具类的封装） -2018年01月30日
+
+</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/日常优质文章收录/" class="post-category" target="_blank">
+                                    日常优质文章收录
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
                     </a>
                     
-                    <a href="/tags/bootstrap/" target="_blank">
-                        <span class="chip bg-color">bootstrap</span>
+                    <a href="/tags/css/" target="_blank">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/js/" target="_blank">
+                        <span class="chip bg-color">js</span>
+                    </a>
+                    
+                    <a href="/tags/扎实基础/" target="_blank">
+                        <span class="chip bg-color">扎实基础</span>
                     </a>
                     
                 </div>
@@ -793,33 +708,32 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/">
+                <a href="/2019/04/17/guan-dian-yu-gan-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="js运算精度_decimal插件">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="观点与感想">
                         
-                        <span class="card-title">js运算精度_decimal插件</span>
+                        <span class="card-title">观点与感想</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">收藏备用：
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+                    <div class="summary block-with-text">
+必须知道的程序员思维 -2019年04月15日
+写给工程师的十条精进原则 -2018年09月13日
+《未来世界的幸存者》 -2018年07月09日
 
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot;&gt;
-        &lt;ti</div>
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/日常优质文章收录/" class="post-category" target="_blank">
+                                    日常优质文章收录
                                 </a>
                             
                             
@@ -829,8 +743,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/观点与感想/" target="_blank">
+                        <span class="chip bg-color">观点与感想</span>
                     </a>
                     
                 </div>
