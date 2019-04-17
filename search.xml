@@ -4,37 +4,6 @@
   
     
     <entry>
-      <title>扎实基础</title>
-      <link href="/2019/04/17/zha-shi-ji-chu/"/>
-      <url>/2019/04/17/zha-shi-ji-chu/</url>
-      
-        <content type="html"><![CDATA[<ul><li><a href="https://segmentfault.com/a/1190000013331105" target="_blank" rel="noopener">长期收集整理资源</a> -2018年02月23日</li><li><a href="https://segmentfault.com/a/1190000005926579" target="_blank" rel="noopener">debounce(防抖)和throttle(节流)</a> -2016年07月10日</li><li><a href="https://segmentfault.com/a/1190000013041329" target="_blank" rel="noopener">javascript 总结（常用工具类的封装）</a> -2018年01月30日</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日常优质文章收录 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> html </tag>
-            
-            <tag> css </tag>
-            
-            <tag> js </tag>
-            
-            <tag> 扎实基础 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>观点与感想</title>
       <link href="/2019/04/17/guan-dian-yu-gan-xiang/"/>
       <url>/2019/04/17/guan-dian-yu-gan-xiang/</url>
@@ -52,6 +21,37 @@
         <tags>
             
             <tag> 观点与感想 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>扎实基础</title>
+      <link href="/2019/04/17/zha-shi-ji-chu/"/>
+      <url>/2019/04/17/zha-shi-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="https://segmentfault.com/a/1190000013331105" target="_blank" rel="noopener">长期收集整理资源</a> -2018年02月23日</li><li><a href="https://segmentfault.com/a/1190000005926579" target="_blank" rel="noopener">debounce(防抖)和throttle(节流)</a> -2016年07月10日</li><li><a href="https://segmentfault.com/a/1190000013041329" target="_blank" rel="noopener">javascript 总结（常用工具类的封装）</a> -2018年01月30日</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常优质文章收录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> css </tag>
+            
+            <tag> html </tag>
+            
+            <tag> 扎实基础 </tag>
             
         </tags>
       
@@ -157,11 +157,11 @@
             
             <tag> jquery </tag>
             
+            <tag> bootstrap </tag>
+            
             <tag> js </tag>
             
             <tag> css3 </tag>
-            
-            <tag> bootstrap </tag>
             
         </tags>
       
@@ -238,9 +238,9 @@
       
         <tags>
             
-            <tag> css </tag>
-            
             <tag> js </tag>
+            
+            <tag> css </tag>
             
         </tags>
       
@@ -421,9 +421,9 @@
       
         <tags>
             
-            <tag> css </tag>
-            
             <tag> jquery </tag>
+            
+            <tag> css </tag>
             
         </tags>
       
@@ -629,11 +629,11 @@
       
         <tags>
             
-            <tag> html </tag>
+            <tag> js </tag>
             
             <tag> css </tag>
             
-            <tag> js </tag>
+            <tag> html </tag>
             
             <tag> 个人轮子整理 </tag>
             
