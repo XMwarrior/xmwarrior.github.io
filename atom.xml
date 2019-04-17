@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XMwarrior</title>
+  
+  <subtitle>每天进步一点点</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://xmwarrior.github.io/"/>
+  <updated>2019-04-16T03:06:58.639Z</updated>
+  <id>http://xmwarrior.github.io/</id>
+  
+  <author>
+    <name>XMwarrior</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>天气插件改造之Free初探</title>
+    <link href="http://xmwarrior.github.io/2019/04/11/tian-qi-cha-jian-xm-weather/"/>
+    <id>http://xmwarrior.github.io/2019/04/11/tian-qi-cha-jian-xm-weather/</id>
+    <published>2019-04-11T11:18:19.000Z</published>
+    <updated>2019-04-16T03:06:58.639Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;此处不宜多说（露出一个高深莫测的微笑！），精华自取：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) {
+  
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高阶函数缓存应用之斐波那契数列</title>
+    <link href="http://xmwarrior.github.io/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/"/>
+    <id>http://xmwarrior.github.io/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/</id>
+    <published>2019-04-02T06:18:19.000Z</published>
+    <updated>2019-04-16T03:06:29.599Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;合理的利用js缓存，能有效提升复杂运算效率，此处有两种概念：&lt;br&gt;1.闭包-（指有权访问另一个函数作用域中的变量的函数）&lt;br&gt;2.高阶函数-（接受其他函数作为参数或返回其他函数的函数）&lt;br&gt;此处以斐波那契数列为例，演示了运用缓存与不运用缓存计算的效率差别。&lt;/p&gt;
+&lt;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+      <category term="算法" scheme="http://xmwarrior.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>清除cookie稳妥做法</title>
+    <link href="http://xmwarrior.github.io/2019/03/27/qing-chu-cookie-wen-tuo-zuo-fa/"/>
+    <id>http://xmwarrior.github.io/2019/03/27/qing-chu-cookie-wen-tuo-zuo-fa/</id>
+    <published>2019-03-27T06:16:00.000Z</published>
+    <updated>2019-04-16T03:06:46.347Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;清除cookie稳妥做法就是设置cookie与清除cookie写法一致，cookie清除不了的问题，主要出现在设置与清除cookie并非一端操作的情况下，此时需要注意path、domain的设置必须保持一致，注意下文中注释&lt;code&gt;//warning&lt;/code&gt;处代码，
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>色调旋转滤镜按钮-在线生成</title>
+    <link href="http://xmwarrior.github.io/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/"/>
+    <id>http://xmwarrior.github.io/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/</id>
+    <published>2019-03-18T09:41:00.000Z</published>
+    <updated>2019-04-16T06:31:54.057Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本例应用颜色拾取插件 &lt;a href=&quot;https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+      <category term="css3" scheme="http://xmwarrior.github.io/tags/css3/"/>
+    
+      <category term="bootstrap" scheme="http://xmwarrior.github.io/tags/bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>百度分享-设置缩略图及标题</title>
+    <link href="http://xmwarrior.github.io/2019/03/14/bai-du-fen-xiang-she-zhi-suo-lue-tu-ji-biao-ti/"/>
+    <id>http://xmwarrior.github.io/2019/03/14/bai-du-fen-xiang-she-zhi-suo-lue-tu-ji-biao-ti/</id>
+    <published>2019-03-14T07:50:00.000Z</published>
+    <updated>2019-04-16T03:06:25.158Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一不小心走进你的锅…&quot;&gt;&lt;a href=&quot;#一不小心走进你的锅…&quot; class=&quot;headerlink&quot; title=&quot;一不小心走进你的锅…&quot;&gt;&lt;/a&gt;&lt;strong&gt;一不小心走进你的锅…&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;当你工作中用到  &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>position-sticky</title>
+    <link href="http://xmwarrior.github.io/2019/03/14/position-sticky/"/>
+    <id>http://xmwarrior.github.io/2019/03/14/position-sticky/</id>
+    <published>2019-03-14T02:56:00.000Z</published>
+    <updated>2019-04-16T03:06:25.143Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;position-sticky简介&quot;&gt;&lt;a href=&quot;#position-sticky简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+      <category term="css3" scheme="http://xmwarrior.github.io/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css变量</title>
+    <link href="http://xmwarrior.github.io/2019/03/13/css-bian-liang/"/>
+    <id>http://xmwarrior.github.io/2019/03/13/css-bian-liang/</id>
+    <published>2019-03-13T07:58:00.000Z</published>
+    <updated>2019-04-16T03:05:46.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;CSS变量var-语法&quot;&gt;&lt;a href=&quot;#CSS变量var-语法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于CSS3 column多栏布局实现水平滑页翻页交互</title>
+    <link href="http://xmwarrior.github.io/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/"/>
+    <id>http://xmwarrior.github.io/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/</id>
+    <published>2019-03-12T09:18:00.000Z</published>
+    <updated>2019-04-16T03:06:34.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天看大神张鑫旭的文章，有一篇  &lt;a href=&quot;https://www.zhangxinxu.com/wordpress/2017/02/css3-multiple-column-layout-read-horizontal/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+      <category term="css3" scheme="http://xmwarrior.github.io/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>相邻算法</title>
+    <link href="http://xmwarrior.github.io/2019/03/11/xiang-lin-suan-fa/"/>
+    <id>http://xmwarrior.github.io/2019/03/11/xiang-lin-suan-fa/</id>
+    <published>2019-03-11T02:03:00.000Z</published>
+    <updated>2019-04-16T03:07:07.326Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;参照“猫眼电影”购票选座规则：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/*
+* 影院选座验证
+* param {Array} arr
+* param {Object} options.ok验证成功回调函数，options.cancel验证失败回调函数
+* return
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网页防扒</title>
+    <link href="http://xmwarrior.github.io/2019/03/06/wang-ye-fang-ba/"/>
+    <id>http://xmwarrior.github.io/2019/03/06/wang-ye-fang-ba/</id>
+    <published>2019-03-06T06:16:19.000Z</published>
+    <updated>2019-04-16T03:07:03.710Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;所谓防火防盗防大佬，虽然我们提倡开源，但是有时也会用到“网页防扒”，在&lt;a href=&quot;https://www.sojson.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.sojson.com&lt;/a&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bootstrap-Modal组件封装</title>
+    <link href="http://xmwarrior.github.io/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/"/>
+    <id>http://xmwarrior.github.io/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/</id>
+    <published>2019-02-26T07:16:19.000Z</published>
+    <updated>2019-04-16T03:05:12.403Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;bootstrap-Modal组件封装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(function() {
+    $.extend({
+        xmDialog: {
+        init: function(option) {
+            var
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
+    
+      <category term="bootstrap" scheme="http://xmwarrior.github.io/tags/bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>title美化提示框</title>
+    <link href="http://xmwarrior.github.io/2019/02/25/title-mei-hua-ti-shi-kuang/"/>
+    <id>http://xmwarrior.github.io/2019/02/25/title-mei-hua-ti-shi-kuang/</id>
+    <published>2019-02-25T09:18:00.000Z</published>
+    <updated>2019-04-16T03:06:25.151Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html&amp;gt;
+
+    &amp;lt;head&amp;gt;
+        &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+        &amp;lt;meta
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js运算精度_decimal插件</title>
+    <link href="http://xmwarrior.github.io/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/"/>
+    <id>http://xmwarrior.github.io/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/</id>
+    <published>2019-02-19T07:16:19.000Z</published>
+    <updated>2019-04-16T03:06:25.134Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;收藏备用：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+
+    &amp;lt;head&amp;gt;
+        &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+       
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>input-range自定义</title>
+    <link href="http://xmwarrior.github.io/2019/02/01/input-range-zi-ding-yi/"/>
+    <id>http://xmwarrior.github.io/2019/02/01/input-range-zi-ding-yi/</id>
+    <published>2019-02-01T07:11:19.000Z</published>
+    <updated>2019-04-16T03:06:25.117Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;input-range自定义样式&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;meta
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>canvas转换svg合成图片</title>
+    <link href="http://xmwarrior.github.io/2019/02/01/canvas-zhuan-huan-svg-he-cheng-tu-pian/"/>
+    <id>http://xmwarrior.github.io/2019/02/01/canvas-zhuan-huan-svg-he-cheng-tu-pian/</id>
+    <published>2019-02-01T06:18:19.000Z</published>
+    <updated>2019-04-16T03:05:46.270Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;此函数应用场景为：百度地图生成自定义标志&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(function ($, document) {
+    $.extend({
+        //16进制颜色转换为rgba颜色
+        colorRgb: function (str,
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端实现懒加载</title>
+    <link href="http://xmwarrior.github.io/2018/12/05/qian-duan-shi-xian-lan-jia-zai/"/>
+    <id>http://xmwarrior.github.io/2018/12/05/qian-duan-shi-xian-lan-jia-zai/</id>
+    <published>2018-12-05T01:30:19.000Z</published>
+    <updated>2019-04-16T03:06:42.161Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;
+
+    &amp;lt;head&amp;gt;
+        &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;
+      
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
+    
+      <category term="bootstrap" scheme="http://xmwarrior.github.io/tags/bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js规范</title>
+    <link href="http://xmwarrior.github.io/2018/04/13/js-gui-fan/"/>
+    <id>http://xmwarrior.github.io/2018/04/13/js-gui-fan/</id>
+    <published>2018-04-13T01:55:19.000Z</published>
+    <updated>2019-04-16T03:06:25.125Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h2&gt;&lt;h4 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css规范</title>
+    <link href="http://xmwarrior.github.io/2018/04/13/css-gui-fan/"/>
+    <id>http://xmwarrior.github.io/2018/04/13/css-gui-fan/</id>
+    <published>2018-04-13T01:55:09.000Z</published>
+    <updated>2019-04-16T03:05:46.283Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h2&gt;&lt;p&gt; id采用驼峰式命名；&lt;br&gt; 类名使用小写字母，以中划线分隔。&lt;/p&gt;
+&lt;h2 id=&quot;正确使用-Display-的属性&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html规范</title>
+    <link href="http://xmwarrior.github.io/2018/04/13/html-gui-fan/"/>
+    <id>http://xmwarrior.github.io/2018/04/13/html-gui-fan/</id>
+    <published>2018-04-13T01:54:55.000Z</published>
+    <updated>2019-04-16T03:06:00.339Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;head&quot;&gt;&lt;a href=&quot;#head&quot; class=&quot;headerlink&quot; title=&quot;head&quot;&gt;&lt;/a&gt;head&lt;/h2&gt;&lt;p&gt;head基本内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!--字符编码：--&amp;gt;
+&amp;lt;meta
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="html" scheme="http://xmwarrior.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>灵活的console</title>
+    <link href="http://xmwarrior.github.io/2017/10/15/ling-huo-de-console/"/>
+    <id>http://xmwarrior.github.io/2017/10/15/ling-huo-de-console/</id>
+    <published>2017-10-15T04:46:19.000Z</published>
+    <updated>2019-04-16T03:06:38.316Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;//打印信息。注：%s字符串，%d数字，%c添加css样式
+console.log(&amp;#39;console.log&amp;#39;);
+//打印警告
+console.warn(&amp;#39;console.warn&amp;#39;);
+//打印dom
+console.di
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
+  
+</feed>
