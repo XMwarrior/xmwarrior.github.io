@@ -163,7 +163,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #5c78ff 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #00d2d2 0%, #0f9d58 100%);
 }
 
 .text-color {
@@ -1674,7 +1674,7 @@ footer .copy-right {
 }
 
 .top-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
+    background: linear-gradient(to bottom right, #01cfcb 0%, #0f9d58 100%);
     width: 48px;
     height: 48px;
 }
