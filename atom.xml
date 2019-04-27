@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2019-04-18T03:07:13.943Z</updated>
+  <updated>2019-04-27T15:17:35.801Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue组件传值</title>
+    <link href="http://xmwarrior.github.io/2019/04/27/2019-4-27vue-zu-jian-chuan-zhi/"/>
+    <id>http://xmwarrior.github.io/2019/04/27/2019-4-27vue-zu-jian-chuan-zhi/</id>
+    <published>2019-04-27T15:03:55.000Z</published>
+    <updated>2019-04-27T15:17:35.801Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-props传递单个参数&quot;&gt;&lt;a href=&quot;#1-props传递单个参数&quot; class=&quot;headerlink&quot; title=&quot;1. props传递单个参数&quot;&gt;&lt;/a&gt;1. props传递单个参数&lt;/h2&gt;&lt;h3 id=&quot;父组件&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="vue" scheme="http://xmwarrior.github.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建hexo博客体会</title>
@@ -43,39 +69,11 @@
   </entry>
   
   <entry>
-    <title>观点与感想</title>
-    <link href="http://xmwarrior.github.io/2019/04/17/guan-dian-yu-gan-xiang/"/>
-    <id>http://xmwarrior.github.io/2019/04/17/guan-dian-yu-gan-xiang/</id>
-    <published>2019-04-17T09:54:55.000Z</published>
-    <updated>2019-04-17T08:13:03.323Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000018868172&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;必须知道的程序员思维&lt;/a&gt; -2019年04月15日&lt;/li&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="日常优质文章收录" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%B8%B8%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
-    
-    
-      <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
     <title>扎实基础</title>
     <link href="http://xmwarrior.github.io/2019/04/17/zha-shi-ji-chu/"/>
     <id>http://xmwarrior.github.io/2019/04/17/zha-shi-ji-chu/</id>
     <published>2019-04-17T09:54:55.000Z</published>
-    <updated>2019-04-17T08:30:19.170Z</updated>
+    <updated>2019-04-17T13:21:37.810Z</updated>
     
     <summary type="html">
     
@@ -101,6 +99,34 @@
       <category term="html" scheme="http://xmwarrior.github.io/tags/html/"/>
     
       <category term="扎实基础" scheme="http://xmwarrior.github.io/tags/%E6%89%8E%E5%AE%9E%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>观点与感想</title>
+    <link href="http://xmwarrior.github.io/2019/04/17/guan-dian-yu-gan-xiang/"/>
+    <id>http://xmwarrior.github.io/2019/04/17/guan-dian-yu-gan-xiang/</id>
+    <published>2019-04-17T09:54:55.000Z</published>
+    <updated>2019-04-17T13:21:37.813Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000018868172&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;必须知道的程序员思维&lt;/a&gt; -2019年04月15日&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="日常优质文章收录" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%B8%B8%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
+    
+    
+      <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
     
   </entry>
   
@@ -139,7 +165,7 @@
     <link href="http://xmwarrior.github.io/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/"/>
     <id>http://xmwarrior.github.io/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/</id>
     <published>2019-04-02T06:18:19.000Z</published>
-    <updated>2019-04-17T10:55:16.283Z</updated>
+    <updated>2019-04-17T13:21:37.814Z</updated>
     
     <summary type="html">
     
@@ -168,7 +194,7 @@
     <link href="http://xmwarrior.github.io/2019/03/27/qing-chu-cookie-wen-tuo-zuo-fa/"/>
     <id>http://xmwarrior.github.io/2019/03/27/qing-chu-cookie-wen-tuo-zuo-fa/</id>
     <published>2019-03-27T06:16:00.000Z</published>
-    <updated>2019-04-16T03:06:46.347Z</updated>
+    <updated>2019-04-17T13:21:37.811Z</updated>
     
     <summary type="html">
     
@@ -194,7 +220,7 @@
     <link href="http://xmwarrior.github.io/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/"/>
     <id>http://xmwarrior.github.io/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/</id>
     <published>2019-03-18T09:41:00.000Z</published>
-    <updated>2019-04-17T10:57:41.219Z</updated>
+    <updated>2019-04-17T13:21:37.813Z</updated>
     
     <summary type="html">
     
@@ -226,7 +252,7 @@
     <link href="http://xmwarrior.github.io/2019/03/14/bai-du-fen-xiang-she-zhi-suo-lue-tu-ji-biao-ti/"/>
     <id>http://xmwarrior.github.io/2019/03/14/bai-du-fen-xiang-she-zhi-suo-lue-tu-ji-biao-ti/</id>
     <published>2019-03-14T07:50:00.000Z</published>
-    <updated>2019-04-17T10:54:31.114Z</updated>
+    <updated>2019-04-17T13:21:37.812Z</updated>
     
     <summary type="html">
     
@@ -252,7 +278,7 @@
     <link href="http://xmwarrior.github.io/2019/03/14/position-sticky/"/>
     <id>http://xmwarrior.github.io/2019/03/14/position-sticky/</id>
     <published>2019-03-14T02:56:00.000Z</published>
-    <updated>2019-04-17T10:52:33.406Z</updated>
+    <updated>2019-04-17T13:21:37.808Z</updated>
     
     <summary type="html">
     
@@ -280,7 +306,7 @@
     <link href="http://xmwarrior.github.io/2019/03/13/css-bian-liang/"/>
     <id>http://xmwarrior.github.io/2019/03/13/css-bian-liang/</id>
     <published>2019-03-13T07:58:00.000Z</published>
-    <updated>2019-04-17T10:50:51.194Z</updated>
+    <updated>2019-04-17T13:21:37.806Z</updated>
     
     <summary type="html">
     
@@ -308,7 +334,7 @@
     <link href="http://xmwarrior.github.io/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/"/>
     <id>http://xmwarrior.github.io/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/</id>
     <published>2019-03-12T09:18:00.000Z</published>
-    <updated>2019-04-17T10:56:22.693Z</updated>
+    <updated>2019-04-17T13:21:37.810Z</updated>
     
     <summary type="html">
     
@@ -338,7 +364,7 @@
     <link href="http://xmwarrior.github.io/2019/03/11/xiang-lin-suan-fa/"/>
     <id>http://xmwarrior.github.io/2019/03/11/xiang-lin-suan-fa/</id>
     <published>2019-03-11T02:03:00.000Z</published>
-    <updated>2019-04-17T10:50:51.332Z</updated>
+    <updated>2019-04-17T13:21:37.812Z</updated>
     
     <summary type="html">
     
@@ -369,7 +395,7 @@
     <link href="http://xmwarrior.github.io/2019/03/06/wang-ye-fang-ba/"/>
     <id>http://xmwarrior.github.io/2019/03/06/wang-ye-fang-ba/</id>
     <published>2019-03-06T06:16:19.000Z</published>
-    <updated>2019-04-17T10:50:51.322Z</updated>
+    <updated>2019-04-17T13:21:37.812Z</updated>
     
     <summary type="html">
     
@@ -395,7 +421,7 @@
     <link href="http://xmwarrior.github.io/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/"/>
     <id>http://xmwarrior.github.io/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/</id>
     <published>2019-02-26T07:16:19.000Z</published>
-    <updated>2019-04-17T10:46:48.415Z</updated>
+    <updated>2019-04-17T13:21:37.805Z</updated>
     
     <summary type="html">
     
@@ -428,7 +454,7 @@
     <link href="http://xmwarrior.github.io/2019/02/25/title-mei-hua-ti-shi-kuang/"/>
     <id>http://xmwarrior.github.io/2019/02/25/title-mei-hua-ti-shi-kuang/</id>
     <published>2019-02-25T09:18:00.000Z</published>
-    <updated>2019-04-17T10:50:51.252Z</updated>
+    <updated>2019-04-17T13:21:37.809Z</updated>
     
     <summary type="html">
     
@@ -459,7 +485,7 @@
     <link href="http://xmwarrior.github.io/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/"/>
     <id>http://xmwarrior.github.io/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/</id>
     <published>2019-02-19T07:16:19.000Z</published>
-    <updated>2019-04-17T10:50:51.222Z</updated>
+    <updated>2019-04-17T13:21:37.808Z</updated>
     
     <summary type="html">
     
@@ -491,7 +517,7 @@
     <link href="http://xmwarrior.github.io/2019/02/01/input-range-zi-ding-yi/"/>
     <id>http://xmwarrior.github.io/2019/02/01/input-range-zi-ding-yi/</id>
     <published>2019-02-01T07:11:19.000Z</published>
-    <updated>2019-04-17T10:50:51.205Z</updated>
+    <updated>2019-04-17T13:21:37.807Z</updated>
     
     <summary type="html">
     
@@ -523,7 +549,7 @@
     <link href="http://xmwarrior.github.io/2019/02/01/canvas-zhuan-huan-svg-he-cheng-tu-pian/"/>
     <id>http://xmwarrior.github.io/2019/02/01/canvas-zhuan-huan-svg-he-cheng-tu-pian/</id>
     <published>2019-02-01T06:18:19.000Z</published>
-    <updated>2019-04-17T10:48:13.150Z</updated>
+    <updated>2019-04-17T13:21:37.805Z</updated>
     
     <summary type="html">
     
@@ -555,7 +581,7 @@
     <link href="http://xmwarrior.github.io/2018/12/05/qian-duan-shi-xian-lan-jia-zai/"/>
     <id>http://xmwarrior.github.io/2018/12/05/qian-duan-shi-xian-lan-jia-zai/</id>
     <published>2018-12-05T01:30:19.000Z</published>
-    <updated>2019-04-26T08:10:03.551Z</updated>
+    <updated>2019-04-27T15:02:28.926Z</updated>
     
     <summary type="html">
     
@@ -580,32 +606,6 @@
       <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
     
       <category term="bootstrap" scheme="http://xmwarrior.github.io/tags/bootstrap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js规范</title>
-    <link href="http://xmwarrior.github.io/2018/04/13/js-gui-fan/"/>
-    <id>http://xmwarrior.github.io/2018/04/13/js-gui-fan/</id>
-    <published>2018-04-13T01:55:19.000Z</published>
-    <updated>2019-04-16T03:06:25.125Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h2&gt;&lt;h4 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
     
   </entry>
   
