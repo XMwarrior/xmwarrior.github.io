@@ -5,9 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="vue组件传值, xmwarrior,xmsniper">
-    <meta name="description" content="1. props传递单个参数父组件&amp;lt;template&amp;gt;
+    <meta name="description" content="一、父子传值1. props传递单个参数父组件&amp;lt;template&amp;gt;
   &amp;lt;div class=&amp;quot;app-container&amp;quot;&amp;gt;
-    &amp;lt;Pagination :page=&amp;quot;currentPa">
+    &amp;lt;Pagination :page=&amp;quot;cur">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -407,14 +407,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        358
+                        718
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        4 分
                     </div>
                     
                 
@@ -430,7 +430,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-props传递单个参数"><a href="#1-props传递单个参数" class="headerlink" title="1. props传递单个参数"></a>1. props传递单个参数</h2><h3 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h3><pre><code>&lt;template&gt;
+                <h2 id="一、父子传值"><a href="#一、父子传值" class="headerlink" title="一、父子传值"></a>一、父子传值</h2><h3 id="1-props传递单个参数"><a href="#1-props传递单个参数" class="headerlink" title="1. props传递单个参数"></a>1. props传递单个参数</h3><h4 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h4><pre><code>&lt;template&gt;
   &lt;div class=&quot;app-container&quot;&gt;
     &lt;Pagination :page=&quot;currentPage&quot; @changePage=&quot;listenPageChange&quot;/&gt;
   &lt;/div&gt;
@@ -453,7 +453,7 @@ export default {
   }
 };
 &lt;/script&gt;
-</code></pre><h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><pre><code>&lt;template&gt;
+</code></pre><h4 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h4><pre><code>&lt;template&gt;
   &lt;el-pagination
     @size-change=&quot;handleSizeChange&quot;
     @current-change=&quot;handleCurrentChange&quot;
@@ -482,58 +482,136 @@ export default {
   }
 };
 &lt;/script&gt;
-</code></pre><h2 id="2-props传递多个参数"><a href="#2-props传递多个参数" class="headerlink" title="2. props传递多个参数"></a>2. props传递多个参数</h2><h3 id="父组件-1"><a href="#父组件-1" class="headerlink" title="父组件"></a>父组件</h3><pre><code>&lt;template&gt;
-  &lt;div class=&quot;app-container&quot;&gt;
-    &lt;Pagination :page=&quot;pageOptions&quot; @changePage=&quot;listenPageChange&quot;/&gt;
+</code></pre><h3 id="2-props传递对象"><a href="#2-props传递对象" class="headerlink" title="2. props传递对象"></a>2. props传递对象</h3><h4 id="父组件-1"><a href="#父组件-1" class="headerlink" title="父组件"></a>父组件</h4><pre><code>&lt;template&gt;
+  &lt;div class=&quot;p-5&quot;&gt;
+    &lt;Pagination :pageOption=&quot;pageOptions&quot; /&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
 import Pagination from &#39;./components/pagination&#39;;
+
 export default {
-  components:{
-    Pagination
-  },
-  methods:{
-    listenPageChange(data){
-      console.log(data);
-    }
-  },
-  data() {
+  data () {
     return {
       pageOptions:{
         page:1,
-        pgeSize:20
+        pageSize:10,
+        pageSizes:[10,20,30,40],
+        total:40
       }
     };
+  },
+  components: {
+    Pagination
+  }
+}
+
+&lt;/script&gt;
+</code></pre><h4 id="子组件-1"><a href="#子组件-1" class="headerlink" title="子组件"></a>子组件</h4><pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;el-pagination
+      @size-change=&quot;handleSizeChange&quot;
+      @current-change=&quot;handleCurrentChange&quot;
+      :current-page=&quot;propOptions.page&quot;
+      :page-sizes=&quot;propOptions.pageSizes&quot;
+      :page-size=&quot;propOptions.pageSize&quot;
+      layout=&quot;total, sizes, prev, pager, next, jumper&quot;
+      :total=&quot;propOptions.total&quot;
+    &gt;&lt;/el-pagination&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: [&quot;page-option&quot;],
+  data() {
+    return {
+        propOptions:this.pageOption
+    };
+  },
+  methods: {
+      handleSizeChange(val) {
+        this.propOptions.pageSize=val;
+      },
+      handleCurrentChange(val) {
+        this.propOptions.page=val;
+      }
   }
 };
 &lt;/script&gt;
-</code></pre><h3 id="子组件-1"><a href="#子组件-1" class="headerlink" title="子组件"></a>子组件</h3><pre><code>&lt;template&gt;
-  &lt;el-pagination
-    @size-change=&quot;handleSizeChange&quot;
-    @current-change=&quot;handleCurrentChange&quot;
-    :current-page=&quot;pageOptions.page&quot;
-    :page-sizes=&quot;[100, 200, 300, 400]&quot;
-    :page-size=&quot;pageOptions.pageSize&quot;
-    layout=&quot;total, sizes, prev, pager, next, jumper&quot;
-    :total=&quot;400&quot;
-  &gt;&lt;/el-pagination&gt;
+</code></pre><h2 id="二、兄弟组件传值"><a href="#二、兄弟组件传值" class="headerlink" title="二、兄弟组件传值"></a>二、兄弟组件传值</h2><h3 id="1-借助事件车"><a href="#1-借助事件车" class="headerlink" title="1. 借助事件车"></a>1. 借助事件车</h3><h4 id="自定义公用组件bus-js"><a href="#自定义公用组件bus-js" class="headerlink" title="自定义公用组件bus.js"></a>自定义公用组件bus.js</h4><p>自定义创建bus.js,兄弟组件共同引用此js，bus.js内容：</p>
+<pre><code>import Vue from &#39;vue&#39;;
+var VueEvent=new Vue();
+export default VueEvent;
+</code></pre><h4 id="兄弟组件a"><a href="#兄弟组件a" class="headerlink" title="兄弟组件a"></a>兄弟组件a</h4><pre><code>&lt;!-- pagination --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;el-pagination
+      @size-change=&quot;handleSizeChange&quot;
+      @current-change=&quot;handleCurrentChange&quot;
+      :current-page=&quot;propOptions.page&quot;
+      :page-sizes=&quot;propOptions.pageSizes&quot;
+      :page-size=&quot;propOptions.pageSize&quot;
+      layout=&quot;total, sizes, prev, pager, next, jumper&quot;
+      :total=&quot;propOptions.total&quot;
+    &gt;&lt;/el-pagination&gt;
+  &lt;/div&gt;
 &lt;/template&gt;
+
 &lt;script&gt;
+import Bus from &#39;./bus.js&#39;;
 export default {
-  props: [&#39;page-options&#39;],//注意：此处驼峰式写法转换为（短横线隔开式命名）
+  props: [&quot;page-option&quot;],
+  data() {
+    return {
+        propOptions:this.pageOption
+    };
+  },
   methods: {
-    handleSizeChange(val) {
-      this.pageOptions.pageSize = val;
-    },
-    handleCurrentChange(val) {
-      this.pageOptions.page = val;
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        Bus.$emit(&#39;pageChangeTo&#39;,val);
+      }
+  }
+};
+&lt;/script&gt;
+</code></pre><h4 id="兄弟组件b"><a href="#兄弟组件b" class="headerlink" title="兄弟组件b"></a>兄弟组件b</h4><pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;el-steps :active=&quot;pageOption.page&quot; align-center&gt;
+      &lt;el-step title=&quot;步骤1&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
+      &lt;el-step title=&quot;步骤2&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
+      &lt;el-step title=&quot;步骤3&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
+      &lt;el-step title=&quot;步骤4&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
+    &lt;/el-steps&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Bus from &quot;./bus.js&quot;;
+export default {
+  data() {
+    return {
+      pageOption: {
+        page: 1
+      }
+    };
+  },
+  mounted() {
+    this.listenPageChange();
+  },
+  methods: {
+    listenPageChange() {
+      Bus.$on(&quot;pageChangeTo&quot;, val =&gt; {
+        this.pageOption.page = val;
+      });
     }
   }
 };
 &lt;/script&gt;
-</code></pre><p>此处，应用场景为elementUI，子组件用的是elementUI的pagination组件。</p>
+</code></pre><p>此处，应用场景为elementUI，子组件用的是elementUI的pagination组件、step组件。</p>
 
             </div>
             <hr>
@@ -739,9 +817,9 @@ export default {
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1. props传递单个参数父组件&lt;template&gt;
+                    <div class="summary block-with-text">一、父子传值1. props传递单个参数父组件&lt;template&gt;
   &lt;div class=&quot;app-container&quot;&gt;
-    &lt;Pagination :page=&quot;currentPa</div>
+    &lt;Pagination :page=&quot;cur</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-27
@@ -967,7 +1045,7 @@ XMwarrior是纯手撸的</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13k</span>
+                <span class="white-color">13.4k</span>
             
 
             
