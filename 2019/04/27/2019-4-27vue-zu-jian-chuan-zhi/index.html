@@ -4,11 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="css变量, xmwarrior,xmsniper">
-    <meta name="description" content="CSS变量var()语法CSS中原生的变量定义语法是：--*，变量使用语法是：var(--*)，其中*表示我们的变量名称。下面是bootstrap使用的:root定义：
-:root {
-    --blue: #007bff;
-    --">
+    <meta name="keywords" content="vue组件传值, xmwarrior,xmsniper">
+    <meta name="description" content="一、父子传值1. props传递单个参数父组件&amp;lt;template&amp;gt;
+  &amp;lt;div class=&amp;quot;app-container&amp;quot;&amp;gt;
+    &amp;lt;Pagination :page=&amp;quot;cur">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>css变量 | XMwarrior</title>
+    <title>vue组件传值 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +259,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        css变量
+                        vue组件传值
                     </div>
                 </div>
             </div>
@@ -377,12 +376,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
-                            </a>
-                        
-                            <a href="/tags/css/" target="_blank">
-                                <span class="chip bg-color">css</span>
+                            <a href="/tags/vue/" target="_blank">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -393,8 +388,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/日志/" class="post-category" target="_blank">
+                                日志
                             </a>
                         
                     </div>
@@ -405,21 +400,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-13
+                    2019-04-27
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        244
+                        718
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        4 分
                     </div>
                     
                 
@@ -435,39 +430,188 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="CSS变量var-语法"><a href="#CSS变量var-语法" class="headerlink" title="CSS变量var()语法"></a><strong>CSS变量var()语法</strong></h4><p>CSS中原生的变量定义语法是：<code>--*</code>，<br>变量使用语法是：<code>var(--*)</code>，<br>其中*表示我们的变量名称。<br>下面是bootstrap使用的<code>:root</code>定义：</p>
-<pre><code>:root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --primary: #007bff;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #343a40;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;;
-    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,&quot;Liberation Mono&quot;,&quot;Courier New&quot;,monospace;
+                <h2 id="一、父子传值"><a href="#一、父子传值" class="headerlink" title="一、父子传值"></a>一、父子传值</h2><h3 id="1-props传递单个参数"><a href="#1-props传递单个参数" class="headerlink" title="1. props传递单个参数"></a>1. props传递单个参数</h3><h4 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h4><pre><code>&lt;template&gt;
+  &lt;div class=&quot;app-container&quot;&gt;
+    &lt;Pagination :page=&quot;currentPage&quot; @changePage=&quot;listenPageChange&quot;/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Pagination from &#39;./components/pagination&#39;;
+export default {
+  components:{
+    Pagination
+  },
+  methods:{
+    listenPageChange(data){
+      console.log(data);
+    }
+  },
+  data() {
+    return {
+      currentPage:1
+  }
+};
+&lt;/script&gt;
+</code></pre><h4 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h4><pre><code>&lt;template&gt;
+  &lt;el-pagination
+    @size-change=&quot;handleSizeChange&quot;
+    @current-change=&quot;handleCurrentChange&quot;
+    :current-page=&quot;currentPage&quot;
+    :page-sizes=&quot;[100, 200, 300, 400]&quot;
+    :page-size=&quot;100&quot;
+    layout=&quot;total, sizes, prev, pager, next, jumper&quot;
+    :total=&quot;400&quot;
+  &gt;&lt;/el-pagination&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  props: [&quot;currentPage&quot;],
+  methods: {
+    handleSizeChange(val) {
+      this.pageOption.pageSize = val;
+      this.listenOptionChange(this.pageOption);
+    },
+    handleCurrentChange(val) {
+      this.pageOption.page = val;
+      this.listenOptionChange(this.pageOption);
+    },
+    listenOptionChange(datas) {
+       this.$emit(&quot;changePage&quot;, datas);
+    }
+  }
+};
+&lt;/script&gt;
+</code></pre><h3 id="2-props传递对象"><a href="#2-props传递对象" class="headerlink" title="2. props传递对象"></a>2. props传递对象</h3><h4 id="父组件-1"><a href="#父组件-1" class="headerlink" title="父组件"></a>父组件</h4><pre><code>&lt;template&gt;
+  &lt;div class=&quot;p-5&quot;&gt;
+    &lt;Pagination :pageOption=&quot;pageOptions&quot; /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Pagination from &#39;./components/pagination&#39;;
+
+export default {
+  data () {
+    return {
+      pageOptions:{
+        page:1,
+        pageSize:10,
+        pageSizes:[10,20,30,40],
+        total:40
+      }
+    };
+  },
+  components: {
+    Pagination
+  }
 }
-</code></pre><p>相信用不了多久，你就可以不考虑此用法的兼容性。CSS中原生的变量的应用场景你可以自己探索，在我看来，此不失为一种定制一套皮肤风格的好办法。示例里顺便试了下document.scrollingElement,如有兴趣请自行F2查看。</p>
-<p>示例：<a href="/pages/css变量.html">请点这里</a></p>
+
+&lt;/script&gt;
+</code></pre><h4 id="子组件-1"><a href="#子组件-1" class="headerlink" title="子组件"></a>子组件</h4><pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;el-pagination
+      @size-change=&quot;handleSizeChange&quot;
+      @current-change=&quot;handleCurrentChange&quot;
+      :current-page=&quot;propOptions.page&quot;
+      :page-sizes=&quot;propOptions.pageSizes&quot;
+      :page-size=&quot;propOptions.pageSize&quot;
+      layout=&quot;total, sizes, prev, pager, next, jumper&quot;
+      :total=&quot;propOptions.total&quot;
+    &gt;&lt;/el-pagination&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: [&quot;page-option&quot;],
+  data() {
+    return {
+        propOptions:this.pageOption
+    };
+  },
+  methods: {
+      handleSizeChange(val) {
+        this.propOptions.pageSize=val;
+      },
+      handleCurrentChange(val) {
+        this.propOptions.page=val;
+      }
+  }
+};
+&lt;/script&gt;
+</code></pre><h2 id="二、兄弟组件传值"><a href="#二、兄弟组件传值" class="headerlink" title="二、兄弟组件传值"></a>二、兄弟组件传值</h2><h3 id="1-借助事件车"><a href="#1-借助事件车" class="headerlink" title="1. 借助事件车"></a>1. 借助事件车</h3><h4 id="自定义公用组件bus-js"><a href="#自定义公用组件bus-js" class="headerlink" title="自定义公用组件bus.js"></a>自定义公用组件bus.js</h4><p>自定义创建bus.js,兄弟组件共同引用此js，bus.js内容：</p>
+<pre><code>import Vue from &#39;vue&#39;;
+var VueEvent=new Vue();
+export default VueEvent;
+</code></pre><h4 id="兄弟组件a"><a href="#兄弟组件a" class="headerlink" title="兄弟组件a"></a>兄弟组件a</h4><pre><code>&lt;!-- pagination --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;el-pagination
+      @size-change=&quot;handleSizeChange&quot;
+      @current-change=&quot;handleCurrentChange&quot;
+      :current-page=&quot;propOptions.page&quot;
+      :page-sizes=&quot;propOptions.pageSizes&quot;
+      :page-size=&quot;propOptions.pageSize&quot;
+      layout=&quot;total, sizes, prev, pager, next, jumper&quot;
+      :total=&quot;propOptions.total&quot;
+    &gt;&lt;/el-pagination&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Bus from &#39;./bus.js&#39;;
+export default {
+  props: [&quot;page-option&quot;],
+  data() {
+    return {
+        propOptions:this.pageOption
+    };
+  },
+  methods: {
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        Bus.$emit(&#39;pageChangeTo&#39;,val);
+      }
+  }
+};
+&lt;/script&gt;
+</code></pre><h4 id="兄弟组件b"><a href="#兄弟组件b" class="headerlink" title="兄弟组件b"></a>兄弟组件b</h4><pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;el-steps :active=&quot;pageOption.page&quot; align-center&gt;
+      &lt;el-step title=&quot;步骤1&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
+      &lt;el-step title=&quot;步骤2&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
+      &lt;el-step title=&quot;步骤3&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
+      &lt;el-step title=&quot;步骤4&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
+    &lt;/el-steps&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Bus from &quot;./bus.js&quot;;
+export default {
+  data() {
+    return {
+      pageOption: {
+        page: 1
+      }
+    };
+  },
+  mounted() {
+    this.listenPageChange();
+  },
+  methods: {
+    listenPageChange() {
+      Bus.$on(&quot;pageChangeTo&quot;, val =&gt; {
+        this.pageOption.page = val;
+      });
+    }
+  }
+};
+&lt;/script&gt;
+</code></pre><p>此处，应用场景为elementUI，子组件用的是elementUI的pagination组件、step组件。</p>
 
             </div>
             <hr>
@@ -615,7 +759,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/13/css-bian-liang/" class="b-link-green">css变量</a>
+                    <a href="/2019/04/27/2019-4-27vue-zu-jian-chuan-zhi/" class="b-link-green">vue组件传值</a>
                 </p>
             </div>
         </div>
@@ -637,7 +781,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-03-13T15-58-00',
+        id: '2019-04-27T23-03-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -660,44 +804,44 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/03/14/position-sticky/">
+                <a href="/2019/04/27/2019-4-27vue-zu-jian-chuan-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="position-sticky">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="vue组件传值">
                         
-                        <span class="card-title">position-sticky</span>
+                        <span class="card-title">vue组件传值</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">position:sticky简介单词sticky的中文意思是“粘性的”，position:sticky表现也符合这个粘性的表现。基本上，可以看出是position:relative和position:fixed的结合体——当元素在屏幕内，</div>
+                    <div class="summary block-with-text">一、父子传值1. props传递单个参数父组件&lt;template&gt;
+  &lt;div class=&quot;app-container&quot;&gt;
+    &lt;Pagination :page=&quot;cur</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/日志/" class="post-category" target="_blank">
+                                    日志
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                    <a href="/tags/css3/" target="_blank">
-                        <span class="chip bg-color">css3</span>
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -711,29 +855,29 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/">
+                <a href="/2019/04/18/2019-4-17-da-jian-hexo-bo-ke-ti-hui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="基于CSS3 column多栏布局实现水平滑页翻页交互">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="搭建hexo博客体会">
                         
-                        <span class="card-title">基于CSS3 column多栏布局实现水平滑页翻页交互</span>
+                        <span class="card-title">搭建hexo博客体会</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">今天看大神张鑫旭的文章，有一篇  基于CSS3 column多栏布局实现水平滑页翻页交互，为熟悉column多栏布局写法，模仿 起点中文网 封装了个jquery拓展方法。如下：
-csshtml,body {
-    width: 100%;</div>
+                    <div class="summary block-with-text">发现问题虽然此前也搭建过博客，并且尝试写过markdown博客文章，但也没有深入了解过hexo博客的搭建。一切只能从一个合并博客内容的想法开始…因为本人日前做过两个博客，XMwarrior跟xmsniper。
+
+XMwarrior是纯手撸的</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/日志/" class="post-category" target="_blank">
+                                    日志
                                 </a>
                             
                             
@@ -743,16 +887,8 @@ csshtml,body {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
-                    </a>
-                    
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
-                    </a>
-                    
-                    <a href="/tags/css3/" target="_blank">
-                        <span class="chip bg-color">css3</span>
+                    <a href="/tags/观点与感想/" target="_blank">
+                        <span class="chip bg-color">观点与感想</span>
                     </a>
                     
                 </div>

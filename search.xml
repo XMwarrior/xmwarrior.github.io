@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>搭建hexo博客体会</title>
-      <link href="/2019/04/18/2019-4-17-da-jian-hexo-bo-ke-ti-hui/"/>
-      <url>/2019/04/18/2019-4-17-da-jian-hexo-bo-ke-ti-hui/</url>
+      <title>vue组件传值</title>
+      <link href="/2019/04/27/2019-4-27vue-zu-jian-chuan-zhi/"/>
+      <url>/2019/04/27/2019-4-27vue-zu-jian-chuan-zhi/</url>
       
-        <content type="html"><![CDATA[<h2 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h2><p>虽然此前也搭建过博客，并且尝试写过markdown博客文章，但也没有深入了解过hexo博客的搭建。一切只能从一个合并博客内容的想法开始…<br>因为本人日前做过两个博客，XMwarrior跟xmsniper。</p><ul><li>XMwarrior是纯手撸的博客，设计到呈现、布局到逻辑都是自己大体借鉴别的博客做出来的，哈哈，这也是术业不专攻造成的失败原因，自己看着都别扭。</li><li>XMsniper一开始采用了一个简单的hexo theme皮肤yilla。还是能满足程序员的审美的。</li></ul><p>本来两个项目，互不相干也就相安无事了，但不规范，不正规，老旧不更新的东西，总是免不了淘汰或升级的命运。<br>这不，导火索就是个人精力有限，两个博客我都不想放弃，但是同时维护两个博客除了浪费时间，自己的资源分散不集中外，实在是没啥好处。<br>但合并并不是如我预料的那般简单：</p><ol><li>基于github的开放式代码管理模式，让个人资料完全没有自己的隐私。</li><li>个人博客如果仅作自我娱乐，归纳总结的话。为何不直接用更简单的方式，如：segmentfault，博客园，CSDN，知乎等等。</li><li>每天读过，看过的优质文章找个什么地方分类，整理，收藏才好。</li><li>文章到底有没有人来看?别人看过后，是否有建议?</li><li>文章太长会使页面太长，进而引起阅读困难。</li><li>个人博客影响力毕竟太小，怎样才能扩大自己的分享圈。</li></ol><h2 id="挖掘根本需求"><a href="#挖掘根本需求" class="headerlink" title="挖掘根本需求"></a>挖掘根本需求</h2><ol><li>对于自己的文章源码markdown，个人的hexo皮肤配置，我并不想公开；生成的博客文章网站代码，可以公开。</li><li>其实我要的是在个人归纳总结的基础上，分享经验。归纳总结不仅在文字表达，而且需要带可运行实例。</li><li>我需要一个单独的博客区域存放优质文章。</li><li>我需要正常博客应该有的访问量、访问人数统计，也需要有文章评论系统。</li><li>我需要一个带有锚点目录，方便查看文章的功能。</li><li>我需要文章分享到各大平台网站的功能。</li></ol><h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><p>过程不是那么一番风顺，在尝试过同类的3个hexo theme皮肤，添加各个功能过程中，又出现了诸多问题：</p><ol start="7"><li>码云git管理嵌套github代码管理，造成git提交bug。</li><li>hexo clean 清理build文件夹，造成github的git记录被清空，静态资源文件被清除。</li><li>更新替换个人信息，修改皮肤样式，各种细节修改，带来一系列工作量。</li><li>依赖插件加载过慢造成页面加载过慢。</li><li>首屏加载速度缓慢，其他页面同样因为加载文件过多造成加载过慢。</li><li>gitalk经过theme主题作者的封装修改后，并未提供相关文档说明，导致评论模块报错。</li></ol><p>是不是突然感觉一个头两个大？本来一天就搞定的计划，直接呵呵了。断断续续搞定完这些问题，<br>已经是两天以后。好在探索解决问题的过程也充满了乐趣。磕磕绊绊的bug路，也让自己对博客搭建这个套路，理解个七七八八。</p><h2 id="成果-amp-经验"><a href="#成果-amp-经验" class="headerlink" title="成果&amp;经验"></a>成果&amp;经验</h2><ul><li>个人代码正式合二为一，码云管理所有博客代码，github管理展示代码。</li><li>博客最终采用matery主题。<ul><li>采用gitalk评论功能。</li><li>不蒜子网站统计。</li><li>hexo-wordcount文章字数统计、阅读时长、总字数统计。</li><li>分享等其他基本功能。</li><li>为优化首屏加载速度，放弃视频，音频功能。</li></ul></li></ul><p>个人博客平台终于搭建好了。心底着实松了一口气。（搞定最后一个问题时，真是又高兴又激动…O(∩_∩)O哈哈~）<br>哈哈，终于回归正轨，此处留此文章一篇，权作纪念！</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="一、父子传值"><a href="#一、父子传值" class="headerlink" title="一、父子传值"></a>一、父子传值</h2><h3 id="1-props传递单个参数"><a href="#1-props传递单个参数" class="headerlink" title="1. props传递单个参数"></a>1. props传递单个参数</h3><h4 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h4><pre><code>&lt;template&gt;  &lt;div class=&quot;app-container&quot;&gt;    &lt;Pagination :page=&quot;currentPage&quot; @changePage=&quot;listenPageChange&quot;/&gt;  &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import Pagination from &#39;./components/pagination&#39;;export default {  components:{    Pagination  },  methods:{    listenPageChange(data){      console.log(data);    }  },  data() {    return {      currentPage:1  }};&lt;/script&gt;</code></pre><h4 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h4><pre><code>&lt;template&gt;  &lt;el-pagination    @size-change=&quot;handleSizeChange&quot;    @current-change=&quot;handleCurrentChange&quot;    :current-page=&quot;currentPage&quot;    :page-sizes=&quot;[100, 200, 300, 400]&quot;    :page-size=&quot;100&quot;    layout=&quot;total, sizes, prev, pager, next, jumper&quot;    :total=&quot;400&quot;  &gt;&lt;/el-pagination&gt;&lt;/template&gt;&lt;script&gt;export default {  props: [&quot;currentPage&quot;],  methods: {    handleSizeChange(val) {      this.pageOption.pageSize = val;      this.listenOptionChange(this.pageOption);    },    handleCurrentChange(val) {      this.pageOption.page = val;      this.listenOptionChange(this.pageOption);    },    listenOptionChange(datas) {       this.$emit(&quot;changePage&quot;, datas);    }  }};&lt;/script&gt;</code></pre><h3 id="2-props传递对象"><a href="#2-props传递对象" class="headerlink" title="2. props传递对象"></a>2. props传递对象</h3><h4 id="父组件-1"><a href="#父组件-1" class="headerlink" title="父组件"></a>父组件</h4><pre><code>&lt;template&gt;  &lt;div class=&quot;p-5&quot;&gt;    &lt;Pagination :pageOption=&quot;pageOptions&quot; /&gt;  &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import Pagination from &#39;./components/pagination&#39;;export default {  data () {    return {      pageOptions:{        page:1,        pageSize:10,        pageSizes:[10,20,30,40],        total:40      }    };  },  components: {    Pagination  }}&lt;/script&gt;</code></pre><h4 id="子组件-1"><a href="#子组件-1" class="headerlink" title="子组件"></a>子组件</h4><pre><code>&lt;template&gt;  &lt;div&gt;    &lt;el-pagination      @size-change=&quot;handleSizeChange&quot;      @current-change=&quot;handleCurrentChange&quot;      :current-page=&quot;propOptions.page&quot;      :page-sizes=&quot;propOptions.pageSizes&quot;      :page-size=&quot;propOptions.pageSize&quot;      layout=&quot;total, sizes, prev, pager, next, jumper&quot;      :total=&quot;propOptions.total&quot;    &gt;&lt;/el-pagination&gt;  &lt;/div&gt;&lt;/template&gt;&lt;script&gt;export default {  props: [&quot;page-option&quot;],  data() {    return {        propOptions:this.pageOption    };  },  methods: {      handleSizeChange(val) {        this.propOptions.pageSize=val;      },      handleCurrentChange(val) {        this.propOptions.page=val;      }  }};&lt;/script&gt;</code></pre><h2 id="二、兄弟组件传值"><a href="#二、兄弟组件传值" class="headerlink" title="二、兄弟组件传值"></a>二、兄弟组件传值</h2><h3 id="1-借助事件车"><a href="#1-借助事件车" class="headerlink" title="1. 借助事件车"></a>1. 借助事件车</h3><h4 id="自定义公用组件bus-js"><a href="#自定义公用组件bus-js" class="headerlink" title="自定义公用组件bus.js"></a>自定义公用组件bus.js</h4><p>自定义创建bus.js,兄弟组件共同引用此js，bus.js内容：</p><pre><code>import Vue from &#39;vue&#39;;var VueEvent=new Vue();export default VueEvent;</code></pre><h4 id="兄弟组件a"><a href="#兄弟组件a" class="headerlink" title="兄弟组件a"></a>兄弟组件a</h4><pre><code>&lt;!-- pagination --&gt;&lt;template&gt;  &lt;div&gt;    &lt;el-pagination      @size-change=&quot;handleSizeChange&quot;      @current-change=&quot;handleCurrentChange&quot;      :current-page=&quot;propOptions.page&quot;      :page-sizes=&quot;propOptions.pageSizes&quot;      :page-size=&quot;propOptions.pageSize&quot;      layout=&quot;total, sizes, prev, pager, next, jumper&quot;      :total=&quot;propOptions.total&quot;    &gt;&lt;/el-pagination&gt;  &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import Bus from &#39;./bus.js&#39;;export default {  props: [&quot;page-option&quot;],  data() {    return {        propOptions:this.pageOption    };  },  methods: {      handleSizeChange(val) {        console.log(`每页 ${val} 条`);      },      handleCurrentChange(val) {        Bus.$emit(&#39;pageChangeTo&#39;,val);      }  }};&lt;/script&gt;</code></pre><h4 id="兄弟组件b"><a href="#兄弟组件b" class="headerlink" title="兄弟组件b"></a>兄弟组件b</h4><pre><code>&lt;template&gt;  &lt;div&gt;    &lt;el-steps :active=&quot;pageOption.page&quot; align-center&gt;      &lt;el-step title=&quot;步骤1&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;      &lt;el-step title=&quot;步骤2&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;      &lt;el-step title=&quot;步骤3&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;      &lt;el-step title=&quot;步骤4&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;    &lt;/el-steps&gt;  &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import Bus from &quot;./bus.js&quot;;export default {  data() {    return {      pageOption: {        page: 1      }    };  },  mounted() {    this.listenPageChange();  },  methods: {    listenPageChange() {      Bus.$on(&quot;pageChangeTo&quot;, val =&gt; {        this.pageOption.page = val;      });    }  }};&lt;/script&gt;</code></pre><p>此处，应用场景为elementUI，子组件用的是elementUI的pagination组件、step组件。</p>]]></content>
       
       
       <categories>
@@ -20,7 +20,7 @@
       
         <tags>
             
-            <tag> 观点与感想 </tag>
+            <tag> vue </tag>
             
         </tags>
       
@@ -29,16 +29,16 @@
     
     
     <entry>
-      <title>观点与感想</title>
-      <link href="/2019/04/17/guan-dian-yu-gan-xiang/"/>
-      <url>/2019/04/17/guan-dian-yu-gan-xiang/</url>
+      <title>搭建hexo博客体会</title>
+      <link href="/2019/04/18/2019-4-17-da-jian-hexo-bo-ke-ti-hui/"/>
+      <url>/2019/04/18/2019-4-17-da-jian-hexo-bo-ke-ti-hui/</url>
       
-        <content type="html"><![CDATA[<ul><li><a href="https://segmentfault.com/a/1190000018868172" target="_blank" rel="noopener">必须知道的程序员思维</a> -2019年04月15日</li><li><a href="https://blog.fundebug.com/2018/09/13/10-principle-for-programer/" target="_blank" rel="noopener">写给工程师的十条精进原则</a> -2018年09月13日</li><li><a href="http://www.ruanyifeng.com/survivor/" target="_blank" rel="noopener">《未来世界的幸存者》</a> -2018年07月09日</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h2><p>虽然此前也搭建过博客，并且尝试写过markdown博客文章，但也没有深入了解过hexo博客的搭建。一切只能从一个合并博客内容的想法开始…<br>因为本人日前做过两个博客，XMwarrior跟xmsniper。</p><ul><li>XMwarrior是纯手撸的博客，设计到呈现、布局到逻辑都是自己大体借鉴别的博客做出来的，哈哈，这也是术业不专攻造成的失败原因，自己看着都别扭。</li><li>XMsniper一开始采用了一个简单的hexo theme皮肤yilla。还是能满足程序员的审美的。</li></ul><p>本来两个项目，互不相干也就相安无事了，但不规范，不正规，老旧不更新的东西，总是免不了淘汰或升级的命运。<br>这不，导火索就是个人精力有限，两个博客我都不想放弃，但是同时维护两个博客除了浪费时间，自己的资源分散不集中外，实在是没啥好处。<br>但合并并不是如我预料的那般简单：</p><ol><li>基于github的开放式代码管理模式，让个人资料完全没有自己的隐私。</li><li>个人博客如果仅作自我娱乐，归纳总结的话。为何不直接用更简单的方式，如：segmentfault，博客园，CSDN，知乎等等。</li><li>每天读过，看过的优质文章找个什么地方分类，整理，收藏才好。</li><li>文章到底有没有人来看?别人看过后，是否有建议?</li><li>文章太长会使页面太长，进而引起阅读困难。</li><li>个人博客影响力毕竟太小，怎样才能扩大自己的分享圈。</li></ol><h2 id="挖掘根本需求"><a href="#挖掘根本需求" class="headerlink" title="挖掘根本需求"></a>挖掘根本需求</h2><ol><li>对于自己的文章源码markdown，个人的hexo皮肤配置，我并不想公开；生成的博客文章网站代码，可以公开。</li><li>其实我要的是在个人归纳总结的基础上，分享经验。归纳总结不仅在文字表达，而且需要带可运行实例。</li><li>我需要一个单独的博客区域存放优质文章。</li><li>我需要正常博客应该有的访问量、访问人数统计，也需要有文章评论系统。</li><li>我需要一个带有锚点目录，方便查看文章的功能。</li><li>我需要文章分享到各大平台网站的功能。</li></ol><h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><p>过程不是那么一番风顺，在尝试过同类的3个hexo theme皮肤，添加各个功能过程中，又出现了诸多问题：</p><ol start="7"><li>码云git管理嵌套github代码管理，造成git提交bug。</li><li>hexo clean 清理build文件夹，造成github的git记录被清空，静态资源文件被清除。</li><li>更新替换个人信息，修改皮肤样式，各种细节修改，带来一系列工作量。</li><li>依赖插件加载过慢造成页面加载过慢。</li><li>首屏加载速度缓慢，其他页面同样因为加载文件过多造成加载过慢。</li><li>gitalk经过theme主题作者的封装修改后，并未提供相关文档说明，导致评论模块报错。</li></ol><p>是不是突然感觉一个头两个大？本来一天就搞定的计划，直接呵呵了。断断续续搞定完这些问题，<br>已经是两天以后。好在探索解决问题的过程也充满了乐趣。磕磕绊绊的bug路，也让自己对博客搭建这个套路，理解个七七八八。</p><h2 id="成果-amp-经验"><a href="#成果-amp-经验" class="headerlink" title="成果&amp;经验"></a>成果&amp;经验</h2><ul><li>个人代码正式合二为一，码云管理所有博客代码，github管理展示代码。</li><li>博客最终采用matery主题。<ul><li>采用gitalk评论功能。</li><li>不蒜子网站统计。</li><li>hexo-wordcount文章字数统计、阅读时长、总字数统计。</li><li>分享等其他基本功能。</li><li>为优化首屏加载速度，放弃视频，音频功能。</li></ul></li></ul><p>个人博客平台终于搭建好了。心底着实松了一口气。（搞定最后一个问题时，真是又高兴又激动…O(∩_∩)O哈哈~）<br>哈哈，终于回归正轨，此处留此文章一篇，权作纪念！</p>]]></content>
       
       
       <categories>
           
-          <category> 日常优质文章收录 </category>
+          <category> 日志 </category>
           
       </categories>
       
@@ -77,6 +77,31 @@
             <tag> html </tag>
             
             <tag> 扎实基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>观点与感想</title>
+      <link href="/2019/04/17/guan-dian-yu-gan-xiang/"/>
+      <url>/2019/04/17/guan-dian-yu-gan-xiang/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="https://segmentfault.com/a/1190000018868172" target="_blank" rel="noopener">必须知道的程序员思维</a> -2019年04月15日</li><li><a href="https://blog.fundebug.com/2018/09/13/10-principle-for-programer/" target="_blank" rel="noopener">写给工程师的十条精进原则</a> -2018年09月13日</li><li><a href="http://www.ruanyifeng.com/survivor/" target="_blank" rel="noopener">《未来世界的幸存者》</a> -2018年07月09日</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常优质文章收录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 观点与感想 </tag>
             
         </tags>
       
