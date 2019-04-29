@@ -5,9 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="vue组件传值, xmwarrior,xmsniper">
-    <meta name="description" content="一、父子传值1. props传递单个参数父组件&amp;lt;template&amp;gt;
+    <meta name="description" content="一、父子传值1. props传递单个参数· 父组件&amp;lt;template&amp;gt;
   &amp;lt;div class=&amp;quot;app-container&amp;quot;&amp;gt;
-    &amp;lt;Pagination :page=&amp;quot;cur">
+    &amp;lt;Pagination :page=&amp;quot;c">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -400,21 +400,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-27
+                    2019-04-29
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        718
+                        1.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        9 分
                     </div>
                     
                 
@@ -430,7 +430,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、父子传值"><a href="#一、父子传值" class="headerlink" title="一、父子传值"></a>一、父子传值</h2><h3 id="1-props传递单个参数"><a href="#1-props传递单个参数" class="headerlink" title="1. props传递单个参数"></a>1. props传递单个参数</h3><h4 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h4><pre><code>&lt;template&gt;
+                <h2 id="一、父子传值"><a href="#一、父子传值" class="headerlink" title="一、父子传值"></a>一、父子传值</h2><h3 id="1-props传递单个参数"><a href="#1-props传递单个参数" class="headerlink" title="1. props传递单个参数"></a>1. props传递单个参数</h3><h4 id="·-父组件"><a href="#·-父组件" class="headerlink" title="· 父组件"></a>· 父组件</h4><pre><code>&lt;template&gt;
   &lt;div class=&quot;app-container&quot;&gt;
     &lt;Pagination :page=&quot;currentPage&quot; @changePage=&quot;listenPageChange&quot;/&gt;
   &lt;/div&gt;
@@ -453,7 +453,7 @@ export default {
   }
 };
 &lt;/script&gt;
-</code></pre><h4 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h4><pre><code>&lt;template&gt;
+</code></pre><h4 id="·-子组件"><a href="#·-子组件" class="headerlink" title="· 子组件"></a>· 子组件</h4><pre><code>&lt;template&gt;
   &lt;el-pagination
     @size-change=&quot;handleSizeChange&quot;
     @current-change=&quot;handleCurrentChange&quot;
@@ -482,7 +482,7 @@ export default {
   }
 };
 &lt;/script&gt;
-</code></pre><h3 id="2-props传递对象"><a href="#2-props传递对象" class="headerlink" title="2. props传递对象"></a>2. props传递对象</h3><h4 id="父组件-1"><a href="#父组件-1" class="headerlink" title="父组件"></a>父组件</h4><pre><code>&lt;template&gt;
+</code></pre><h3 id="2-props传递对象"><a href="#2-props传递对象" class="headerlink" title="2. props传递对象"></a>2. props传递对象</h3><h4 id="·-父组件-1"><a href="#·-父组件-1" class="headerlink" title="· 父组件"></a>· 父组件</h4><pre><code>&lt;template&gt;
   &lt;div class=&quot;p-5&quot;&gt;
     &lt;Pagination :pageOption=&quot;pageOptions&quot; /&gt;
   &lt;/div&gt;
@@ -508,7 +508,7 @@ export default {
 }
 
 &lt;/script&gt;
-</code></pre><h4 id="子组件-1"><a href="#子组件-1" class="headerlink" title="子组件"></a>子组件</h4><pre><code>&lt;template&gt;
+</code></pre><h4 id="·-子组件-1"><a href="#·-子组件-1" class="headerlink" title="· 子组件"></a>· 子组件</h4><pre><code>&lt;template&gt;
   &lt;div&gt;
     &lt;el-pagination
       @size-change=&quot;handleSizeChange&quot;
@@ -540,12 +540,11 @@ export default {
   }
 };
 &lt;/script&gt;
-</code></pre><h2 id="二、兄弟组件传值"><a href="#二、兄弟组件传值" class="headerlink" title="二、兄弟组件传值"></a>二、兄弟组件传值</h2><h3 id="1-借助事件车"><a href="#1-借助事件车" class="headerlink" title="1. 借助事件车"></a>1. 借助事件车</h3><h4 id="自定义公用组件bus-js"><a href="#自定义公用组件bus-js" class="headerlink" title="自定义公用组件bus.js"></a>自定义公用组件bus.js</h4><p>自定义创建bus.js,兄弟组件共同引用此js，bus.js内容：</p>
+</code></pre><h2 id="二、兄弟组件传值"><a href="#二、兄弟组件传值" class="headerlink" title="二、兄弟组件传值"></a>二、兄弟组件传值</h2><h3 id="1-借助事件车"><a href="#1-借助事件车" class="headerlink" title="1. 借助事件车"></a>1. 借助事件车</h3><h4 id="·-自定义公用组件bus-js"><a href="#·-自定义公用组件bus-js" class="headerlink" title="· 自定义公用组件bus.js"></a>· 自定义公用组件bus.js</h4><p>自定义创建bus.js,兄弟组件共同引用此js，bus.js内容：</p>
 <pre><code>import Vue from &#39;vue&#39;;
 var VueEvent=new Vue();
 export default VueEvent;
-</code></pre><h4 id="兄弟组件a"><a href="#兄弟组件a" class="headerlink" title="兄弟组件a"></a>兄弟组件a</h4><pre><code>&lt;!-- pagination --&gt;
-&lt;template&gt;
+</code></pre><h4 id="·-兄弟组件a"><a href="#·-兄弟组件a" class="headerlink" title="· 兄弟组件a"></a>· 兄弟组件a</h4><pre><code>&lt;template&gt;
   &lt;div&gt;
     &lt;el-pagination
       @size-change=&quot;handleSizeChange&quot;
@@ -578,7 +577,7 @@ export default {
   }
 };
 &lt;/script&gt;
-</code></pre><h4 id="兄弟组件b"><a href="#兄弟组件b" class="headerlink" title="兄弟组件b"></a>兄弟组件b</h4><pre><code>&lt;template&gt;
+</code></pre><h4 id="·-兄弟组件b"><a href="#·-兄弟组件b" class="headerlink" title="· 兄弟组件b"></a>· 兄弟组件b</h4><pre><code>&lt;template&gt;
   &lt;div&gt;
     &lt;el-steps :active=&quot;pageOption.page&quot; align-center&gt;
       &lt;el-step title=&quot;步骤1&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
@@ -611,7 +610,183 @@ export default {
   }
 };
 &lt;/script&gt;
-</code></pre><p>此处，应用场景为elementUI，子组件用的是elementUI的pagination组件、step组件。</p>
+</code></pre><h2 id="三、Vuex传值"><a href="#三、Vuex传值" class="headerlink" title="三、Vuex传值"></a>三、Vuex传值</h2><h3 id="1-开始使用vuex，新建一个-sotre文件夹，分开维护-actions-mutations-getters"><a href="#1-开始使用vuex，新建一个-sotre文件夹，分开维护-actions-mutations-getters" class="headerlink" title="1. 开始使用vuex，新建一个 sotre文件夹，分开维护 actions mutations getters"></a>1. 开始使用vuex，新建一个 sotre文件夹，分开维护 actions mutations getters</h3><p><img src="https://img-blog.csdn.net/20180208174810357" alt="网络不好"></p>
+<h3 id="2-在store-index-js文件中新建vuex-的store实例"><a href="#2-在store-index-js文件中新建vuex-的store实例" class="headerlink" title="2. 在store/index.js文件中新建vuex 的store实例"></a>2. 在store/index.js文件中新建vuex 的store实例</h3><pre><code>import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+import * as getters from &#39;./getters&#39; // 导入响应的模块，*相当于引入了这个组件下所有导出的事例
+import * as actions from &#39;./actions&#39;
+import * as mutations from &#39;./mutations&#39;
+
+Vue.use(Vuex)
+// 首先声明一个需要全局维护的状态 state,比如 我这里举例的resturantName
+const state = {
+    resturantName: &#39;飞歌餐馆&#39; // 默认值
+    // id: xxx  如果还有全局状态也可以在这里添加
+    // name:xxx
+}
+
+// 注册上面引入的各大模块
+const store = new Vuex.Store({
+    state,    // 共同维护的一个状态，state里面可以是很多个全局状态
+    getters,  // 获取数据并渲染
+    actions,  // 数据的异步操作
+    mutations  // 处理数据的唯一途径，state的改变或赋值只能在这里
+})
+
+export default store  // 导出store并在 main.js中引用注册。
+</code></pre><h3 id="3-actions"><a href="#3-actions" class="headerlink" title="3.actions"></a>3.actions</h3><pre><code>// 给action注册事件处理函数。当这个函数被触发时候，将状态提交到mutations中处理
+export function modifyAName({commit}, name) { // commit 提交；name即为点击后传递过来的参数，此时是 &#39;A餐馆&#39;
+    return commit (&#39;modifyAName&#39;, name)
+}
+export function modifyBName({commit}, name) {
+    return commit (&#39;modifyBName&#39;, name)
+}
+
+// ES6精简写法
+// export const modifyAName = ({commit},name) =&gt; commit(&#39;modifyAName&#39;, name)
+</code></pre><h3 id="4-mutations"><a href="#4-mutations" class="headerlink" title="4.mutations"></a>4.mutations</h3><pre><code>
+// 提交 mutations是更改Vuex状态的唯一合法方法
+export const modifyAName = (state, name) =&gt; { // A组件点击更改餐馆名称为 A餐馆
+    state.resturantName = name // 把方法传递过来的参数，赋值给state中的resturantName
+}
+export const modifyBName = (state, name) =&gt; { // B组件点击更改餐馆名称为 B餐馆
+    state.resturantName = name
+}
+</code></pre><h3 id="5-getters"><a href="#5-getters" class="headerlink" title="5.getters"></a>5.getters</h3><pre><code>// 获取最终的状态信息
+export const resturantName = state =&gt; state.resturantName
+</code></pre><h3 id="6-在main-js中导入-store实例"><a href="#6-在main-js中导入-store实例" class="headerlink" title="6.在main.js中导入 store实例"></a>6.在main.js中导入 store实例</h3><pre><code>// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from &#39;vue&#39;
+import App from &#39;./App&#39;
+import router from &#39;./router&#39;
+import store from &#39;./store&#39;
+
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+new Vue({
+  el: &#39;#app&#39;,
+  router,
+  store,  // 这样就能全局使用vuex了
+  components: { App },
+  template: &#39;&lt;App/&gt;&#39;
+})
+</code></pre><h3 id="7-在组件A中，定义点击事件，点击-修改-餐馆的名称，并把餐馆的名称在事件中用参数进行传递。"><a href="#7-在组件A中，定义点击事件，点击-修改-餐馆的名称，并把餐馆的名称在事件中用参数进行传递。" class="headerlink" title="7.在组件A中，定义点击事件，点击 修改 餐馆的名称，并把餐馆的名称在事件中用参数进行传递。"></a>7.在组件A中，定义点击事件，点击 修改 餐馆的名称，并把餐馆的名称在事件中用参数进行传递。</h3><p>…mapactions 和 …mapgetters都是vuex提供的语法糖，在底层已经封装好了，拿来就能用，简化了很多操作。</p>
+<p>其中…mapActions([‘clickAFn’]) 相当于this.$store.dispatch(‘clickAFn’，{参数})，mapActions中只需要指定方法名即可，参数省略。</p>
+<p>…mapGetters([‘resturantName’])相当于this.$store.getters.resturantName</p>
+<pre><code>&lt;template&gt;
+  &lt;div class=&quot;componentsA&quot;&gt;
+      &lt;P class=&quot;title&quot;&gt;组件A&lt;/P&gt;
+      &lt;P class=&quot;titleName&quot;&gt;餐馆名称：{{resturantName}}&lt;/P&gt;
+      &lt;div&gt;
+            &lt;!-- 点击修改 为 A 餐馆 --&gt;
+          &lt;button class=&quot;btn&quot; @click=&quot;modifyAName(&#39;A餐馆&#39;)&quot;&gt;修改为A餐馆&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;marTop&quot;&gt;
+          &lt;button class=&quot;btn&quot; @click=&quot;trunToB&quot;&gt;跳转到B页面&lt;/button&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import {mapActions, mapGetters} from &#39;vuex&#39;
+export default {
+  name: &#39;A&#39;,
+  data () {
+    return {
+    }
+  },
+  methods:{
+      ...mapActions( // 语法糖
+          [&#39;modifyAName&#39;] // 相当于this.$store.dispatch(&#39;modifyName&#39;),提交这个方法
+      ),
+      trunToB () {
+          this.$router.push({path: &#39;/componentsB&#39;}) // 路由跳转到B
+      }
+  },
+  computed: {
+      ...mapGetters([&#39;resturantName&#39;]) // 动态计算属性，相当于this.$store.getters.resturantName
+  }
+}
+&lt;/script&gt;
+
+&lt;!-- Add &quot;scoped&quot; attribute to limit CSS to this component only --&gt;
+&lt;style scoped&gt;
+    .title,.titleName{
+        color: blue;
+        font-size: 20px;
+    }
+    .btn{
+        width: 160px;
+        height: 40px;
+        background-color: blue;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        border-radius: 4px;
+    }
+    .marTop{
+        margin-top: 20px;
+    }
+&lt;/style&gt;
+</code></pre><p>B组件同理</p>
+<pre><code>
+&lt;template&gt;
+  &lt;div class=&quot;componentsB&quot;&gt;
+      &lt;P class=&quot;title&quot;&gt;组件B&lt;/P&gt;
+      &lt;P class=&quot;titleName&quot;&gt;餐馆名称：{{resturantName}}&lt;/P&gt;
+      &lt;div&gt;
+          &lt;!-- 点击修改 为 B 餐馆 --&gt;
+          &lt;button class=&quot;btn&quot; @click=&quot;modifyBName(&#39;B餐馆&#39;)&quot;&gt;修改为B餐馆&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;marTop&quot;&gt;
+          &lt;button class=&quot;btn&quot; @click=&quot;trunToA&quot;&gt;跳转到A页面&lt;/button&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import {mapActions, mapGetters} from &#39;vuex&#39;
+export default {
+  name: &#39;B&#39;,
+  data () {
+    return {
+    }
+  },
+  methods:{
+      ...mapActions( // 语法糖
+          [&#39;modifyBName&#39;] // 相当于this.$store.dispatch(&#39;modifyName&#39;),提交这个方法
+      ),
+      trunToA () {
+          this.$router.push({path: &#39;/componentsA&#39;}) // 路由跳转到A
+      }
+  },
+  computed: {
+      ...mapGetters([&#39;resturantName&#39;]) // 动态计算属性，相当于this.$store.getters.resturantName
+  }
+}
+&lt;/script&gt;
+
+&lt;!-- Add &quot;scoped&quot; attribute to limit CSS to this component only --&gt;
+&lt;style scoped&gt;
+    .title,.titleName{
+        color: red;
+        font-size: 20px;
+    }
+    .btn{
+        width: 160px;
+        height: 40px;
+        background-color: red;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        border-radius: 4px;
+    }
+    .marTop{
+        margin-top: 20px;
+    }
+&lt;/style&gt;
+</code></pre><p>参考文章：<a href="https://blog.csdn.net/qq_35430000/article/details/79291287" target="_blank" rel="noopener">Vue通信、传值的多种方式，详解（都是干货）</a></p>
 
             </div>
             <hr>
@@ -759,7 +934,7 @@ export default {
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/27/2019-4-27vue-zu-jian-chuan-zhi/" class="b-link-green">vue组件传值</a>
+                    <a href="/2019/04/29/2019-4-27vue-zu-jian-chuan-zhi/" class="b-link-green">vue组件传值</a>
                 </p>
             </div>
         </div>
@@ -781,7 +956,7 @@ export default {
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-04-27T23-03-55',
+        id: '2019-04-29T23-03-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -807,7 +982,7 @@ export default {
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/04/27/2019-4-27vue-zu-jian-chuan-zhi/">
+                <a href="/2019/04/29/2019-4-27vue-zu-jian-chuan-zhi/">
                     <div class="card-image">
                         
                         
@@ -817,12 +992,12 @@ export default {
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一、父子传值1. props传递单个参数父组件&lt;template&gt;
+                    <div class="summary block-with-text">一、父子传值1. props传递单个参数· 父组件&lt;template&gt;
   &lt;div class=&quot;app-container&quot;&gt;
-    &lt;Pagination :page=&quot;cur</div>
+    &lt;Pagination :page=&quot;c</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-29
                             </span>
                         <span class="publish-author">
                             
@@ -1045,7 +1220,7 @@ XMwarrior是纯手撸的</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13.4k</span>
+                <span class="white-color">14.5k</span>
             
 
             
