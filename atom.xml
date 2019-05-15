@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2019-04-29T15:48:55.821Z</updated>
+  <updated>2019-05-15T15:07:35.722Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>优秀文章收录</title>
+    <link href="http://xmwarrior.github.io/2019/05/15/you-xiu-wen-zhang-shou-lu/"/>
+    <id>http://xmwarrior.github.io/2019/05/15/you-xiu-wen-zhang-shou-lu/</id>
+    <published>2019-05-15T13:35:00.000Z</published>
+    <updated>2019-05-15T15:07:35.722Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;安全&quot;&gt;&lt;a href=&quot;#安全&quot; class=&quot;headerlink&quot; title=&quot;安全&quot;&gt;&lt;/a&gt;安全&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000019176325&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="日常优质文章收录" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%B8%B8%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
+    
+    
+      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+      <category term="html" scheme="http://xmwarrior.github.io/tags/html/"/>
+    
+      <category term="优秀文章收录" scheme="http://xmwarrior.github.io/tags/%E4%BC%98%E7%A7%80%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>vue组件传值</title>
@@ -47,7 +80,7 @@
     <link href="http://xmwarrior.github.io/2019/04/18/2019-4-17-da-jian-hexo-bo-ke-ti-hui/"/>
     <id>http://xmwarrior.github.io/2019/04/18/2019-4-17-da-jian-hexo-bo-ke-ti-hui/</id>
     <published>2019-04-17T16:29:55.000Z</published>
-    <updated>2019-04-18T03:07:13.943Z</updated>
+    <updated>2019-04-25T12:20:25.338Z</updated>
     
     <summary type="html">
     
@@ -65,40 +98,6 @@
     
     
       <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>扎实基础</title>
-    <link href="http://xmwarrior.github.io/2019/04/17/zha-shi-ji-chu/"/>
-    <id>http://xmwarrior.github.io/2019/04/17/zha-shi-ji-chu/</id>
-    <published>2019-04-17T09:54:55.000Z</published>
-    <updated>2019-04-17T13:21:37.810Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000013331105&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;长期收集整理资源&lt;/a&gt; -2018年02月23日&lt;/li&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="日常优质文章收录" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%B8%B8%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
-    
-      <category term="html" scheme="http://xmwarrior.github.io/tags/html/"/>
-    
-      <category term="扎实基础" scheme="http://xmwarrior.github.io/tags/%E6%89%8E%E5%AE%9E%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -323,9 +322,9 @@
       <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
       <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
     
   </entry>
   
@@ -538,9 +537,9 @@
       <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
-    
       <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
     
   </entry>
   
