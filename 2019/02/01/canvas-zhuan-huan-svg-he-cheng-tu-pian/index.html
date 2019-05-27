@@ -413,14 +413,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        529
+                        443
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        2 分
                     </div>
                     
                 
@@ -437,68 +437,69 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>此函数应用场景为：百度地图生成自定义标志</p>
-<pre><code>(function ($, document) {
-    $.extend({
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>function <span class="token punctuation">(</span>$, document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $.extend<span class="token punctuation">(</span><span class="token punctuation">{</span>
         //16进制颜色转换为rgba颜色
-        colorRgb: function (str, opacity) {
-            var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-            var sColor = str.toLowerCase();
-            if (sColor &amp;&amp; reg.test(sColor)) {
-                if (sColor.length === 4) {
-                    var sColorNew = &quot;#&quot;;
-                    for (var i = 1; i &lt; 4; i++) {
-                        sColorNew += sColor.slice(i, i + 1).concat(sColor.slice(i, i + 1));
-                    }
-                    sColor = sColorNew;
-                }
+        colorRgb: <span class="token keyword">function</span> <span class="token punctuation">(</span>str, opacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var reg <span class="token operator">=</span> /^<span class="token comment" spellcheck="true">#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;</span>
+            var sColor <span class="token operator">=</span> str.toLowerCase<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>sColor <span class="token operator">&amp;&amp;</span> reg.test<span class="token punctuation">(</span>sColor<span class="token punctuation">))</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>sColor.length <span class="token operator">==</span><span class="token operator">=</span> 4<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    var sColorNew <span class="token operator">=</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 1<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 4<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        sColorNew +<span class="token operator">=</span> sColor.slice<span class="token punctuation">(</span>i, i + 1<span class="token punctuation">)</span>.concat<span class="token punctuation">(</span>sColor.slice<span class="token punctuation">(</span>i, i + 1<span class="token punctuation">))</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    sColor <span class="token operator">=</span> sColorNew<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
                 //处理六位的颜色值  
-                var sColorChange = [];
-                for (var i = 1; i &lt; 7; i += 2) {
-                    sColorChange.push(parseInt(&quot;0x&quot; + sColor.slice(i, i + 2)));
-                }
-                return &quot;rgba(&quot; + sColorChange.join(&quot;,&quot;) + &quot;,&quot; + opacity; //透明度
-            } else {
-                return sColor;
-            }
-        },
-        svgToPng: function (opts) {
-            var options = {
-                color: opts.color || &#39;#ff0000&#39;,
-                opacity: opts.opacity || 0.3,
-                txt: opts.txt || &#39;生&#39;,
-                width: opts.width || 30,
-                height: opts.height || 30,
-                fn: opts.fn || function (res) {
-                    console.log(res);
-                }
-            };
-            var svgArr = [];
-            svgArr.push(&#39;&lt;svg version=&quot;1.1&quot; id=&quot;图层_1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot; width=&quot;&#39; + options.width + &#39;&quot; height=&quot;&#39; + options.height + &#39;&quot; viewBox=&quot;0 0 48 48&quot; enable-background=&quot;new 0 0 48 48&quot; xml:space=&quot;preserve&quot;&gt;&#39;);
-            svgArr.push(&#39;    &lt;path fill=&quot;&#39; + $.colorRgb(options.color, options.opacity) + &#39;&quot; d=&quot;M45.301,24.094c0,11.741-9.519,21.26-21.26,21.26c-11.741,0-21.26-9.519-21.26-21.26 c0-11.741,9.519-21.259,21.26-21.259C35.782,2.834,45.301,12.353,45.301,24.094z&quot; /&gt;&#39;);
-            svgArr.push(&#39;    &lt;path fill=&quot;&#39; + options.color + &#39;&quot; d=&quot;M8.45,24.096c0,8.608,6.98,15.588,15.59,15.588c8.611,0,15.59-6.98,15.59-15.588 c0-8.612-6.979-15.592-15.59-15.592C15.43,8.504,8.45,15.484,8.45,24.096z&quot; /&gt;&#39;);
-            svgArr.push(&#39;&lt;/svg&gt;&#39;);
-            var svgXml = svgArr.join(&#39;&#39;);
-            var img = new Image();
-            img.crossOrigin = &#39;Anonymous&#39;;
+                var sColorChange <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 1<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 7<span class="token punctuation">;</span> i +<span class="token operator">=</span> 2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    sColorChange.push<span class="token punctuation">(</span>parseInt<span class="token punctuation">(</span><span class="token string">"0x"</span> + sColor.slice<span class="token punctuation">(</span>i, i + 2<span class="token punctuation">))</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> <span class="token string">"rgba("</span> + sColorChange.join<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span> + <span class="token string">","</span> + opacity<span class="token punctuation">;</span> //透明度
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> sColor<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>,
+        svgToPng: <span class="token keyword">function</span> <span class="token punctuation">(</span>opts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var options <span class="token operator">=</span> <span class="token punctuation">{</span>
+                color: opts.color <span class="token operator">||</span> <span class="token string">'#ff0000'</span>,
+                opacity: opts.opacity <span class="token operator">||</span> 0.3,
+                txt: opts.txt <span class="token operator">||</span> <span class="token string">'生'</span>,
+                width: opts.width <span class="token operator">||</span> 30,
+                height: opts.height <span class="token operator">||</span> 30,
+                fn: opts.fn <span class="token operator">||</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    console.log<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            var svgArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            svgArr.push<span class="token punctuation">(</span><span class="token string">'&lt;svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="'</span> + options.width + <span class="token string">'" height="'</span> + options.height + <span class="token string">'" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            svgArr.push<span class="token punctuation">(</span><span class="token string">'    &lt;path fill="'</span> + $.colorRgb<span class="token punctuation">(</span>options.color, options.opacity<span class="token punctuation">)</span> + <span class="token string">'" d="M45.301,24.094c0,11.741-9.519,21.26-21.26,21.26c-11.741,0-21.26-9.519-21.26-21.26 c0-11.741,9.519-21.259,21.26-21.259C35.782,2.834,45.301,12.353,45.301,24.094z" />'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            svgArr.push<span class="token punctuation">(</span><span class="token string">'    &lt;path fill="'</span> + options.color + <span class="token string">'" d="M8.45,24.096c0,8.608,6.98,15.588,15.59,15.588c8.611,0,15.59-6.98,15.59-15.588 c0-8.612-6.979-15.592-15.59-15.592C15.43,8.504,8.45,15.484,8.45,24.096z" />'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            svgArr.push<span class="token punctuation">(</span><span class="token string">'&lt;/svg>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            var svgXml <span class="token operator">=</span> svgArr.join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            var img <span class="token operator">=</span> new Image<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            img.crossOrigin <span class="token operator">=</span> <span class="token string">'Anonymous'</span><span class="token punctuation">;</span>
             //给图片对象写入base64编码的svg流
-            img.src = &#39;data:image/svg+xml;base64,&#39; + window.btoa(unescape(encodeURIComponent(svgXml)));
-            img.onload = function () {
-                var canvas = document.createElement(&#39;canvas&#39;); //准备空画布
-                var context = canvas.getContext(&#39;2d&#39;);
-                canvas.width = options.width;
-                canvas.height = options.height;
-                context.drawImage(img, 0, 0);
-                context.fillStyle = &#39;#fff&#39;;
-                context.font = &quot;bold 13px &#39;微软雅黑&#39;,&#39;宋体&#39;&quot;;
-                context.textBaseline = &#39;middle&#39;;
-                context.fillText(options.txt, (options.width - 13) / 2, (options.height / 2));
-                var imagePng = canvas.toDataURL(&#39;image/png&#39;);
-                options.fn &amp;&amp; options.fn(imagePng);
-            }
-        }
-    });
-})(jQuery, document);
-</code></pre><p>示例：<a href="/pages/canvas转换svg合成图片.html">请点这里</a></p>
+            img.src <span class="token operator">=</span> <span class="token string">'data:image/svg+xml;base64,'</span> + window.btoa<span class="token punctuation">(</span>unescape<span class="token punctuation">(</span>encodeURIComponent<span class="token punctuation">(</span>svgXml<span class="token punctuation">))</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            img.onload <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                var canvas <span class="token operator">=</span> document.createElement<span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> //准备空画布
+                var context <span class="token operator">=</span> canvas.getContext<span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                canvas.width <span class="token operator">=</span> options.width<span class="token punctuation">;</span>
+                canvas.height <span class="token operator">=</span> options.height<span class="token punctuation">;</span>
+                context.drawImage<span class="token punctuation">(</span>img, 0, 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                context.fillStyle <span class="token operator">=</span> <span class="token string">'#fff'</span><span class="token punctuation">;</span>
+                context.font <span class="token operator">=</span> <span class="token string">"bold 13px '微软雅黑','宋体'"</span><span class="token punctuation">;</span>
+                context.textBaseline <span class="token operator">=</span> <span class="token string">'middle'</span><span class="token punctuation">;</span>
+                context.fillText<span class="token punctuation">(</span>options.txt, <span class="token punctuation">(</span>options.width - 13<span class="token punctuation">)</span> / 2, <span class="token punctuation">(</span>options.height / 2<span class="token punctuation">))</span><span class="token punctuation">;</span>
+                var imagePng <span class="token operator">=</span> canvas.toDataURL<span class="token punctuation">(</span><span class="token string">'image/png'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                options.fn <span class="token operator">&amp;&amp;</span> options.fn<span class="token punctuation">(</span>imagePng<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>jQuery, document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>示例：<a href="/pages/canvas转换svg合成图片.html">请点这里</a></p>
 
             </div>
             <hr>
