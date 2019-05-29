@@ -434,41 +434,47 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>参照“猫眼电影”购票选座规则：</p>
-<pre><code>/*
+<pre class=" language-bash"><code class="language-bash">/*
 * 影院选座验证
-* param {Array} arr
-* param {Object} options.ok验证成功回调函数，options.cancel验证失败回调函数
-* return {Boolean} 验证成功返回true,失败返回false
+* param <span class="token punctuation">{</span>Array<span class="token punctuation">}</span> arr
+* param <span class="token punctuation">{</span>Object<span class="token punctuation">}</span> options.ok验证成功回调函数，options.cancel验证失败回调函数
+* <span class="token keyword">return</span> <span class="token punctuation">{</span>Boolean<span class="token punctuation">}</span> 验证成功返回true,失败返回false
 */
-function getAdjacentItem(arr,options) {
-    var arrLength=arr.length;
-    var nextItems=[];
-    if(!arrLength){return false;}
-    if(arrLength===1){options.ok&amp;&amp;options.ok(arr);return true;}
-    arr.sort(function(a,b){
-        if(a.y===b.y&amp;&amp;Math.abs(a.x-b.x)===1){
-            nextItems.push({
-                a:a,
-                b:b
-            });
-        }
-        return a.y-b.y;
-    });
-    if(arrLength%2){
-        if(Math.floor(arrLength/2)===nextItems.length){
-            options.ok&amp;&amp;options.ok(arr);
-            return true;
-        }
-    }else{
-        if(arrLength/2===nextItems.length){
-            options.ok&amp;&amp;options.ok(arr);
-            return true;
-        }
-    }
-    options.cancel&amp;&amp;options.cancel(arr);
-    return false;
-}
-</code></pre><p>示例：<a href="/pages/相邻算法.html">请点这里</a></p>
+<span class="token keyword">function</span> getAdjacentItem<span class="token punctuation">(</span>arr, options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var arrLength <span class="token operator">=</span> arr.length<span class="token punctuation">;</span>
+    var nextItems <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>arrLength<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arrLength <span class="token operator">==</span><span class="token operator">=</span> 1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        options.ok <span class="token operator">&amp;&amp;</span> options.ok<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    arr.sort<span class="token punctuation">(</span>function <span class="token punctuation">(</span>a, b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a.y <span class="token operator">==</span><span class="token operator">=</span> b.y <span class="token operator">&amp;&amp;</span> Math.abs<span class="token punctuation">(</span>a.x - b.x<span class="token punctuation">)</span> <span class="token operator">==</span><span class="token operator">=</span> 1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            nextItems.push<span class="token punctuation">(</span><span class="token punctuation">{</span>
+                a: a,
+                b: b
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> a.y - b.y<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arrLength % 2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Math.floor<span class="token punctuation">(</span>arrLength / 2<span class="token punctuation">)</span> <span class="token operator">==</span><span class="token operator">=</span> nextItems.length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            options.ok <span class="token operator">&amp;&amp;</span> options.ok<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arrLength / 2 <span class="token operator">==</span><span class="token operator">=</span> nextItems.length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            options.ok <span class="token operator">&amp;&amp;</span> options.ok<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    options.cancel <span class="token operator">&amp;&amp;</span> options.cancel<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>示例：<a href="/pages/相邻算法.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -674,8 +680,9 @@ function getAdjacentItem(arr,options) {
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">今天看大神张鑫旭的文章，有一篇  基于CSS3 column多栏布局实现水平滑页翻页交互，为熟悉column多栏布局写法，模仿 起点中文网 封装了个jquery拓展方法。如下：
-csshtml,body {
-    width: 100%;</div>
+csshtml,
+body {
+    width: 100%</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-12
@@ -908,7 +915,7 @@ document.onkeydown=function(){
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             

@@ -50,7 +50,7 @@
     <link href="http://xmwarrior.github.io/2019/05/15/you-xiu-wen-zhang-shou-lu/"/>
     <id>http://xmwarrior.github.io/2019/05/15/you-xiu-wen-zhang-shou-lu/</id>
     <published>2019-05-15T13:35:00.000Z</published>
-    <updated>2019-05-15T15:07:35.722Z</updated>
+    <updated>2019-05-29T14:23:20.393Z</updated>
     
     <summary type="html">
     
@@ -58,7 +58,7 @@
       
         
         
-          &lt;h1 id=&quot;安全&quot;&gt;&lt;a href=&quot;#安全&quot; class=&quot;headerlink&quot; title=&quot;安全&quot;&gt;&lt;/a&gt;安全&lt;/h1&gt;&lt;ul&gt;
+          &lt;h2 id=&quot;安全&quot;&gt;&lt;a href=&quot;#安全&quot; class=&quot;headerlink&quot; title=&quot;安全&quot;&gt;&lt;/a&gt;安全&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000019176325&quot;
         
       
@@ -163,7 +163,7 @@
     <link href="http://xmwarrior.github.io/2019/04/11/tian-qi-cha-jian-xm-weather/"/>
     <id>http://xmwarrior.github.io/2019/04/11/tian-qi-cha-jian-xm-weather/</id>
     <published>2019-04-11T11:18:19.000Z</published>
-    <updated>2019-04-17T13:21:37.810Z</updated>
+    <updated>2019-05-29T14:28:33.062Z</updated>
     
     <summary type="html">
     
@@ -172,8 +172,7 @@
         
         
           &lt;p&gt;此处不宜多说（露出一个高深莫测的微笑！），精华自取：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;(function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) {
-  
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;function
         
       
     
@@ -193,7 +192,7 @@
     <link href="http://xmwarrior.github.io/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/"/>
     <id>http://xmwarrior.github.io/2019/04/02/gao-jie-han-shu-huan-cun-ying-yong-zhi-fei-bo-na-qi-shu-lie/</id>
     <published>2019-04-02T06:18:19.000Z</published>
-    <updated>2019-04-17T13:21:37.814Z</updated>
+    <updated>2019-05-29T14:40:34.945Z</updated>
     
     <summary type="html">
     
@@ -222,7 +221,7 @@
     <link href="http://xmwarrior.github.io/2019/03/27/qing-chu-cookie-wen-tuo-zuo-fa/"/>
     <id>http://xmwarrior.github.io/2019/03/27/qing-chu-cookie-wen-tuo-zuo-fa/</id>
     <published>2019-03-27T06:16:00.000Z</published>
-    <updated>2019-04-17T13:21:37.811Z</updated>
+    <updated>2019-05-29T14:28:52.999Z</updated>
     
     <summary type="html">
     
@@ -248,7 +247,7 @@
     <link href="http://xmwarrior.github.io/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/"/>
     <id>http://xmwarrior.github.io/2019/03/18/se-diao-xuan-zhuan-lu-jing-an-niu-zai-xian-sheng-cheng/</id>
     <published>2019-03-18T09:41:00.000Z</published>
-    <updated>2019-04-17T13:21:37.813Z</updated>
+    <updated>2019-05-29T14:38:29.842Z</updated>
     
     <summary type="html">
     
@@ -280,7 +279,7 @@
     <link href="http://xmwarrior.github.io/2019/03/14/bai-du-fen-xiang-she-zhi-suo-lue-tu-ji-biao-ti/"/>
     <id>http://xmwarrior.github.io/2019/03/14/bai-du-fen-xiang-she-zhi-suo-lue-tu-ji-biao-ti/</id>
     <published>2019-03-14T07:50:00.000Z</published>
-    <updated>2019-04-17T13:21:37.812Z</updated>
+    <updated>2019-05-29T14:35:58.012Z</updated>
     
     <summary type="html">
     
@@ -306,7 +305,7 @@
     <link href="http://xmwarrior.github.io/2019/03/14/position-sticky/"/>
     <id>http://xmwarrior.github.io/2019/03/14/position-sticky/</id>
     <published>2019-03-14T02:56:00.000Z</published>
-    <updated>2019-04-17T13:21:37.808Z</updated>
+    <updated>2019-05-29T14:11:05.504Z</updated>
     
     <summary type="html">
     
@@ -362,7 +361,7 @@
     <link href="http://xmwarrior.github.io/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/"/>
     <id>http://xmwarrior.github.io/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/</id>
     <published>2019-03-12T09:18:00.000Z</published>
-    <updated>2019-05-27T14:17:55.164Z</updated>
+    <updated>2019-05-29T14:27:35.778Z</updated>
     
     <summary type="html">
     
@@ -392,7 +391,7 @@
     <link href="http://xmwarrior.github.io/2019/03/11/xiang-lin-suan-fa/"/>
     <id>http://xmwarrior.github.io/2019/03/11/xiang-lin-suan-fa/</id>
     <published>2019-03-11T02:03:00.000Z</published>
-    <updated>2019-04-17T13:21:37.812Z</updated>
+    <updated>2019-05-29T14:37:21.861Z</updated>
     
     <summary type="html">
     
@@ -401,11 +400,9 @@
         
         
           &lt;p&gt;参照“猫眼电影”购票选座规则：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/*
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;/*
 * 影院选座验证
-* param {Array} arr
-* param {Object} options.ok验证成功回调函数，options.cancel验证失败回调函数
-* return
+* param &lt;span class=&quot;token
         
       
     
@@ -423,7 +420,7 @@
     <link href="http://xmwarrior.github.io/2019/03/06/wang-ye-fang-ba/"/>
     <id>http://xmwarrior.github.io/2019/03/06/wang-ye-fang-ba/</id>
     <published>2019-03-06T06:16:19.000Z</published>
-    <updated>2019-04-17T13:21:37.812Z</updated>
+    <updated>2019-05-29T14:37:50.522Z</updated>
     
     <summary type="html">
     
@@ -478,7 +475,7 @@
     <link href="http://xmwarrior.github.io/2019/02/25/title-mei-hua-ti-shi-kuang/"/>
     <id>http://xmwarrior.github.io/2019/02/25/title-mei-hua-ti-shi-kuang/</id>
     <published>2019-02-25T09:18:00.000Z</published>
-    <updated>2019-04-17T13:21:37.809Z</updated>
+    <updated>2019-05-29T14:20:57.499Z</updated>
     
     <summary type="html">
     
@@ -486,12 +483,8 @@
       
         
         
-          &lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE HTML&amp;gt;
-&amp;lt;html&amp;gt;
-
-    &amp;lt;head&amp;gt;
-        &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
-        &amp;lt;meta
+          &lt;pre class=&quot; language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&amp;lt;!DOCTYPE HTML&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span
         
       
     
@@ -509,7 +502,7 @@
     <link href="http://xmwarrior.github.io/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/"/>
     <id>http://xmwarrior.github.io/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/</id>
     <published>2019-02-19T07:16:19.000Z</published>
-    <updated>2019-04-17T13:21:37.808Z</updated>
+    <updated>2019-05-29T14:08:38.647Z</updated>
     
     <summary type="html">
     
@@ -518,12 +511,7 @@
         
         
           &lt;p&gt;收藏备用：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
-
-    &amp;lt;head&amp;gt;
-        &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
-       
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token
         
       
     
@@ -541,7 +529,7 @@
     <link href="http://xmwarrior.github.io/2019/02/01/input-range-zi-ding-yi/"/>
     <id>http://xmwarrior.github.io/2019/02/01/input-range-zi-ding-yi/</id>
     <published>2019-02-01T07:11:19.000Z</published>
-    <updated>2019-04-17T13:21:37.807Z</updated>
+    <updated>2019-05-29T13:59:06.516Z</updated>
     
     <summary type="html">
     
@@ -550,10 +538,7 @@
         
         
           &lt;p&gt;input-range自定义样式&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;
-    &amp;lt;head&amp;gt;
-        &amp;lt;meta
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token
         
       
     

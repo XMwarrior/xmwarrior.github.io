@@ -5,11 +5,12 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="前端实现懒加载, xmwarrior,xmsniper">
-    <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;
+    <meta name="description" content="&amp;lt;!DOCTYPE html&gt;
+&amp;lt;html lang=&#34;zh&#34;&gt;
 
-    &amp;lt;head&amp;gt;
-        &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt">
+&amp;lt;head&gt;
+    &amp;lt;meta charset=&#34;UTF-8&#34; /&gt;
+    &amp;lt;meta name=&#34;viewport&#34; content=&#34;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -413,14 +414,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1k
+                        863
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        5 分
                     </div>
                     
                 
@@ -436,147 +437,251 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh&quot;&gt;
+                <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"zh"</span><span class="token operator">></span>
 
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
-        &lt;title&gt;Document&lt;/title&gt;
-        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/bootstrap.min.css&quot;/&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
-            .page-scroll-container&gt;div{position:relative;margin-bottom:20px}
-            .page-scroll-container a{overflow:hidden;display:block}
-            .mask{background-color:rgba(0,0,0,0.6);position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;filter:alpha(opacity=0);transition:all .5s;-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;text-align:center;color:#ffffff}
-            .mask h4{transform:translateY(10px);opacity:0.5;transition-duration:0.8s;transition-delay:.2s;margin-top:28%;font-size:36px;line-height:42px}
-            .page-scroll-container&gt;div:hover .mask h4{opacity:1;transform:translateY(-10px)}
-            .mask strong{transform:translateY(10px);opacity:0.8;transition-duration:1s;transition-delay:.3s;display:block}
-            .page-scroll-container&gt;div:hover .mask strong{transform:translateY(-10px);opacity:1;transition-duration:opacity 1s}
-            .mask span{color:#fff;transform:translateY(10px);opacity:0.5;transition-duration:.8s;transition-delay:.4s;display:block;font-size:14px}
-            .page-scroll-container&gt;div:hover span{opacity:1;transform:translateY(-10px)}
-            .page-scroll-container&gt;div:hover .mask{opacity:1;filter:alpha(opacity=100);transform:scale(1)}
-            .page-scroll-container img{width:100%;height:100%;transition:all .5s;-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;-ms-transition:all .5s;overflow:hidden}
-            .page-scroll-container a:hover img{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-o-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2)}
-            .more{width:280px;height:55px;line-height:55px;background:#d7000f;margin:20px auto 50px auto;text-align:center;border-radius:26px}
-            .more a{color:#ffffff;font-size:18px}
-        &lt;/style&gt;
-    &lt;/head&gt;
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span> /<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span> /<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta http-equiv<span class="token operator">=</span><span class="token string">"X-UA-Compatible"</span> content<span class="token operator">=</span><span class="token string">"ie=edge"</span> /<span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>Document<span class="token operator">&lt;</span>/title<span class="token operator">></span>
+    <span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet"</span> type<span class="token operator">=</span><span class="token string">"text/css"</span> href<span class="token operator">=</span><span class="token string">"css/bootstrap.min.css"</span> /<span class="token operator">></span>
+    <span class="token operator">&lt;</span>style type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token operator">></span>
+        .page-scroll-container<span class="token operator">></span>div <span class="token punctuation">{</span>
+            position: relative<span class="token punctuation">;</span>
+            margin-bottom: 20px
+        <span class="token punctuation">}</span>
 
-    &lt;body&gt;
+        .page-scroll-container a <span class="token punctuation">{</span>
+            overflow: hidden<span class="token punctuation">;</span>
+            display: block
+        <span class="token punctuation">}</span>
 
-        &lt;div class=&quot;page-scroll-container row&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;more&quot;&gt;
-            &lt;a id=&quot;itemMore&quot;&gt;查看更多造势案例+&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;script src=&quot;./js/jquery.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script&gt;
-            (function($, document) {
-                /*前端实现-懒加载插件pageScroll
-                 * param el       {object} jquery对象,默认： $(&#39;.page-scroll-container&#39;)
-                 * param datas    {array } 数据数组,格式：[{img:&#39;&#39;,title:&#39;&#39;,content:&#39;&#39;},...],默认：示例
-                 * param pageSize {number} 每页显示数量,默认： 6
-                 * param currentPage {number} 当前页,默认： 0
-                 * param addButton {object} jquery对象,默认： $(&#39;#itemMore&#39;)
-                 * param bottom {number} 距底部距离,默认： 0
-                 * param loadingTime {number} 加载时间,默认： 200ms
-                 * */
-                $.pageScroll = function(option) {
-                    option = option || {};
-                    var defaultOption = {
-                        el: $(&#39;.page-scroll-container&#39;),
-                        arr: option.datas || JSON.parse((&#39;[&#39; + new String(&#39;,{&quot;img&quot;:&quot;img/index3_1.png&quot;,&quot;title&quot;:&quot;Brand&quot;,&quot;content&quot;:&quot;内容&quot;}&#39;).repeat(20).substring(1) + &#39;]&#39;)),
-                        pagesize: option.pageSize || 6,
-                        currentPage: option.currentPage || 0,
-                        $loadText: option.addButton || $(&#39;#itemMore&#39;),
-                        loadTxt: {
-                            more: &#39;查看更多造势案例+&#39;,
-                            loading: &#39;&lt;span&gt;加载中...&lt;/span&gt;&#39;,
-                            end: &#39;没有更多了&#39;
-                        },
-                        bottom: option.bottom || 0,
-                        loadingTime: option.loadingTime || 200,
-                        isloading: false
-                    };
-                    Object.defineProperty(defaultOption, &quot;page&quot;, {
-                        get: function() {
-                            if(option.page) {
-                                return option.page
-                            }
-                            return this.arr.length % this.pagesize ? (parseInt(this.arr.length / this.pagesize) + 1) : this.arr.length / this.pagesize;
-                        }
-                    });
-                    defaultOption.toPage = function() {
-                        var that = this;
-                        if(!this.isloading) {
-                            this.isloading = true;
-                            var res = [];
-                            for(var i = this.currentPage * this.pagesize, len = ((i + this.pagesize &lt; this.arr.length) ? i + this.pagesize : this.arr.length); i &lt; len; i++) {
-                                res.push(&#39;&lt;div class=&quot;imgitem col-md-4 col-sm-4 col-xs-6&quot; style=&quot;display:none;&quot;&gt;&#39;);
-                                res.push(&#39;    &lt;a href=&quot;#&quot;&gt;&#39;);
-                                res.push(&#39;        &lt;img src=&quot;&#39; + this.arr[i].img + &#39;&quot; class=&quot;img-responsive&quot;&gt;&#39;);
-                                res.push(&#39;        &lt;div class=&quot;mask&quot;&gt;&#39;);
-                                res.push(&#39;            &lt;h4&gt;&#39; + this.arr[i].title + &#39;&lt;/h4&gt;&#39;);
-                                res.push(&#39;            &lt;strong&gt;&#39; + this.arr[i].content + &#39;&lt;/strong&gt;&#39;);
-                                res.push(&#39;            &lt;span class=&quot;qwe&quot;&gt;查看该案例详情&lt;/span&gt;&#39;);
-                                res.push(&#39;        &lt;/div&gt;&#39;);
-                                res.push(&#39;    &lt;/a&gt;&#39;);
-                                res.push(&#39;&lt;/div&gt;&#39;);
-                            }
-                            $(this.el).append(res.join(&#39;&#39;));
-                            $(&#39;.imgitem:not(:visible)&#39;).fadeIn(1500);
-                            this.$loadText.html(this.loadTxt.more);
-                            this.currentPage++;
-                            setTimeout(function() {
-                                that.isloading = false;
-                            }, 1000);
-                        }
-                    };
-                    defaultOption.init = function() {
-                        var that = this;
-                        this.toPage();
-                        //点击展开更多
-                        this.$loadText.on(&#39;click&#39;, function() {
-                            if(that.currentPage &lt; that.page) {
-                                that.$loadText.html(that.loadTxt.loading);
-                                setTimeout(function() {
-                                    that.toPage();
-                                }, that.loadingTime);
-                            } else {
-                                that.$loadText.html(that.loadTxt.end);
-                            }
-                            that.toPage();
-                            return false;
-                        });
-                        //页面滚动到距底部x距离时展开更多
-                        $(window).on(&#39;scroll&#39;, function() {
-                            var wHeight = $(window).innerHeight();
-                            var dHeight = $(document).height();
-                            var sHeight = $(document).scrollTop();
-                            var bottomLength = dHeight - wHeight - sHeight;
-                            if(bottomLength &lt;= that.bottom) { //距底部高度
-                                if(that.currentPage &lt; that.page) {
-                                    that.$loadText.html(that.loadTxt.loading);
-                                    setTimeout(function() {
-                                        that.toPage();
-                                    }, that.loadingTime);
-                                } else {
-                                    that.$loadText.html(that.loadTxt.end);
-                                }
-                            }
-                        });
-                    }
-                    defaultOption.init();
-                    return defaultOption;
-                }
-            })(jQuery, document);
-            //调用方式
-            $.pageScroll();
-        &lt;/script&gt;
-    &lt;/body&gt;
+        .mask <span class="token punctuation">{</span>
+            background-color: rgba<span class="token punctuation">(</span>0, 0, 0, 0.6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            position: absolute<span class="token punctuation">;</span>
+            top: 0<span class="token punctuation">;</span>
+            left: 0<span class="token punctuation">;</span>
+            width: 100%<span class="token punctuation">;</span>
+            height: 100%<span class="token punctuation">;</span>
+            opacity: 0<span class="token punctuation">;</span>
+            filter: alpha<span class="token punctuation">(</span>opacity<span class="token operator">=</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            transition: all .5s<span class="token punctuation">;</span>
+            -webkit-transition: all .5s<span class="token punctuation">;</span>
+            -moz-transition: all .5s<span class="token punctuation">;</span>
+            -o-transition: all .5s<span class="token punctuation">;</span>
+            -ms-transition: all .5s<span class="token punctuation">;</span>
+            text-align: center<span class="token punctuation">;</span>
+            color: <span class="token comment" spellcheck="true">#ffffff</span>
+        <span class="token punctuation">}</span>
 
-&lt;/html&gt;
-</code></pre><p>示例：<a href="/pages/前端实现懒加载.html">请点这里</a></p>
+        .mask h4 <span class="token punctuation">{</span>
+            transform: translateY<span class="token punctuation">(</span>10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            opacity: 0.5<span class="token punctuation">;</span>
+            transition-duration: 0.8s<span class="token punctuation">;</span>
+            transition-delay: .2s<span class="token punctuation">;</span>
+            margin-top: 28%<span class="token punctuation">;</span>
+            font-size: 36px<span class="token punctuation">;</span>
+            line-height: 42px
+        <span class="token punctuation">}</span>
+
+        .page-scroll-container<span class="token operator">></span>div:hover .mask h4 <span class="token punctuation">{</span>
+            opacity: 1<span class="token punctuation">;</span>
+            transform: translateY<span class="token punctuation">(</span>-10px<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        .mask strong <span class="token punctuation">{</span>
+            transform: translateY<span class="token punctuation">(</span>10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            opacity: 0.8<span class="token punctuation">;</span>
+            transition-duration: 1s<span class="token punctuation">;</span>
+            transition-delay: .3s<span class="token punctuation">;</span>
+            display: block
+        <span class="token punctuation">}</span>
+
+        .page-scroll-container<span class="token operator">></span>div:hover .mask strong <span class="token punctuation">{</span>
+            transform: translateY<span class="token punctuation">(</span>-10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            opacity: 1<span class="token punctuation">;</span>
+            transition-duration: opacity 1s
+        <span class="token punctuation">}</span>
+
+        .mask span <span class="token punctuation">{</span>
+            color: <span class="token comment" spellcheck="true">#fff;</span>
+            transform: translateY<span class="token punctuation">(</span>10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            opacity: 0.5<span class="token punctuation">;</span>
+            transition-duration: .8s<span class="token punctuation">;</span>
+            transition-delay: .4s<span class="token punctuation">;</span>
+            display: block<span class="token punctuation">;</span>
+            font-size: 14px
+        <span class="token punctuation">}</span>
+
+        .page-scroll-container<span class="token operator">></span>div:hover span <span class="token punctuation">{</span>
+            opacity: 1<span class="token punctuation">;</span>
+            transform: translateY<span class="token punctuation">(</span>-10px<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        .page-scroll-container<span class="token operator">></span>div:hover .mask <span class="token punctuation">{</span>
+            opacity: 1<span class="token punctuation">;</span>
+            filter: alpha<span class="token punctuation">(</span>opacity<span class="token operator">=</span>100<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            transform: scale<span class="token punctuation">(</span>1<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        .page-scroll-container img <span class="token punctuation">{</span>
+            width: 100%<span class="token punctuation">;</span>
+            height: 100%<span class="token punctuation">;</span>
+            transition: all .5s<span class="token punctuation">;</span>
+            -webkit-transition: all .5s<span class="token punctuation">;</span>
+            -moz-transition: all .5s<span class="token punctuation">;</span>
+            -o-transition: all .5s<span class="token punctuation">;</span>
+            -ms-transition: all .5s<span class="token punctuation">;</span>
+            overflow: hidden
+        <span class="token punctuation">}</span>
+
+        .page-scroll-container a:hover img <span class="token punctuation">{</span>
+            -webkit-transform: scale<span class="token punctuation">(</span>1.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            -moz-transform: scale<span class="token punctuation">(</span>1.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            -o-transform: scale<span class="token punctuation">(</span>1.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            -ms-transform: scale<span class="token punctuation">(</span>1.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            transform: scale<span class="token punctuation">(</span>1.2<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        .more <span class="token punctuation">{</span>
+            width: 280px<span class="token punctuation">;</span>
+            height: 55px<span class="token punctuation">;</span>
+            line-height: 55px<span class="token punctuation">;</span>
+            background: <span class="token comment" spellcheck="true">#d7000f;</span>
+            margin: 20px auto 50px auto<span class="token punctuation">;</span>
+            text-align: center<span class="token punctuation">;</span>
+            border-radius: 26px
+        <span class="token punctuation">}</span>
+
+        .more a <span class="token punctuation">{</span>
+            color: <span class="token comment" spellcheck="true">#ffffff;</span>
+            font-size: 18px
+        <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>/style<span class="token operator">></span>
+<span class="token operator">&lt;</span>/head<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+
+    <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"page-scroll-container row"</span><span class="token operator">></span><span class="token operator">&lt;</span>/div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"more"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>a id<span class="token operator">=</span><span class="token string">"itemMore"</span><span class="token operator">></span>查看更多造势案例+<span class="token operator">&lt;</span>/a<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"./js/jquery.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token punctuation">(</span>function <span class="token punctuation">(</span>$, document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            /*前端实现-懒加载插件pageScroll
+             * param el       <span class="token punctuation">{</span>object<span class="token punctuation">}</span> jquery对象,默认： <span class="token punctuation">$(</span><span class="token string">'.page-scroll-container'</span><span class="token punctuation">)</span>
+             * param datas    <span class="token punctuation">{</span>array <span class="token punctuation">}</span> 数据数组,格式：<span class="token punctuation">[</span><span class="token punctuation">{</span>img:<span class="token string">''</span>,title:<span class="token string">''</span>,content:<span class="token string">''</span><span class="token punctuation">}</span>,<span class="token punctuation">..</span>.<span class="token punctuation">]</span>,默认：示例
+             * param pageSize <span class="token punctuation">{</span>number<span class="token punctuation">}</span> 每页显示数量,默认： 6
+             * param currentPage <span class="token punctuation">{</span>number<span class="token punctuation">}</span> 当前页,默认： 0
+             * param addButton <span class="token punctuation">{</span>object<span class="token punctuation">}</span> jquery对象,默认： <span class="token punctuation">$(</span><span class="token string">'#itemMore'</span><span class="token punctuation">)</span>
+             * param bottom <span class="token punctuation">{</span>number<span class="token punctuation">}</span> 距底部距离,默认： 0
+             * param loadingTime <span class="token punctuation">{</span>number<span class="token punctuation">}</span> 加载时间,默认： 200ms
+             * */
+            $.pageScroll <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>option<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                option <span class="token operator">=</span> option <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+                var defaultOption <span class="token operator">=</span> <span class="token punctuation">{</span>
+                    el: <span class="token punctuation">$(</span><span class="token string">'.page-scroll-container'</span><span class="token punctuation">)</span>,
+                    arr: option.datas <span class="token operator">||</span> JSON.parse<span class="token punctuation">((</span><span class="token string">'['</span> + new String<span class="token punctuation">(</span>
+                            <span class="token string">',{"img":"img/index3_1.png","title":"Brand","content":"内容"}'</span><span class="token punctuation">)</span>.repeat<span class="token punctuation">(</span>20<span class="token punctuation">)</span>
+                        .substring<span class="token punctuation">(</span>1<span class="token punctuation">)</span> + <span class="token string">']'</span><span class="token punctuation">))</span>,
+                    pagesize: option.pageSize <span class="token operator">||</span> 6,
+                    currentPage: option.currentPage <span class="token operator">||</span> 0,
+                    <span class="token variable">$loadText</span><span class="token keyword">:</span> option.addButton <span class="token operator">||</span> <span class="token punctuation">$(</span><span class="token string">'#itemMore'</span><span class="token punctuation">)</span>,
+                    loadTxt: <span class="token punctuation">{</span>
+                        more: <span class="token string">'查看更多造势案例+'</span>,
+                        loading: <span class="token string">'&lt;span>加载中...&lt;/span>'</span>,
+                        end: <span class="token string">'没有更多了'</span>
+                    <span class="token punctuation">}</span>,
+                    bottom: option.bottom <span class="token operator">||</span> 0,
+                    loadingTime: option.loadingTime <span class="token operator">||</span> 200,
+                    isloading: <span class="token boolean">false</span>
+                <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                Object.defineProperty<span class="token punctuation">(</span>defaultOption, <span class="token string">"page"</span>, <span class="token punctuation">{</span>
+                    get: <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>option.page<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            <span class="token keyword">return</span> option.page
+                        <span class="token punctuation">}</span>
+                        <span class="token keyword">return</span> this.arr.length % this.pagesize ? <span class="token punctuation">(</span>parseInt<span class="token punctuation">(</span>this.arr.length / this
+                            .pagesize<span class="token punctuation">)</span> + 1<span class="token punctuation">)</span> <span class="token keyword">:</span> this.arr.length / this.pagesize<span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                defaultOption.toPage <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    var that <span class="token operator">=</span> this<span class="token punctuation">;</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>this.isloading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        this.isloading <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                        var res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                        <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> this.currentPage * this.pagesize, len <span class="token operator">=</span> <span class="token punctuation">((</span>i + this.pagesize <span class="token operator">&lt;</span> this.arr
+                                .length<span class="token punctuation">)</span> ? i + this.pagesize <span class="token keyword">:</span> this.arr.length<span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            res.push<span class="token punctuation">(</span>
+                                <span class="token string">'&lt;div class="imgitem col-md-4 col-sm-4 col-xs-6" style="display:none;">'</span>
+                                <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'    &lt;a href="#">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'        &lt;img src="'</span> + this.arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>.img + <span class="token string">'" class="img-responsive">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'        &lt;div class="mask">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'            &lt;h4>'</span> + this.arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>.title + <span class="token string">'&lt;/h4>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'            &lt;strong>'</span> + this.arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>.content + <span class="token string">'&lt;/strong>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'            &lt;span class="qwe">查看该案例详情&lt;/span>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'        &lt;/div>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'    &lt;/a>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            res.push<span class="token punctuation">(</span><span class="token string">'&lt;/div>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token variable"><span class="token variable">$(</span>this.el<span class="token variable">)</span></span>.append<span class="token punctuation">(</span>res.join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">$(</span><span class="token string">'.imgitem:not(:visible)'</span><span class="token punctuation">)</span>.fadeIn<span class="token punctuation">(</span>1500<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        this.<span class="token variable">$loadText</span>.html<span class="token punctuation">(</span>this.loadTxt.more<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        this.currentPage++<span class="token punctuation">;</span>
+                        setTimeout<span class="token punctuation">(</span>function <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            that.isloading <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>, 1000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                defaultOption.init <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    var that <span class="token operator">=</span> this<span class="token punctuation">;</span>
+                    this.toPage<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    //点击展开更多
+                    this.<span class="token variable">$loadText</span>.on<span class="token punctuation">(</span><span class="token string">'click'</span>, <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>that.currentPage <span class="token operator">&lt;</span> that.page<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            that.<span class="token variable">$loadText</span>.html<span class="token punctuation">(</span>that.loadTxt.loading<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            setTimeout<span class="token punctuation">(</span>function <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                that.toPage<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>, that.loadingTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                            that.<span class="token variable">$loadText</span>.html<span class="token punctuation">(</span>that.loadTxt.end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                        that.toPage<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    //页面滚动到距底部x距离时展开更多
+                    <span class="token variable"><span class="token variable">$(</span>window<span class="token variable">)</span></span>.on<span class="token punctuation">(</span><span class="token string">'scroll'</span>, <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        var wHeight <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>window<span class="token variable">)</span></span>.innerHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        var dHeight <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>document<span class="token variable">)</span></span>.height<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        var sHeight <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>document<span class="token variable">)</span></span>.scrollTop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        var bottomLength <span class="token operator">=</span> dHeight - wHeight - sHeight<span class="token punctuation">;</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>bottomLength <span class="token operator">&lt;=</span> that.bottom<span class="token punctuation">)</span> <span class="token punctuation">{</span> //距底部高度
+                            <span class="token keyword">if</span> <span class="token punctuation">(</span>that.currentPage <span class="token operator">&lt;</span> that.page<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                that.<span class="token variable">$loadText</span>.html<span class="token punctuation">(</span>that.loadTxt.loading<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                setTimeout<span class="token punctuation">(</span>function <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                    that.toPage<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                <span class="token punctuation">}</span>, that.loadingTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                                that.<span class="token variable">$loadText</span>.html<span class="token punctuation">(</span>that.loadTxt.end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                defaultOption.init<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> defaultOption<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>jQuery, document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        //调用方式
+        $.pageScroll<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span>/script<span class="token operator">></span>
+<span class="token operator">&lt;</span>/body<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>/html<span class="token operator">></span>
+</code></pre>
+<p>示例：<a href="/pages/前端实现懒加载.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -1014,7 +1119,7 @@ As long as necessary（如有必要，尽量详尽）：合理的注释、空行
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             

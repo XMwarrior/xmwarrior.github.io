@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="色调旋转滤镜按钮-在线生成, xmwarrior,xmsniper">
     <meta name="description" content="本例应用颜色拾取插件 https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html直接放源码，有兴趣的点击例子查看：
-&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;ht">
+&amp;lt;html lang=&#34;zh&#34;&gt;
+
+&amp;lt;hea">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -419,14 +420,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        907
+                        712
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        3 分
                     </div>
                     
                 
@@ -443,125 +444,130 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本例应用颜色拾取插件 <a href="https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html" target="_blank" rel="noopener">https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html</a><br>直接放源码，有兴趣的点击例子查看：</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh&quot;&gt;
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"zh"</span><span class="token operator">></span>
 
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
-        &lt;title&gt;色调旋转滤镜下的按钮&lt;/title&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css&quot; integrity=&quot;sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm&quot; crossorigin=&quot;anonymous&quot;&gt;
-        &lt;link href=&quot;css/bootstrap-colorpicker.css&quot; rel=&quot;stylesheet&quot;&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
-            html,
-            body {
-                height: 100%;
-            }
-        &lt;/style&gt;
-    &lt;/head&gt;
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span> /<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span> /<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta http-equiv<span class="token operator">=</span><span class="token string">"X-UA-Compatible"</span> content<span class="token operator">=</span><span class="token string">"ie=edge"</span> /<span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>色调旋转滤镜下的按钮<span class="token operator">&lt;</span>/title<span class="token operator">></span>
+    <span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet"</span> href<span class="token operator">=</span><span class="token string">"https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"</span>
+        integrity<span class="token operator">=</span><span class="token string">"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"</span> crossorigin<span class="token operator">=</span><span class="token string">"anonymous"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>link href<span class="token operator">=</span><span class="token string">"css/bootstrap-colorpicker.css"</span> rel<span class="token operator">=</span><span class="token string">"stylesheet"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>style type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token operator">></span>
+        html,
+        body <span class="token punctuation">{</span>
+            height: 100%<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>/style<span class="token operator">></span>
+<span class="token operator">&lt;</span>/head<span class="token operator">></span>
 
-    &lt;body&gt;
-        &lt;div class=&quot;container jumbotron h-100&quot;&gt;
-            &lt;h1&gt;选择颜色&lt;/h1&gt;
-            &lt;div id=&quot;demo&quot; class=&quot;input-group&quot; title=&quot;Using input value&quot;&gt;
-                &lt;input type=&quot;text&quot; class=&quot;form-control input-lg&quot; value=&quot;&quot; /&gt;
-                &lt;span class=&quot;input-group-append&quot;&gt;&lt;span class=&quot;input-group-text colorpicker-input-addon&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;h4 class=&quot;pt-3&quot;&gt;色调旋转滤镜下的按钮&lt;/h4&gt;
-            &lt;div id=&quot;hueBtnBox&quot;&gt;&lt;/div&gt;
-            &lt;h4 class=&quot;pt-3&quot;&gt;css&lt;/h4&gt;
-            &lt;div id=&quot;css&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;js/bootstrap-colorpicker.js&quot;&gt;&lt;/script&gt;
-        &lt;script&gt;
-            $(function() {
-                $(&#39;#demo&#39;).colorpicker({
-                    &quot;color&quot;: &quot;#ff0000&quot;
-                });
-                $(&#39;#demo&#39;).on(&#39;colorpickerChange&#39;, function(event) {
-                    initColor(event.color);
-                });
-                //初始化
-                initColor(&#39;#ff0000&#39;);
-                //生成36种旋转滤镜颜色
-                function initColor(color) {
-                    color = String(color).indexOf(&#39;#&#39;) &gt;= 0 ? color : hexify(String(color));
-                    var templeteStyle = &#39;.ui-button-primary{border: 1px solid &#39; + color + &#39;;background-color: &#39; + color + &#39;;color: #fff;}.ui-button-primary:hover {background-color: &#39; + LightenDarkenColor(color, -20) + &#39;;border-color: &#39; + LightenDarkenColor(color, -20) + &#39;;}&#39;;
-                    var res = [];
-                    if(!$(&#39;#colorPickerStyle&#39;).length) {
-                        $(document.head).append(&#39;&lt;style id=&quot;colorPickerStyle&quot;&gt;&#39; + templeteStyle + &#39;&lt;/style&gt;&#39;);
-                    } else {
-                        $(&#39;#colorPickerStyle&#39;).html(templeteStyle);
-                    }
-                    for(var i = 0, len = 36; i &lt; len; i++) {
-                        res.push(&#39;&lt;button class=&quot;btn ui-button-primary m-1&quot; style=&quot;filter:hue-rotate(&#39; + i + &#39;0deg);&quot;&gt;其它色按钮&lt;/button&gt;&#39;)
-                    }
-                    $(&#39;#hueBtnBox&#39;).html(res.join(&#39;&#39;));
-                    $(&#39;#css&#39;).html(templeteStyle);
-                }
-            });
-            //十六进制转为RGB
-            function hex2Rgb(hex) {
-                var rgb = [];
-                if(/^\#[0-9A-F]{3}$/i.test(hex)) { //判断传入是否为#三位十六进制数
-                    let sixHex = &#39;#&#39;;
-                    hex.replace(/[0-9A-F]/ig, function(kw) {
-                        sixHex += kw + kw; //把三位16进制数转化为六位
-                    });
-                    hex = sixHex; //保存回hex
-                }
-                if(/^#[0-9A-F]{6}$/i.test(hex)) { //判断传入是否为#六位十六进制数
-                    hex.replace(/[0-9A-F]{2}/ig, function(kw) {
-                        rgb.push(eval(&#39;0x&#39; + kw)); //十六进制转化为十进制并存如数组
-                    });
-                    return `rgb(${rgb.join(&#39;,&#39;)})`; //输出RGB格式颜色
-                } else {
-                    console.log(`Input ${hex} is wrong!`);
-                    return &#39;rgb(0,0,0)&#39;;
-                }
-            }
-            //rgb转换十六进制
-            function hexify(color) {
-                var values = color
-                    .replace(/rgba?\(/, &#39;&#39;)
-                    .replace(/\)/, &#39;&#39;)
-                    .replace(/[\s+]/g, &#39;&#39;)
-                    .split(&#39;,&#39;);
-                var a = parseFloat(values[3] || 1),
-                    r = Math.floor(a * parseInt(values[0]) + (1 - a) * 255),
-                    g = Math.floor(a * parseInt(values[1]) + (1 - a) * 255),
-                    b = Math.floor(a * parseInt(values[2]) + (1 - a) * 255);
-                return &quot;#&quot; +
-                    (&quot;0&quot; + r.toString(16)).slice(-2) +
-                    (&quot;0&quot; + g.toString(16)).slice(-2) +
-                    (&quot;0&quot; + b.toString(16)).slice(-2);
-            }
-            //转换颜色变亮、变暗
-            function LightenDarkenColor(col, amt) {
-                var usePound = false;
-                if(col[0] == &quot;#&quot;) {
-                    col = col.slice(1);
-                    usePound = true;
-                }
-                var num = parseInt(col, 16);
-                var r = (num &gt;&gt; 16) + amt;
-                if(r &gt; 255) r = 255;
-                else if(r &lt; 0) r = 0;
-                var b = ((num &gt;&gt; 8) &amp; 0x00FF) + amt;
-                if(b &gt; 255) b = 255;
-                else if(b &lt; 0) b = 0;
-                var g = (num &amp; 0x0000FF) + amt;
-                if(g &gt; 255) g = 255;
-                else if(g &lt; 0) g = 0;
-                return(usePound ? &quot;#&quot; : &quot;&quot;) + (g | (b &lt;&lt; 8) | (r &lt;&lt; 16)).toString(16);
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"container jumbotron h-100"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>h1<span class="token operator">></span>选择颜色<span class="token operator">&lt;</span>/h1<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"demo"</span> class<span class="token operator">=</span><span class="token string">"input-group"</span> title<span class="token operator">=</span><span class="token string">"Using input value"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> class<span class="token operator">=</span><span class="token string">"form-control input-lg"</span> value<span class="token operator">=</span><span class="token string">""</span> /<span class="token operator">></span>
+            <span class="token operator">&lt;</span>span class<span class="token operator">=</span><span class="token string">"input-group-append"</span><span class="token operator">></span><span class="token operator">&lt;</span>span
+                    class<span class="token operator">=</span><span class="token string">"input-group-text colorpicker-input-addon"</span><span class="token operator">></span><span class="token operator">&lt;</span>i<span class="token operator">></span><span class="token operator">&lt;</span>/i<span class="token operator">></span><span class="token operator">&lt;</span>/span<span class="token operator">></span><span class="token operator">&lt;</span>/span<span class="token operator">></span>
+        <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>h4 class<span class="token operator">=</span><span class="token string">"pt-3"</span><span class="token operator">></span>色调旋转滤镜下的按钮<span class="token operator">&lt;</span>/h4<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"hueBtnBox"</span><span class="token operator">></span><span class="token operator">&lt;</span>/div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>h4 class<span class="token operator">=</span><span class="token string">"pt-3"</span><span class="token operator">></span>css<span class="token operator">&lt;</span>/h4<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"css"</span><span class="token operator">></span><span class="token operator">&lt;</span>/div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://code.jquery.com/jquery-3.3.1.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"js/bootstrap.bundle.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"js/bootstrap-colorpicker.js"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token variable"><span class="token variable">$(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">)</span></span> <span class="token punctuation">{</span>
+            <span class="token punctuation">$(</span><span class="token string">'#demo'</span><span class="token punctuation">)</span>.colorpicker<span class="token punctuation">(</span><span class="token punctuation">{</span>
+                <span class="token string">"color"</span><span class="token keyword">:</span> <span class="token string">"#ff0000"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">$(</span><span class="token string">'#demo'</span><span class="token punctuation">)</span>.on<span class="token punctuation">(</span><span class="token string">'colorpickerChange'</span>, <span class="token keyword">function</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                initColor<span class="token punctuation">(</span>event.color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            //初始化
+            initColor<span class="token punctuation">(</span><span class="token string">'#ff0000'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            //生成36种旋转滤镜颜色
+            <span class="token keyword">function</span> initColor<span class="token punctuation">(</span>color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                color <span class="token operator">=</span> String<span class="token punctuation">(</span>color<span class="token punctuation">)</span>.indexOf<span class="token punctuation">(</span><span class="token string">'#'</span><span class="token punctuation">)</span> <span class="token operator">>=</span> 0 ? color <span class="token keyword">:</span> hexify<span class="token punctuation">(</span>String<span class="token punctuation">(</span>color<span class="token punctuation">))</span><span class="token punctuation">;</span>
+                var templeteStyle <span class="token operator">=</span> <span class="token string">'.ui-button-primary{border: 1px solid '</span> + color + <span class="token string">';background-color: '</span> +
+                    color + <span class="token string">';color: #fff;}.ui-button-primary:hover {background-color: '</span> + LightenDarkenColor<span class="token punctuation">(</span>
+                        color, -20<span class="token punctuation">)</span> + <span class="token string">';border-color: '</span> + LightenDarkenColor<span class="token punctuation">(</span>color, -20<span class="token punctuation">)</span> + <span class="token string">';}'</span><span class="token punctuation">;</span>
+                var res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">$(</span><span class="token string">'#colorPickerStyle'</span><span class="token punctuation">)</span>.length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token variable"><span class="token variable">$(</span>document.head<span class="token variable">)</span></span>.append<span class="token punctuation">(</span><span class="token string">'&lt;style id="colorPickerStyle">'</span> + templeteStyle + <span class="token string">'&lt;/style>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token punctuation">$(</span><span class="token string">'#colorPickerStyle'</span><span class="token punctuation">)</span>.html<span class="token punctuation">(</span>templeteStyle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 0, len <span class="token operator">=</span> 36<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    res.push<span class="token punctuation">(</span><span class="token string">'&lt;button class="btn ui-button-primary m-1" style="filter:hue-rotate('</span> + i +
+                        <span class="token string">'0deg);">其它色按钮&lt;/button>'</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token punctuation">$(</span><span class="token string">'#hueBtnBox'</span><span class="token punctuation">)</span>.html<span class="token punctuation">(</span>res.join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+                <span class="token punctuation">$(</span><span class="token string">'#css'</span><span class="token punctuation">)</span>.html<span class="token punctuation">(</span>templeteStyle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        //十六进制转为RGB
+        <span class="token keyword">function</span> hex2Rgb<span class="token punctuation">(</span>hex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var rgb <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>/^\#<span class="token punctuation">[</span>0-9A-F<span class="token punctuation">]</span><span class="token punctuation">{</span>3<span class="token punctuation">}</span>$/i.test<span class="token punctuation">(</span>hex<span class="token punctuation">))</span> <span class="token punctuation">{</span> //判断传入是否为<span class="token comment" spellcheck="true">#三位十六进制数</span>
+                <span class="token keyword">let</span> sixHex <span class="token operator">=</span> <span class="token string">'#'</span><span class="token punctuation">;</span>
+                hex.replace<span class="token punctuation">(</span>/<span class="token punctuation">[</span>0-9A-F<span class="token punctuation">]</span>/ig, <span class="token keyword">function</span> <span class="token punctuation">(</span>kw<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    sixHex +<span class="token operator">=</span> kw + kw<span class="token punctuation">;</span> //把三位16进制数转化为六位
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                hex <span class="token operator">=</span> sixHex<span class="token punctuation">;</span> //保存回hex
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>/^<span class="token comment" spellcheck="true">#[0-9A-F]{6}$/i.test(hex)) { //判断传入是否为#六位十六进制数</span>
+                hex.replace<span class="token punctuation">(</span>/<span class="token punctuation">[</span>0-9A-F<span class="token punctuation">]</span><span class="token punctuation">{</span>2<span class="token punctuation">}</span>/ig, <span class="token keyword">function</span> <span class="token punctuation">(</span>kw<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    rgb.push<span class="token punctuation">(</span>eval<span class="token punctuation">(</span><span class="token string">'0x'</span> + kw<span class="token punctuation">))</span><span class="token punctuation">;</span> //十六进制转化为十进制并存如数组
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> `rgb<span class="token punctuation">(</span>$<span class="token punctuation">{</span>rgb.join<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token variable"><span class="token variable">`</span><span class="token punctuation">;</span> //输出RGB格式颜色
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                console.log<span class="token punctuation">(</span><span class="token variable">`</span></span>Input <span class="token variable">${hex}</span> is wrong<span class="token operator">!</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> <span class="token string">'rgb(0,0,0)'</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        //rgb转换十六进制
+        <span class="token keyword">function</span> hexify<span class="token punctuation">(</span>color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var values <span class="token operator">=</span> color
+                .replace<span class="token punctuation">(</span>/rgba?\<span class="token punctuation">(</span>/, <span class="token string">''</span><span class="token punctuation">)</span>
+                .replace<span class="token punctuation">(</span>/\<span class="token punctuation">)</span>/, <span class="token string">''</span><span class="token punctuation">)</span>
+                .replace<span class="token punctuation">(</span>/<span class="token punctuation">[</span>\s+<span class="token punctuation">]</span>/g, <span class="token string">''</span><span class="token punctuation">)</span>
+                .split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            var a <span class="token operator">=</span> parseFloat<span class="token punctuation">(</span>values<span class="token punctuation">[</span>3<span class="token punctuation">]</span> <span class="token operator">||</span> 1<span class="token punctuation">)</span>,
+                r <span class="token operator">=</span> Math.floor<span class="token punctuation">(</span>a * parseInt<span class="token punctuation">(</span>values<span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">)</span> + <span class="token punctuation">(</span>1 - a<span class="token punctuation">)</span> * 255<span class="token punctuation">)</span>,
+                g <span class="token operator">=</span> Math.floor<span class="token punctuation">(</span>a * parseInt<span class="token punctuation">(</span>values<span class="token punctuation">[</span>1<span class="token punctuation">]</span><span class="token punctuation">)</span> + <span class="token punctuation">(</span>1 - a<span class="token punctuation">)</span> * 255<span class="token punctuation">)</span>,
+                b <span class="token operator">=</span> Math.floor<span class="token punctuation">(</span>a * parseInt<span class="token punctuation">(</span>values<span class="token punctuation">[</span>2<span class="token punctuation">]</span><span class="token punctuation">)</span> + <span class="token punctuation">(</span>1 - a<span class="token punctuation">)</span> * 255<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token string">"#"</span> +
+                <span class="token punctuation">(</span><span class="token string">"0"</span> + r.toString<span class="token punctuation">(</span>16<span class="token punctuation">))</span>.slice<span class="token punctuation">(</span>-2<span class="token punctuation">)</span> +
+                <span class="token punctuation">(</span><span class="token string">"0"</span> + g.toString<span class="token punctuation">(</span>16<span class="token punctuation">))</span>.slice<span class="token punctuation">(</span>-2<span class="token punctuation">)</span> +
+                <span class="token punctuation">(</span><span class="token string">"0"</span> + b.toString<span class="token punctuation">(</span>16<span class="token punctuation">))</span>.slice<span class="token punctuation">(</span>-2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        //转换颜色变亮、变暗
+        <span class="token keyword">function</span> LightenDarkenColor<span class="token punctuation">(</span>col, amt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var usePound <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>col<span class="token punctuation">[</span>0<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"#"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                col <span class="token operator">=</span> col.slice<span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                usePound <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            var num <span class="token operator">=</span> parseInt<span class="token punctuation">(</span>col, 16<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            var r <span class="token operator">=</span> <span class="token punctuation">(</span>num <span class="token operator">>></span> 16<span class="token punctuation">)</span> + amt<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">></span> 255<span class="token punctuation">)</span> r <span class="token operator">=</span> 255<span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> 0<span class="token punctuation">)</span> r <span class="token operator">=</span> 0<span class="token punctuation">;</span>
+            var b <span class="token operator">=</span> <span class="token punctuation">((</span>num <span class="token operator">>></span> 8<span class="token punctuation">)</span> <span class="token operator">&amp;</span> 0x00FF<span class="token punctuation">)</span> + amt<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">></span> 255<span class="token punctuation">)</span> b <span class="token operator">=</span> 255<span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">&lt;</span> 0<span class="token punctuation">)</span> b <span class="token operator">=</span> 0<span class="token punctuation">;</span>
+            var g <span class="token operator">=</span> <span class="token punctuation">(</span>num <span class="token operator">&amp;</span> 0x0000FF<span class="token punctuation">)</span> + amt<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">></span> 255<span class="token punctuation">)</span> g <span class="token operator">=</span> 255<span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>g <span class="token operator">&lt;</span> 0<span class="token punctuation">)</span> g <span class="token operator">=</span> 0<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>usePound ? <span class="token string">"#"</span> <span class="token keyword">:</span> <span class="token string">""</span><span class="token punctuation">)</span> + <span class="token punctuation">(</span>g <span class="token operator">|</span> <span class="token punctuation">(</span>b <span class="token operator">&lt;&lt;</span> 8<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;&lt;</span> 16<span class="token punctuation">))</span>.toString<span class="token punctuation">(</span>16<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            }
-        &lt;/script&gt;
-    &lt;/body&gt;
-</code></pre><p>示例：<a href="/pages/色调旋转滤镜按钮在线生成/index.html">请点这里</a></p>
+        <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>/script<span class="token operator">></span>
+<span class="token operator">&lt;</span>/body<span class="token operator">></span>
+</code></pre>
+<p>示例：<a href="/pages/色调旋转滤镜按钮在线生成/index.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -811,8 +817,7 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一不小心走进你的锅…当你工作中用到  百度分享，百度官方提供了两种方式，如图：
-一定会毫不犹豫点金百度分享官网，按其提示的两种方式选择一种来用，那么问题来了…,当你真的把网页分享出去时，你可能提出类似这种问题：…无法正常显示分享缩略图和介绍</div>
+                    <div class="summary block-with-text">一不小心走进你的锅…当你工作中用到  百度分享，百度官方提供了两种方式，如图：一定会毫不犹豫点进百度分享官网，按其提示的两种方式选择一种来用，那么问题来了…,当你真的把网页分享出去时，你可能提出类似这种问题：…无法正常显示分享缩略图和介绍?</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-14
@@ -990,7 +995,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             

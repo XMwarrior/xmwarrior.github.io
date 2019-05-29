@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta name="keywords" content="input-range自定义, xmwarrior,xmsniper">
     <meta name="description" content="input-range自定义样式
-&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt;
-    &amp;lt;head&amp;gt;
-        &amp;lt;meta charset=&amp;quot;">
+&amp;lt;!DOCTYPE html&gt;
+&amp;lt;html lang=&#34;zh&#34;&gt;
+    &amp;lt;head&gt;
+        &amp;lt;meta charset=&#34;UTF-8&#34; /&gt;
+        &amp;lt;me">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -413,7 +414,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        527
+                        454
                     </div>
                     
 
@@ -437,94 +438,95 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>input-range自定义样式</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
-        &lt;title&gt;Document&lt;/title&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"zh"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>head<span class="token operator">></span>
+        <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span> /<span class="token operator">></span>
+        <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span> /<span class="token operator">></span>
+        <span class="token operator">&lt;</span>meta http-equiv<span class="token operator">=</span><span class="token string">"X-UA-Compatible"</span> content<span class="token operator">=</span><span class="token string">"ie=edge"</span> /<span class="token operator">></span>
+        <span class="token operator">&lt;</span>title<span class="token operator">></span>Document<span class="token operator">&lt;</span>/title<span class="token operator">></span>
+        <span class="token operator">&lt;</span>style type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token operator">></span>
             /*去除默认样式*/
-            input[type=range] {
-                -webkit-appearance: none;
-                width: 300px;
-                background: -webkit-linear-gradient(#059CFA, #059CFA) no-repeat;
-                background-size: 0% 100%;
-                border-radius: 10px;
+            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+                -webkit-appearance: none<span class="token punctuation">;</span>
+                width: 300px<span class="token punctuation">;</span>
+                background: -webkit-linear-gradient<span class="token punctuation">(</span><span class="token comment" spellcheck="true">#059CFA, #059CFA) no-repeat;</span>
+                background-size: 0% 100%<span class="token punctuation">;</span>
+                border-radius: 10px<span class="token punctuation">;</span>
                 /*这个属性设置使填充进度条时的图形为圆角*/
-            }
-            input[type=range]::-webkit-slider-thumb {
-                -webkit-appearance: none;
+            <span class="token punctuation">}</span>
+            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span>::-webkit-slider-thumb <span class="token punctuation">{</span>
+                -webkit-appearance: none<span class="token punctuation">;</span>
                 /*隐藏滑块*/
-            }
+            <span class="token punctuation">}</span>
             /*轨道自定义样式*/
-            input[type=range]::-webkit-slider-runnable-track {
-                height: 15px;
-                border-radius: 10px;
+            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span>::-webkit-slider-runnable-track <span class="token punctuation">{</span>
+                height: 15px<span class="token punctuation">;</span>
+                border-radius: 10px<span class="token punctuation">;</span>
                 /*将轨道设为圆角的*/
-                box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;
+                box-shadow: 0 1px 1px <span class="token comment" spellcheck="true">#def3f8, inset 0 .125em .125em #0d1112;</span>
                 /*轨道内置阴影效果*/
-            }
-            input[type=range]:focus {
-                outline: none;
+            <span class="token punctuation">}</span>
+            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span>:focus <span class="token punctuation">{</span>
+                outline: none<span class="token punctuation">;</span>
                 /*原始的控件获取到焦点时，会显示包裹整个控件的边框，所以还需要把边框取消。*/
-            }
+            <span class="token punctuation">}</span>
             /*滑块自定义样式*/
-            input[type=range]::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                height: 25px;
-                width: 25px;
-                margin-top: -5px;
+            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span>::-webkit-slider-thumb <span class="token punctuation">{</span>
+                -webkit-appearance: none<span class="token punctuation">;</span>
+                height: 25px<span class="token punctuation">;</span>
+                width: 25px<span class="token punctuation">;</span>
+                margin-top: -5px<span class="token punctuation">;</span>
                 /*使滑块超出轨道部分的偏移量相等*/
-                background: #ffffff;
-                border-radius: 50%;
+                background: <span class="token comment" spellcheck="true">#ffffff;</span>
+                border-radius: 50%<span class="token punctuation">;</span>
                 /*外观设置为圆形*/
-                border: solid 0.125em rgba(205, 224, 230, 0.5);
+                border: solid 0.125em rgba<span class="token punctuation">(</span>205, 224, 230, 0.5<span class="token punctuation">)</span><span class="token punctuation">;</span>
                 /*设置边框*/
-                box-shadow: 0 .125em .125em #3b4547;
+                box-shadow: 0 .125em .125em <span class="token comment" spellcheck="true">#3b4547;</span>
                 /*添加底部阴影*/
-            }
-        &lt;/style&gt;
-    &lt;/head&gt;
+            <span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>/style<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/head<span class="token operator">></span>
 
-    &lt;body&gt;
-        &lt;input id=&quot;snrPollInterval&quot; type=&quot;range&quot; value=&quot;10&quot; min=&quot;1&quot; max=&quot;30&quot;&gt;
-        &lt;script src=&quot;js/jquery-2.1.0.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-        &lt;script type=&quot;text/javascript&quot;&gt;
+    <span class="token operator">&lt;</span>body<span class="token operator">></span>
+        <span class="token operator">&lt;</span>input id<span class="token operator">=</span><span class="token string">"snrPollInterval"</span> type<span class="token operator">=</span><span class="token string">"range"</span> value<span class="token operator">=</span><span class="token string">"10"</span> min<span class="token operator">=</span><span class="token string">"1"</span> max<span class="token operator">=</span><span class="token string">"30"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"js/jquery-2.1.0.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span> charset<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
+        <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
             //滑动时的样式
-            $.fn.RangeSlider = function(cfg) {
-                this.sliderCfg = {
-                    min: cfg &amp;&amp; !isNaN(parseFloat(cfg.min)) ? Number(cfg.min) : null,
-                    max: cfg &amp;&amp; !isNaN(parseFloat(cfg.max)) ? Number(cfg.max) : null,
-                    step: cfg &amp;&amp; Number(cfg.step) ? cfg.step : 1,
-                    callback: cfg &amp;&amp; cfg.callback ? cfg.callback : null
-                };
-                var $input = $(this);
-                var min = this.sliderCfg.min;
-                var max = this.sliderCfg.max;
-                var step = this.sliderCfg.step;
-                var callback = this.sliderCfg.callback;
-                $input.attr(&#39;min&#39;, min).attr(&#39;max&#39;, max).attr(&#39;step&#39;, step);
-                $input.on(&quot;input&quot;, function(e) {
-                    $input.attr(&#39;value&#39;, this.value);
-                    $input.css(&#39;background&#39;, &#39;linear-gradient(to right, #059CFA, #ebeff4 &#39; + this.value + &#39;%, #ebeff4)&#39;);
-                    if($.isFunction(callback)) {
-                        callback(this);
-                    }
-                });
-                $input.trigger(&#39;input&#39;);
-            };
-            $(&#39;#snrPollInterval&#39;).RangeSlider({
+            $.fn.RangeSlider <span class="token operator">=</span> function<span class="token punctuation">(</span>cfg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                this.sliderCfg <span class="token operator">=</span> <span class="token punctuation">{</span>
+                    min: cfg <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isNaN<span class="token punctuation">(</span>parseFloat<span class="token punctuation">(</span>cfg.min<span class="token punctuation">))</span> ? Number<span class="token punctuation">(</span>cfg.min<span class="token punctuation">)</span> <span class="token keyword">:</span> null,
+                    max: cfg <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isNaN<span class="token punctuation">(</span>parseFloat<span class="token punctuation">(</span>cfg.max<span class="token punctuation">))</span> ? Number<span class="token punctuation">(</span>cfg.max<span class="token punctuation">)</span> <span class="token keyword">:</span> null,
+                    step: cfg <span class="token operator">&amp;&amp;</span> Number<span class="token punctuation">(</span>cfg.step<span class="token punctuation">)</span> ? cfg.step <span class="token keyword">:</span> 1,
+                    callback: cfg <span class="token operator">&amp;&amp;</span> cfg.callback ? cfg.callback <span class="token keyword">:</span> null
+                <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                var <span class="token variable">$input</span> <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>this<span class="token variable">)</span></span><span class="token punctuation">;</span>
+                var min <span class="token operator">=</span> this.sliderCfg.min<span class="token punctuation">;</span>
+                var max <span class="token operator">=</span> this.sliderCfg.max<span class="token punctuation">;</span>
+                var step <span class="token operator">=</span> this.sliderCfg.step<span class="token punctuation">;</span>
+                var callback <span class="token operator">=</span> this.sliderCfg.callback<span class="token punctuation">;</span>
+                <span class="token variable">$input</span>.attr<span class="token punctuation">(</span><span class="token string">'min'</span>, min<span class="token punctuation">)</span>.attr<span class="token punctuation">(</span><span class="token string">'max'</span>, max<span class="token punctuation">)</span>.attr<span class="token punctuation">(</span><span class="token string">'step'</span>, step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token variable">$input</span>.on<span class="token punctuation">(</span><span class="token string">"input"</span>, function<span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token variable">$input</span>.attr<span class="token punctuation">(</span><span class="token string">'value'</span>, this.value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token variable">$input</span>.css<span class="token punctuation">(</span><span class="token string">'background'</span>, <span class="token string">'linear-gradient(to right, #059CFA, #ebeff4 '</span> + this.value + <span class="token string">'%, #ebeff4)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    if<span class="token punctuation">(</span>$.isFunction<span class="token punctuation">(</span>callback<span class="token punctuation">))</span> <span class="token punctuation">{</span>
+                        callback<span class="token punctuation">(</span>this<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token variable">$input</span>.trigger<span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token punctuation">$(</span><span class="token string">'#snrPollInterval'</span><span class="token punctuation">)</span>.RangeSlider<span class="token punctuation">(</span><span class="token punctuation">{</span>
                 min: 0,
                 max: 100,
                 step: 1,
-                callback: &#39;&#39;
-            });
-        &lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>示例：<a href="/pages/input_range自定义.html">请点这里</a></p>
+                callback: <span class="token string">''</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">&lt;</span>/script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/body<span class="token operator">></span>
+<span class="token operator">&lt;</span>/html<span class="token operator">></span>
+</code></pre>
+<p>示例：<a href="/pages/input_range自定义.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -730,12 +732,12 @@
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">收藏备用：
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;!DOCTYPE html>
+&lt;html>
 
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot;&gt;
-        &lt;ti</div>
+    &lt;head>
+        &lt;meta charset="UTF-8">
+        &lt;title>解决JS运算和精度问题-decima</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-19
@@ -966,7 +968,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             

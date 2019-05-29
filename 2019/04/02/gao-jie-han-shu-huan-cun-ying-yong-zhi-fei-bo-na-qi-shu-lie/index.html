@@ -435,52 +435,61 @@
             <div id="articleContent">
                 <p>合理的利用js缓存，能有效提升复杂运算效率，此处有两种概念：<br>1.闭包-（指有权访问另一个函数作用域中的变量的函数）<br>2.高阶函数-（接受其他函数作为参数或返回其他函数的函数）<br>此处以斐波那契数列为例，演示了运用缓存与不运用缓存计算的效率差别。</p>
 <p>斐波那契数列是一组数字，以1 或 0 开头，后面跟着1，然后根据每个数字等于前两个数字之和规则进行。如</p>
-<pre><code>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …]
-</code></pre><p>根据此规律，编写一个函数返回斐波那契数列中的 n 元素，可解：</p>
-<pre><code>function fibonacci(n) {
-    if(n &lt;= 1) {
-        return 1;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-};
-</code></pre><p>运用高阶函数缓存改写此方法，可封装函数：</p>
-<pre><code>var memoizer = function(fun) {
-    var cache = {};
-    return function(n) {
-        if(cache[n] != undefined) {
-            return cache[n];
-        } else {
-            var result = fun(n);
-            cache[n] = result;
-            return result;
-        }
-    }
-};
-var fibonacciUseCache = memoizer(fibonacciMemorizer);
-var fibonacciMemorizer = function(n) {
-    if(n &lt;= 1) {
-        return 1;
-    }
-    return fibonacciUseCache(n - 1) + fibonacciUseCache(n - 2);
-}
-</code></pre><p>下面是写给自己看的，此处用jquery拓展封装下，备用：</p>
-<pre><code>(function() {
-    $.extend({
-        memoizer:function(fun) {
-            var cache = {};
-            return function(n) {
-                if(cache[n] != undefined) {
-                    return cache[n];
-                } else {
-                    var result = fun(n);
-                    cache[n] = result;
-                    return result;
-                }
-            }
-        }
-    });
-})();
-</code></pre><p>参考文档：<br><a href="https://segmentfault.com/a/1190000018589996" target="_blank" rel="noopener">Web 性能优化：理解及使用 JavaScript 缓存-前端小智</a><br><a href="http://www.ruanyifeng.com/blog/2018/07/web-worker.html" target="_blank" rel="noopener">Web Worker 使用教程-阮一峰</a><br>示例：<a href="/pages/高阶函数缓存应用之斐波那契数列/index.html">请点这里</a></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …<span class="token punctuation">]</span>
+</code></pre>
+<p>根据此规律，编写一个函数返回斐波那契数列中的 n 元素，可解：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> fibonacci<span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> 1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> 1<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> fibonacci<span class="token punctuation">(</span>n - 1<span class="token punctuation">)</span> + fibonacci<span class="token punctuation">(</span>n - 2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>运用高阶函数缓存改写此方法，可封装函数：</p>
+<pre class=" language-bash"><code class="language-bash">var memoizer <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>fun<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var cache <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cache<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">!=</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> cache<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            var result <span class="token operator">=</span> fun<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cache<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> result<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+var fibonacciUseCache <span class="token operator">=</span> memoizer<span class="token punctuation">(</span>fibonacciMemorizer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+var fibonacciMemorizer <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> 1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> 1<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> fibonacciUseCache<span class="token punctuation">(</span>n - 1<span class="token punctuation">)</span> + fibonacciUseCache<span class="token punctuation">(</span>n - 2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>下面是写给自己看的，此处用jquery拓展封装下，备用：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>function <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $.extend<span class="token punctuation">(</span><span class="token punctuation">{</span>
+        memoizer: <span class="token keyword">function</span> <span class="token punctuation">(</span>fun<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var cache <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>cache<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">!=</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> cache<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    var result <span class="token operator">=</span> fun<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    cache<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> result<span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>参考文档：</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000018589996" target="_blank" rel="noopener">Web 性能优化：理解及使用 JavaScript 缓存-前端小智</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2018/07/web-worker.html" target="_blank" rel="noopener">Web Worker 使用教程-阮一峰</a></li>
+</ul>
+<p>示例：<a href="/pages/高阶函数缓存应用之斐波那契数列/index.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -686,8 +695,7 @@ var fibonacciMemorizer = function(n) {
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">此处不宜多说（露出一个高深莫测的微笑！），精华自取：
-(function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) {
- </div>
+(function (window, document, scriptName, wigetname, url, jsonurl, scriptNode, originalNode) {</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-11
@@ -914,7 +922,7 @@ var fibonacciMemorizer = function(n) {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             

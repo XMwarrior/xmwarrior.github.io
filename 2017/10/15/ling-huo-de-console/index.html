@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta name="keywords" content="灵活的console, xmwarrior,xmsniper">
     <meta name="description" content="//打印信息。注：%s字符串，%d数字，%c添加css样式
-console.log(&amp;#39;console.log&amp;#39;);
+console.log(&#39;console.log&#39;);
 //打印警告
-console.warn(&amp;#39;console.warn&amp;#39;);
+console.warn(&#39;console.warn&#39;);
 //打印dom
-c">
+console.dir(docum">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -410,7 +410,7 @@ c">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        286
+                        228
                     </div>
                     
 
@@ -433,59 +433,60 @@ c">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>//打印信息。注：%s字符串，%d数字，%c添加css样式
-console.log(&#39;console.log&#39;);
+                <pre class=" language-bash"><code class="language-bash">//打印信息。注：%s字符串，%d数字，%c添加css样式
+console.log<span class="token punctuation">(</span><span class="token string">'console.log'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 //打印警告
-console.warn(&#39;console.warn&#39;);
+console.warn<span class="token punctuation">(</span><span class="token string">'console.warn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 //打印dom
-console.dir(document.getElementById(&#39;a3&#39;));
+console.dir<span class="token punctuation">(</span>document.getElementById<span class="token punctuation">(</span><span class="token string">'a3'</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
 //打印表格
-console.table([{
-    id: &#39;1&#39;,
-    name: &#39;小明&#39;,
-    age: &#39;18&#39;,
-    weight: &#39;55kg&#39;
-}, {
-    id: &#39;1&#39;,
-    name: &#39;小红&#39;,
-    age: &#39;17&#39;,
-    weight: &#39;65kg&#39;
-}], [&#39;name&#39;, &#39;age&#39;]);
+console.table<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+    id: <span class="token string">'1'</span>,
+    name: <span class="token string">'小明'</span>,
+    age: <span class="token string">'18'</span>,
+    weight: <span class="token string">'55kg'</span>
+<span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+    id: <span class="token string">'1'</span>,
+    name: <span class="token string">'小红'</span>,
+    age: <span class="token string">'17'</span>,
+    weight: <span class="token string">'65kg'</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span>, <span class="token punctuation">[</span><span class="token string">'name'</span>, <span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 //打印非匹配。应用场景：查找差异、ajax请求数据格式差异提示。
-var arr = [&#39;1&#39;, &#39;2&#39;, {
-    id: &#39;3&#39;
-}];
-arr.forEach(function(item, index) {
-    console.assert(typeof item === &#39;string&#39;, item);
-});
+var arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'1'</span>, <span class="token string">'2'</span>, <span class="token punctuation">{</span>
+    id: <span class="token string">'3'</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr.forEach<span class="token punctuation">(</span>function<span class="token punctuation">(</span>item, index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console.assert<span class="token punctuation">(</span>typeof item <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">'string'</span>, item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 //打印计数。应用场景：dom绑定事件次数监测
-listenerAdd(true);
-function listenerAdd(isfirst) {
-    !isfirst&amp;&amp;console.countReset(&#39;click&#39;);
-    document.querySelector(&#39;#countAdd&#39;).addEventListener(&#39;click&#39;, function() {
-        console.count(&#39;click&#39;);
-    });
-}
+listenerAdd<span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> listenerAdd<span class="token punctuation">(</span>isfirst<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">!</span>isfirst<span class="token operator">&amp;&amp;</span>console.countReset<span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    document.querySelector<span class="token punctuation">(</span><span class="token string">'#countAdd'</span><span class="token punctuation">)</span>.addEventListener<span class="token punctuation">(</span><span class="token string">'click'</span>, function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console.count<span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 //打印操作时间
-getRunTime();
-function getRunTime() {
-    console.time(&#39;t&#39;);
-    setTimeout(function () {
-         console.timeEnd(&#39;t&#39;);
-        console.log(&#39;发现没有，时间t大于%c600ms&#39;,&#39;color:red&#39;)
-    },600);
-}
+getRunTime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> getRunTime<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console.time<span class="token punctuation">(</span><span class="token string">'t'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    setTimeout<span class="token punctuation">(</span>function <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console.timeEnd<span class="token punctuation">(</span><span class="token string">'t'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console.log<span class="token punctuation">(</span><span class="token string">'发现没有，时间t大于%c600ms'</span>, <span class="token string">'color:red'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>, 600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 //组合打印信息
-group();
-function group() {
-    var res=[];
-    console.group(&#39;logGroup&#39;);
-    for (var i=0,length=10;i&lt;length;i++) {
-        console.log(&#39;&lt;li&gt;&#39;+i+&#39;&lt;/li&gt;&#39;);
-    }
-    console.groupEnd();
-}
-</code></pre><p>参考文档：<br><a href="https://segmentfault.com/a/1190000018756503" target="_blank" rel="noopener">灵活使用 console 让 js 调试更简单</a><br>示例：<a href="/pages/灵活的console/index.html">请点这里</a></p>
+group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> group<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    console.group<span class="token punctuation">(</span><span class="token string">'logGroup'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 0, length <span class="token operator">=</span> 10<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console.log<span class="token punctuation">(</span><span class="token string">'&lt;li>'</span> + i + <span class="token string">'&lt;/li>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    console.groupEnd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>参考文档：<br><a href="https://segmentfault.com/a/1190000018756503" target="_blank" rel="noopener">灵活使用 console 让 js 调试更简单</a><br>示例：<a href="/pages/灵活的console/index.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -923,7 +924,7 @@ headhead基本内容：
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             

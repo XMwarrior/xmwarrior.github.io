@@ -431,18 +431,19 @@ document.onkeydown=function(){
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>所谓防火防盗防大佬，虽然我们提倡开源，但是有时也会用到“网页防扒”，在<a href="https://www.sojson.com" target="_blank" rel="noopener">https://www.sojson.com</a> 被挡了一会感觉很蓝瘦，顺便研究了下如何“防扒”，代码如下：</p>
-<pre><code>document.onkeydown=function(){
-    var e=window.event||arguments[0];
-    if(e.keyCode==123){
-        return false;
-    }else if((e.ctrlKey)&amp;&amp;(e.shiftKey)&amp;&amp;(e.keyCode==73)){
-        return false;
-    }
-};
-document.oncontextmenu=function(){
-    return false;
-}
-</code></pre><p>示例：<a href="/pages/网页防扒.html">请点这里</a></p>
+<pre class=" language-bash"><code class="language-bash">document.onkeydown<span class="token operator">=</span>function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    var e<span class="token operator">=</span>window.event<span class="token operator">||</span>arguments<span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    if<span class="token punctuation">(</span>e.keyCode<span class="token operator">==</span>123<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>else <span class="token keyword">if</span><span class="token variable"><span class="token punctuation">((</span>e.ctrlKey<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span><span class="token punctuation">(</span>e.shiftKey<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span><span class="token punctuation">(</span>e.keyCode<span class="token operator">==</span><span class="token number">73</span><span class="token punctuation">))</span></span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+document.oncontextmenu<span class="token operator">=</span>function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>示例：<a href="/pages/网页防扒.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -884,7 +885,7 @@ document.oncontextmenu=function(){
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             

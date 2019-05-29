@@ -6,12 +6,12 @@
     <meta charset="utf-8">
     <meta name="keywords" content="js运算精度_decimal插件, xmwarrior,xmsniper">
     <meta name="description" content="收藏备用：
-&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
+&amp;lt;!DOCTYPE html&gt;
+&amp;lt;html&gt;
 
-    &amp;lt;head&amp;gt;
-        &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
-        &amp;lt;ti">
+    &amp;lt;head&gt;
+        &amp;lt;meta charset=&#34;UTF-8&#34;&gt;
+        &amp;lt;title&gt;解决JS运算和精度问题-decima">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -411,7 +411,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        160
+                        136
                     </div>
                     
 
@@ -435,38 +435,39 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>收藏备用：</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
 
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot;&gt;
-        &lt;title&gt;解决JS运算和精度问题-decimal.js&lt;/title&gt;
-        &lt;script src=&quot;../js/decimal.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-    &lt;/head&gt;
+    <span class="token operator">&lt;</span>head<span class="token operator">></span>
+        <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>title<span class="token operator">></span>解决JS运算和精度问题-decimal.js<span class="token operator">&lt;</span>/title<span class="token operator">></span>
+        <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"../js/decimal.min.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span> charset<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/head<span class="token operator">></span>
 
-    &lt;body&gt;
-        &lt;script type=&quot;text/javascript&quot;&gt;
+    <span class="token operator">&lt;</span>body<span class="token operator">></span>
+        <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
             /*示例*/
-            var dc=function (r) {
-                return new Decimal(r);
-            }
+            var dc<span class="token operator">=</span>function <span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> new Decimal<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
             //加法 add
-            var a = dc(0.1).add(dc(0.2));
+            var a <span class="token operator">=</span> dc<span class="token punctuation">(</span>0.1<span class="token punctuation">)</span>.add<span class="token punctuation">(</span>dc<span class="token punctuation">(</span>0.2<span class="token punctuation">))</span><span class="token punctuation">;</span>
             //减法 sub
-            var b = dc(0.3).sub(dc(0.1));
+            var b <span class="token operator">=</span> dc<span class="token punctuation">(</span>0.3<span class="token punctuation">)</span>.sub<span class="token punctuation">(</span>dc<span class="token punctuation">(</span>0.1<span class="token punctuation">))</span><span class="token punctuation">;</span>
             //乘法 mul
-            var c = dc(37.5).mul(dc(5.5));
+            var c <span class="token operator">=</span> dc<span class="token punctuation">(</span>37.5<span class="token punctuation">)</span>.mul<span class="token punctuation">(</span>dc<span class="token punctuation">(</span>5.5<span class="token punctuation">))</span><span class="token punctuation">;</span>
             //除法 div
-            var d = dc(10).div(dc(3));
-            console.log(a);
-            console.log(b);
-            console.log(c);
-            console.log(d);
-        &lt;/script&gt;
-    &lt;/body&gt;
+            var d <span class="token operator">=</span> dc<span class="token punctuation">(</span>10<span class="token punctuation">)</span>.div<span class="token punctuation">(</span>dc<span class="token punctuation">(</span>3<span class="token punctuation">))</span><span class="token punctuation">;</span>
+            console.log<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            console.log<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            console.log<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            console.log<span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">&lt;</span>/script<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/body<span class="token operator">></span>
 
-&lt;/html&gt;
-</code></pre><p>示例：<a href="/pages/js运算精度_decimal插件.html">请点这里</a></p>
+<span class="token operator">&lt;</span>/html<span class="token operator">></span>
+</code></pre>
+<p>示例：<a href="/pages/js运算精度_decimal插件.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -671,12 +672,12 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
+                    <div class="summary block-with-text">&lt;!DOCTYPE HTML>
+&lt;html>
 
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;meta nam</div>
+    &lt;head>
+        &lt;meta charset="utf-8">
+        &lt;meta name="renderer" content="</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-25
@@ -722,10 +723,11 @@
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">input-range自定义样式
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;</div>
+&lt;!DOCTYPE html>
+&lt;html lang="zh">
+    &lt;head>
+        &lt;meta charset="UTF-8" />
+        &lt;me</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-01
@@ -907,7 +909,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             

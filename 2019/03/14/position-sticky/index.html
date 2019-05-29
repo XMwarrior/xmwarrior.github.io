@@ -409,7 +409,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        265
+                        240
                     </div>
                     
 
@@ -434,42 +434,42 @@
             <div id="articleContent">
                 <h2 id="position-sticky简介"><a href="#position-sticky简介" class="headerlink" title="position:sticky简介"></a>position:sticky简介</h2><p>单词sticky的中文意思是“粘性的”，position:sticky表现也符合这个粘性的表现。<br>基本上，可以看出是position:relative和position:fixed的结合体——当元素在屏幕内，表现为relative，就要滚出显示器屏幕的时候，表现为fixed。<br>你可以点击 <a href="/pages/position-sticky.html">此处</a> 感受一下。</p>
 <p>不过应用此属性需要注意html布局配合，以下是css样式及html结构，具体体会你将在使用时，切身体会到：</p>
-<p><strong>css</strong></p>
-<pre><code>h4 {
-    position: sticky;
-    z-index: 1;
-    top: 0;
-}
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a><strong>css</strong></h3><pre class=" language-bash"><code class="language-bash">h4 <span class="token punctuation">{</span>
+    position: sticky<span class="token punctuation">;</span>
+    z-index: 1<span class="token punctuation">;</span>
+    top: 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-div {
-    position: relative;
-    background-color: #7FDBFF;
-}
+div <span class="token punctuation">{</span>
+    position: relative<span class="token punctuation">;</span>
+    background-color: <span class="token comment" spellcheck="true">#7FDBFF;</span>
+<span class="token punctuation">}</span>
 
-span {
-    display: block;
-    position: sticky;
-    bottom: 50%;
-    z-index: -1;
-    background: #2ECC40;
-}
-</code></pre><p><strong>html</strong></p>
-<pre><code>&lt;ul&gt;
-    &lt;li&gt;
-        &lt;h4&gt;我是标题1&lt;/h4&gt;
-        &lt;div&gt;
-            &lt;p&gt;我是内容......&lt;/p&gt;
-            &lt;p&gt;我是内容......&lt;/p&gt;
-            &lt;p&gt;我是内容......&lt;/p&gt;
-            &lt;p&gt;我是内容......&lt;/p&gt;
-            &lt;p&gt;我是内容......&lt;/p&gt;
-            &lt;p&gt;我是内容......&lt;/p&gt;
-            &lt;p&gt;我是内容......&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;span&gt;我是footer&lt;/span&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</code></pre><p>示例：<a href="/pages/position-sticky.html">请点这里</a></p>
+span <span class="token punctuation">{</span>
+    display: block<span class="token punctuation">;</span>
+    position: sticky<span class="token punctuation">;</span>
+    bottom: 50%<span class="token punctuation">;</span>
+    z-index: -1<span class="token punctuation">;</span>
+    background: <span class="token comment" spellcheck="true">#2ECC40;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="html"><a href="#html" class="headerlink" title="html"></a><strong>html</strong></h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>ul<span class="token operator">></span>
+    <span class="token operator">&lt;</span>li<span class="token operator">></span>
+        <span class="token operator">&lt;</span>h4<span class="token operator">></span>我是标题1<span class="token operator">&lt;</span>/h4<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div<span class="token operator">></span>
+            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是内容<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
+            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是内容<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
+            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是内容<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
+            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是内容<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
+            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是内容<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
+            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是内容<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
+            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是内容<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
+        <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>我是footer<span class="token operator">&lt;</span>/span<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/li<span class="token operator">></span>
+<span class="token operator">&lt;</span>/ul<span class="token operator">></span>
+</code></pre>
+<p>示例：<a href="/pages/position-sticky.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -674,8 +674,7 @@ span {
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一不小心走进你的锅…当你工作中用到  百度分享，百度官方提供了两种方式，如图：
-一定会毫不犹豫点金百度分享官网，按其提示的两种方式选择一种来用，那么问题来了…,当你真的把网页分享出去时，你可能提出类似这种问题：…无法正常显示分享缩略图和介绍</div>
+                    <div class="summary block-with-text">一不小心走进你的锅…当你工作中用到  百度分享，百度官方提供了两种方式，如图：一定会毫不犹豫点进百度分享官网，按其提示的两种方式选择一种来用，那么问题来了…,当你真的把网页分享出去时，你可能提出类似这种问题：…无法正常显示分享缩略图和介绍?</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-14
@@ -905,7 +904,7 @@ span {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.2k</span>
+                <span class="white-color">14.3k</span>
             
 
             
