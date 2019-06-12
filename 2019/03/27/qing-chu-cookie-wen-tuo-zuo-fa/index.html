@@ -405,7 +405,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        304
+                        273
                     </div>
                     
 
@@ -429,68 +429,69 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>清除cookie稳妥做法就是设置cookie与清除cookie写法一致，cookie清除不了的问题，主要出现在设置与清除cookie并非一端操作的情况下，此时需要注意path、domain的设置必须保持一致，注意下文中注释<code>//warning</code>处代码，如下：</p>
-<pre><code>/*Days默认输入number或string格式数字=day；s10、m10、h10、d10分别代表秒、分、小时、天*/
-function setCookie(name, value, Days) {
-    var cookieString = name + &#39;=&#39; + escape(value),
-        checkTime, checkMark;
-    if (!isNaN(+Days)) {
-        checkTime = +Days
-    } else {
-        checkTime = Days.substr(1);
-        checkMark = Days.substr(0, 1)
-    } if (checkTime &gt; 0) {
-        var setDate = new Date();
-        setDate.setTime(setDate.getTime() + checkstr(checkMark, checkTime));
-        cookieString = name + &#39;=&#39; + escape(value) + &#39;; expires=&#39; + setDate.toGMTString() + &#39;;path=/;domain=&#39; + location.hostname
-    }
-    document.cookie = cookieString
-}
+<pre class=" language-bash"><code class="language-bash">/*Days默认输入number或string格式数字<span class="token operator">=</span>day；s10、m10、h10、d10分别代表秒、分、小时、天*/
+<span class="token keyword">function</span> setCookie<span class="token punctuation">(</span>name, value, Days<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var cookieString <span class="token operator">=</span> name + <span class="token string">'='</span> + escape<span class="token punctuation">(</span>value<span class="token punctuation">)</span>,
+        checkTime, checkMark<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isNaN<span class="token punctuation">(</span>+Days<span class="token punctuation">))</span> <span class="token punctuation">{</span>
+        checkTime <span class="token operator">=</span> +Days
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        checkTime <span class="token operator">=</span> Days.substr<span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        checkMark <span class="token operator">=</span> Days.substr<span class="token punctuation">(</span>0, 1<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>checkTime <span class="token operator">></span> 0<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        var setDate <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        setDate.setTime<span class="token punctuation">(</span>setDate.getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> + checkstr<span class="token punctuation">(</span>checkMark, checkTime<span class="token punctuation">))</span><span class="token punctuation">;</span>
+        cookieString <span class="token operator">=</span> name + <span class="token string">'='</span> + escape<span class="token punctuation">(</span>value<span class="token punctuation">)</span> + <span class="token string">'; expires='</span> + setDate.toGMTString<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">';path=/;domain='</span> + location.hostname
+    <span class="token punctuation">}</span>
+    document.cookie <span class="token operator">=</span> cookieString
+<span class="token punctuation">}</span>
 
-function getCookie(name) {
-    var strCookie = document.cookie,
-        arrCookie = strCookie.split(&#39;;&#39;);
-    for (var i = 0, len = arrCookie.length; i &lt; len; i++) {
-        var Arr_keyvalue = arrCookie[i].split(&#39;=&#39;);
-        if (Arr_keyvalue[0].replace(/(^\s*)|(\s*$)/g, &quot;&quot;) == name) {
-            return unescape(Arr_keyvalue[1])
-        }
-    }
-    return &#39;&#39;
-}
+<span class="token keyword">function</span> getCookie<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var strCookie <span class="token operator">=</span> document.cookie,
+        arrCookie <span class="token operator">=</span> strCookie.split<span class="token punctuation">(</span><span class="token string">';'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 0, len <span class="token operator">=</span> arrCookie.length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        var Arr_keyvalue <span class="token operator">=</span> arrCookie<span class="token punctuation">[</span>i<span class="token punctuation">]</span>.split<span class="token punctuation">(</span><span class="token string">'='</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Arr_keyvalue<span class="token punctuation">[</span>0<span class="token punctuation">]</span>.replace<span class="token punctuation">(</span>/<span class="token punctuation">(</span>^\s*<span class="token punctuation">)</span><span class="token operator">|</span><span class="token punctuation">(</span>\s*$<span class="token punctuation">)</span>/g, <span class="token string">""</span><span class="token punctuation">)</span> <span class="token operator">==</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> unescape<span class="token punctuation">(</span>Arr_keyvalue<span class="token punctuation">[</span>1<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token string">''</span>
+<span class="token punctuation">}</span>
 
-function deleteCookie(name) {
-    var setDate = new Date();
-    setDate.setTime(setDate.getTime() - 10000);
-    var value = getCookie(name);
-    if (value) {
-        document.cookie = name + &#39;=&#39; + value + &#39;; expires=&#39; + setDate.toGMTString() + &#39;;path=/;domain=&#39; + location.hostname
-    }
-}
+<span class="token keyword">function</span> deleteCookie<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var setDate <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    setDate.setTime<span class="token punctuation">(</span>setDate.getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> - 10000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    var value <span class="token operator">=</span> getCookie<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        document.cookie <span class="token operator">=</span> name + <span class="token string">'='</span> + value + <span class="token string">'; expires='</span> + setDate.toGMTString<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">';path=/;domain='</span> + location.hostname
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-function checkstr(mark, Time) {
-    if (!mark) {
-        return Time * 24 * 60 * 60 * 1000
-    } else {
-        switch (mark) {
-            case &#39;s&#39;:
-                return Time * 1000;
-                break;
-            case &#39;m&#39;:
-                return Time * 60 * 1000;
-                break;
-            case &#39;h&#39;:
-                return Time * 60 * 60 * 1000;
-                break;
-            case &#39;d&#39;:
-                return Time * 24 * 60 * 60 * 1000;
-                break;
+<span class="token keyword">function</span> checkstr<span class="token punctuation">(</span>mark, Time<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>mark<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Time * 24 * 60 * 60 * 1000
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        switch <span class="token punctuation">(</span>mark<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token string">'s'</span><span class="token keyword">:</span>
+                <span class="token keyword">return</span> Time * 1000<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'m'</span><span class="token keyword">:</span>
+                <span class="token keyword">return</span> Time * 60 * 1000<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'h'</span><span class="token keyword">:</span>
+                <span class="token keyword">return</span> Time * 60 * 60 * 1000<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'d'</span><span class="token keyword">:</span>
+                <span class="token keyword">return</span> Time * 24 * 60 * 60 * 1000<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
             default:
-                return false;
-                break
-        }
-    }
-}
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
+
             </div>
             <hr>
 
@@ -745,8 +746,9 @@ function checkstr(mark, Time) {
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">本例应用颜色拾取插件 https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html直接放源码，有兴趣的点击例子查看：
-&lt;!DOCTYPE html&gt;
-&lt;ht</div>
+&lt;html lang="zh">
+
+&lt;hea</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-18
@@ -936,7 +938,7 @@ function checkstr(mark, Time) {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14.5k</span>
+                <span class="white-color">14.3k</span>
             
 
             

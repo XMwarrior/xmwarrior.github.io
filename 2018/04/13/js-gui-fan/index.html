@@ -430,44 +430,48 @@ As long as necessary（如有必要，尽量详尽）：合理的注释、空行
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h4 id="原则"><a href="#原则" class="headerlink" title="原则"></a><strong>原则</strong></h4><p>As short as possible（如无必要，勿增注释）：尽量提高代码本身的清晰性、可读性。</p>
+                <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a><strong>原则</strong></h3><p>As short as possible（如无必要，勿增注释）：尽量提高代码本身的清晰性、可读性。</p>
 <p>As long as necessary（如有必要，尽量详尽）：合理的注释、空行排版等，可以让代码更易阅读、更具美感。</p>
-<h4 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a><strong>单行注释</strong></h4><p>必须独占一行。<code>//</code> 后跟一个空格，缩进与下一行被注释说明的代码一致。</p>
-<h4 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a><strong>多行注释</strong></h4><p>避免使用 <code>/*...*/</code> 这样的多行注释。有多行注释内容时，使用多个单行注释。</p>
-<h4 id="函数-方法注释"><a href="#函数-方法注释" class="headerlink" title="函数/方法注释"></a><strong>函数/方法注释</strong></h4><p>函数/方法注释必须包含函数说明，有参数和返回值时必须使用注释标识。；<br>参数和返回值注释必须包含类型信息和说明；<br>当函数是内部函数，外部不可访问时，可以使用 <code>@inner</code> 标识；</p>
-<pre><code>/**
+<h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a><strong>单行注释</strong></h3><p>必须独占一行。<code>//</code> 后跟一个空格，缩进与下一行被注释说明的代码一致。</p>
+<h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a><strong>多行注释</strong></h3><p>避免使用 <code>/*...*/</code> 这样的多行注释。有多行注释内容时，使用多个单行注释。</p>
+<h3 id="函数-方法注释"><a href="#函数-方法注释" class="headerlink" title="函数/方法注释"></a><strong>函数/方法注释</strong></h3><p>函数/方法注释必须包含函数说明，有参数和返回值时必须使用注释标识。；<br>参数和返回值注释必须包含类型信息和说明；<br>当函数是内部函数，外部不可访问时，可以使用 <code>@inner</code> 标识；</p>
+<pre class=" language-bash"><code class="language-bash">/**
  * 函数描述
  *
- * @param {string} p1 参数1的说明
- * @param {string} p2 参数2的说明，比较长
+ * @param <span class="token punctuation">{</span>string<span class="token punctuation">}</span> p1 参数1的说明
+ * @param <span class="token punctuation">{</span>string<span class="token punctuation">}</span> p2 参数2的说明，比较长
  *     那就换行了.
- * @param {number=} p3 参数3的说明（可选）
- * @return {Object} 返回值描述
+ * @param <span class="token punctuation">{</span>number<span class="token operator">=</span><span class="token punctuation">}</span> p3 参数3的说明（可选）
+ * @return <span class="token punctuation">{</span>Object<span class="token punctuation">}</span> 返回值描述
  */
-function foo(p1, p2, p3) {
-    var p3 = p3 || 10;
-    return {
+<span class="token keyword">function</span> foo<span class="token punctuation">(</span>p1, p2, p3<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var p3 <span class="token operator">=</span> p3 <span class="token operator">||</span> 10<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
         p1: p1,
         p2: p2,
         p3: p3
-    };
-}
-</code></pre><h4 id="文件注释"><a href="#文件注释" class="headerlink" title="文件注释"></a><strong>文件注释</strong></h4><p>文件注释用于告诉不熟悉这段代码的读者这个文件中包含哪些东西。 应该提供文件的大体内容, 它的 <strong><code>作者</code></strong> , <strong><code>依赖关系</code></strong> 和 <strong><code>兼容性信息</code></strong> 。如下:</p>
-<pre><code>/**
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="文件注释"><a href="#文件注释" class="headerlink" title="文件注释"></a><strong>文件注释</strong></h3><p>文件注释用于告诉不熟悉这段代码的读者这个文件中包含哪些东西。 应该提供文件的大体内容, 它的 <strong><code>作者</code></strong> , <strong><code>依赖关系</code></strong> 和 <strong><code>兼容性信息</code></strong> 。如下:</p>
+<pre class=" language-bash"><code class="language-bash">/**
  * @fileoverview Description of file, its uses and information
  * about its dependencies.
- * @author user@meizu.com (Firstname Lastname)
+ * @author user@meizu.com <span class="token punctuation">(</span>Firstname Lastname<span class="token punctuation">)</span>
  * Copyright 2009 Meizu Inc. All Rights Reserved.
  */
-</code></pre><h2 id="命名语法"><a href="#命名语法" class="headerlink" title="命名语法"></a>命名语法</h2><p>类名，使用名词。<br><code>function Engine(options) {}</code></p>
+</code></pre>
+<h2 id="命名语法"><a href="#命名语法" class="headerlink" title="命名语法"></a>命名语法</h2><p>类名，使用名词。<br><code>function Engine(options) {}</code></p>
 <p>函数名，使用动宾短语。<br><code>function getStyle(element) {}</code></p>
 <p>boolean 类型的变量使用 is 或 has 开头。</p>
-<pre><code>var isReady = false;
-var hasMoreCommands = false;
-</code></pre><p>Promise 对象用动宾短语的进行时表达。</p>
-<pre><code>var loadingData = ajax.get(&#39;url&#39;);
-loadingData.then(callback);
-</code></pre><h4 id="接口命名规范"><a href="#接口命名规范" class="headerlink" title="接口命名规范"></a><strong>接口命名规范</strong></h4><p>可读性强，见名晓义；<br>尽量不与 jQuery 社区已有的习惯冲突；<br>尽量写全。不用缩写，除非是下面列表中约定的；（变量以表达清楚为目标，uglify 会完成压缩体积工作）</p>
+<pre class=" language-bash"><code class="language-bash">var isReady <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+var hasMoreCommands <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Promise 对象用动宾短语的进行时表达。</p>
+<pre class=" language-bash"><code class="language-bash">var loadingData <span class="token operator">=</span> ajax.get<span class="token punctuation">(</span><span class="token string">'url'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+loadingData.then<span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="接口命名规范"><a href="#接口命名规范" class="headerlink" title="接口命名规范"></a><strong>接口命名规范</strong></h3><p>可读性强，见名晓义；<br>尽量不与 jQuery 社区已有的习惯冲突；<br>尽量写全。不用缩写，除非是下面列表中约定的；（变量以表达清楚为目标，uglify 会完成压缩体积工作）</p>
 <table>
 <thead>
 <tr>
@@ -592,97 +596,97 @@ loadingData.then(callback);
 </ul>
 <h2 id="不要在-Array-上使用-for-in-循环"><a href="#不要在-Array-上使用-for-in-循环" class="headerlink" title="不要在 Array 上使用 for-in 循环"></a>不要在 Array 上使用 for-in 循环</h2><p>for-in 循环只用于 object/map/hash 的遍历, 对 Array 用 for-in 循环有时会出错. 因为它并不是从 0 到 length - 1 进行遍历, 而是所有出现在对象及其原型链的键值。</p>
 <h2 id="条件-三元-操作符"><a href="#条件-三元-操作符" class="headerlink" title="条件(三元)操作符 (?:)"></a>条件(三元)操作符 (?:)</h2><p>三元操作符用于替代 if 条件判断语句。</p>
-<pre><code>// Not recommended
-if (val != 0) {
-  return foo();
-} else {
-  return bar();
-}
+<pre class=" language-bash"><code class="language-bash">// Not recommended
+<span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">!=</span> 0<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> foo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 // Recommended
-return val ? foo() : bar();
-</code></pre><h2 id="amp-amp-和"><a href="#amp-amp-和" class="headerlink" title="&amp;&amp; 和 ||"></a>&amp;&amp; 和 ||</h2><p>二元布尔操作符是可短路的, 只有在必要时才会计算到最后一项。</p>
-<pre><code>// Not recommended
-function foo(opt_win) {
-  var win;
-  if (opt_win) {
-    win = opt_win;
-  } else {
-    win = window;
-  }
-  // ...
-}
+<span class="token keyword">return</span> val ? foo<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">:</span> bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="amp-amp-和"><a href="#amp-amp-和" class="headerlink" title="&amp;&amp; 和 ||"></a>&amp;&amp; 和 ||</h2><p>二元布尔操作符是可短路的, 只有在必要时才会计算到最后一项。</p>
+<pre class=" language-bash"><code class="language-bash">// Not recommended
+<span class="token keyword">function</span> foo<span class="token punctuation">(</span>opt_win<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  var win<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>opt_win<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    win <span class="token operator">=</span> opt_win<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    win <span class="token operator">=</span> window<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  // <span class="token punctuation">..</span>.
+<span class="token punctuation">}</span>
 
-if (node) {
-  if (node.kids) {
-    if (node.kids[index]) {
-      foo(node.kids[index]);
-    }
-  }
-}
+<span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node.kids<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node.kids<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      foo<span class="token punctuation">(</span>node.kids<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 // Recommended
-function foo(opt_win) {
-  var win = opt_win || window;
-  // ...
-}
+<span class="token keyword">function</span> foo<span class="token punctuation">(</span>opt_win<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  var win <span class="token operator">=</span> opt_win <span class="token operator">||</span> window<span class="token punctuation">;</span>
+  // <span class="token punctuation">..</span>.
+<span class="token punctuation">}</span>
 
-var kid = node &amp;&amp; node.kids &amp;&amp; node.kids[index];
-if (kid) {
-  foo(kid);
-}
-</code></pre><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><p><strong>避免不必要的 DOM 操作</strong></p>
-<p>浏览器遍历 DOM 元素的代价是昂贵的。最简单优化 DOM 树查询的方案是，当一个元素出现多次时，将它保存在一个变量中，就避免多次查询 DOM 树了。</p>
-<pre><code>// good
-var myList = &quot;&quot;;
-var myListHTML = document.getElementById(&quot;myList&quot;).innerHTML;
+var kid <span class="token operator">=</span> node <span class="token operator">&amp;&amp;</span> node.kids <span class="token operator">&amp;&amp;</span> node.kids<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>kid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  foo<span class="token punctuation">(</span>kid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="避免不必要的DOM操作"><a href="#避免不必要的DOM操作" class="headerlink" title="避免不必要的DOM操作"></a><strong>避免不必要的DOM操作</strong></h3><p>浏览器遍历 DOM 元素的代价是昂贵的。最简单优化 DOM 树查询的方案是，当一个元素出现多次时，将它保存在一个变量中，就避免多次查询 DOM 树了。</p>
+<pre class=" language-bash"><code class="language-bash">// good
+var myList <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+var myListHTML <span class="token operator">=</span> document.getElementById<span class="token punctuation">(</span><span class="token string">"myList"</span><span class="token punctuation">)</span>.innerHTML<span class="token punctuation">;</span>
 
-for (var i = 0; i &lt; 100; i++) {
-  myList += &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;;
-}
+<span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 0<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 100<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  myList +<span class="token operator">=</span> <span class="token string">"&lt;span>"</span> + i + <span class="token string">"&lt;/span>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-myListHTML = myList;
+myListHTML <span class="token operator">=</span> myList<span class="token punctuation">;</span>
 
 // bad
-for (var i = 0; i &lt; 100; i++) {
-  document.getElementById(&quot;myList&quot;).innerHTML += &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;;
-}
-</code></pre><p><strong>缓存数组长度</strong></p>
-<p>循环无疑是和 JavaScript 性能非常相关的一部分。通过存储数组的长度，可以有效避免每次循环重新计算。<br>注: 虽然现代浏览器引擎会自动优化这个过程，但是不要忘记还有旧的浏览器。</p>
-<pre><code>var arr = new Array(1000),
-    len, i;
+<span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 0<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 100<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document.getElementById<span class="token punctuation">(</span><span class="token string">"myList"</span><span class="token punctuation">)</span>.innerHTML +<span class="token operator">=</span> <span class="token string">"&lt;span>"</span> + i + <span class="token string">"&lt;/span>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="缓存数组长度"><a href="#缓存数组长度" class="headerlink" title="缓存数组长度"></a><strong>缓存数组长度</strong></h3><p>循环无疑是和 JavaScript 性能非常相关的一部分。通过存储数组的长度，可以有效避免每次循环重新计算。<br>注: 虽然现代浏览器引擎会自动优化这个过程，但是不要忘记还有旧的浏览器。</p>
+<pre class=" language-bash"><code class="language-bash">var arr <span class="token operator">=</span> new Array<span class="token punctuation">(</span>1000<span class="token punctuation">)</span>,
+    len, i<span class="token punctuation">;</span>
 // good
-for (i = 0, len = arr.length; i &lt; len; i++) {
+<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> 0, len <span class="token operator">=</span> arr.length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-}
+<span class="token punctuation">}</span>
 
 // bad
-for (i = 0; i &lt; arr.length; i++) {
+<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> 0<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr.length<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-}
-</code></pre><p><strong>异步加载第三方内容</strong></p>
-<p>当你无法保证嵌入第三方内容比如 Youtube 视频或者一个 like/tweet 按钮可以正常工作的时候，你需要考虑用异步加载这些代码，避免阻塞整个页面加载。</p>
-<pre><code>(function() {
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="异步加载第三方内容"><a href="#异步加载第三方内容" class="headerlink" title="异步加载第三方内容"></a><strong>异步加载第三方内容</strong></h3><p>当你无法保证嵌入第三方内容比如 Youtube 视频或者一个 like/tweet 按钮可以正常工作的时候，你需要考虑用异步加载这些代码，避免阻塞整个页面加载。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     var script,
-        scripts = document.getElementsByTagName(&#39;script&#39;)[0];
+        scripts <span class="token operator">=</span> document.getElementsByTagName<span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    function load(url) {
-      script = document.createElement(&#39;script&#39;);
-      script.async = true;
-      script.src = url;
-      scripts.parentNode.insertBefore(script, scripts);
-    }
+    <span class="token keyword">function</span> load<span class="token punctuation">(</span>url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      script <span class="token operator">=</span> document.createElement<span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      script.async <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      script.src <span class="token operator">=</span> url<span class="token punctuation">;</span>
+      scripts.parentNode.insertBefore<span class="token punctuation">(</span>script, scripts<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    load(&#39;//apis.google.com/js/plusone.js&#39;);
-    load(&#39;//platform.twitter.com/widgets.js&#39;);
-    load(&#39;//s.widgetsite.com/widget.js&#39;);
-}());
-</code></pre><p><strong>避免使用 jQuery 实现动画</strong></p>
-<p>禁止使用 slideUp/Down() fadeIn/fadeOut() 等方法；尽量不使用 animate() 方法；</p>
+    load<span class="token punctuation">(</span><span class="token string">'//apis.google.com/js/plusone.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    load<span class="token punctuation">(</span><span class="token string">'//platform.twitter.com/widgets.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    load<span class="token punctuation">(</span><span class="token string">'//s.widgetsite.com/widget.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="避免使用-jQuery-实现动画"><a href="#避免使用-jQuery-实现动画" class="headerlink" title="避免使用 jQuery 实现动画"></a><strong>避免使用 jQuery 实现动画</strong></h3><p>禁止使用 slideUp/Down() fadeIn/fadeOut() 等方法；尽量不使用 animate() 方法；</p>
 <p>在确保产品兼容性的前提下，能利用requestAnimationFrame方式、css3方式实现的动画，就尽量用以上两种方式代替jQuery实现。</p>
 <p>requestAnimationFrame使用方法请参考：<a href="http://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-%E5%8A%A8%E7%94%BB%E7%AE%97%E6%B3%95/" target="_blank" rel="noopener">CSS3动画那么强，requestAnimationFrame还有毛线用？-赵鑫旭</a></p>
-<p><strong>备注：</strong></p>
-<ol>
+<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a><strong>备注：</strong></h3><ol>
 <li>开发环境统一严格模式，所有js文件头部统一添加<code>/*use strict*/</code>;</li>
 </ol>
 
@@ -889,11 +893,12 @@ for (i = 0; i &lt; arr.length; i++) {
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh&quot;&gt;
+                    <div class="summary block-with-text">&lt;!DOCTYPE html>
+&lt;html lang="zh">
 
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot; /&gt</div>
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-05
@@ -1123,7 +1128,7 @@ display: inline后不应该再使用 width、height、margin、pad</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14.5k</span>
+                <span class="white-color">14.3k</span>
             
 
             

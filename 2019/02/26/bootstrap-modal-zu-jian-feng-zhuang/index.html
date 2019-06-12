@@ -414,14 +414,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        813
+                        574
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        3 分
                     </div>
                     
                 
@@ -438,123 +438,124 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>bootstrap-Modal组件封装：</p>
-<pre><code>(function() {
-    $.extend({
-        xmDialog: {
-        init: function(option) {
-            var that = this;
-            var base = {
-                el: &#39;#xmCustomModal&#39;,
-                classes: option.classes || &#39;modal-sm&#39;,
-                zIndex:option.zIndex||10000,
-                styles: option.styles || {},//临时没用到
-                modalHeader: {
-                    title: option.title || &#39;&#39;,
-                    styles: option.headerStyles||{}
-                },
-                modalBody: {
-                    content: option.content || &#39;&#39;,
-                    styles: option.bodyStyles || {},
-                    loading: &#39;&lt;div id=&quot;spinLoading&quot; class=&quot;bg-white w-100 h-100 position-absolute row align-items-center justify-content-center m-0 spin-loading&quot; style=&quot;top:0;left:0;&quot;&gt;&lt;div class=&quot;loader&quot;&gt;&lt;div class=&quot;loader-inner line-spin-fade-loader&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&#39;,
-                },
-                modalFooter: {
-                    show: typeof option.showFooter === &#39;boolean&#39; ? option.showFooter : true,
-                    styles: {
-                        &#39;justify-content&#39;: option.footerAlign||&#39;center&#39;
-                    },
-                    type: option.type || &#39;confirm&#39;,
-                    buttons: {
-                        &#39;confirm&#39;: [{
-                            type: &#39;ok&#39;,
-                            classes: &#39;btn-primary&#39;,
-                            text: option.okText || &#39;确认&#39;,
-                            fn: function() {
-                                option.ok ? option.ok(that) : that.$el.modal(&#39;hide&#39;);
-                            }
-                        }, {
-                            type: &#39;cancel&#39;,
-                            classes: &#39;btn-secondary&#39;,
-                            text: &#39;取消&#39;,
-                            fn: function() {
-                                option.cancel ? option.cancel(that) : that.$el.modal(&#39;hide&#39;);
-                            }
-                        }],
-                        &#39;tip&#39;: [{
-                            type: &#39;tip&#39;,
-                            classes: &#39;btn-info&#39;,
-                            text: &#39;我知道了&#39;,
-                            fn: function() {
-                                option.confirm ? option.confirm(that) : that.$el.modal(&#39;hide&#39;);
-                            }
-                        }]
-                    }
-                },
-                formatStyle: function(obj) {
-                    if(!obj || $.isEmptyObject(obj)) {
-                        return &#39;&#39;;
-                    } else {
-                        var res = [];
-                        for(var key in obj) {
-                            res.push(key + &#39;:&#39; + obj[key]);
-                        }
-                        return res.join(&#39;;&#39;);
-                    }
-                },
-                shown: function() {
-                    option.shown ? option.shown(that) : that.hideLoading();
-                },
-                hidden: function() {
-                    option.hidden &amp;&amp; option.hidden(that);
-                }
-            };
-            if(!$(base.el).length) {
-                $(&#39;body&#39;).append(&#39;&lt;div id=&quot;&#39; + base.el.substring(1) + &#39;&quot; class=&quot;modal fade&quot; style=&quot;z-index:10000;&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalCenterTitle&quot; aria-hidden=&quot;true&quot; data-backdrop=&quot;static&quot;&gt;&lt;/div&gt;&#39;);
-            }
-            that.$el = $(base.el);
-            var templete = [];
-            if(base.style) {
-                that.$el.attr(&#39;style&#39;, base.style);
-            }
-            templete.push(&#39;&lt;div class=&quot;modal-dialog modal-dialog-centered modal-dialog-scrollable &#39; + base.classes + &#39;&quot; role=&quot;document&quot; style=&quot;&#39; + base.formatStyle(base.styles) + &#39;&quot;&gt;&#39;);
-            templete.push(&#39;    &lt;div class=&quot;modal-content&quot;&gt;&#39;);
-            templete.push(&#39;        &lt;div class=&quot;modal-header border-0 py-2&quot; style=&quot;&#39; + base.formatStyle(base.modalHeader.styles) + &#39;&quot;&gt;&#39;);
-            templete.push(&#39;            &lt;h5 class=&quot;modal-title pr-3 text-nowrap overflow-hidden&quot; style=&quot;text-overflow:ellipsis;&quot;&gt;&#39; + base.modalHeader.title + &#39;&lt;/h5&gt;&#39;);
-            templete.push(&#39;            &lt;button type=&quot;button&quot; class=&quot;close&quot; style=&quot;margin:-0.5rem -1rem;padding:0.5rem 0.75rem;&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&#39;);
-            templete.push(&#39;                &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&#39;);
-            templete.push(&#39;            &lt;/button&gt;&#39;);
-            templete.push(&#39;        &lt;/div&gt;&#39;);
-            templete.push(&#39;        &lt;div class=&quot;modalBody modal-body relative&quot; style=&quot;&#39; + base.formatStyle(base.modalBody.styles) + &#39;&quot;&gt;&#39;);
-            templete.push(&#39;            &lt;!--提示内容--&gt;&#39;);
-            templete.push(base.modalBody.content + base.modalBody.loading);
-            templete.push(&#39;        &lt;/div&gt;&#39;);
-            if(base.modalFooter.show) {
-                templete.push(&#39;    &lt;div class=&quot;modal-footer border-0&quot; style=&quot;&#39; + base.formatStyle(base.modalFooter.styles) + &#39;&quot;&gt;&#39;);
-                base.modalFooter.buttons[base.modalFooter.type].forEach(function(item, index) {
-                    $[&#39;xmCustomModal&#39; + index] = item.fn;
-                    templete.push(&#39;    &lt;button type=&quot;button&quot; class=&quot;btn &#39; + item.classes + &#39; px-4&quot; onclick=&quot;&#39; + &#39;$.xmCustomModal&#39; + index + &#39;();&quot;&gt;&#39; + item.text + &#39;&lt;/button&gt;&#39;);
-                });
-                templete.push(&#39;    &lt;/div&gt;&#39;);
-            }
-            templete.push(&#39;    &lt;/div&gt;&#39;);
-            templete.push(&#39;&lt;/div&gt;&#39;);
-            that.$el.html(templete.join(&#39;&#39;));
-            that.$el.off(&#39;hidden.bs.modal&#39;).on(&#39;hidden.bs.modal&#39;, function() {
-                base.hidden &amp;&amp; base.hidden(this);
-            });
-            that.$el.off(&#39;shown.bs.modal&#39;).on(&#39;shown.bs.modal&#39;, function() {
-                base.shown &amp;&amp; base.shown(that);
-            });
-            that.$el.modal(&#39;show&#39;);
-            return this;
-        },
-        hideLoading: function() {
-            $(&#39;#spinLoading&#39;).hide();
-            return this;
-        }
-    }
-});
-})();
-</code></pre><p>示例：<a href="/pages/bootstrap-Modal组件封装.html">请点这里</a></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $.extend<span class="token punctuation">(</span><span class="token punctuation">{</span>
+        xmDialog: <span class="token punctuation">{</span>
+        init: function<span class="token punctuation">(</span>option<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var that <span class="token operator">=</span> this<span class="token punctuation">;</span>
+            var base <span class="token operator">=</span> <span class="token punctuation">{</span>
+                el: <span class="token string">'#xmCustomModal'</span>,
+                classes: option.classes <span class="token operator">||</span> <span class="token string">'modal-sm'</span>,
+                zIndex:option.zIndex<span class="token operator">||</span>10000,
+                styles: option.styles <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,//临时没用到
+                modalHeader: <span class="token punctuation">{</span>
+                    title: option.title <span class="token operator">||</span> <span class="token string">''</span>,
+                    styles: option.headerStyles<span class="token operator">||</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>,
+                modalBody: <span class="token punctuation">{</span>
+                    content: option.content <span class="token operator">||</span> <span class="token string">''</span>,
+                    styles: option.bodyStyles <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+                    loading: <span class="token string">'&lt;div id="spinLoading" class="bg-white w-100 h-100 position-absolute row align-items-center justify-content-center m-0 spin-loading" style="top:0;left:0;">&lt;div class="loader">&lt;div class="loader-inner line-spin-fade-loader">&lt;div>&lt;/div>&lt;div>&lt;/div>&lt;div>&lt;/div>&lt;div>&lt;/div>&lt;div>&lt;/div>&lt;div>&lt;/div>&lt;div>&lt;/div>&lt;div>&lt;/div>&lt;/div>&lt;/div>&lt;/div>'</span>,
+                <span class="token punctuation">}</span>,
+                modalFooter: <span class="token punctuation">{</span>
+                    show: typeof option.showFooter <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">'boolean'</span> ? option.showFooter <span class="token keyword">:</span> true,
+                    styles: <span class="token punctuation">{</span>
+                        <span class="token string">'justify-content'</span><span class="token keyword">:</span> option.footerAlign<span class="token operator">||</span><span class="token string">'center'</span>
+                    <span class="token punctuation">}</span>,
+                    type: option.type <span class="token operator">||</span> <span class="token string">'confirm'</span>,
+                    buttons: <span class="token punctuation">{</span>
+                        <span class="token string">'confirm'</span><span class="token keyword">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+                            type: <span class="token string">'ok'</span>,
+                            classes: <span class="token string">'btn-primary'</span>,
+                            text: option.okText <span class="token operator">||</span> <span class="token string">'确认'</span>,
+                            fn: function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                option.ok ? option.ok<span class="token punctuation">(</span>that<span class="token punctuation">)</span> <span class="token keyword">:</span> that.<span class="token variable">$el</span>.modal<span class="token punctuation">(</span><span class="token string">'hide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>, <span class="token punctuation">{</span>
+                            type: <span class="token string">'cancel'</span>,
+                            classes: <span class="token string">'btn-secondary'</span>,
+                            text: <span class="token string">'取消'</span>,
+                            fn: function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                option.cancel ? option.cancel<span class="token punctuation">(</span>that<span class="token punctuation">)</span> <span class="token keyword">:</span> that.<span class="token variable">$el</span>.modal<span class="token punctuation">(</span><span class="token string">'hide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">]</span>,
+                        <span class="token string">'tip'</span><span class="token keyword">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+                            type: <span class="token string">'tip'</span>,
+                            classes: <span class="token string">'btn-info'</span>,
+                            text: <span class="token string">'我知道了'</span>,
+                            fn: function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                option.confirm ? option.confirm<span class="token punctuation">(</span>that<span class="token punctuation">)</span> <span class="token keyword">:</span> that.<span class="token variable">$el</span>.modal<span class="token punctuation">(</span><span class="token string">'hide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>,
+                formatStyle: function<span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    if<span class="token punctuation">(</span><span class="token operator">!</span>obj <span class="token operator">||</span> $.isEmptyObject<span class="token punctuation">(</span>obj<span class="token punctuation">))</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        var res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                        for<span class="token punctuation">(</span>var key <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            res.push<span class="token punctuation">(</span>key + <span class="token string">':'</span> + obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token keyword">return</span> res.join<span class="token punctuation">(</span><span class="token string">';'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>,
+                shown: function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    option.shown ? option.shown<span class="token punctuation">(</span>that<span class="token punctuation">)</span> <span class="token keyword">:</span> that.hideLoading<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>,
+                hidden: function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    option.hidden <span class="token operator">&amp;&amp;</span> option.hidden<span class="token punctuation">(</span>that<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            if<span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable"><span class="token variable">$(</span>base.el<span class="token variable">)</span></span>.length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token punctuation">$(</span><span class="token string">'body'</span><span class="token punctuation">)</span>.append<span class="token punctuation">(</span><span class="token string">'&lt;div id="'</span> + base.el.substring<span class="token punctuation">(</span>1<span class="token punctuation">)</span> + <span class="token string">'" class="modal fade" style="z-index:10000;" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static">&lt;/div>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            that.<span class="token variable">$el</span> <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>base.el<span class="token variable">)</span></span><span class="token punctuation">;</span>
+            var templete <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            if<span class="token punctuation">(</span>base.style<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                that.<span class="token variable">$el</span>.attr<span class="token punctuation">(</span><span class="token string">'style'</span>, base.style<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'&lt;div class="modal-dialog modal-dialog-centered modal-dialog-scrollable '</span> + base.classes + <span class="token string">'" role="document" style="'</span> + base.formatStyle<span class="token punctuation">(</span>base.styles<span class="token punctuation">)</span> + <span class="token string">'">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'    &lt;div class="modal-content">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'        &lt;div class="modal-header border-0 py-2" style="'</span> + base.formatStyle<span class="token punctuation">(</span>base.modalHeader.styles<span class="token punctuation">)</span> + <span class="token string">'">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'            &lt;h5 class="modal-title pr-3 text-nowrap overflow-hidden" style="text-overflow:ellipsis;">'</span> + base.modalHeader.title + <span class="token string">'&lt;/h5>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'            &lt;button type="button" class="close" style="margin:-0.5rem -1rem;padding:0.5rem 0.75rem;" data-dismiss="modal" aria-label="Close">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'                &lt;span aria-hidden="true">&amp;times;&lt;/span>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'            &lt;/button>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'        &lt;/div>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'        &lt;div class="modalBody modal-body relative" style="'</span> + base.formatStyle<span class="token punctuation">(</span>base.modalBody.styles<span class="token punctuation">)</span> + <span class="token string">'">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'            &lt;!--提示内容-->'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span>base.modalBody.content + base.modalBody.loading<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'        &lt;/div>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            if<span class="token punctuation">(</span>base.modalFooter.show<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                templete.push<span class="token punctuation">(</span><span class="token string">'    &lt;div class="modal-footer border-0" style="'</span> + base.formatStyle<span class="token punctuation">(</span>base.modalFooter.styles<span class="token punctuation">)</span> + <span class="token string">'">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                base.modalFooter.buttons<span class="token punctuation">[</span>base.modalFooter.type<span class="token punctuation">]</span>.forEach<span class="token punctuation">(</span>function<span class="token punctuation">(</span>item, index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    $<span class="token punctuation">[</span><span class="token string">'xmCustomModal'</span> + index<span class="token punctuation">]</span> <span class="token operator">=</span> item.fn<span class="token punctuation">;</span>
+                    templete.push<span class="token punctuation">(</span><span class="token string">'    &lt;button type="button" class="btn '</span> + item.classes + <span class="token string">' px-4" onclick="'</span> + <span class="token string">'$.xmCustomModal'</span> + index + <span class="token string">'();">'</span> + item.text + <span class="token string">'&lt;/button>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                templete.push<span class="token punctuation">(</span><span class="token string">'    &lt;/div>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'    &lt;/div>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            templete.push<span class="token punctuation">(</span><span class="token string">'&lt;/div>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            that.<span class="token variable">$el</span>.html<span class="token punctuation">(</span>templete.join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+            that.<span class="token variable">$el</span>.off<span class="token punctuation">(</span><span class="token string">'hidden.bs.modal'</span><span class="token punctuation">)</span>.on<span class="token punctuation">(</span><span class="token string">'hidden.bs.modal'</span>, function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                base.hidden <span class="token operator">&amp;&amp;</span> base.hidden<span class="token punctuation">(</span>this<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            that.<span class="token variable">$el</span>.off<span class="token punctuation">(</span><span class="token string">'shown.bs.modal'</span><span class="token punctuation">)</span>.on<span class="token punctuation">(</span><span class="token string">'shown.bs.modal'</span>, function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                base.shown <span class="token operator">&amp;&amp;</span> base.shown<span class="token punctuation">(</span>that<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            that.<span class="token variable">$el</span>.modal<span class="token punctuation">(</span><span class="token string">'show'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> this<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>,
+        hideLoading: function<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">$(</span><span class="token string">'#spinLoading'</span><span class="token punctuation">)</span>.hide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> this<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>示例：<a href="/pages/bootstrap-Modal组件封装.html">请点这里</a></p>
 
             </div>
             <hr>
@@ -806,12 +807,12 @@ document.onkeydown=function(){
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
+                    <div class="summary block-with-text">&lt;!DOCTYPE HTML>
+&lt;html>
 
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;meta nam</div>
+    &lt;head>
+        &lt;meta charset="utf-8">
+        &lt;meta name="renderer" content="</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-25
@@ -989,7 +990,7 @@ document.onkeydown=function(){
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14.5k</span>
+                <span class="white-color">14.3k</span>
             
 
             

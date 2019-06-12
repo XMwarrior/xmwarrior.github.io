@@ -441,94 +441,78 @@ display: inline后不应该再使用 width、height、margin、pad">
 </ul>
 <h2 id="不滥用-Float"><a href="#不滥用-Float" class="headerlink" title="不滥用 Float"></a>不滥用 Float</h2><p>Float在渲染时计算量比较大，尽量减少使用。</p>
 <h2 id="多利用硬件能力，如通过-3D-变形开启-GPU-加速"><a href="#多利用硬件能力，如通过-3D-变形开启-GPU-加速" class="headerlink" title="多利用硬件能力，如通过 3D 变形开启 GPU 加速"></a>多利用硬件能力，如通过 3D 变形开启 GPU 加速</h2><p>一般在 Chrome 中，3D或透视变换（perspective transform）CSS属性和对 opacity 进行 CSS 动画会创建新的图层，在硬件加速渲染通道的优化下，GPU 完成 3D 变形等操作后，将图层进行复合操作（Compesite Layers），从而避免触发浏览器大面积重绘和重排。<br>注：3D 变形会消耗更多的内存和功耗。<br>使用 translate3d 右移 500px 的动画流畅度要明显优于直接使用 left：</p>
-<pre><code>.ball-1 {
-  transition: -webkit-transform .5s ease;
-  -webkit-transform: translate3d(0, 0, 0);
-}
-.ball-1.slidein{
-  -webkit-transform: translate3d(500px, 0, 0);
-}
-.ball-2 {
-  transition: left .5s ease; left：0;
-}
-.ball-2.slidein {
-  left：500px;
-}
-</code></pre><h2 id="提升-CSS-选择器性能"><a href="#提升-CSS-选择器性能" class="headerlink" title="提升 CSS 选择器性能"></a>提升 CSS 选择器性能</h2><p>CSS 选择器对性能的影响源于浏览器匹配选择器和文档元素时所消耗的时间，所以优化选择器的原则是应尽量避免使用消耗更多匹配时间的选择器。而在这之前我们需要了解 CSS 选择器匹配的机制， 如子选择器规则：<br><code>#header &gt; a {font-weight:blod;}</code><br>我们中的大多数人都是从左到右的阅读习惯，会习惯性的设定浏览器也是从左到右的方式进行匹配规则，推测这条规则的开销并不高。<br>我们会假设浏览器以这样的方式工作：寻找 id 为 header 的元素，然后将样式规则应用到直系子元素中的 a 元素上。我们知道文档中只有一个 id 为 header 的元素，并且它只有几个 a 元素的子节点，所以这个 CSS 选择器应该相当高效。<br>事实上，却恰恰相反，CSS 选择器是从右到左进行规则匹配。了解这个机制后，例子中看似高效的选择器在实际中的匹配开销是很高的，浏览器必须遍历页面中所有的 a 元素并且确定其父元素的 id 是否为 header 。<br>如果把例子的子选择器改为后代选择器则会开销更多，在遍历页面中所有 a 元素后还需向其上级遍历直到根节点。<br><code>#header  a {font-weight:blod;}</code><br>理解了CSS选择器从右到左匹配的机制后，明白只要当前选择符的左边还有其他选择符，样式系统就会继续向左移动，直到找到和规则匹配的选择符，或者因为不匹配而退出。我们把最右边选择符称之为关键选择器。——更多详情</p>
-<ol>
-<li><strong>避免使用通用选择器</strong><br>浏览器匹配文档中所有的元素后分别向上逐级匹配 class 为 content 的元素，直到文档的根节点。因此其匹配开销是非常大的，所以应避免使用关键选择器是通配选择器的情况。<pre><code>/* bad */
-.content * {color: red;}
-</code></pre></li>
-<li><strong>避免使用标签或 class 选择器限制 id 选择器</strong><pre><code>/* bad */
-button#backButton {…}
-/* good */
-#newMenuIcon {…}
-</code></pre></li>
-<li><p>避免使用标签限制 class 选择器</p>
-<pre><code>/* bad */
-treecell.indented {…}
-/* good */
-.treecell-indented {…}
-/* better */
-.hierarchy-deep {…}
-</code></pre></li>
-<li><p>避免使用多层标签选择器。使用 class 选择器替换，减少css查找</p>
-<pre><code>/* bad */
-treeitem[mailfolder=&quot;true&quot;] &gt; treerow &gt; treecell {…}
-/* good */
-.treecell-mailfolder {…}
-</code></pre></li>
-<li><p>避免使用子选择器</p>
-<pre><code>/* bad */
-treehead treerow treecell {…}
-/* good */
-treehead &gt; treerow &gt; treecell {…}
-/* better */
-.treecell-header {…}
-</code></pre></li>
-<li><p>使用继承</p>
-<pre><code>/* bad */
-#bookmarkMenuItem &gt; .menu-left { list-style-image: url(blah) }
-/* good */
-#bookmarkMenuItem { list-style-image: url(blah) }
-</code></pre></li>
-</ol>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li>不允许有空的规则；</li>
-<li>元素选择器用小写字母；</li>
-<li>去掉数字中不必要的小数点和末尾的0；</li>
-<li>属性值’0’后面不要加单位；</li>
-<li>同个属性不同前缀的写法需要在垂直方向保持对齐；</li>
-<li>无前缀的标准属性应该写在有前缀的属性后面；</li>
-<li>不要在同个规则里出现重复的属性，如果重复的属性是连续的则没关系；</li>
-<li>不要在一个文件里出现两个相同的规则；</li>
-<li>用 border: 0; 代替 border: none;；</li>
-<li>选择器不要超过4层（在scss中如果超过4层应该考虑用嵌套的方式来写）；</li>
-<li>发布的代码中不要有 @import；</li>
-<li>尽量少用’*’选择器。<h3 id="nec-网易-的reset"><a href="#nec-网易-的reset" class="headerlink" title="nec(网易) 的reset"></a>nec(网易) 的reset</h3></li>
-</ul>
-<pre><code>/* reset */
-html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
-header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
-table{border-collapse:collapse;border-spacing:0;}
-caption,th{text-align:left;font-weight:normal;}
-html,body,fieldset,img,iframe,abbr{border:0;}
-i,cite,em,var,address,dfn{font-style:normal;}
-[hidefocus],summary{outline:0;}
-li{list-style:none;}
-h1,h2,h3,h4,h5,h6,small{font-size:100%;}
-sup,sub{font-size:83%;}
-pre,code,kbd,samp{font-family:inherit;}
-q:before,q:after{content:none;}
-textarea{overflow:auto;resize:none;}
-label,summary{cursor:default;}
-a,button{cursor:pointer;}
-h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
-del,ins,u,s,a,a:hover{text-decoration:none;}
-body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
-body{background:#fff;}
-a,a:hover{color:#333;}
+<pre class=" language-bash"><code class="language-bash">.ball-1 <span class="token punctuation">{</span>
+  transition: -webkit-transform .5s ease<span class="token punctuation">;</span>
+  -webkit-transform: translate3d<span class="token punctuation">(</span>0, 0, 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.ball-1.slidein<span class="token punctuation">{</span>
+  -webkit-transform: translate3d<span class="token punctuation">(</span>500px, 0, 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.ball-2 <span class="token punctuation">{</span>
+  transition: left .5s ease<span class="token punctuation">;</span> left：0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.ball-2.slidein <span class="token punctuation">{</span>
+  left：500px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
+<h2 id="提升-CSS-选择器性能"><a href="#提升-CSS-选择器性能" class="headerlink" title="提升 CSS 选择器性能"></a>提升 CSS 选择器性能</h2><p>CSS 选择器对性能的影响源于浏览器匹配选择器和文档元素时所消耗的时间，所以优化选择器的原则是应尽量避免使用消耗更多匹配时间的选择器。而在这之前我们需要了解 CSS 选择器匹配的机制， 如子选择器规则：<br><code>#header &gt; a {font-weight:blod;}</code><br>我们中的大多数人都是从左到右的阅读习惯，会习惯性的设定浏览器也是从左到右的方式进行匹配规则，推测这条规则的开销并不高。<br>我们会假设浏览器以这样的方式工作：寻找 id 为 header 的元素，然后将样式规则应用到直系子元素中的 a 元素上。我们知道文档中只有一个 id 为 header 的元素，并且它只有几个 a 元素的子节点，所以这个 CSS 选择器应该相当高效。<br>事实上，却恰恰相反，CSS 选择器是从右到左进行规则匹配。了解这个机制后，例子中看似高效的选择器在实际中的匹配开销是很高的，浏览器必须遍历页面中所有的 a 元素并且确定其父元素的 id 是否为 header 。<br>如果把例子的子选择器改为后代选择器则会开销更多，在遍历页面中所有 a 元素后还需向其上级遍历直到根节点。<br><code>#header  a {font-weight:blod;}</code><br>理解了CSS选择器从右到左匹配的机制后，明白只要当前选择符的左边还有其他选择符，样式系统就会继续向左移动，直到找到和规则匹配的选择符，或者因为不匹配而退出。我们把最右边选择符称之为关键选择器。——更多详情</p>
+<h3 id="1-避免使用通用选择器"><a href="#1-避免使用通用选择器" class="headerlink" title="1.避免使用通用选择器"></a>1.避免使用通用选择器</h3><p>浏览器匹配文档中所有的元素后分别向上逐级匹配 class 为 content 的元素，直到文档的根节点。因此其匹配开销是非常大的，所以应避免使用关键选择器是通配选择器的情况。</p>
+<pre class=" language-bash"><code class="language-bash">/* bad */
+.content * <span class="token punctuation">{</span>color: red<span class="token punctuation">;</span><span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-避免使用标签或-class-选择器限制-id-选择器"><a href="#2-避免使用标签或-class-选择器限制-id-选择器" class="headerlink" title="2.避免使用标签或 class 选择器限制 id 选择器"></a>2.避免使用标签或 class 选择器限制 id 选择器</h3><pre class=" language-bash"><code class="language-bash">/* bad */
+button<span class="token comment" spellcheck="true">#backButton {…}</span>
+/* good */
+<span class="token comment" spellcheck="true">#newMenuIcon {…}</span>
+</code></pre>
+<h3 id="3-避免使用标签限制-class-选择器"><a href="#3-避免使用标签限制-class-选择器" class="headerlink" title="3. 避免使用标签限制 class 选择器"></a>3. 避免使用标签限制 class 选择器</h3><pre class=" language-bash"><code class="language-bash">/* bad */
+treecell.indented <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+/* good */
+.treecell-indented <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+/* better */
+.hierarchy-deep <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="4-避免使用多层标签选择器。使用-class-选择器替换，减少css查找"><a href="#4-避免使用多层标签选择器。使用-class-选择器替换，减少css查找" class="headerlink" title="4. 避免使用多层标签选择器。使用 class 选择器替换，减少css查找"></a>4. 避免使用多层标签选择器。使用 class 选择器替换，减少css查找</h3><pre class=" language-bash"><code class="language-bash">/* bad */
+treeitem<span class="token punctuation">[</span>mailfolder<span class="token operator">=</span><span class="token string">"true"</span><span class="token punctuation">]</span> <span class="token operator">></span> treerow <span class="token operator">></span> treecell <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+/* good */
+.treecell-mailfolder <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="5-避免使用子选择器"><a href="#5-避免使用子选择器" class="headerlink" title="5. 避免使用子选择器"></a>5. 避免使用子选择器</h3><pre class=" language-bash"><code class="language-bash">/* bad */
+treehead treerow treecell <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+/* good */
+treehead <span class="token operator">></span> treerow <span class="token operator">></span> treecell <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+/* better */
+.treecell-header <span class="token punctuation">{</span>…<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="6-使用继承"><a href="#6-使用继承" class="headerlink" title="6. 使用继承"></a>6. 使用继承</h3><pre class=" language-bash"><code class="language-bash">/* bad */
+<span class="token comment" spellcheck="true">#bookmarkMenuItem > .menu-left { list-style-image: url(blah) }</span>
+/* good */
+<span class="token comment" spellcheck="true">#bookmarkMenuItem { list-style-image: url(blah) }</span>
+</code></pre>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>-不允许有空的规则；<br>-元素选择器用小写字母；<br>-去掉数字中不必要的小数点和末尾的0；<br>-属性值’0’后面不要加单位；<br>-同个属性不同前缀的写法需要在垂直方向保持对齐；<br>-无前缀的标准属性应该写在有前缀的属性后面；<br>-不要在同个规则里出现重复的属性，如果重复的属性是连续的则没关系；<br>-不要在一个文件里出现两个相同的规则；<br>-用 border: 0; 代替 border: none;；<br>-选择器不要超过4层（在scss中如果超过4层应该考虑用嵌套的方式来写）；<br>-发布的代码中不要有 @import；<br>-尽量少用’*’选择器。</p>
+<h3 id="nec-网易-的reset"><a href="#nec-网易-的reset" class="headerlink" title="nec(网易) 的reset"></a>nec(网易) 的reset</h3><pre class=" language-bash"><code class="language-bash">/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu<span class="token punctuation">{</span>margin:0<span class="token punctuation">;</span>padding:0<span class="token punctuation">;</span><span class="token punctuation">}</span>
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details<span class="token punctuation">{</span>display:block<span class="token punctuation">;</span><span class="token punctuation">}</span>
+table<span class="token punctuation">{</span>border-collapse:collapse<span class="token punctuation">;</span>border-spacing:0<span class="token punctuation">;</span><span class="token punctuation">}</span>
+caption,th<span class="token punctuation">{</span>text-align:left<span class="token punctuation">;</span>font-weight:normal<span class="token punctuation">;</span><span class="token punctuation">}</span>
+html,body,fieldset,img,iframe,abbr<span class="token punctuation">{</span>border:0<span class="token punctuation">;</span><span class="token punctuation">}</span>
+i,cite,em,var,address,dfn<span class="token punctuation">{</span>font-style:normal<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">[</span>hidefocus<span class="token punctuation">]</span>,summary<span class="token punctuation">{</span>outline:0<span class="token punctuation">;</span><span class="token punctuation">}</span>
+li<span class="token punctuation">{</span>list-style:none<span class="token punctuation">;</span><span class="token punctuation">}</span>
+h1,h2,h3,h4,h5,h6,small<span class="token punctuation">{</span>font-size:100%<span class="token punctuation">;</span><span class="token punctuation">}</span>
+sup,sub<span class="token punctuation">{</span>font-size:83%<span class="token punctuation">;</span><span class="token punctuation">}</span>
+pre,code,kbd,samp<span class="token punctuation">{</span>font-family:inherit<span class="token punctuation">;</span><span class="token punctuation">}</span>
+q:before,q:after<span class="token punctuation">{</span>content:none<span class="token punctuation">;</span><span class="token punctuation">}</span>
+textarea<span class="token punctuation">{</span>overflow:auto<span class="token punctuation">;</span>resize:none<span class="token punctuation">;</span><span class="token punctuation">}</span>
+label,summary<span class="token punctuation">{</span>cursor:default<span class="token punctuation">;</span><span class="token punctuation">}</span>
+a,button<span class="token punctuation">{</span>cursor:pointer<span class="token punctuation">;</span><span class="token punctuation">}</span>
+h1,h2,h3,h4,h5,h6,em,strong,b<span class="token punctuation">{</span>font-weight:bold<span class="token punctuation">;</span><span class="token punctuation">}</span>
+del,ins,u,s,a,a:hover<span class="token punctuation">{</span>text-decoration:none<span class="token punctuation">;</span><span class="token punctuation">}</span>
+body,textarea,input,button,select,keygen,legend<span class="token punctuation">{</span>font:12px/1.14 arial,\5b8b\4f53<span class="token punctuation">;</span>color:<span class="token comment" spellcheck="true">#333;outline:0;}</span>
+body<span class="token punctuation">{</span>background:<span class="token comment" spellcheck="true">#fff;}</span>
+a,a:hover<span class="token punctuation">{</span>color:<span class="token comment" spellcheck="true">#333;}</span>
+</code></pre>
+
             </div>
             <hr>
 
@@ -781,10 +765,11 @@ As long as necessary（如有必要，尽量详尽）：合理的注释、空行
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
 headhead基本内容：
-&lt;!--字符编码：--&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;!--页面标题：--&gt;
-&lt;title&gt;青岛乘正科技有限公司&lt;/</div>
+&lt;!--字符编码：-->
+&lt;meta charset="UTF-8">
+&lt;!--页面标题：-->
+&lt;title>青岛乘正科技有限公司&lt;/title>
+&lt;!--页面关键词：--</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-04-13
@@ -962,7 +947,7 @@ headhead基本内容：
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14.5k</span>
+                <span class="white-color">14.3k</span>
             
 
             
