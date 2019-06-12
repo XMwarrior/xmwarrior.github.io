@@ -5,9 +5,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="vue组件传值, xmwarrior,xmsniper">
-    <meta name="description" content="一、父子传值1. props传递单个参数· 父组件&amp;lt;template&amp;gt;
-  &amp;lt;div class=&amp;quot;app-container&amp;quot;&amp;gt;
-    &amp;lt;Pagination :page=&amp;quot;c">
+    <meta name="description" content="一、父子传值1. props传递单个参数· 父组件&amp;lt;template&gt;
+  &amp;lt;div class=&#34;app-container&#34;&gt;
+    &amp;lt;Pagination :page=&#34;currentPage&#34; @changePa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -407,14 +407,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        1.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        7 分
                     </div>
                     
                 
@@ -430,363 +430,375 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、父子传值"><a href="#一、父子传值" class="headerlink" title="一、父子传值"></a>一、父子传值</h2><h3 id="1-props传递单个参数"><a href="#1-props传递单个参数" class="headerlink" title="1. props传递单个参数"></a>1. props传递单个参数</h3><h4 id="·-父组件"><a href="#·-父组件" class="headerlink" title="· 父组件"></a>· 父组件</h4><pre><code>&lt;template&gt;
-  &lt;div class=&quot;app-container&quot;&gt;
-    &lt;Pagination :page=&quot;currentPage&quot; @changePage=&quot;listenPageChange&quot;/&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+                <h2 id="一、父子传值"><a href="#一、父子传值" class="headerlink" title="一、父子传值"></a>一、父子传值</h2><h3 id="1-props传递单个参数"><a href="#1-props传递单个参数" class="headerlink" title="1. props传递单个参数"></a>1. props传递单个参数</h3><h4 id="·-父组件"><a href="#·-父组件" class="headerlink" title="· 父组件"></a>· 父组件</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"app-container"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>Pagination :page<span class="token operator">=</span><span class="token string">"currentPage"</span> @changePage<span class="token operator">=</span><span class="token string">"listenPageChange"</span>/<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
 
-&lt;script&gt;
-import Pagination from &#39;./components/pagination&#39;;
-export default {
-  components:{
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">import</span> Pagination from <span class="token string">'./components/pagination'</span><span class="token punctuation">;</span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  components:<span class="token punctuation">{</span>
     Pagination
-  },
-  methods:{
-    listenPageChange(data){
-      console.log(data);
-    }
-  },
-  data() {
-    return {
+  <span class="token punctuation">}</span>,
+  methods:<span class="token punctuation">{</span>
+    listenPageChange<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
       currentPage:1
-  }
-};
-&lt;/script&gt;
-</code></pre><h4 id="·-子组件"><a href="#·-子组件" class="headerlink" title="· 子组件"></a>· 子组件</h4><pre><code>&lt;template&gt;
-  &lt;el-pagination
-    @size-change=&quot;handleSizeChange&quot;
-    @current-change=&quot;handleCurrentChange&quot;
-    :current-page=&quot;currentPage&quot;
-    :page-sizes=&quot;[100, 200, 300, 400]&quot;
-    :page-size=&quot;100&quot;
-    layout=&quot;total, sizes, prev, pager, next, jumper&quot;
-    :total=&quot;400&quot;
-  &gt;&lt;/el-pagination&gt;
-&lt;/template&gt;
-&lt;script&gt;
-export default {
-  props: [&quot;currentPage&quot;],
-  methods: {
-    handleSizeChange(val) {
-      this.pageOption.pageSize = val;
-      this.listenOptionChange(this.pageOption);
-    },
-    handleCurrentChange(val) {
-      this.pageOption.page = val;
-      this.listenOptionChange(this.pageOption);
-    },
-    listenOptionChange(datas) {
-       this.$emit(&quot;changePage&quot;, datas);
-    }
-  }
-};
-&lt;/script&gt;
-</code></pre><h3 id="2-props传递对象"><a href="#2-props传递对象" class="headerlink" title="2. props传递对象"></a>2. props传递对象</h3><h4 id="·-父组件-1"><a href="#·-父组件-1" class="headerlink" title="· 父组件"></a>· 父组件</h4><pre><code>&lt;template&gt;
-  &lt;div class=&quot;p-5&quot;&gt;
-    &lt;Pagination :pageOption=&quot;pageOptions&quot; /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
+</code></pre>
+<h4 id="·子组件"><a href="#·子组件" class="headerlink" title="·子组件"></a>·子组件</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>el-pagination
+    @size-change<span class="token operator">=</span><span class="token string">"handleSizeChange"</span>
+    @current-change<span class="token operator">=</span><span class="token string">"handleCurrentChange"</span>
+    :current-page<span class="token operator">=</span><span class="token string">"currentPage"</span>
+    :page-sizes<span class="token operator">=</span><span class="token string">"[100, 200, 300, 400]"</span>
+    :page-size<span class="token operator">=</span><span class="token string">"100"</span>
+    layout<span class="token operator">=</span><span class="token string">"total, sizes, prev, pager, next, jumper"</span>
+    :total<span class="token operator">=</span><span class="token string">"400"</span>
+  <span class="token operator">></span><span class="token operator">&lt;</span>/el-pagination<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  props: <span class="token punctuation">[</span><span class="token string">"currentPage"</span><span class="token punctuation">]</span>,
+  methods: <span class="token punctuation">{</span>
+    handleSizeChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      this.pageOption.pageSize <span class="token operator">=</span> val<span class="token punctuation">;</span>
+      this.listenOptionChange<span class="token punctuation">(</span>this.pageOption<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    handleCurrentChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      this.pageOption.page <span class="token operator">=</span> val<span class="token punctuation">;</span>
+      this.listenOptionChange<span class="token punctuation">(</span>this.pageOption<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    listenOptionChange<span class="token punctuation">(</span>datas<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       this.<span class="token variable">$emit</span><span class="token punctuation">(</span><span class="token string">"changePage"</span>, datas<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
+</code></pre>
+<h3 id="2-props传递对象"><a href="#2-props传递对象" class="headerlink" title="2. props传递对象"></a>2. props传递对象</h3><h4 id="·父组件"><a href="#·父组件" class="headerlink" title="·父组件"></a>·父组件</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"p-5"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>Pagination :pageOption<span class="token operator">=</span><span class="token string">"pageOptions"</span> /<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
 
-&lt;script&gt;
-import Pagination from &#39;./components/pagination&#39;;
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">import</span> Pagination from <span class="token string">'./components/pagination'</span><span class="token punctuation">;</span>
 
-export default {
-  data () {
-    return {
-      pageOptions:{
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  data <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      pageOptions:<span class="token punctuation">{</span>
         page:1,
         pageSize:10,
-        pageSizes:[10,20,30,40],
+        pageSizes:<span class="token punctuation">[</span>10,20,30,40<span class="token punctuation">]</span>,
         total:40
-      }
-    };
-  },
-  components: {
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>,
+  components: <span class="token punctuation">{</span>
     Pagination
-  }
-}
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-&lt;/script&gt;
-</code></pre><h4 id="·-子组件-1"><a href="#·-子组件-1" class="headerlink" title="· 子组件"></a>· 子组件</h4><pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;el-pagination
-      @size-change=&quot;handleSizeChange&quot;
-      @current-change=&quot;handleCurrentChange&quot;
-      :current-page=&quot;propOptions.page&quot;
-      :page-sizes=&quot;propOptions.pageSizes&quot;
-      :page-size=&quot;propOptions.pageSize&quot;
-      layout=&quot;total, sizes, prev, pager, next, jumper&quot;
-      :total=&quot;propOptions.total&quot;
-    &gt;&lt;/el-pagination&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
+</code></pre>
+<h4 id="·-子组件"><a href="#·-子组件" class="headerlink" title="· 子组件"></a>· 子组件</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el-pagination
+      @size-change<span class="token operator">=</span><span class="token string">"handleSizeChange"</span>
+      @current-change<span class="token operator">=</span><span class="token string">"handleCurrentChange"</span>
+      :current-page<span class="token operator">=</span><span class="token string">"propOptions.page"</span>
+      :page-sizes<span class="token operator">=</span><span class="token string">"propOptions.pageSizes"</span>
+      :page-size<span class="token operator">=</span><span class="token string">"propOptions.pageSize"</span>
+      layout<span class="token operator">=</span><span class="token string">"total, sizes, prev, pager, next, jumper"</span>
+      :total<span class="token operator">=</span><span class="token string">"propOptions.total"</span>
+    <span class="token operator">></span><span class="token operator">&lt;</span>/el-pagination<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
 
-&lt;script&gt;
-export default {
-  props: [&quot;page-option&quot;],
-  data() {
-    return {
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  props: <span class="token punctuation">[</span><span class="token string">"page-option"</span><span class="token punctuation">]</span>,
+  data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
         propOptions:this.pageOption
-    };
-  },
-  methods: {
-      handleSizeChange(val) {
-        this.propOptions.pageSize=val;
-      },
-      handleCurrentChange(val) {
-        this.propOptions.page=val;
-      }
-  }
-};
-&lt;/script&gt;
-</code></pre><h2 id="二、兄弟组件传值"><a href="#二、兄弟组件传值" class="headerlink" title="二、兄弟组件传值"></a>二、兄弟组件传值</h2><h3 id="1-借助事件车"><a href="#1-借助事件车" class="headerlink" title="1. 借助事件车"></a>1. 借助事件车</h3><h4 id="·-自定义公用组件bus-js"><a href="#·-自定义公用组件bus-js" class="headerlink" title="· 自定义公用组件bus.js"></a>· 自定义公用组件bus.js</h4><p>自定义创建bus.js,兄弟组件共同引用此js，bus.js内容：</p>
-<pre><code>import Vue from &#39;vue&#39;;
-var VueEvent=new Vue();
-export default VueEvent;
-</code></pre><h4 id="·-兄弟组件a"><a href="#·-兄弟组件a" class="headerlink" title="· 兄弟组件a"></a>· 兄弟组件a</h4><pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;el-pagination
-      @size-change=&quot;handleSizeChange&quot;
-      @current-change=&quot;handleCurrentChange&quot;
-      :current-page=&quot;propOptions.page&quot;
-      :page-sizes=&quot;propOptions.pageSizes&quot;
-      :page-size=&quot;propOptions.pageSize&quot;
-      layout=&quot;total, sizes, prev, pager, next, jumper&quot;
-      :total=&quot;propOptions.total&quot;
-    &gt;&lt;/el-pagination&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>,
+  methods: <span class="token punctuation">{</span>
+      handleSizeChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        this.propOptions.pageSize<span class="token operator">=</span>val<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>,
+      handleCurrentChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        this.propOptions.page<span class="token operator">=</span>val<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
+</code></pre>
+<h2 id="二、兄弟组件传值"><a href="#二、兄弟组件传值" class="headerlink" title="二、兄弟组件传值"></a>二、兄弟组件传值</h2><h3 id="1-借助事件车"><a href="#1-借助事件车" class="headerlink" title="1. 借助事件车"></a>1. 借助事件车</h3><h4 id="·-自定义公用组件bus-js"><a href="#·-自定义公用组件bus-js" class="headerlink" title="· 自定义公用组件bus.js"></a>· 自定义公用组件bus.js</h4><p>自定义创建bus.js,兄弟组件共同引用此js，bus.js内容：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> Vue from <span class="token string">'vue'</span><span class="token punctuation">;</span>
+var VueEvent<span class="token operator">=</span>new Vue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">export</span> default VueEvent<span class="token punctuation">;</span>
+</code></pre>
+<h4 id="·-兄弟组件a"><a href="#·-兄弟组件a" class="headerlink" title="· 兄弟组件a"></a>· 兄弟组件a</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el-pagination
+      @size-change<span class="token operator">=</span><span class="token string">"handleSizeChange"</span>
+      @current-change<span class="token operator">=</span><span class="token string">"handleCurrentChange"</span>
+      :current-page<span class="token operator">=</span><span class="token string">"propOptions.page"</span>
+      :page-sizes<span class="token operator">=</span><span class="token string">"propOptions.pageSizes"</span>
+      :page-size<span class="token operator">=</span><span class="token string">"propOptions.pageSize"</span>
+      layout<span class="token operator">=</span><span class="token string">"total, sizes, prev, pager, next, jumper"</span>
+      :total<span class="token operator">=</span><span class="token string">"propOptions.total"</span>
+    <span class="token operator">></span><span class="token operator">&lt;</span>/el-pagination<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
 
-&lt;script&gt;
-import Bus from &#39;./bus.js&#39;;
-export default {
-  props: [&quot;page-option&quot;],
-  data() {
-    return {
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">import</span> Bus from <span class="token string">'./bus.js'</span><span class="token punctuation">;</span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  props: <span class="token punctuation">[</span><span class="token string">"page-option"</span><span class="token punctuation">]</span>,
+  data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
         propOptions:this.pageOption
-    };
-  },
-  methods: {
-      handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
-      },
-      handleCurrentChange(val) {
-        Bus.$emit(&#39;pageChangeTo&#39;,val);
-      }
-  }
-};
-&lt;/script&gt;
-</code></pre><h4 id="·-兄弟组件b"><a href="#·-兄弟组件b" class="headerlink" title="· 兄弟组件b"></a>· 兄弟组件b</h4><pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;el-steps :active=&quot;pageOption.page&quot; align-center&gt;
-      &lt;el-step title=&quot;步骤1&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
-      &lt;el-step title=&quot;步骤2&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
-      &lt;el-step title=&quot;步骤3&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
-      &lt;el-step title=&quot;步骤4&quot; description=&quot;这是一段很长很长很长的描述性文字&quot;&gt;&lt;/el-step&gt;
-    &lt;/el-steps&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>,
+  methods: <span class="token punctuation">{</span>
+      handleSizeChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console.log<span class="token punctuation">(</span><span class="token variable"><span class="token variable">`</span>每页 $<span class="token punctuation">{</span>val<span class="token punctuation">}</span> 条<span class="token variable">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>,
+      handleCurrentChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Bus.<span class="token variable">$emit</span><span class="token punctuation">(</span><span class="token string">'pageChangeTo'</span>,val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
+</code></pre>
+<h4 id="·-兄弟组件b"><a href="#·-兄弟组件b" class="headerlink" title="· 兄弟组件b"></a>· 兄弟组件b</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el-steps :active<span class="token operator">=</span><span class="token string">"pageOption.page"</span> align-center<span class="token operator">></span>
+      <span class="token operator">&lt;</span>el-step title<span class="token operator">=</span><span class="token string">"步骤1"</span> description<span class="token operator">=</span><span class="token string">"这是一段很长很长很长的描述性文字"</span><span class="token operator">></span><span class="token operator">&lt;</span>/el-step<span class="token operator">></span>
+      <span class="token operator">&lt;</span>el-step title<span class="token operator">=</span><span class="token string">"步骤2"</span> description<span class="token operator">=</span><span class="token string">"这是一段很长很长很长的描述性文字"</span><span class="token operator">></span><span class="token operator">&lt;</span>/el-step<span class="token operator">></span>
+      <span class="token operator">&lt;</span>el-step title<span class="token operator">=</span><span class="token string">"步骤3"</span> description<span class="token operator">=</span><span class="token string">"这是一段很长很长很长的描述性文字"</span><span class="token operator">></span><span class="token operator">&lt;</span>/el-step<span class="token operator">></span>
+      <span class="token operator">&lt;</span>el-step title<span class="token operator">=</span><span class="token string">"步骤4"</span> description<span class="token operator">=</span><span class="token string">"这是一段很长很长很长的描述性文字"</span><span class="token operator">></span><span class="token operator">&lt;</span>/el-step<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/el-steps<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
 
-&lt;script&gt;
-import Bus from &quot;./bus.js&quot;;
-export default {
-  data() {
-    return {
-      pageOption: {
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">import</span> Bus from <span class="token string">"./bus.js"</span><span class="token punctuation">;</span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      pageOption: <span class="token punctuation">{</span>
         page: 1
-      }
-    };
-  },
-  mounted() {
-    this.listenPageChange();
-  },
-  methods: {
-    listenPageChange() {
-      Bus.$on(&quot;pageChangeTo&quot;, val =&gt; {
-        this.pageOption.page = val;
-      });
-    }
-  }
-};
-&lt;/script&gt;
-</code></pre><h2 id="三、Vuex传值"><a href="#三、Vuex传值" class="headerlink" title="三、Vuex传值"></a>三、Vuex传值</h2><h3 id="1-开始使用vuex，新建一个-sotre文件夹，分开维护-actions-mutations-getters"><a href="#1-开始使用vuex，新建一个-sotre文件夹，分开维护-actions-mutations-getters" class="headerlink" title="1. 开始使用vuex，新建一个 sotre文件夹，分开维护 actions mutations getters"></a>1. 开始使用vuex，新建一个 sotre文件夹，分开维护 actions mutations getters</h3><p><img src="https://img-blog.csdn.net/20180208174810357" alt="网络不好"></p>
-<h3 id="2-在store-index-js文件中新建vuex-的store实例"><a href="#2-在store-index-js文件中新建vuex-的store实例" class="headerlink" title="2. 在store/index.js文件中新建vuex 的store实例"></a>2. 在store/index.js文件中新建vuex 的store实例</h3><pre><code>import Vue from &#39;vue&#39;
-import Vuex from &#39;vuex&#39;
-import * as getters from &#39;./getters&#39; // 导入响应的模块，*相当于引入了这个组件下所有导出的事例
-import * as actions from &#39;./actions&#39;
-import * as mutations from &#39;./mutations&#39;
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>,
+  mounted<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    this.listenPageChange<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>,
+  methods: <span class="token punctuation">{</span>
+    listenPageChange<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Bus.<span class="token variable">$on</span><span class="token punctuation">(</span><span class="token string">"pageChangeTo"</span>, val <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        this.pageOption.page <span class="token operator">=</span> val<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
+</code></pre>
+<h2 id="三、Vuex传值"><a href="#三、Vuex传值" class="headerlink" title="三、Vuex传值"></a>三、Vuex传值</h2><h3 id="1-开始使用vuex，新建一个-sotre文件夹，分开维护-actions-mutations-getters"><a href="#1-开始使用vuex，新建一个-sotre文件夹，分开维护-actions-mutations-getters" class="headerlink" title="1. 开始使用vuex，新建一个 sotre文件夹，分开维护 actions mutations getters"></a>1. 开始使用vuex，新建一个 sotre文件夹，分开维护 actions mutations getters</h3><p><img src="https://img-blog.csdn.net/20180208174810357" alt="网络不好"></p>
+<h3 id="2-在store-index-js文件中新建vuex-的store实例"><a href="#2-在store-index-js文件中新建vuex-的store实例" class="headerlink" title="2. 在store/index.js文件中新建vuex 的store实例"></a>2. 在store/index.js文件中新建vuex 的store实例</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> Vue from <span class="token string">'vue'</span>
+<span class="token function">import</span> Vuex from <span class="token string">'vuex'</span>
+<span class="token function">import</span> * as getters from <span class="token string">'./getters'</span> // 导入响应的模块，*相当于引入了这个组件下所有导出的事例
+<span class="token function">import</span> * as actions from <span class="token string">'./actions'</span>
+<span class="token function">import</span> * as mutations from <span class="token string">'./mutations'</span>
 
-Vue.use(Vuex)
+Vue.use<span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span>
 // 首先声明一个需要全局维护的状态 state,比如 我这里举例的resturantName
-const state = {
-    resturantName: &#39;飞歌餐馆&#39; // 默认值
+const state <span class="token operator">=</span> <span class="token punctuation">{</span>
+    resturantName: <span class="token string">'飞歌餐馆'</span> // 默认值
     // id: xxx  如果还有全局状态也可以在这里添加
     // name:xxx
-}
+<span class="token punctuation">}</span>
 
 // 注册上面引入的各大模块
-const store = new Vuex.Store({
+const store <span class="token operator">=</span> new Vuex.Store<span class="token punctuation">(</span><span class="token punctuation">{</span>
     state,    // 共同维护的一个状态，state里面可以是很多个全局状态
     getters,  // 获取数据并渲染
     actions,  // 数据的异步操作
     mutations  // 处理数据的唯一途径，state的改变或赋值只能在这里
-})
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-export default store  // 导出store并在 main.js中引用注册。
-</code></pre><h3 id="3-actions"><a href="#3-actions" class="headerlink" title="3.actions"></a>3.actions</h3><pre><code>// 给action注册事件处理函数。当这个函数被触发时候，将状态提交到mutations中处理
-export function modifyAName({commit}, name) { // commit 提交；name即为点击后传递过来的参数，此时是 &#39;A餐馆&#39;
-    return commit (&#39;modifyAName&#39;, name)
-}
-export function modifyBName({commit}, name) {
-    return commit (&#39;modifyBName&#39;, name)
-}
+<span class="token function">export</span> default store  // 导出store并在 main.js中引用注册。
+</code></pre>
+<h3 id="3-actions"><a href="#3-actions" class="headerlink" title="3.actions"></a>3.actions</h3><pre class=" language-bash"><code class="language-bash">// 给action注册事件处理函数。当这个函数被触发时候，将状态提交到mutations中处理
+<span class="token function">export</span> <span class="token keyword">function</span> modifyAName<span class="token punctuation">(</span><span class="token punctuation">{</span>commit<span class="token punctuation">}</span>, name<span class="token punctuation">)</span> <span class="token punctuation">{</span> // commit 提交；name即为点击后传递过来的参数，此时是 <span class="token string">'A餐馆'</span>
+    <span class="token keyword">return</span> commit <span class="token punctuation">(</span><span class="token string">'modifyAName'</span>, name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">export</span> <span class="token keyword">function</span> modifyBName<span class="token punctuation">(</span><span class="token punctuation">{</span>commit<span class="token punctuation">}</span>, name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> commit <span class="token punctuation">(</span><span class="token string">'modifyBName'</span>, name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
 // ES6精简写法
-// export const modifyAName = ({commit},name) =&gt; commit(&#39;modifyAName&#39;, name)
-</code></pre><h3 id="4-mutations"><a href="#4-mutations" class="headerlink" title="4.mutations"></a>4.mutations</h3><pre><code>
-// 提交 mutations是更改Vuex状态的唯一合法方法
-export const modifyAName = (state, name) =&gt; { // A组件点击更改餐馆名称为 A餐馆
-    state.resturantName = name // 把方法传递过来的参数，赋值给state中的resturantName
-}
-export const modifyBName = (state, name) =&gt; { // B组件点击更改餐馆名称为 B餐馆
-    state.resturantName = name
-}
-</code></pre><h3 id="5-getters"><a href="#5-getters" class="headerlink" title="5.getters"></a>5.getters</h3><pre><code>// 获取最终的状态信息
-export const resturantName = state =&gt; state.resturantName
-</code></pre><h3 id="6-在main-js中导入-store实例"><a href="#6-在main-js中导入-store实例" class="headerlink" title="6.在main.js中导入 store实例"></a>6.在main.js中导入 store实例</h3><pre><code>// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from &#39;vue&#39;
-import App from &#39;./App&#39;
-import router from &#39;./router&#39;
-import store from &#39;./store&#39;
+// <span class="token function">export</span> const modifyAName <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>commit<span class="token punctuation">}</span>,name<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> commit<span class="token punctuation">(</span><span class="token string">'modifyAName'</span>, name<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="4-mutations"><a href="#4-mutations" class="headerlink" title="4.mutations"></a>4.mutations</h3><pre class=" language-bash"><code class="language-bash">// 提交 mutations是更改Vuex状态的唯一合法方法
+<span class="token function">export</span> const modifyAName <span class="token operator">=</span> <span class="token punctuation">(</span>state, name<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> // A组件点击更改餐馆名称为 A餐馆
+    state.resturantName <span class="token operator">=</span> name // 把方法传递过来的参数，赋值给state中的resturantName
+<span class="token punctuation">}</span>
+<span class="token function">export</span> const modifyBName <span class="token operator">=</span> <span class="token punctuation">(</span>state, name<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> // B组件点击更改餐馆名称为 B餐馆
+    state.resturantName <span class="token operator">=</span> name
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="5-getters"><a href="#5-getters" class="headerlink" title="5.getters"></a>5.getters</h3><pre class=" language-bash"><code class="language-bash">// 获取最终的状态信息
+<span class="token function">export</span> const resturantName <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">></span> state.resturantName
+</code></pre>
+<h3 id="6-在main-js中导入-store实例"><a href="#6-在main-js中导入-store实例" class="headerlink" title="6.在main.js中导入 store实例"></a>6.在main.js中导入 store实例</h3><pre class=" language-bash"><code class="language-bash">// The Vue build version to load with the <span class="token variable"><span class="token variable">`</span><span class="token function">import</span><span class="token variable">`</span></span> <span class="token function">command</span>
+// <span class="token punctuation">(</span>runtime-only or standalone<span class="token punctuation">)</span> has been <span class="token keyword">set</span> <span class="token keyword">in</span> webpack.base.conf with an alias.
+<span class="token function">import</span> Vue from <span class="token string">'vue'</span>
+<span class="token function">import</span> App from <span class="token string">'./App'</span>
+<span class="token function">import</span> router from <span class="token string">'./router'</span>
+<span class="token function">import</span> store from <span class="token string">'./store'</span>
 
-Vue.config.productionTip = false
+Vue.config.productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
 
 /* eslint-disable no-new */
-new Vue({
-  el: &#39;#app&#39;,
+new Vue<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el: <span class="token string">'#app'</span>,
   router,
   store,  // 这样就能全局使用vuex了
-  components: { App },
-  template: &#39;&lt;App/&gt;&#39;
-})
-</code></pre><h3 id="7-在组件A中，定义点击事件，点击-修改-餐馆的名称，并把餐馆的名称在事件中用参数进行传递。"><a href="#7-在组件A中，定义点击事件，点击-修改-餐馆的名称，并把餐馆的名称在事件中用参数进行传递。" class="headerlink" title="7.在组件A中，定义点击事件，点击 修改 餐馆的名称，并把餐馆的名称在事件中用参数进行传递。"></a>7.在组件A中，定义点击事件，点击 修改 餐馆的名称，并把餐馆的名称在事件中用参数进行传递。</h3><p>…mapactions 和 …mapgetters都是vuex提供的语法糖，在底层已经封装好了，拿来就能用，简化了很多操作。</p>
+  components: <span class="token punctuation">{</span> App <span class="token punctuation">}</span>,
+  template: <span class="token string">'&lt;App/>'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="7-在组件A中，定义点击事件，点击-修改-餐馆的名称，并把餐馆的名称在事件中用参数进行传递。"><a href="#7-在组件A中，定义点击事件，点击-修改-餐馆的名称，并把餐馆的名称在事件中用参数进行传递。" class="headerlink" title="7.在组件A中，定义点击事件，点击 修改 餐馆的名称，并把餐馆的名称在事件中用参数进行传递。"></a>7.在组件A中，定义点击事件，点击 修改 餐馆的名称，并把餐馆的名称在事件中用参数进行传递。</h3><p>…mapactions 和 …mapgetters都是vuex提供的语法糖，在底层已经封装好了，拿来就能用，简化了很多操作。</p>
 <p>其中…mapActions([‘clickAFn’]) 相当于this.$store.dispatch(‘clickAFn’，{参数})，mapActions中只需要指定方法名即可，参数省略。</p>
 <p>…mapGetters([‘resturantName’])相当于this.$store.getters.resturantName</p>
-<pre><code>&lt;template&gt;
-  &lt;div class=&quot;componentsA&quot;&gt;
-      &lt;P class=&quot;title&quot;&gt;组件A&lt;/P&gt;
-      &lt;P class=&quot;titleName&quot;&gt;餐馆名称：{{resturantName}}&lt;/P&gt;
-      &lt;div&gt;
-            &lt;!-- 点击修改 为 A 餐馆 --&gt;
-          &lt;button class=&quot;btn&quot; @click=&quot;modifyAName(&#39;A餐馆&#39;)&quot;&gt;修改为A餐馆&lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;marTop&quot;&gt;
-          &lt;button class=&quot;btn&quot; @click=&quot;trunToB&quot;&gt;跳转到B页面&lt;/button&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"componentsA"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>P class<span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span>组件A<span class="token operator">&lt;</span>/P<span class="token operator">></span>
+      <span class="token operator">&lt;</span>P class<span class="token operator">=</span><span class="token string">"titleName"</span><span class="token operator">></span>餐馆名称：<span class="token punctuation">{</span><span class="token punctuation">{</span>resturantName<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/P<span class="token operator">></span>
+      <span class="token operator">&lt;</span>div<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span>-- 点击修改 为 A 餐馆 --<span class="token operator">></span>
+          <span class="token operator">&lt;</span>button class<span class="token operator">=</span><span class="token string">"btn"</span> @click<span class="token operator">=</span><span class="token string">"modifyAName('A餐馆')"</span><span class="token operator">></span>修改为A餐馆<span class="token operator">&lt;</span>/button<span class="token operator">></span>
+      <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+      <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"marTop"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>button class<span class="token operator">=</span><span class="token string">"btn"</span> @click<span class="token operator">=</span><span class="token string">"trunToB"</span><span class="token operator">></span>跳转到B页面<span class="token operator">&lt;</span>/button<span class="token operator">></span>
+      <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
 
-&lt;script&gt;
-import {mapActions, mapGetters} from &#39;vuex&#39;
-export default {
-  name: &#39;A&#39;,
-  data () {
-    return {
-    }
-  },
-  methods:{
-      ...mapActions( // 语法糖
-          [&#39;modifyAName&#39;] // 相当于this.$store.dispatch(&#39;modifyName&#39;),提交这个方法
-      ),
-      trunToB () {
-          this.$router.push({path: &#39;/componentsB&#39;}) // 路由跳转到B
-      }
-  },
-  computed: {
-      ...mapGetters([&#39;resturantName&#39;]) // 动态计算属性，相当于this.$store.getters.resturantName
-  }
-}
-&lt;/script&gt;
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">import</span> <span class="token punctuation">{</span>mapActions, mapGetters<span class="token punctuation">}</span> from <span class="token string">'vuex'</span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  name: <span class="token string">'A'</span>,
+  data <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  methods:<span class="token punctuation">{</span>
+      <span class="token punctuation">..</span>.mapActions<span class="token punctuation">(</span> // 语法糖
+          <span class="token punctuation">[</span><span class="token string">'modifyAName'</span><span class="token punctuation">]</span> // 相当于this.<span class="token variable">$store</span>.dispatch<span class="token punctuation">(</span><span class="token string">'modifyName'</span><span class="token punctuation">)</span>,提交这个方法
+      <span class="token punctuation">)</span>,
+      trunToB <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          this.<span class="token variable">$router</span>.push<span class="token punctuation">(</span><span class="token punctuation">{</span>path: <span class="token string">'/componentsB'</span><span class="token punctuation">}</span><span class="token punctuation">)</span> // 路由跳转到B
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  computed: <span class="token punctuation">{</span>
+      <span class="token punctuation">..</span>.mapGetters<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'resturantName'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> // 动态计算属性，相当于this.<span class="token variable">$store</span>.getters.resturantName
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
 
-&lt;!-- Add &quot;scoped&quot; attribute to limit CSS to this component only --&gt;
-&lt;style scoped&gt;
-    .title,.titleName{
-        color: blue;
-        font-size: 20px;
-    }
-    .btn{
-        width: 160px;
-        height: 40px;
-        background-color: blue;
-        border: none;
-        outline: none;
-        color: #ffffff;
-        border-radius: 4px;
-    }
-    .marTop{
-        margin-top: 20px;
-    }
-&lt;/style&gt;
-</code></pre><p>B组件同理</p>
-<pre><code>
-&lt;template&gt;
-  &lt;div class=&quot;componentsB&quot;&gt;
-      &lt;P class=&quot;title&quot;&gt;组件B&lt;/P&gt;
-      &lt;P class=&quot;titleName&quot;&gt;餐馆名称：{{resturantName}}&lt;/P&gt;
-      &lt;div&gt;
-          &lt;!-- 点击修改 为 B 餐馆 --&gt;
-          &lt;button class=&quot;btn&quot; @click=&quot;modifyBName(&#39;B餐馆&#39;)&quot;&gt;修改为B餐馆&lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;marTop&quot;&gt;
-          &lt;button class=&quot;btn&quot; @click=&quot;trunToA&quot;&gt;跳转到A页面&lt;/button&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- Add <span class="token string">"scoped"</span> attribute to limit CSS to this component only --<span class="token operator">></span>
+<span class="token operator">&lt;</span>style scoped<span class="token operator">></span>
+    .title,.titleName<span class="token punctuation">{</span>
+        color: blue<span class="token punctuation">;</span>
+        font-size: 20px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    .btn<span class="token punctuation">{</span>
+        width: 160px<span class="token punctuation">;</span>
+        height: 40px<span class="token punctuation">;</span>
+        background-color: blue<span class="token punctuation">;</span>
+        border: none<span class="token punctuation">;</span>
+        outline: none<span class="token punctuation">;</span>
+        color: <span class="token comment" spellcheck="true">#ffffff;</span>
+        border-radius: 4px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    .marTop<span class="token punctuation">{</span>
+        margin-top: 20px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/style<span class="token operator">></span>
+</code></pre>
+<p>B组件同理</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"componentsB"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>P class<span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span>组件B<span class="token operator">&lt;</span>/P<span class="token operator">></span>
+      <span class="token operator">&lt;</span>P class<span class="token operator">=</span><span class="token string">"titleName"</span><span class="token operator">></span>餐馆名称：<span class="token punctuation">{</span><span class="token punctuation">{</span>resturantName<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>/P<span class="token operator">></span>
+      <span class="token operator">&lt;</span>div<span class="token operator">></span>
+          <span class="token operator">&lt;</span><span class="token operator">!</span>-- 点击修改 为 B 餐馆 --<span class="token operator">></span>
+          <span class="token operator">&lt;</span>button class<span class="token operator">=</span><span class="token string">"btn"</span> @click<span class="token operator">=</span><span class="token string">"modifyBName('B餐馆')"</span><span class="token operator">></span>修改为B餐馆<span class="token operator">&lt;</span>/button<span class="token operator">></span>
+      <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+      <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"marTop"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>button class<span class="token operator">=</span><span class="token string">"btn"</span> @click<span class="token operator">=</span><span class="token string">"trunToA"</span><span class="token operator">></span>跳转到A页面<span class="token operator">&lt;</span>/button<span class="token operator">></span>
+      <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
 
-&lt;script&gt;
-import {mapActions, mapGetters} from &#39;vuex&#39;
-export default {
-  name: &#39;B&#39;,
-  data () {
-    return {
-    }
-  },
-  methods:{
-      ...mapActions( // 语法糖
-          [&#39;modifyBName&#39;] // 相当于this.$store.dispatch(&#39;modifyName&#39;),提交这个方法
-      ),
-      trunToA () {
-          this.$router.push({path: &#39;/componentsA&#39;}) // 路由跳转到A
-      }
-  },
-  computed: {
-      ...mapGetters([&#39;resturantName&#39;]) // 动态计算属性，相当于this.$store.getters.resturantName
-  }
-}
-&lt;/script&gt;
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">import</span> <span class="token punctuation">{</span>mapActions, mapGetters<span class="token punctuation">}</span> from <span class="token string">'vuex'</span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  name: <span class="token string">'B'</span>,
+  data <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  methods:<span class="token punctuation">{</span>
+      <span class="token punctuation">..</span>.mapActions<span class="token punctuation">(</span> // 语法糖
+          <span class="token punctuation">[</span><span class="token string">'modifyBName'</span><span class="token punctuation">]</span> // 相当于this.<span class="token variable">$store</span>.dispatch<span class="token punctuation">(</span><span class="token string">'modifyName'</span><span class="token punctuation">)</span>,提交这个方法
+      <span class="token punctuation">)</span>,
+      trunToA <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          this.<span class="token variable">$router</span>.push<span class="token punctuation">(</span><span class="token punctuation">{</span>path: <span class="token string">'/componentsA'</span><span class="token punctuation">}</span><span class="token punctuation">)</span> // 路由跳转到A
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  computed: <span class="token punctuation">{</span>
+      <span class="token punctuation">..</span>.mapGetters<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'resturantName'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> // 动态计算属性，相当于this.<span class="token variable">$store</span>.getters.resturantName
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
 
-&lt;!-- Add &quot;scoped&quot; attribute to limit CSS to this component only --&gt;
-&lt;style scoped&gt;
-    .title,.titleName{
-        color: red;
-        font-size: 20px;
-    }
-    .btn{
-        width: 160px;
-        height: 40px;
-        background-color: red;
-        border: none;
-        outline: none;
-        color: #ffffff;
-        border-radius: 4px;
-    }
-    .marTop{
-        margin-top: 20px;
-    }
-&lt;/style&gt;
-</code></pre><p>参考文章：<a href="https://blog.csdn.net/qq_35430000/article/details/79291287" target="_blank" rel="noopener">Vue通信、传值的多种方式，详解（都是干货）</a></p>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- Add <span class="token string">"scoped"</span> attribute to limit CSS to this component only --<span class="token operator">></span>
+<span class="token operator">&lt;</span>style scoped<span class="token operator">></span>
+    .title,.titleName<span class="token punctuation">{</span>
+        color: red<span class="token punctuation">;</span>
+        font-size: 20px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    .btn<span class="token punctuation">{</span>
+        width: 160px<span class="token punctuation">;</span>
+        height: 40px<span class="token punctuation">;</span>
+        background-color: red<span class="token punctuation">;</span>
+        border: none<span class="token punctuation">;</span>
+        outline: none<span class="token punctuation">;</span>
+        color: <span class="token comment" spellcheck="true">#ffffff;</span>
+        border-radius: 4px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    .marTop<span class="token punctuation">{</span>
+        margin-top: 20px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>/style<span class="token operator">></span>
+</code></pre>
+<p>参考文章：<a href="https://blog.csdn.net/qq_35430000/article/details/79291287" target="_blank" rel="noopener">Vue通信、传值的多种方式，详解（都是干货）</a></p>
 
             </div>
             <hr>
@@ -979,44 +991,58 @@ export default {
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/04/29/2019-4-27vue-zu-jian-chuan-zhi/">
+                <a href="/2019/05/15/you-xiu-wen-zhang-shou-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="vue组件传值">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="优秀文章收录">
                         
-                        <span class="card-title">vue组件传值</span>
+                        <span class="card-title">优秀文章收录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一、父子传值1. props传递单个参数· 父组件&lt;template&gt;
-  &lt;div class=&quot;app-container&quot;&gt;
-    &lt;Pagination :page=&quot;c</div>
+                    <div class="summary block-with-text">安全
+竞争激烈的互联网时代，是否需要注重一下WEB安全？ -2019年05月15日
+
+网络、浏览器基础
+你不知道的浏览器页面渲染机制 -2019年04月02日
+面试的信心来源于过硬的基础 -2018年02月23日
+http 缓存小结 201</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/日志/" class="post-category" target="_blank">
-                                    日志
+                            <a href="/categories/日常优质文章收录/" class="post-category" target="_blank">
+                                    日常优质文章收录
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/" target="_blank">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/css/" target="_blank">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/js/" target="_blank">
+                        <span class="chip bg-color">js</span>
+                    </a>
+                    
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                    <a href="/tags/优秀文章收录/" target="_blank">
+                        <span class="chip bg-color">优秀文章收录</span>
                     </a>
                     
                 </div>
@@ -1220,7 +1246,7 @@ XMwarrior是纯手撸的</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14.5k</span>
+                <span class="white-color">14.3k</span>
             
 
             
