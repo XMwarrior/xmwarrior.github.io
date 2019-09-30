@@ -458,7 +458,7 @@
   <span class="token operator">&lt;</span>el-pagination
     @size-change<span class="token operator">=</span><span class="token string">"handleSizeChange"</span>
     @current-change<span class="token operator">=</span><span class="token string">"handleCurrentChange"</span>
-    :current-page<span class="token operator">=</span><span class="token string">"currentPage"</span>
+    :current-page<span class="token operator">=</span><span class="token string">"page"</span>
     :page-sizes<span class="token operator">=</span><span class="token string">"[100, 200, 300, 400]"</span>
     :page-size<span class="token operator">=</span><span class="token string">"100"</span>
     layout<span class="token operator">=</span><span class="token string">"total, sizes, prev, pager, next, jumper"</span>
@@ -467,7 +467,7 @@
 <span class="token operator">&lt;</span>/template<span class="token operator">></span>
 <span class="token operator">&lt;</span>script<span class="token operator">></span>
 <span class="token function">export</span> default <span class="token punctuation">{</span>
-  props: <span class="token punctuation">[</span><span class="token string">"currentPage"</span><span class="token punctuation">]</span>,
+  props: <span class="token punctuation">[</span><span class="token string">"page"</span><span class="token punctuation">]</span>,
   methods: <span class="token punctuation">{</span>
     handleSizeChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       this.pageOption.pageSize <span class="token operator">=</span> val<span class="token punctuation">;</span>
@@ -1029,12 +1029,12 @@ http 缓存小结 201</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
                     <a href="/tags/js/" target="_blank">
                         <span class="chip bg-color">js</span>
+                    </a>
+                    
+                    <a href="/tags/css/" target="_blank">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                     <a href="/tags/html/" target="_blank">
@@ -1246,7 +1246,7 @@ XMwarrior是纯手撸的</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14.3k</span>
+                <span class="white-color">15.1k</span>
             
 
             

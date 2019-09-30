@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+	<head><meta name="generator" content="Hexo 3.8.0">
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.container {
+				font-size: 0;
+				width: 360px;
+			}
+			
+			.item {
+				font-size: 16px;
+				width: 40px;
+				height: 40px;
+				border: 1px solid;
+				display: inline-block;
+				box-sizing: border-box;
+				text-align: center;
+				line-height: 40px;
+			}
+		</style>
+	<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+	<body>
+		<div id="gameContainer" class="container">
+
+		</div>
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var gameMap = function() {
+				var numStr = '123456789'.split('');
+				var obj = {};
+				for(var x = 0; x < 9; x++) {
+					for(var y = 0; y < 9; y++) {
+						obj[numStr[x] + numStr[y]] = 0;
+					}
+				}
+				return obj;
+			}();
+			var render = function(map) {
+				var res = [];
+				for(var key in map) {
+					res.push('<div class="item" data-id="' + key + '">' + (map[key] ? map[key] : '') + '</div>');
+				}
+				$('#gameContainer').html(res.join(''));
+			}
+			var unSetArray = ['14', '15', '16', '17', '18', '19', '24', '25', '26', '27', '28', '29', '34', '35', '36', '37', '38', '39', '41', '42', '43', '47', '48', '49', '51', '52', '53', '57', '58', '59', '61', '62', '63', '67', '68', '69', '71', '72', '73', '74', '75', '76', '81', '82', '83', '84', '85', '86', '91', '92', '93', '94', '95', '96'];
+			var i = 0;
+			var queue = new Map();
+			var initNum = function(i, isReturn) {
+				if(i > 53) return;
+				var nPossibleNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+				var regionMap = {
+					'1': [1, 2, 3],
+					'2': [1, 2, 3],
+					'3': [1, 2, 3],
+					'4': [4, 5, 6],
+					'5': [4, 5, 6],
+					'6': [4, 5, 6],
+					'7': [7, 8, 9],
+					'8': [7, 8, 9],
+					'9': [7, 8, 9]
+				}
+				for(var j in gameMap) {
+					if(j[0] === unSetArray[i][0] && gameMap[j]) {
+						var spliceIndex = nPossibleNumbers.indexOf(gameMap[j]);
+						spliceIndex >= 0 && nPossibleNumbers.splice(spliceIndex, 1);
+					}
+					if(j[1] === unSetArray[i][1] && gameMap[j]) {
+						var spliceIndex = nPossibleNumbers.indexOf(gameMap[j]);
+						spliceIndex >= 0 && nPossibleNumbers.splice(spliceIndex, 1);
+					}
+				}
+				var regionKeys = regionMap[unSetArray[i][0]].map(function(k) {
+					return regionMap[unSetArray[i][1]].map(function(l) {
+						return k + '' + l;
+					});
+				}).flat();
+				regionKeys.forEach(function(key, index) {
+					if(gameMap[key]) {
+						var spliceIndex = nPossibleNumbers.indexOf(gameMap[key]);
+						spliceIndex >= 0 && nPossibleNumbers.splice(spliceIndex, 1);
+					}
+				});
+				queue.set(unSetArray[i], nPossibleNumbers);
+				i++;
+				initNum(i);
+				//				console.log(nPossibleNumbers);
+				//				if(nPossibleNumbers.length) {
+				//					if(isReturn && nPossibleNumbers.length === 1) {
+				//						i--;
+				//						gameMap[unSetArray[i]] = 0;
+				//						initNum(i, true);
+				//					} else {
+				//						nPossibleNumbers = nPossibleNumbers.sort(function() {
+				//							return Math.random() - .5;
+				//						});
+				//						gameMap[unSetArray[i]] = nPossibleNumbers[0];
+				//						queue[unSetArray[i]] = nPossibleNumbers;
+				//						i++;
+				//						initNum(i);
+				//					}
+				//				} else {
+				//					i--;
+				//					gameMap[unSetArray[i]] = 0;
+				//					initNum(i, true);
+				//				}
+
+				//				if(nPossibleNumbers.length) {
+				//					if(isReturn) {
+				//						i--;
+				//						gameMap[unSetArray[i]] = 0;
+				//						initNum(i);
+				//					} else {
+				//						nPossibleNumbers = nPossibleNumbers.sort(function() {
+				//							return Math.random() - 0.5;
+				//						});
+				//						gameMap[unSetArray[i]] = nPossibleNumbers[0];
+				//						nPossibleNumbers.splice(0, 1);
+				//						queue[unSetArray[i]] = nPossibleNumbers;
+				//						//next
+				//						i++;
+				//						initNum(i);
+				//					}
+				//				} else {
+				//					i--;
+				//					gameMap[unSetArray[i]] = 0;
+				//					initNum(i, true);
+				//				}
+
+				//				possibleNumbers = possibleNumbers || [1, 2, 3, 4, 5, 6, 7, 8, 9];
+				//				if(!isBack) {
+				//					queue[unSetArray[i]] = {
+				//						possibleNumbers: possibleNumbers
+				//					}
+				//				}
+				//				if(possibleNumbers.length) {
+				//					!isBack && possibleNumbers.sort(function() {
+				//						return Math.random() - .5;
+				//					});
+				//					//					debugger
+				//					if(possibleNumbers.length) {
+				//						gameMap[unSetArray[i]] = possibleNumbers[0];
+				//						queue[unSetArray[i]].num = gameMap[unSetArray[i]];
+				//					}
+				//					if(!isBack) {
+				//						i++;
+				//					}
+				//					//next
+				//
+				//					for(var j in gameMap) {
+				//						if(j[0] === unSetArray[i][0] && gameMap[j]) {
+				//							var spliceIndex = nPossibleNumbers.indexOf(gameMap[j]);
+				//							nPossibleNumbers.splice(spliceIndex, 1);
+				//						}
+				//						if(j[1] === unSetArray[i][1] && gameMap[j]) {
+				//							var spliceIndex = nPossibleNumbers.indexOf(gameMap[j]);
+				//							nPossibleNumbers.splice(spliceIndex, 1);
+				//						}
+				//					}
+				//					var regionKeys = regionMap[unSetArray[i][0]].map(function(k) {
+				//						return regionMap[unSetArray[i][1]].map(function(l) {
+				//							return k + '' + l;
+				//						});
+				//					}).flat();
+				//					regionKeys.forEach(function(key, index) {
+				//						if(gameMap[key]) {
+				//							var spliceIndex = nPossibleNumbers.indexOf(gameMap[key]);
+				//							spliceIndex >= 0 && nPossibleNumbers.splice(spliceIndex, 1);
+				//						}
+				//					});
+				//					console.log(nPossibleNumbers);
+				//					if(nPossibleNumbers.length) {
+				//						initNum(unSetArray[i], nPossibleNumbers);
+				//					} else {
+				//						//						debugger
+				//						i--;
+				//						if(possibleNumbers.length > 1) {
+				//							possibleNumbers.splice(0, 1);
+				//							initNum(unSetArray[i], possibleNumbers, true);
+				//							return;
+				//						} else {
+				//							i--;
+				//							var sIndex = queue[unSetArray[i]].possibleNumbers.indexOf(queue[unSetArray[i]].num);
+				//							queue[unSetArray[i]].possibleNumbers.splice(sIndex, 1);
+				//							initNum(i, queue[unSetArray[i]].possibleNumbers, true);
+				//						}
+				//					}
+				//				} else {
+				//
+			}
+			//				}
+
+			function randomAdd(arrx, arry) {
+				var randomArr = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(function() {
+					return Math.random() - 0.5;
+				});
+				var i = 0;
+				arrx.forEach(function(x) {
+					arry.forEach(function(y) {
+						gameMap[x + y] = randomArr[i];
+						i++
+					});
+				});
+			}
+			randomAdd(['1', '2', '3'], ['1', '2', '3']);
+			randomAdd(['4', '5', '6'], ['4', '5', '6']);
+			randomAdd(['7', '8', '9'], ['7', '8', '9']);
+			initNum(i);
+//			console.log(queue);
+			var j = 0;
+			
+			if(isValidate()) {
+				addNum();
+//				gameMap[unSetArray[i]]
+			} else {
+
+			}
+			console.log(isValidate());
+
+			//			if (queue) {
+			//				
+			//			}
+			//			gameMap[unSetArray[i]]
+			render(gameMap);
+			function addNum() {
+//				console.log(queue.get(unSetArray[j]))
+				gameMap[unSetArray[j]]=queue.get(unSetArray[j])[0];
+				if(isValidate()) {
+					addNum();
+				}
+			}
+			//验证
+			function isValidate() {
+				return ![...queue.values()].filter(item => !item.length).length;
+			}
+		</script>
+		<!--<script type="text/javascript">
+			//方法4
+			function initSudoku() {
+				var randomNum = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(function() {
+					return Math.random() - .5;
+				});
+				var a = randomNum[0],
+					b = randomNum[1],
+					c = randomNum[2],
+					d = randomNum[3],
+					e = randomNum[4],
+					f = randomNum[5],
+					g = randomNum[6],
+					h = randomNum[7],
+					i = randomNum[8];
+				var gameMap = {
+					"11": d,
+					"12": g,
+					"13": e,
+					"14": f,
+					"15": h,
+					"16": b,
+					"17": i,
+					"18": a,
+					"19": c,
+					"21": a,
+					"22": b,
+					"23": c,
+					"24": d,
+					"25": e,
+					"26": i,
+					"27": f,
+					"28": g,
+					"29": h,
+					"31": f,
+					"32": h,
+					"33": i,
+					"34": a,
+					"35": c,
+					"36": g,
+					"37": b,
+					"38": d,
+					"39": e,
+					"41": b,
+					"42": a,
+					"43": d,
+					"44": c,
+					"45": f,
+					"46": e,
+					"47": g,
+					"48": h,
+					"49": i,
+					"51": c,
+					"52": f,
+					"53": e,
+					"54": g,
+					"55": i,
+					"56": h,
+					"57": a,
+					"58": b,
+					"59": d,
+					"61": g,
+					"62": i,
+					"63": h,
+					"64": b,
+					"65": a,
+					"66": d,
+					"67": c,
+					"68": e,
+					"69": f,
+					"71": e,
+					"72": c,
+					"73": a,
+					"74": h,
+					"75": b,
+					"76": f,
+					"77": d,
+					"78": i,
+					"79": g,
+					"81": h,
+					"82": g,
+					"83": f,
+					"84": i,
+					"85": d,
+					"86": a,
+					"87": f,
+					"88": c,
+					"89": b,
+					"91": i,
+					"92": d,
+					"93": b,
+					"94": e,
+					"95": g,
+					"96": c,
+					"97": h,
+					"98": f,
+					"99": a
+				}
+				return gameMap;
+			}
+			var render = function(map) {
+				var res = [];
+				for(var key in map) {
+					res.push('<div class="item" data-id="' + key + '">' + (map[key] ? map[key] : '') + '</div>');
+				}
+				$('#gameContainer').html(res.join(''));
+			}
+			render(initSudoku());
+		</script>-->
+		<!--<script type="text/javascript">
+			//方法3
+			var regionMap = {
+				'1': ['1', '2', '3'],
+				'2': ['1', '2', '3'],
+				'3': ['1', '2', '3'],
+				'4': ['4', '5', '6'],
+				'5': ['4', '5', '6'],
+				'6': ['4', '5', '6'],
+				'7': ['7', '8', '9'],
+				'8': ['7', '8', '9'],
+				'9': ['7', '8', '9']
+			}
+			var gameMap = function() {
+				var numStr = '123456789'.split('');
+				var obj = {};
+				for(var x = 0; x < 9; x++) {
+					for(var y = 0; y < 9; y++) {
+						obj[numStr[x] + numStr[y]] = 0;
+					}
+				}
+				return obj;
+			}();
+			var render = function(map) {
+				var res = [];
+				for(var key in map) {
+					res.push('<div class="item" data-id="' + key + '">' + (map[key] ? map[key] : '') + '</div>');
+				}
+				$('#gameContainer').html(res.join(''));
+			}
+
+			var initSudoku = function(gameMap) {
+				randomAdd(['4', '5', '6']);
+				sortAddXY(['4', '5', '6'], ['4', '5', '6']);
+				sortAddX(['4', '5', '6'],['1', '2', '3']);
+				sortAddX(['4', '5', '6'],['7', '8', '9']);
+			}
+			var sortAddXY = function(arrX, arrY) {
+				var valueArr = arrY.map(function(x) {
+					return arrX.map(function(y) {
+						return gameMap[x + y];
+					});
+				});
+				var sortArrLeft = [2, 0, 1];
+				var sortArrRight = [1, 2, 0];
+				var i = 0;
+				arrLeftY = arrX.map(function(item) {
+					return String(~~item - 3);
+				});
+				arrRightY = arrX.map(function(item) {
+					return String(~~item + 3);
+				});
+				arrY.map(function(x) {
+					var j = 0;
+					var k = 0;
+					arrLeftY.map(function(y) {
+						gameMap[x + y] = valueArr[sortArrLeft[i]][j];
+						gameMap[y + x] = valueArr[j][sortArrLeft[i]];
+						j++;
+					});
+					arrRightY.map(function(y) {
+						gameMap[x + y] = valueArr[sortArrRight[i]][k];
+						gameMap[y + x] = valueArr[k][sortArrRight[i]];
+						k++;
+					});
+					i++;
+				});
+			}
+			var sortAddX = function(arrX, arrY) {
+				var valueArr = arrY.map(function(x) {
+					return arrX.map(function(y) {
+						return gameMap[x + y];
+					});
+				});
+				var sortArrLeft = [2, 0, 1];
+				var sortArrRight = [1, 2, 0];
+				var i = 0;
+				arrLeftY = arrX.map(function(item) {
+					return String(~~item - 3);
+				});
+				arrRightY = arrX.map(function(item) {
+					return String(~~item + 3);
+				});
+				arrY.map(function(x) {
+					var j = 0;
+					var k = 0;
+					arrLeftY.map(function(y) {
+						gameMap[x + y] = valueArr[sortArrLeft[i]][j];
+						j++;
+					});
+					arrRightY.map(function(y) {
+						gameMap[x + y] = valueArr[sortArrRight[i]][k];
+						k++;
+					});
+					i++;
+				});
+			}
+
+			function randomAdd(arr) {
+				var randomArr = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(function() {
+					return Math.random() - 0.5;
+				});
+				var i = 0;
+				arr.forEach(function(x) {
+					arr.forEach(function(y) {
+						gameMap[x + y] = randomArr[i];
+						i++
+					});
+				});
+			}
+			initSudoku(gameMap);
+			render(gameMap);
+			//			console.log(gameMap);
+		</script>-->
+	</body>
+
+</html>

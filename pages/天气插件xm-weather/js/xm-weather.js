@@ -1,7 +1,7 @@
 (function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) {
 	$.extend({
 		smartDefaultOption: {
-			"flavor": "bubble", //样式选择：bubble浮动气泡，slim固定极简
+			"flavor": "slim", //样式选择：bubble浮动气泡，slim固定极简
 			"positionMode": "static",//浮动气泡所需属性：默认fixed
 			"location": [
 				"北京市",
@@ -42,7 +42,7 @@
 		 */
 		getLocation: function(fn) {
 			$.ajax({
-				url: "https://api.map.baidu.com/location/ip?ak=OyLlhcqIbwA8nY5WgZCIMezstiin3UGM&coor=bd09ll",
+				url: "https://api.map.baidu.com/location/ip?ak=rXQyabMtMjaQcc1kRHZbh6w1AE0ZH7i4&coor=bd09ll",
 				type: "POST",
 				dataType: "jsonp",
 				success: function(data) {
@@ -57,7 +57,7 @@
 		 */
 		getDirectName: function(cityLocation, fn) {
 			$.ajax({
-				url: 'https://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=' + cityLocation + '&output=json&pois=1&latest_admin=1&ak=OyLlhcqIbwA8nY5WgZCIMezstiin3UGM',
+				url: 'https://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=' + cityLocation + '&output=json&pois=1&latest_admin=1&ak=rXQyabMtMjaQcc1kRHZbh6w1AE0ZH7i4',
 				type: "get",
 				async: true,
 				dataType: "jsonp",
