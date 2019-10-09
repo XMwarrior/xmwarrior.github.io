@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2019-09-30T08:28:09.590Z</updated>
+  <updated>2019-10-09T05:37:54.028Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>reduce方法应用技巧</title>
+    <link href="http://xmwarrior.github.io/2019/10/09/2019-10-09reduce-fang-fa-ying-yong-ji-qiao/"/>
+    <id>http://xmwarrior.github.io/2019/10/09/2019-10-09reduce-fang-fa-ying-yong-ji-qiao/</id>
+    <published>2019-10-09T14:29:55.000Z</published>
+    <updated>2019-10-09T05:37:54.028Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;定义和用法&quot;&gt;&lt;a href=&quot;#定义和用法&quot; class=&quot;headerlink&quot; title=&quot;定义和用法&quot;&gt;&lt;/a&gt;定义和用法&lt;/h2&gt;&lt;p&gt;reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。&lt;br&gt;注意:
+        
+      
+    
+    </summary>
+    
+      <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>基于elementUI表头筛选组件封装</title>
@@ -550,35 +576,6 @@
     
     
       <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>input-range自定义</title>
-    <link href="http://xmwarrior.github.io/2019/02/01/input-range-zi-ding-yi/"/>
-    <id>http://xmwarrior.github.io/2019/02/01/input-range-zi-ding-yi/</id>
-    <published>2019-02-01T07:11:19.000Z</published>
-    <updated>2019-06-12T07:20:30.566Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;input-range自定义样式&lt;/p&gt;
-&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
-    
-      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
     
   </entry>
   

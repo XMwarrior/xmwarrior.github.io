@@ -8,11 +8,73 @@
 		<!--<link rel="stylesheet" href="../assets/script/elementUI/index.css">-->
 		<!-- index -->
 		<!--<link rel="stylesheet" href="../assets/css/index.css">-->
+		<style type="text/css">
+			/* 加载中阻止事件 */
+			
+			.skt-loading .skeleton {
+				pointer-events: none;
+				position: relative;
+				overflow: hidden;
+				border: none !important;
+				border-radius: 5px;
+				background-color: transparent !important;
+				background-image: none !important;
+				display: inline-block;
+			}
+			
+			.skt-loading .skeleton::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 9;
+				width: 100%;
+				height: 100%;
+				background-color: #EBF1F8;
+				display: block;
+			}
+			/* 下面这部分都是自定义的，看需求修改 */
+			
+			.skt-loading .skeleton:not(.not-round)::after {
+				border-radius: 4px;
+			}
+			
+			.skt-loading .skeleton:not(.not-before)::before {
+				position: absolute;
+				top: 0;
+				width: 30%;
+				height: 100%;
+				content: "";
+				background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .3) 50%, rgba(255, 255, 255, 0) 100%);
+				transform: skewX(-45deg);
+				z-index: 99;
+				animation: skeleton-ani 1s ease infinite;
+				display: block;
+			}
+			
+			.skt-loading .skeleton.badge {
+				&::after {
+					background-color: #F8FAFC;
+				}
+			}
+			
+			@keyframes skeleton-ani {
+				/* 骨架屏动画 */
+				from {
+					left: -100%;
+				}
+				to {
+					left: 150%;
+				}
+			}
+		</style>
 	<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 	<body>
-		<div id="app">
-
+		<div id="app" class="skt-loading">
+			<div class="skeleton">
+				<img src="../../../../../public/favicon.png">
+			</div>
 		</div>
 		<!-- 引入vue -->
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -81,18 +143,25 @@
 							let unfilleds = [...this.blokMap.get(i).entries()].filter(item => !item[1]);
 							let unfilledsMap = new Map(unfilleds);
 							let possibleArray = [];
+							let isXNotok = true;
+							let isYNotok = true;
 							//横竖16格未填
 							for(let index = 0, length = unfilleds.length; index < length; index++) {
 								const element = unfilleds[index];
-								if(!this.hasNumberInX(element[0][0], num) && !this.hasNumberInY(element[0][1], num)) {
-									// console.log(element)
-									possibleArray.push(element[0]);
+								isXNotok = this.hasNumberInX(element[0][0], num);
+								if(isXNotok) {
+									break;
 								}
+								isYNotok = this.hasNumberInY(element[0][1], num);
+								if(isYNotok) {
+									break;
+								}
+								possibleArray.push(element[0]);
 							}
 							//可填位置
 							if(possibleArray.length) {
 								let randomIndex = Math.floor((Math.random() * possibleArray.length));
-								let randomKey=possibleArray[randomIndex];
+								let randomKey = possibleArray[randomIndex];
 								this.blokMap.get(i).set(randomKey, num);
 								this.dataMap[randomKey[0]][randomKey[1]] = num;
 								this.numberMap[i] = possibleArray;

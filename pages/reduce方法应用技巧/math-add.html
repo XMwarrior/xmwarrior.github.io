@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head><meta name="generator" content="Hexo 3.8.0">
+		<meta charset="UTF-8">
+		<title></title>
+		<style id="style" type="text/css">
+
+		</style>
+	<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+	<body id="html">
+		<p>点击按钮计算数组[65, 44, 12, 4]元素相加后的总和。</p>
+		<button onclick="myFunction()">点我</button>
+		<p>数组元素总和: <span id="demo"></span></p>
+	</body>
+	<script id="script" type="text/javascript">
+		var numbers = [65, 44, 12, 4];
+		function myFunction(item) {
+			document.getElementById("demo").innerHTML = numbers.reduce(function(total, currentValue) {
+				return total + currentValue;
+			});
+		}
+	</script>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head><meta name="generator" content="Hexo 3.8.0">
+		<meta charset="UTF-8">
+		<title>onlineEditor</title>		
+		<!-- bootstrap -->
+		<link href="css/bootstrap-combined.min.css" rel="stylesheet">
+		<script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- x-editable (bootstrap version) -->
+		<link href="css/jquery-editable.css" rel="stylesheet">
+		<script src="js/bootstrap-editable.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_555898_o1g3ptdfgg9.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+	<body>
+		<div class="monaco clearfix item-editor">
+			<div class="x-col5">
+				<ul class="m-editbox">
+					<li>
+						<div id="htmlContainer" class="m-textarea"></div>
+						<span>html</span>
+					</li>
+					<li>
+						<div id="cssContainer" class="m-textarea"></div>
+						<span>css</span>
+					</li>
+					<li>
+						<div id="jsContainer" class="m-textarea"></div>
+						<span>js</span>
+					</li>
+				</ul>
+				<div id="mHandler1" class="m-handler"></div>
+			</div>
+			<div class="x-col7">
+				<div class="m-run">
+				    <span class="iconfont icon-run btn btn-outline-primary" style="vertical-align: baseline;">Run</span>
+				</div>
+				<div id="viewContainer" class="m-viewContainer"></div>
+				<div id="mHandler2" class="m-handler"></div>
+			</div>
+		</div>
+		<!--js-->
+		<script src="monaco-editor/min/vs/loader.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/item-edit.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

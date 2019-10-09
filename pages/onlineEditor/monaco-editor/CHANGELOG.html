@@ -1,0 +1,351 @@
+<h1 id="Monaco-Editor-Change-log"><a href="#Monaco-Editor-Change-log" class="headerlink" title="Monaco Editor Change log"></a>Monaco Editor Change log</h1><h2 id="0-13-1-15-05-2018"><a href="#0-13-1-15-05-2018" class="headerlink" title="[0.13.1] (15.05.2018)"></a>[0.13.1] (15.05.2018)</h2><ul>
+<li>Fixes <a href="https://github.com/Microsoft/monaco-editor/issues/871">issue #871</a>: TypeScript import error after mocaco-editor upgraded from 0.12 to 0.13</li>
+</ul>
+<h2 id="0-13-0-11-05-2018"><a href="#0-13-0-11-05-2018" class="headerlink" title="[0.13.0] (11.05.2018)"></a>[0.13.0] (11.05.2018)</h2><h3 id="New-amp-Noteworthy"><a href="#New-amp-Noteworthy" class="headerlink" title="New &amp; Noteworthy"></a>New &amp; Noteworthy</h3><ul>
+<li>New folding provider <code>registerFoldingRangeProvider</code>.</li>
+<li>You can now specifies the stack order of a decoration by setting <code>IModelDecorationOptions.zIndex</code>. A decoration with greater stack order is always in front of a decoration with a lower stack order.</li>
+<li>You can now tell Monaco if there is an <code>inlineClassName</code> which affects letter spacing. the stack order of a decoration by setting <code>IModelDecorationOptions.inlineClassNameAffectsLetterSpacing</code>.</li>
+<li>Get the text length for a certain line on text model (<code>ITextModel.getLineLength(lineNumber: number)</code>)</li>
+<li>New option <code>codeActionsOnSave</code>, controls whether code action kinds will be run on save.</li>
+<li>New option <code>codeActionsOnSaveTimeout</code>, controls timeout for running code actions on save.</li>
+<li>New option <code>multiCursorMergeOverlapping</code>, controls if overlapping selections should be merged. Default to <code>true</code>.</li>
+</ul>
+<h3 id="Breaking-Change"><a href="#Breaking-Change" class="headerlink" title="Breaking Change"></a>Breaking Change</h3><ul>
+<li>Removed <code>ICodeEditor.getCenteredRangeInViewport</code>.</li>
+<li><code>RenameProvider.resolveRenameLocation</code> now returns <code>RenameLocation</code> instead of <code>IRange</code>.</li>
+</ul>
+<h3 id="Thank-you"><a href="#Thank-you" class="headerlink" title="Thank you"></a>Thank you</h3><ul>
+<li><a href="https://github.com/Serhioromano">Sergey Romanov @Serhioromano</a>: Add new language Structured Text support <a href="https://github.com/Microsoft/monaco-languages/pull/32">PR monaco-languages#32</a></li>
+<li><a href="https://github.com/Yukaii">Yukai Huang @Yukaii</a>: Fix backspace in IME composition on iOS Safari <a href="https://github.com/Microsoft/vscode/pull/40546">PR vscode#40546</a></li>
+</ul>
+<h2 id="0-12-0-11-04-2018"><a href="#0-12-0-11-04-2018" class="headerlink" title="[0.12.0] (11.04.2018)"></a>[0.12.0] (11.04.2018)</h2><ul>
+<li>Special thanks to <a href="https://github.com/timkendrick">Tim Kendrick</a> for contributing a webpack plugin - <code>monaco-editor-webpack-plugin</code> - now available on <a href="https://www.npmjs.com/package/monaco-editor-webpack-plugin">npm</a>.</li>
+</ul>
+<h3 id="Breaking-changes"><a href="#Breaking-changes" class="headerlink" title="Breaking changes"></a>Breaking changes</h3><ul>
+<li>Introduced <code>MarkerSeverity</code> instead of <code>Severity</code> for markers serverity.</li>
+<li>Replaced <code>RenameProvider.resolveInitialRenameValue</code> with <code>RenameProvider.resolveRenameLocation</code>.</li>
+<li>Fixed typo in <code>monaco-typescript</code>, renamed <code>setMaximunWorkerIdleTime</code> to <code>setMaximumWorkerIdleTime</code>.</li>
+</ul>
+<h3 id="Thank-you-1"><a href="#Thank-you-1" class="headerlink" title="Thank you"></a>Thank you</h3><ul>
+<li><a href="https://github.com/rcjsuen">Remy Suen @rcjsuen</a>: Fix conversion code from MarkedString to IMarkdownString in hovers <a href="https://github.com/Microsoft/monaco-css/pull/5">PR monaco-css#5</a></li>
+<li><a href="https://github.com/pengx17">Peng Xiao @pengx17</a>: fix an issue of <code>fromMarkdownString</code> <a href="https://github.com/Microsoft/monaco-json/pull/4">PR monaco-json#4</a></li>
+<li><a href="https://github.com/systemsoverload">TJ Kells @systemsoverload</a>: Add rust colorization support <a href="https://github.com/Microsoft/monaco-languages/pull/31">PR monaco-languages#31</a></li>
+</ul>
+<h2 id="0-11-1-15-03-2018"><a href="#0-11-1-15-03-2018" class="headerlink" title="0.11.1 (15.03.2018)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.11.0...v0.11.1">0.11.1</a> (15.03.2018)</h2><ul>
+<li>Fixes <a href="https://github.com/Microsoft/monaco-editor/issues/756">issue #756</a>: Can’t use “Enter” key to accept an IntelliSense item</li>
+<li>Fixes <a href="https://github.com/Microsoft/monaco-editor/issues/757">issue #757</a>: TypeScript errors in <code>editor.api.d.ts</code> typings</li>
+</ul>
+<h2 id="0-11-0-14-03-2018"><a href="#0-11-0-14-03-2018" class="headerlink" title="0.11.0 (14.03.2018)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.10.1...v0.11.0">0.11.0</a> (14.03.2018)</h2><h3 id="New-amp-Noteworthy-1"><a href="#New-amp-Noteworthy-1" class="headerlink" title="New &amp; Noteworthy"></a>New &amp; Noteworthy</h3><ul>
+<li><strong>ESM distribution</strong> (compatible with e.g. webpack).</li>
+<li>New interval tree decorations implementation.</li>
+<li>New piece tree text buffer implementation.</li>
+<li>The minimap can be placed to the left.</li>
+<li>Line numbers can be displayed in an interval.</li>
+<li>The cursor width can be customized.</li>
+<li>Smooth scrolling can be turned on.</li>
+<li>Color decorators and color picker via <code>DocumentColorProvider</code>.</li>
+</ul>
+<h3 id="Breaking-changes-1"><a href="#Breaking-changes-1" class="headerlink" title="Breaking changes"></a>Breaking changes</h3><ul>
+<li>Replaced <code>MarkedString</code> with <code>IMarkdownString</code>. Source code snippets can be expressed using the GH markdown syntax.</li>
+<li>Renamed <code>IResourceEdit</code> to <code>ResourceTextEdit</code>.</li>
+</ul>
+<h3 id="API-changes"><a href="#API-changes" class="headerlink" title="API changes"></a>API changes</h3><ul>
+<li>Merged <code>IModel</code>, <code>IReadOnlyModel</code>, <code>IEditableTextModel</code>, <code>ITextModelWithMarkers</code>, <code>ITokenizedModel</code>, <code>ITextModelWithDecorations</code> to <code>ITextModel</code>. A type alias for <code>IModel</code> is defined for compatibility.</li>
+<li>Merged <code>ICommonCodeEditor</code> and <code>ICodeEditor</code> to <code>ICodeEditor</code>.</li>
+<li>Merged <code>ICommonDiffEditor</code> and <code>IDiffEditor</code> to <code>IDiffEditor</code>.</li>
+<li><code>CompletionItem.documentation</code>, <code>ParameterInformation.documentation</code> and <code>SignatureInformation.documentation</code> can now be an <code>IMarkdownString</code>.</li>
+<li>Added <code>CompetionItem.command</code>, <code>CompletionItem.commitCharacters</code> and <code>CompletionItem.additionalTextEdits</code>.</li>
+<li>Added language configuration <code>folding</code> which can define markers for code patterns where a folding regions should be created. See for example the <a href="https://github.com/Microsoft/monaco-languages/blob/d2db3faa76b741bf4ee822c403fc355c913bc46d/src/python/python.ts#L35-L41">Python configuration</a>.</li>
+<li>Added by accident <code>ResourceFileEdit</code> (due to how <code>monaco.d.ts</code> is generated from vscode). That is not honoured by the editor, and should not be used.</li>
+</ul>
+<h3 id="Thank-you-2"><a href="#Thank-you-2" class="headerlink" title="Thank you"></a>Thank you</h3><ul>
+<li><a href="https://github.com/rcjsuen">Remy Suen @rcjsuen</a>:<ul>
+<li>Fix a small typo in README.md <a href="https://github.com/Microsoft/monaco-typescript/pull/18">PR monaco-typescript#18</a></li>
+<li>Remove unused IDisposable array <a href="https://github.com/Microsoft/monaco-typescript/pull/19">PR monaco-typescript#19</a></li>
+<li>Add HEALTHCHECK as a Dockerfile keyword <a href="https://github.com/Microsoft/monaco-languages/pull/29">PR monaco-languages#29</a></li>
+<li>Add ARG as a Dockerfile keyword <a href="https://github.com/Microsoft/monaco-languages/pull/30">PR monaco-languages#30</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/abacigil">Can Abacigil @abacigil</a>: MySQL, Postgres, Redshift and Redis Language Support <a href="https://github.com/Microsoft/monaco-languages/pull/26">PR monaco-languages#26</a></li>
+<li><a href="https://github.com/mattes">Matthias Kadenbach @mattes</a>: Support Content-Security-Policy syntax highlighting <a href="https://github.com/Microsoft/monaco-languages/pull/27">PR monaco-languages#27</a></li>
+<li><a href="https://github.com/evakili">e.vakili @evakili</a>: Whitespaces after # are allowed in C++ preprocessor statements <a href="https://github.com/Microsoft/monaco-languages/pull/28">PR monaco-languages#28</a></li>
+<li><a href="https://github.com/PAPERPANKS">Pankaj Kumar Gautam @PAPERPANKS</a>: adding microsoft logo to footer <a href="https://github.com/Microsoft/monaco-editor/pull/577">PR monaco-editor#577</a></li>
+<li><a href="https://github.com/domoritz">Dominik Moritz @domoritz</a>: Fix code in changelog <a href="https://github.com/Microsoft/monaco-editor/pull/582">PR monaco-editor#582</a></li>
+<li><a href="https://github.com/ItsPugle">ItsPugle @ItsPugle</a>: Updating the footer to reflect change of year <a href="https://github.com/Microsoft/monaco-editor/pull/707">PR monaco-editor#707</a></li>
+<li><a href="https://github.com/MSeifert04">Michael Seifert @MSeifert04</a>: Add linebreak for if  <a href="https://github.com/Microsoft/monaco-editor/pull/726">PR monaco-editor#726</a></li>
+<li><a href="https://github.com/apalm">Andrew Palm @apalm</a>: Fix ‘Configure JSON defaults’ sample <a href="https://github.com/Microsoft/monaco-editor/pull/731">PR monaco-editor#731</a></li>
+<li><a href="https://github.com/nikeee">Niklas Mollenhauer @nikeee</a>: Fix line number API usage <a href="https://github.com/Microsoft/monaco-editor/pull/740">PR monaco-editor#740</a></li>
+<li><a href="https://github.com/anc">Andre @anc</a>: More realistic terminal shell <a href="https://github.com/Microsoft/monaco-editor/pull/742">PR monaco-editor#742</a></li>
+<li>to the many others that have contributed PRs to <a href="https://github.com/Microsoft/vscode">vscode</a> which have also made their way into the monaco-editor.</li>
+</ul>
+<h2 id="0-10-1-16-10-2017"><a href="#0-10-1-16-10-2017" class="headerlink" title="0.10.1 (16.10.2017)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.10.0...v0.10.1">0.10.1</a> (16.10.2017)</h2><ul>
+<li>Fixes <a href="https://github.com/Microsoft/monaco-editor/issues/601">issue #601</a>: window.opener should be set to null to protect against malicious code</li>
+</ul>
+<h2 id="0-10-0-17-08-2017"><a href="#0-10-0-17-08-2017" class="headerlink" title="0.10.0 (17.08.2017)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.9.0...v0.10.0">0.10.0</a> (17.08.2017)</h2><h3 id="Breaking-changes-2"><a href="#Breaking-changes-2" class="headerlink" title="Breaking changes"></a>Breaking changes</h3><ul>
+<li>Removed <code>CodeAction</code>.</li>
+<li>Method <code>provideCodeActions</code> in <code>CodeActionProvider</code> now returns <code>Command[] | Thenable&lt;Command[]&gt;</code> instead of <code>CodeAction[] | Thenable&lt;CodeAction[]&gt;</code>, which is already removed.</li>
+</ul>
+<h3 id="API-changes-1"><a href="#API-changes-1" class="headerlink" title="API changes"></a>API changes</h3><ul>
+<li>added <code>monaco.editor.getModelMarkers</code>. Get markers for owner and/or resource.</li>
+</ul>
+<h3 id="Notable-Fixes"><a href="#Notable-Fixes" class="headerlink" title="Notable Fixes"></a>Notable Fixes</h3><ul>
+<li>No longer use CSS class <code>.row</code> for command palette to avoid CSS conflicts with Bootstrap.</li>
+<li>Fix Accessibility Help Dialog accessible issue on IE/Edge.</li>
+<li>Fix Find Widget CSS compability issues with IE11.</li>
+<li>Toggle Block Comment can remove extra whitespaces.</li>
+</ul>
+<h3 id="Thank-you-3"><a href="#Thank-you-3" class="headerlink" title="Thank you"></a>Thank you</h3><ul>
+<li><a href="https://github.com/kitsonk">Kitson Kelly @kitsonk</a>: Update monaco-typescript to TypeScript 2.4.1 <a href="https://github.com/Microsoft/monaco-typescript/pull/15">PR monaco-typescript#15</a></li>
+<li><a href="https://github.com/duncanwerner">@duncanwerner</a>: Add hex number tokenization to R language <a href="https://github.com/Microsoft/monaco-languages/pull/21">PR monaco-languages#21</a></li>
+<li><a href="https://github.com/rcjsuen">Remy Suen @rcjsuen</a>: Update Dockerfile grammar with STOPSIGNAL and SHELL instructions <a href="https://github.com/Microsoft/monaco-languages/pull/22">PR monaco-languages#22</a></li>
+<li><a href="https://github.com/marlenecota">Marlene Cota @marlenecota</a>: Add Small Basic support <a href="https://github.com/Microsoft/monaco-languages/pull/23">PR monaco-languages#23</a></li>
+<li><a href="https://github.com/bjacobso">Ben Jacobson @bjacobso</a>: Add LIMIT to sql keywords <a href="https://github.com/Microsoft/monaco-languages/pull/24">PR monaco-languages#24</a></li>
+<li>to the many others that have contributed PRs to <a href="https://github.com/Microsoft/vscode">vscode</a> which have also made their way into the monaco-editor.</li>
+</ul>
+<h2 id="0-9-0-03-07-2017"><a href="#0-9-0-03-07-2017" class="headerlink" title="0.9.0 (03.07.2017)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.8.3...v0.9.0">0.9.0</a> (03.07.2017)</h2><h3 id="New-amp-Noteworthy-2"><a href="#New-amp-Noteworthy-2" class="headerlink" title="New &amp; Noteworthy"></a>New &amp; Noteworthy</h3><ul>
+<li>Minimap (on by default, use <code>editor.minimap</code> to disable it).</li>
+<li>Drag and Drop (on by default, use <code>editor.dragAndDrop</code> to disable it).</li>
+<li>Copy text with formatting.</li>
+</ul>
+<h3 id="Accessibility"><a href="#Accessibility" class="headerlink" title="Accessibility"></a>Accessibility</h3><ul>
+<li>There is a new <a href="https://github.com/Microsoft/monaco-editor/wiki/Accessibility-Guide-for-Integrators">guide for making the editor accessible to all</a>.</li>
+<li>There is a new Alt+F1 (Ctrl+F1 in IE) accessibility help panel.</li>
+<li>There is a new F8/Shift+F8 diff review panel in the diff editor.</li>
+<li>Many bugfixes, including now respecting the Windows High Contrast Theme on Edge.</li>
+</ul>
+<h3 id="Breaking-changes-3"><a href="#Breaking-changes-3" class="headerlink" title="Breaking changes"></a>Breaking changes</h3><ul>
+<li>A lot has changed w.r.t. how themes work in the editor, mostly driven by the work to support theming in VS Code. <code>editor.updateOptions()</code> <strong>no longer accepts <code>theme</code></strong>; the theme can be changed via the newly introduced <code>monaco.editor.setTheme()</code>. Additionally, we recommend editor colors be customized via <code>monaco.editor.defineTheme()</code> instead of via CSS – see <a href="https://microsoft.github.io/monaco-editor/playground.html#customizing-the-appearence-exposed-colors">sample</a>. The color names will be stable, while the CSS class names might break at any time.</li>
+<li>Support for the internal snippet syntax <strong>has been discontinued</strong> and snippet must now use the official, TextMate-like syntax. Find its grammar and samples <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets#_snippet-syntax">here</a>.</li>
+<li>Changed <code>IModel.findMatches</code> to accept a list of word separators.</li>
+<li>Changed the shape of the <code>IModelContentChangedEvent</code> emitted via <code>IModel.onDidChangeContent</code> to <strong>now contain a batch</strong> of all the changes that the model had.</li>
+<li>No longer using <code>transform: translate3d</code>, now using <code>will-change: transform</code> for browser layer hinting. Use the <code>disableLayerHinting</code> option if you have any trouble with browser layers (bluriness or high GPU memory usage).</li>
+<li>Simplified wrapping settings: <code>wordWrap</code>, <code>wordWrapColumn</code> and <code>wordWrapMinified</code>.</li>
+</ul>
+<h3 id="API-changes-2"><a href="#API-changes-2" class="headerlink" title="API changes"></a>API changes</h3><ul>
+<li>added <code>monaco.languages.registerTypeDefinitionProvider</code>.</li>
+<li>new editor options:<ul>
+<li><code>accessibilityHelpUrl</code> - the url of a page to open for documentation about how to operate the editor when using a Screen Reader.<ul>
+<li><code>find.seedSearchStringFromSelection</code> - Ctrl+F/Cmd+F seeds search string from the editor selection.</li>
+<li><code>find.autoFindInSelection</code> - Ctrl+F/Cmd+F turns on the find in selection toggle if the editor selection is multiline.</li>
+<li><code>minimap.enabled</code> - enable minimap.</li>
+<li><code>minimap.showSlider</code> - control when to render the minimap slider.</li>
+<li><code>minimap.renderCharacters</code> - render characters or blocks in the minimap.</li>
+<li><code>minimap.maxColumn</code> - maximum number of columns the minimap shows.</li>
+<li><code>overviewRulerBorder</code> - toggle that the overview ruler renders a border.</li>
+<li><code>links</code> - enable link detection.</li>
+<li><code>multiCursorModifier</code> - change the multi cursor modifier key.</li>
+<li><code>accessibilitySupport</code> - optimize the editor for use with a Screen Reader.</li>
+<li><code>autoIndent</code> - automatically fix indentation when moving lines, pasting or typing.</li>
+<li><code>dragAndDrop</code> - dragging and dropping editor selection within the editor.</li>
+<li><code>occurrencesHighlight</code> - enable highlighting of occurences.</li>
+<li><code>showFoldingControls</code> - fine-tune when the folding icons should show</li>
+<li><code>matchBrackets</code> - enable bracket matching</li>
+<li><code>letterSpacing</code> - configure font’s letter-spacing.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Thank-you-4"><a href="#Thank-you-4" class="headerlink" title="Thank you"></a>Thank you</h3><ul>
+<li><a href="https://github.com/jmarianer">Joey Marianer (@jmarianer)</a>: Support literal interpolated strings ($@””) <a href="https://github.com/Microsoft/monaco-languages/pull/13">PR monaco-languages#13</a></li>
+<li><a href="https://github.com/AndersMad">@AndersMad</a>: HTML Tags: Add support for dash and fix colon in end tag <a href="https://github.com/Microsoft/monaco-languages/pull/14">PR monaco-languages#14</a></li>
+<li><a href="https://github.com/sandyarmstrong">Sandy Armstrong (@sandyarmstrong)</a>: csharp: add support for binary literals and _ as separator <a href="https://github.com/Microsoft/monaco-languages/pull/16">PR monaco-languages#16</a></li>
+<li><a href="https://github.com/akosyakov">Anton Kosyakov (@akosyakov)</a>: Include src as a part of npm package <a href="https://github.com/Microsoft/monaco-languages/pull/17">PR monaco-languages#17</a></li>
+<li><a href="https://github.com/andybons">Andrew Bonventre (@andybons)</a>: Fix typo: concering → concerning <a href="https://github.com/Microsoft/monaco-languages/pull/18">PR monaco-languages#18</a></li>
+<li><a href="https://github.com/scottmcmaster">Scott McMaster (@scottmcmaster)</a>: MSDAX support <a href="https://github.com/Microsoft/monaco-languages/pull/19">PR monaco-languages#19</a></li>
+<li><a href="https://github.com/lserafin">Luzian Serafin (@lserafin)</a>: Add Solidity <a href="https://github.com/Microsoft/monaco-languages/pull/20">PR monaco-languages#20</a></li>
+<li><a href="https://github.com/kitsonk">Kitson Kelly (@kitsonk)</a>: Update to TypeScript 2.3.4 <a href="https://github.com/Microsoft/monaco-typescript/pull/13">PR monaco-typescript#13</a></li>
+<li><a href="https://github.com/kitsonk">Kitson Kelly (@kitsonk)</a>: Add documentation support on hover <a href="https://github.com/Microsoft/monaco-typescript/pull/14">PR monaco-typescript#14</a></li>
+<li><a href="https://github.com/replacepreg">@replacepreg</a>: Updating date at footer <a href="https://github.com/Microsoft/monaco-editor/pull/409">PR monaco-editor#409</a></li>
+<li><a href="https://github.com/aarinsmith">Aarin Smith (@aarinsmith)</a>: Fixed spelling error in README.md:85 ‘instantion’ -&gt; ‘instantiation’ <a href="https://github.com/Microsoft/monaco-editor/pull/440">PR monaco-editor#440</a></li>
+<li>to the many others that have contributed PRs to <a href="https://github.com/Microsoft/vscode"><code>vscode</code></a> which have also made their way into the <code>monaco-editor</code>.</li>
+</ul>
+<hr>
+<h2 id="0-8-3-03-03-2017"><a href="#0-8-3-03-03-2017" class="headerlink" title="0.8.3 (03.03.2017)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.8.2...v0.8.3">0.8.3</a> (03.03.2017)</h2><ul>
+<li>Fixes an issue in monaco-typescript where it would attempt to validate a disposed model.</li>
+</ul>
+<hr>
+<h2 id="0-8-2-01-03-2017"><a href="#0-8-2-01-03-2017" class="headerlink" title="0.8.2 (01.03.2017)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.8.1...v0.8.2">0.8.2</a> (01.03.2017)</h2><ul>
+<li>Fixes the following regressions:<ul>
+<li><a href="https://github.com/Microsoft/monaco-editor/issues/385">issue #385</a>: Cannot add action to the left-hand-side of the diff editor</li>
+<li><a href="https://github.com/Microsoft/monaco-editor/issues/386">issue #386</a>: Shortcuts for actions added via editor.addAction don’t show up in the Command Palette</li>
+<li><a href="https://github.com/Microsoft/monaco-editor/issues/387">issue #387</a>: Cannot change diff editor to a custom theme based on high contrast</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="0-8-1-27-01-2017"><a href="#0-8-1-27-01-2017" class="headerlink" title="0.8.1 (27.01.2017)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.8.0...v0.8.1">0.8.1</a> (27.01.2017)</h2><ul>
+<li>CSS/JSON/HTML language supports updated:<ul>
+<li>CSS: Support for @apply</li>
+<li>SCSS: Map support</li>
+<li>New HTML formatter options: unformatedContent, wrapAttributes</li>
+</ul>
+</li>
+<li>Fixed issue where the editor was throwing in Safari due to <code>Intl</code> missing.</li>
+<li>Fixed multiple issues where the editor would not position the cursor correctly when using browser zooming.</li>
+</ul>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li>Added <code>disableMonospaceOptimizations</code> editor option that can be used in case browser zooming exposes additional issues.</li>
+<li>Added <code>formatOnPaste</code> editor option.</li>
+<li>Added <code>IActionDescriptor.precondition</code>.</li>
+<li><strong>Breaking change</strong>: renamed <code>registerTypeDefinitionProvider</code> to <code>registerImplementationProvider</code> and associated types.</li>
+</ul>
+<hr>
+<h2 id="0-8-0-18-01-2017"><a href="#0-8-0-18-01-2017" class="headerlink" title="[0.8.0] (18.01.2017)"></a>[0.8.0] (18.01.2017)</h2><ul>
+<li>This release has been brewing for a while and comes with quite a number of important changes.</li>
+<li>There are many bugfixes and speed/memory usage improvements.</li>
+<li>Now shipping TypeScript v2.1.5 in <code>monaco-typescript</code> (JS and TS language support).</li>
+</ul>
+<h3 id="No-longer-supporting-IE9-and-IE10"><a href="#No-longer-supporting-IE9-and-IE10" class="headerlink" title="No longer supporting IE9 and IE10"></a>No longer supporting IE9 and IE10</h3><ul>
+<li>we have not made the editor fail on purpose in these browsers, but we have removed IE9/IE10 targeted workarounds from our codebase;</li>
+<li>now using <strong>Typed Arrays</strong> in a number of key places resulting in considerable speed boosts and lower memory consumption.</li>
+</ul>
+<h3 id="Monarch-Tokenizer"><a href="#Monarch-Tokenizer" class="headerlink" title="Monarch Tokenizer"></a>Monarch Tokenizer</h3><ul>
+<li>Monarch states are now memoized up to a depth of 5. This results in considerable memory improvements for files with many lines.</li>
+<li>Speed improvements to Monarch tokenizer that resulted in one <strong>breaking change</strong>:</li>
+<li>when entering an embedded mode (i.e. <code>nextEmbedded</code>), the state ending up in must immediately contain a <code>nextEmbedded: &quot;@pop&quot;</code> rule. This helps in quickly figuring out where the embedded mode should be left. The editor will throw an error if the Monarch grammar does not respect this condition.</li>
+</ul>
+<h3 id="Tokens-are-styled-in-JS-not-in-CSS-anymore"><a href="#Tokens-are-styled-in-JS-not-in-CSS-anymore" class="headerlink" title="Tokens are styled in JS (not in CSS anymore)"></a>Tokens are styled in JS (not in CSS anymore)</h3><ul>
+<li>This is a <strong>breaking change</strong></li>
+<li>Before, token types would be rendered on the <code>span</code> node of text, and CSS rules would match token types and assign styling to them (i.e. color, boldness, etc.to style tokens)</li>
+<li>To enable us to build something like a minimap, we need to know the text color in JavaScript, and we have therefore moved the token style matching all to JavaScript. In the future, we foresee that even decorations will have to define their color in JavaScript.</li>
+<li>It is possible to create a custom theme via a new API method <code>monaco.editor.defineTheme()</code> and the playground contains a sample showing how that works.</li>
+<li>Token types can be inspected via <code>F1</code> &gt; <code>Developer: Inspect tokens</code>. This will bring up a widget showing the token type and the applied styles.</li>
+</ul>
+<h3 id="API-changes-3"><a href="#API-changes-3" class="headerlink" title="API changes:"></a>API changes:</h3><h4 id="Namespaces"><a href="#Namespaces" class="headerlink" title="Namespaces"></a>Namespaces</h4><ul>
+<li>added <code>monaco.editor.onDidCreateEditor</code> that will be fired whenever an editor is created (will fire even for a diff editor, with the two editors that a diff editor consists of).</li>
+<li>added <code>monaco.editor.tokenize</code> that returns logical tokens (before theme matching, as opposed to <code>monaco.editor.colorize</code>).</li>
+<li>added <code>monaco.languages.registerTypeDefinitionProvider</code></li>
+</ul>
+<h4 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h4><ul>
+<li>removed <code>IModel.getMode()</code>.</li>
+<li>structural changes in the events <code>IModelLanguageChangedEvent</code>, <code>IModelDecorationsChangedEvent</code> and <code>IModelTokensChangedEvent</code>;</li>
+<li>changed <code>IModel.findMatches</code>, <code>IModel.findNextMatch</code> and <code>IModel.findPreviousMatch</code> to be able to capture matches while searching.</li>
+</ul>
+<h4 id="Editors"><a href="#Editors" class="headerlink" title="Editors"></a>Editors</h4><ul>
+<li><code>ICodeEditor.addAction</code> and  <code>IDiffEditor.addAction</code> now return an <code>IDisposable</code> to be able to remove a previously added action.</li>
+<li>renamed <code>ICodeEditor.onDidChangeModelMode</code> to <code>ICodeEditor.onDidChangeModelLanguage</code>;</li>
+<li><code>ICodeEditor.executeEdits</code> can now take resulting selection for better undo/redo stack management;</li>
+<li>added <code>ICodeEditor.getTargetAtClientPoint(clientX, clientY)</code> to be able to do hit testing.</li>
+<li>added <code>IViewZone.marginDomNode</code> to be able to insert a dom node in the margin side of a view zone.</li>
+<li>settings:<ul>
+<li><code>lineDecorationsWidth</code> can now take a value in the form of <code>&quot;1.2ch&quot;</code> besides the previous accepted number (in px)</li>
+<li><code>renderLineHighlight</code> can now take a value in the set <code>&#39;none&#39; | &#39;gutter&#39; | &#39;line&#39; | &#39;all&#39;</code>.</li>
+<li>added <code>fixedOverflowWidgets</code> to render overflowing content widgets as <code>&#39;fixed&#39;</code> (defaults to false)</li>
+<li>added <code>acceptSuggestionOnCommitCharacter</code> to accept suggestions on provider defined characters (defaults to true)</li>
+<li>added <code>emptySelectionClipboard</code> - copying without a selection copies the current line (defaults to true)</li>
+<li>added <code>suggestFontSize</code> - the font size for the suggest widget</li>
+<li>added <code>suggestLineHeight</code> - the line height for the suggest widget</li>
+</ul>
+</li>
+<li>diff editor settings:<ul>
+<li>added <code>renderIndicators</code> - Render +/- indicators for added/deleted changes. (defaults to true)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Thank-you-5"><a href="#Thank-you-5" class="headerlink" title="Thank you"></a>Thank you</h3><ul>
+<li><a href="https://github.com/nicot">Nico Tonozzi (@nicot)</a>: Register React file extensions <a href="https://github.com/Microsoft/monaco-typescript/pull/12">PR monaco-typescript#12</a></li>
+<li><a href="https://github.com/inspiredjw">Jeong Woo Chang (@inspiredjw)</a>: Cannot read property ‘uri’ of null fix <a href="https://github.com/Microsoft/vscode/pull/13263">PR vscode#13263</a></li>
+<li><a href="https://github.com/Hirse">Jan Pilzer(@Hirse)</a>: Add YAML samples <a href="https://github.com/Microsoft/monaco-editor/pull/242">PR monaco-editor#242</a></li>
+</ul>
+<hr>
+<h2 id="0-7-1-07-10-2016"><a href="#0-7-1-07-10-2016" class="headerlink" title="[0.7.1] (07.10.2016)"></a>[0.7.1] (07.10.2016)</h2><ul>
+<li>Bugfixes in monaco-html, including fixing formatting.</li>
+</ul>
+<hr>
+<h2 id="0-7-0-07-10-2016"><a href="#0-7-0-07-10-2016" class="headerlink" title="[0.7.0] (07.10.2016)"></a>[0.7.0] (07.10.2016)</h2><ul>
+<li>Adopted TypeScript 2.0 in all the repos (also reflected in <code>monaco.d.ts</code>).</li>
+<li>Added YAML colorization support.</li>
+<li>Brought back the ability to use <code>editor.addAction()</code> and have the action show in the context menu.</li>
+<li>Web workers now get a nice label next to the script name.</li>
+</ul>
+<h3 id="API-changes-4"><a href="#API-changes-4" class="headerlink" title="API changes:"></a>API changes:</h3><ul>
+<li>settings:<ul>
+<li>new values for <code>lineNumbers</code>: <code>&#39;on&#39; | &#39;off&#39; | &#39;relative&#39;</code></li>
+<li>new values for <code>renderWhitespace</code>: <code>&#39;none&#39; | &#39;boundary&#39; | &#39;all&#39;</code></li>
+</ul>
+</li>
+<li>removed <code>model.setMode()</code>, as <code>IMode</code> will soon disappear from the API.</li>
+</ul>
+<h3 id="Debt-work"><a href="#Debt-work" class="headerlink" title="Debt work"></a>Debt work</h3><ul>
+<li>Removed html, razor, php and handlebars from <code>monaco-editor-core</code>:<ul>
+<li>the <code>monaco-editor-core</code> is now finally language agnostic.</li>
+<li>coloring for html, razor, php and handlebars is now coming in from <code>monaco-languages</code>.</li>
+<li>language smarts for html, razor and handlebars now comes from <code>monaco-html</code>.</li>
+</ul>
+</li>
+<li>Packaging improvements:<ul>
+<li>thanks to the removal of the old languages from <code>monaco-editor-core</code>, we could improve the bundling and reduce the number of .js files we ship.</li>
+<li>we are thinking about simplifying this further in the upcoming releases.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Thank-you-6"><a href="#Thank-you-6" class="headerlink" title="Thank you"></a>Thank you</h3><ul>
+<li><a href="https://github.com/sandyarmstrong">Sandy Armstrong (@sandyarmstrong)</a>: csharp: allow styling #r/#load <a href="https://github.com/Microsoft/monaco-languages/pull/9">PR monaco-languages#9</a></li>
+<li><a href="https://github.com/nicot">Nico Tonozzi (@nicot)</a>: Go: add raw string literal syntax <a href="https://github.com/Microsoft/monaco-languages/pull/10">PR monaco-languages#10</a></li>
+<li><a href="https://github.com/JKillian">Jason Killian (@JKillian)</a>: Add vmin and vmax CSS units <a href="https://github.com/Microsoft/monaco-languages/pull/11">PR monaco-languages#11</a></li>
+<li><a href="https://github.com/Hirse">Jan Pilzer (@Hirse)</a>: YAML colorization <a href="https://github.com/Microsoft/monaco-languages/pull/12">PR monaco-languages#12</a></li>
+<li><a href="https://github.com/microsoftsam">Sam El-Husseini (@microsoftsam)</a>: Using Cmd+Scroll to zoom on a mac <a href="https://github.com/Microsoft/vscode/pull/12477">PR vscode#12477</a></li>
+</ul>
+<hr>
+<h2 id="0-6-1-06-09-2016"><a href="#0-6-1-06-09-2016" class="headerlink" title="0.6.1 (06.09.2016)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.6.0...v0.6.1">0.6.1</a> (06.09.2016)</h2><ul>
+<li>Fixed regression where <code>editor.addCommand</code> was no longer working.</li>
+</ul>
+<hr>
+<h2 id="0-6-0-05-09-2016"><a href="#0-6-0-05-09-2016" class="headerlink" title="0.6.0 (05.09.2016)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.5.1...v0.6.0">0.6.0</a> (05.09.2016)</h2><ul>
+<li>This will be the last release that contains specific IE9 and IE10 fixes/workarounds. We will begin cleaning our code-base and remove them.</li>
+<li>We plan to adopt TypeScript 2.0, so this will be the last release where <code>monaco.d.ts</code> is generated by TypeScript 1.8.</li>
+<li><code>javascript</code> and <code>typescript</code> language services:<ul>
+<li>exposed API to get to the underlying language service.</li>
+<li>fixed a bug that prevented modifying <code>extraLibs</code>.</li>
+</ul>
+</li>
+<li>Multiple improvements/bugfixes to the <code>css</code>, <code>less</code>, <code>scss</code> and <code>json</code> language services.</li>
+<li>Added support for ATS/Postiats.</li>
+</ul>
+<h3 id="API-changes-5"><a href="#API-changes-5" class="headerlink" title="API changes:"></a>API changes:</h3><ul>
+<li>settings:<ul>
+<li>new: <code>mouseWheelZoom</code>, <code>wordWrap</code>, <code>snippetSuggestions</code>, <code>tabCompletion</code>, <code>wordBasedSuggestions</code>, <code>renderControlCharacters</code>, <code>renderLineHighlight</code>, <code>fontWeight</code>.</li>
+<li>removed: <code>tabFocusMode</code>, <code>outlineMarkers</code>.</li>
+<li>renamed: <code>indentGuides</code> -&gt; <code>renderIndentGuides</code>, <code>referenceInfos</code> -&gt; <code>codeLens</code></li>
+</ul>
+</li>
+<li>added <code>editor.pushUndoStop()</code> to explicitly push an undo stop</li>
+<li>added <code>suppressMouseDown</code> to <code>IContentWidget</code></li>
+<li>added optional <code>resolveLink</code> to <code>ILinkProvider</code></li>
+<li>removed <code>enablement</code>, <code>contextMenuGroupId</code> from <code>IActionDescriptor</code></li>
+<li>removed exposed constants for editor context keys.</li>
+</ul>
+<h3 id="Notable-bugfixes"><a href="#Notable-bugfixes" class="headerlink" title="Notable bugfixes:"></a>Notable bugfixes:</h3><ul>
+<li>Icons missing in the find widget in IE11 <a href="https://github.com/Microsoft/monaco-editor/issues/148">#148</a></li>
+<li>Multiple context menu issues</li>
+<li>Multiple clicking issues in IE11/Edge (<a href="https://github.com/Microsoft/monaco-editor/issues/137">#137</a>, <a href="https://github.com/Microsoft/monaco-editor/issues/118">#118</a>)</li>
+<li>Multiple issues with the high-contrast theme.</li>
+<li>Multiple IME issues in IE11, Edge and Firefox.</li>
+</ul>
+<h3 id="Thank-you-7"><a href="#Thank-you-7" class="headerlink" title="Thank you"></a>Thank you</h3><ul>
+<li><a href="https://github.com/paveldk">Pavel Kolev (@paveldk)</a>: Fix sending message to terminated worker <a href="https://github.com/Microsoft/vscode/pull/10833">PR vscode#10833</a></li>
+<li><a href="https://github.com/paveldk">Pavel Kolev (@paveldk)</a>: Export getTypeScriptWorker &amp; getJavaScriptWorker to monaco.languages.typescript <a href="https://github.com/Microsoft/monaco-typescript/pull/8">PR monaco-typescript#8</a></li>
+<li><a href="https://github.com/sandyarmstrong">Sandy Armstrong (@sandyarmstrong)</a>: Support CompletionItemKind.Method. <a href="https://github.com/Microsoft/vscode/pull/10225">PR vscode#10225</a></li>
+<li><a href="https://github.com/sandyarmstrong">Sandy Armstrong (@sandyarmstrong)</a>: Fix show in IE11 <a href="https://github.com/Microsoft/vscode/pull/10309">PR vscode#10309</a></li>
+<li><a href="https://github.com/sandyarmstrong">Sandy Armstrong (@sandyarmstrong)</a>: Correct docs for IEditorScrollbarOptions.useShadows <a href="https://github.com/Microsoft/vscode/pull/11312">PR vscode#11312</a></li>
+<li><a href="https://github.com/ashalkhakov">Artyom Shalkhakov (@ashalkhakov)</a>: Adding support for ATS/Postiats <a href="https://github.com/Microsoft/monaco-languages/pull/5">PR monaco-languages#5</a></li>
+</ul>
+<hr>
+<h2 id="0-5-1-24-06-2016"><a href="#0-5-1-24-06-2016" class="headerlink" title="0.5.1 (24.06.2016)"></a><a href="https://github.com/Microsoft/monaco-editor/compare/v0.5.0...v0.5.1">0.5.1</a> (24.06.2016)</h2><ul>
+<li>Fixed mouse handling in IE</li>
+</ul>
+<hr>
+<h2 id="0-5-0-24-06-2016"><a href="#0-5-0-24-06-2016" class="headerlink" title="[0.5.0] (24.06.2016)"></a>[0.5.0] (24.06.2016)</h2><h3 id="Breaking-changes-4"><a href="#Breaking-changes-4" class="headerlink" title="Breaking changes"></a>Breaking changes</h3><ul>
+<li><code>monaco.editor.createWebWorker</code> now loads the AMD module and calls <code>create</code> and passes in as first argument a context of type <code>monaco.worker.IWorkerContext</code> and as second argument the <code>initData</code>. This <strong>breaking change</strong> was needed to allow handling the case of misconfigured web workers (running on a file protocol or the cross-domain case)</li>
+<li>the <code>CodeActionProvider.provideCodeActions</code> now gets passed in a <code>CodeActionContext</code> that contains the markers at the relevant range.</li>
+<li>the <code>hoverMessage</code> of a decoration is now a <code>MarkedString | MarkedString[]</code></li>
+<li>the <code>contents</code> of a <code>Hover</code> returned by a <code>HoverProvider</code> is now a <code>MarkedString | MarkedString[]</code></li>
+<li>removed deprecated <code>IEditor.onDidChangeModelRawContent</code>, <code>IModel.onDidChangeRawContent</code></li>
+</ul>
+<h3 id="Notable-fixes"><a href="#Notable-fixes" class="headerlink" title="Notable fixes"></a>Notable fixes</h3><ul>
+<li>Broken configurations (loading from <code>file://</code> or misconfigured cross-domain loading) now load the web worker code in the UI thread. This caused a <strong>breaking change</strong> in the behaviour of <code>monaco.editor.createWebWorker</code></li>
+<li>The right-pointing mouse pointer is oversized in high DPI - <a href="https://github.com/Microsoft/monaco-editor/issues/5">issue</a></li>
+<li>The editor functions now correctly when hosted inside a <code>position:fixed</code> element.</li>
+<li>Cross origin configuration is now picked up (as advertised in documentation from MonacoEnvironment)</li>
+</ul>

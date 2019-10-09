@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head><meta name="generator" content="Hexo 3.8.0">
+		<meta charset="UTF-8">
+		<title></title>
+		<style id="style" type="text/css">
+
+		</style>
+	<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+	<body id="html">
+		<p>点击按钮计算4的2倍的平方。</p>
+		<button onclick="myFunction()">点我</button>
+		<p>结果: <span id="demo"></span></p>
+	</body>
+	<script id="script" type="text/javascript">
+		let pipe = (function() {
+			return function(value, context) {
+				context = context || window;
+				let methods = [];
+				let oproxy = new Proxy({}, {
+					get(target, methodName) {
+						if(methodName === 'get') {
+							return methods.reduce((val, fn) => fn(val, context), value);
+						} else {
+							methods.push(context[methodName]);
+							return oproxy;
+						}
+					}
+				});
+				return oproxy;
+			}
+		})();
+		let obj = {
+			double: val => val * 2,
+			pow: val => val * val
+		}
+		function myFunction(item) {
+			document.getElementById("demo").innerHTML = pipe(4, obj).double.pow.get;
+		}
+	</script>
+
+</html>
