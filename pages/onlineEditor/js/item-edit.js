@@ -16,17 +16,17 @@ require.config({
 		}
 	}
 });
-getData();
+//getData();
 createEditor(data);
 $('.icon-run').on('click', function() {
 	GetEditorValue();
 });
-$(document).on('keydown', function(e) {
-	if(e.ctrlKey && e.keyCode === 83) {
-		GetEditorValue();
-	}
-	return false;
-});
+//$(document).on('keydown', function(e) {
+//	if(e.ctrlKey && e.keyCode === 83) {
+//		GetEditorValue();
+//	}
+//	return false;
+//});
 //拖拽宽度
 var canResize1 = false;
 var canResize2 = false;
@@ -58,14 +58,14 @@ $(document).on('mousemove', function(e) {
 });
 
 function getData() {
-	var viewPath = location.search.split('path=')[1];
+	var getData = location.search.split('path=')[1];
 	$.ajax({
 		url: viewPath,
 		type: 'get',
 		dataType: 'html',
 		async: false,
 		success: function(r) {
-//			console.log(r);
+			//			console.log(r);
 			data = {
 				"html": r.split('<body id="html">')[1].split('</body>')[0],
 				"css": r.split('<style id="style" type="text/css">')[1].split('</style>')[0],
