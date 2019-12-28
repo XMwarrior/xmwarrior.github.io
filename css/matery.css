@@ -212,13 +212,13 @@ header nav .brand-span {
 }
 
 header .brand-logo .logo-img {
-    height: 45px;
+    height: 2rem;
     vertical-align: middle;
-    padding-bottom: 6px;
 }
 
 header .brand-logo .logo-span {
-    font-size: 2rem;
+    font-size: 1.4rem;
+    vertical-align: middle;
 }
 
 header .button-collapse i {
