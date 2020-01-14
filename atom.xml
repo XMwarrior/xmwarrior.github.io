@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2019-12-28T04:39:40.207Z</updated>
+  <updated>2020-01-14T07:37:40.393Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue规范</title>
+    <link href="http://xmwarrior.github.io/2020/01/14/vue-gui-fan/"/>
+    <id>http://xmwarrior.github.io/2020/01/14/vue-gui-fan/</id>
+    <published>2020-01-14T15:03:55.000Z</published>
+    <updated>2020-01-14T07:37:40.393Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-组件选项顺序&quot;&gt;&lt;a href=&quot;#1-组件选项顺序&quot; class=&quot;headerlink&quot; title=&quot;1.组件选项顺序&quot;&gt;&lt;/a&gt;1.组件选项顺序&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="vue" scheme="http://xmwarrior.github.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>reduce方法应用技巧</title>
@@ -549,33 +575,6 @@
     
     
       <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js运算精度_decimal插件</title>
-    <link href="http://xmwarrior.github.io/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/"/>
-    <id>http://xmwarrior.github.io/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/</id>
-    <published>2019-02-19T07:16:19.000Z</published>
-    <updated>2019-12-28T04:45:01.494Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;收藏备用：&lt;/p&gt;
-&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
     
   </entry>
   
