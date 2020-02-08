@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-01-14T07:37:40.393Z</updated>
+  <updated>2020-02-08T04:25:20.815Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Eslint rules字典</title>
+    <link href="http://xmwarrior.github.io/2020/02/08/2020-02-08-eslint-rules-zi-dian/"/>
+    <id>http://xmwarrior.github.io/2020/02/08/2020-02-08-eslint-rules-zi-dian/</id>
+    <published>2020-02-08T04:21:00.000Z</published>
+    <updated>2020-02-08T04:25:20.815Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Eslint-rules字典&quot;&gt;&lt;a href=&quot;#Eslint-rules字典&quot; class=&quot;headerlink&quot; title=&quot;Eslint rules字典&quot;&gt;&lt;/a&gt;Eslint rules字典&lt;/h1&gt;&lt;h2 id=&quot;规则级别&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="环境搭建&amp;工具分享" scheme="http://xmwarrior.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="Eslint效验工具" scheme="http://xmwarrior.github.io/tags/Eslint%E6%95%88%E9%AA%8C%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vue规范</title>
-    <link href="http://xmwarrior.github.io/2020/01/14/vue-gui-fan/"/>
-    <id>http://xmwarrior.github.io/2020/01/14/vue-gui-fan/</id>
+    <link href="http://xmwarrior.github.io/2020/01/14/2020-01-14-vue-gui-fan/"/>
+    <id>http://xmwarrior.github.io/2020/01/14/2020-01-14-vue-gui-fan/</id>
     <published>2020-01-14T15:03:55.000Z</published>
-    <updated>2020-01-14T07:37:40.393Z</updated>
+    <updated>2020-02-08T04:23:53.012Z</updated>
     
     <summary type="html">
     
@@ -216,7 +242,7 @@
     <link href="http://xmwarrior.github.io/2019/04/17/guan-dian-yu-gan-xiang/"/>
     <id>http://xmwarrior.github.io/2019/04/17/guan-dian-yu-gan-xiang/</id>
     <published>2019-04-17T09:54:55.000Z</published>
-    <updated>2019-04-17T08:13:03.323Z</updated>
+    <updated>2019-04-17T13:21:37.813Z</updated>
     
     <summary type="html">
     
@@ -548,33 +574,6 @@
       <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
     
       <category term="bootstrap" scheme="http://xmwarrior.github.io/tags/bootstrap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>title美化提示框</title>
-    <link href="http://xmwarrior.github.io/2019/02/25/title-mei-hua-ti-shi-kuang/"/>
-    <id>http://xmwarrior.github.io/2019/02/25/title-mei-hua-ti-shi-kuang/</id>
-    <published>2019-02-25T09:18:00.000Z</published>
-    <updated>2019-12-28T04:48:34.489Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot; language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&amp;lt;!DOCTYPE HTML&gt;&lt;/span&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
     
   </entry>
   
