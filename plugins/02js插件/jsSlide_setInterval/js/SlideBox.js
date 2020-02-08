@@ -1,5 +1,5 @@
 window.onload = function() {
-	var data = ['img/lunbo1.jpg','img/lunbo2.jpg','img/lunbo3.jpg'];
+	var data = ['../../../medias/featureimages/0.jpg','../../../medias/featureimages/1.jpg','../../../medias/featureimages/2.jpg'];
 	mySlide('SlideBox', data, 2500, 400);
 }
 /*slide轮播函数，参数说明：

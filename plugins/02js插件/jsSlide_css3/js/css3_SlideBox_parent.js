@@ -1,5 +1,5 @@
 window.onload = function() {
-	var data = ['img/A.png', 'img/B.png', 'img/C.png'];
+	var data = ['../../../medias/featureimages/0.jpg', '../../../medias/featureimages/1.jpg', '../../../medias/featureimages/2.jpg'];
 	var linkdata = ['#', '#', '#'];
 	mySlide('SlideBox', data, linkdata, 2000, 400);
 }
