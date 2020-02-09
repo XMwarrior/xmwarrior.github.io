@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-02-08T04:25:20.815Z</updated>
+  <updated>2020-02-09T02:15:05.813Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>手摸手带你使用Vue-Cli3搭建前端开发环境</title>
+    <link href="http://xmwarrior.github.io/2020/02/09/2020-02-09-shou-mo-shou-dai-ni-shi-yong-vue-cli3-da-jian-qian-duan-kai-fa-huan-jing/"/>
+    <id>http://xmwarrior.github.io/2020/02/09/2020-02-09-shou-mo-shou-dai-ni-shi-yong-vue-cli3-da-jian-qian-duan-kai-fa-huan-jing/</id>
+    <published>2020-02-09T04:21:00.000Z</published>
+    <updated>2020-02-09T02:15:05.813Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vue-cli搭建前端开发环境指南&quot;&gt;&lt;a href=&quot;#vue-cli搭建前端开发环境指南&quot; class=&quot;headerlink&quot; title=&quot;vue-cli搭建前端开发环境指南&quot;&gt;&lt;/a&gt;vue-cli搭建前端开发环境指南&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="环境搭建&amp;工具分享" scheme="http://xmwarrior.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="Vue-Cli3" scheme="http://xmwarrior.github.io/tags/Vue-Cli3/"/>
+    
+      <category term="环境搭建" scheme="http://xmwarrior.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="eslint" scheme="http://xmwarrior.github.io/tags/eslint/"/>
+    
+  </entry>
   
   <entry>
     <title>Eslint rules字典</title>
@@ -545,35 +575,6 @@
     
     
       <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bootstrap-Modal组件封装</title>
-    <link href="http://xmwarrior.github.io/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/"/>
-    <id>http://xmwarrior.github.io/2019/02/26/bootstrap-modal-zu-jian-feng-zhuang/</id>
-    <published>2019-02-26T07:16:19.000Z</published>
-    <updated>2019-12-28T03:44:47.255Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;bootstrap-Modal组件封装：&lt;/p&gt;
-&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;function&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
-    
-      <category term="bootstrap" scheme="http://xmwarrior.github.io/tags/bootstrap/"/>
     
   </entry>
   
