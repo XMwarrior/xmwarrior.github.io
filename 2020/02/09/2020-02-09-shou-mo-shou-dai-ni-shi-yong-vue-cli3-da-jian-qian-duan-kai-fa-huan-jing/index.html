@@ -417,14 +417,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.6k
+                        947
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        3 分
                     </div>
                     
                 
@@ -507,186 +507,23 @@
 </ul>
 <p><img src="https://cdn.nlark.com/yuque/0/2020/png/793981/1580981087304-fd82a825-6d6d-47f5-9805-6b452098d366.png#align=left&amp;display=inline&amp;height=57&amp;name=9.png&amp;originHeight=57&amp;originWidth=703&amp;size=6624&amp;status=done&amp;style=none&amp;width=703" alt="9.png"></p>
 <p>等待安装完成后，用vscode编辑器打开项目。</p>
-<h2 id="三、配置eslint"><a href="#三、配置eslint" class="headerlink" title="三、配置eslint"></a>三、配置eslint</h2><h3 id="1、配置eslint规则"><a href="#1、配置eslint规则" class="headerlink" title="1、配置eslint规则"></a>1、配置eslint规则</h3><p>vscode打开创建的项目目录，根路径下打开.eslintrc.js，具体eslint参数说明请见<a href="https://xmwarrior.github.io/2020/02/08/2020-02-08-eslint-rules-zi-dian/">eslint参数文档</a>，修改rules如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token string">"no-alert"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-array-constructor"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-bitwise"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-caller"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-catch-shadow"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-class-assign"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-cond-assign"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-console"</span><span class="token keyword">:</span> process.env.NODE_ENV <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">"production"</span> ? <span class="token string">"error"</span> <span class="token keyword">:</span> <span class="token string">"off"</span>,
-<span class="token string">"no-const-assign"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-constant-condition"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-continue"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-control-regex"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-debugger"</span><span class="token keyword">:</span> process.env.NODE_ENV <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">"production"</span> ? <span class="token string">"error"</span> <span class="token keyword">:</span> <span class="token string">"off"</span>,
-<span class="token string">"no-delete-var"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-div-regex"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-dupe-keys"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-dupe-args"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-duplicate-case"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-else-return"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-empty"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-empty-character-class"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-empty-label"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-eq-null"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-eval"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-ex-assign"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-extend-native"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-extra-bind"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-extra-boolean-cast"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-extra-parens"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-extra-semi"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-fallthrough"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-floating-decimal"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-func-assign"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-implicit-coercion"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-implied-eval"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-inline-comments"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-inner-declarations"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"functions"</span><span class="token punctuation">]</span>,
-<span class="token string">"no-invalid-regexp"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-invalid-this"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-irregular-whitespace"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-iterator"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-label-var"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-labels"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-lone-blocks"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-lonely-if"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-loop-func"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-mixed-requires"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,false<span class="token punctuation">]</span>,
-<span class="token string">"no-mixed-spaces-and-tabs"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,false<span class="token punctuation">]</span>,
-<span class="token string">"linebreak-style"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"windows"</span><span class="token punctuation">]</span>,
-<span class="token string">"no-multi-spaces"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-multi-str"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-multiple-empty-lines"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>1,<span class="token punctuation">{</span><span class="token string">"max"</span>:2<span class="token punctuation">}</span><span class="token punctuation">]</span>,
-<span class="token string">"no-native-reassign"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-negated-in-lhs"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-nested-ternary"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-new"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-new-func"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-new-object"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-new-require"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-new-wrappers"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-obj-calls"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-octal"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-octal-escape"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-param-reassign"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-path-concat"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-plusplus"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-process-env"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-process-exit"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-proto"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-redeclare"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-regex-spaces"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-restricted-modules"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-return-assign"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-script-url"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-self-compare"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-sequences"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-shadow"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-shadow-restricted-names"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-spaced-func"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-sparse-arrays"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-sync"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-ternary"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-trailing-spaces"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-this-before-super"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-throw-literal"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-undef"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-undef-init"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-undefined"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-unexpected-multiline"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-underscore-dangle"</span><span class="token keyword">:</span> 1,
-<span class="token string">"no-unneeded-ternary"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-unreachable"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-unused-expressions"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-unused-vars"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token punctuation">{</span><span class="token string">"vars"</span><span class="token keyword">:</span> <span class="token string">"all"</span>,<span class="token string">"args"</span><span class="token keyword">:</span> <span class="token string">"after-used"</span><span class="token punctuation">}</span><span class="token punctuation">]</span>,
-<span class="token string">"no-use-before-define"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-useless-call"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-void"</span><span class="token keyword">:</span> 2,
-<span class="token string">"no-var"</span><span class="token keyword">:</span> 0,
-<span class="token string">"no-warning-comments"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>1,<span class="token punctuation">{</span><span class="token string">"terms"</span><span class="token keyword">:</span> <span class="token punctuation">[</span><span class="token string">"todo"</span>,<span class="token string">"fixme"</span>,<span class="token string">"xxx"</span><span class="token punctuation">]</span>,<span class="token string">"location"</span><span class="token keyword">:</span> <span class="token string">"start"</span><span class="token punctuation">}</span><span class="token punctuation">]</span>,
-<span class="token string">"no-with"</span><span class="token keyword">:</span> 2,
-<span class="token string">"array-bracket-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"never"</span><span class="token punctuation">]</span>,
-<span class="token string">"arrow-parens"</span><span class="token keyword">:</span> 0,
-<span class="token string">"arrow-spacing"</span><span class="token keyword">:</span> 0,
-<span class="token string">"accessor-pairs"</span><span class="token keyword">:</span> 0,
-<span class="token string">"block-scoped-var"</span><span class="token keyword">:</span> 0,
-<span class="token string">"brace-style"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>1,<span class="token string">"1tbs"</span><span class="token punctuation">]</span>,
-<span class="token string">"callback-return"</span><span class="token keyword">:</span> 1,
-<span class="token string">"camelcase"</span><span class="token keyword">:</span> 2,
-<span class="token string">"comma-dangle"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"never"</span><span class="token punctuation">]</span>,
-<span class="token string">"comma-spacing"</span><span class="token keyword">:</span> 0,
-<span class="token string">"comma-style"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"last"</span><span class="token punctuation">]</span>,
-<span class="token string">"complexity"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,11<span class="token punctuation">]</span>,
-<span class="token string">"computed-property-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"never"</span><span class="token punctuation">]</span>,
-<span class="token string">"consistent-return"</span><span class="token keyword">:</span> 0,
-<span class="token string">"consistent-this"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"that"</span><span class="token punctuation">]</span>,
-<span class="token string">"constructor-super"</span><span class="token keyword">:</span> 0,
-<span class="token string">"curly"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"all"</span><span class="token punctuation">]</span>,
-<span class="token string">"default-case"</span><span class="token keyword">:</span> 2,
-<span class="token string">"dot-location"</span><span class="token keyword">:</span> 0,
-<span class="token string">"dot-notation"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token punctuation">{</span><span class="token string">"allowKeywords"</span><span class="token keyword">:</span> true<span class="token punctuation">}</span><span class="token punctuation">]</span>,
-<span class="token string">"eol-last"</span><span class="token keyword">:</span> 0,
-<span class="token string">"eqeqeq"</span><span class="token keyword">:</span> 2,
-<span class="token string">"func-names"</span><span class="token keyword">:</span> 0,
-<span class="token string">"func-style"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"declaration"</span><span class="token punctuation">]</span>,
-<span class="token string">"generator-star-spacing"</span><span class="token keyword">:</span> 0,
-<span class="token string">"guard-for-in"</span><span class="token keyword">:</span> 0,
-<span class="token string">"handle-callback-err"</span><span class="token keyword">:</span> 0,
-<span class="token string">"id-length"</span><span class="token keyword">:</span> 0,
-<span class="token string">"indent"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,4<span class="token punctuation">]</span>,
-<span class="token string">"init-declarations"</span><span class="token keyword">:</span> 0,
-<span class="token string">"key-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token punctuation">{</span><span class="token string">"beforeColon"</span><span class="token keyword">:</span> false,<span class="token string">"afterColon"</span><span class="token keyword">:</span> true<span class="token punctuation">}</span><span class="token punctuation">]</span>,
-<span class="token string">"lines-around-comment"</span><span class="token keyword">:</span> 0,
-<span class="token string">"max-depth"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,4<span class="token punctuation">]</span>,
-<span class="token string">"max-len"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,80,4<span class="token punctuation">]</span>,
-<span class="token string">"max-nested-callbacks"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,2<span class="token punctuation">]</span>,
-<span class="token string">"max-params"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,3<span class="token punctuation">]</span>,
-<span class="token string">"max-statements"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,10<span class="token punctuation">]</span>,
-<span class="token string">"new-cap"</span><span class="token keyword">:</span> 2,
-<span class="token string">"new-parens"</span><span class="token keyword">:</span> 2,
-<span class="token string">"newline-after-var"</span><span class="token keyword">:</span> 2,
-<span class="token string">"object-curly-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"never"</span><span class="token punctuation">]</span>,
-<span class="token string">"object-shorthand"</span><span class="token keyword">:</span> 0,
-<span class="token string">"one-var"</span><span class="token keyword">:</span> 1,
-<span class="token string">"operator-assignment"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"always"</span><span class="token punctuation">]</span>,
-<span class="token string">"operator-linebreak"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"after"</span><span class="token punctuation">]</span>,
-<span class="token string">"padded-blocks"</span><span class="token keyword">:</span> 0,
-<span class="token string">"prefer-const"</span><span class="token keyword">:</span> 0,
-<span class="token string">"prefer-spread"</span><span class="token keyword">:</span> 0,
-<span class="token string">"prefer-reflect"</span><span class="token keyword">:</span> 0,
-<span class="token string">"quotes"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>1,<span class="token string">"double"</span><span class="token punctuation">]</span>,
-<span class="token string">"radix"</span><span class="token keyword">:</span> 2,
-<span class="token string">"id-match"</span><span class="token keyword">:</span> 0,
-<span class="token string">"require-yield"</span><span class="token keyword">:</span> 0,
-<span class="token string">"semi"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"always"</span><span class="token punctuation">]</span>,
-<span class="token string">"semi-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token punctuation">{</span><span class="token string">"before"</span><span class="token keyword">:</span> false,<span class="token string">"after"</span><span class="token keyword">:</span> true<span class="token punctuation">}</span><span class="token punctuation">]</span>,
-<span class="token string">"sort-vars"</span><span class="token keyword">:</span> 0,
-<span class="token string">"space-after-keywords"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"always"</span><span class="token punctuation">]</span>,
-<span class="token string">"space-before-blocks"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"always"</span><span class="token punctuation">]</span>,
-<span class="token string">"space-before-function-paren"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"always"</span><span class="token punctuation">]</span>,
-<span class="token string">"space-in-parens"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token string">"never"</span><span class="token punctuation">]</span>,
-<span class="token string">"space-infix-ops"</span><span class="token keyword">:</span> 0,
-<span class="token string">"space-return-throw-case"</span><span class="token keyword">:</span> 0,
-<span class="token string">"space-unary-ops"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0,<span class="token punctuation">{</span><span class="token string">"words"</span><span class="token keyword">:</span> true,<span class="token string">"nonwords"</span><span class="token keyword">:</span> false<span class="token punctuation">}</span><span class="token punctuation">]</span>,
-<span class="token string">"spaced-comment"</span><span class="token keyword">:</span> 0,
-<span class="token string">"strict"</span><span class="token keyword">:</span> 2,
-<span class="token string">"use-isnan"</span><span class="token keyword">:</span> 2,
-<span class="token string">"valid-jsdoc"</span><span class="token keyword">:</span> 0,
-<span class="token string">"valid-typeof"</span><span class="token keyword">:</span> 2,
-<span class="token string">"vars-on-top"</span><span class="token keyword">:</span> 2,
-<span class="token string">"wrap-iife"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"inside"</span><span class="token punctuation">]</span>,
-<span class="token string">"wrap-regex"</span><span class="token keyword">:</span> 0,
-<span class="token string">"yoda"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2,<span class="token string">"never"</span><span class="token punctuation">]</span>
+<h2 id="三、配置eslint"><a href="#三、配置eslint" class="headerlink" title="三、配置eslint"></a>三、配置eslint</h2><h3 id="1、配置eslint规则"><a href="#1、配置eslint规则" class="headerlink" title="1、配置eslint规则"></a>1、配置eslint规则</h3><p>配置eslint验证规则为eslint推荐规则，<a href="https://eslint.bootcss.com/docs/rules/" target="_blank" rel="noopener">eslint推荐配置官网</a>：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"extends"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"eslint:recommended"</span>,// 添加 eslint推荐规则
+  <span class="token string">"plugin:vue/essential"</span>,
+  <span class="token string">"@vue/prettier"</span>
+<span class="token punctuation">]</span>,
 </code></pre>
 <h3 id="2、配置eslint批量修复指令"><a href="#2、配置eslint批量修复指令" class="headerlink" title="2、配置eslint批量修复指令"></a>2、配置eslint批量修复指令</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i eslint-plugin-vuefix@latest --save-dev
 </code></pre>
-<p>package.json的script添加指令</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token string">"fix"</span><span class="token keyword">:</span> <span class="token string">"node_modules/.bin/eslint --ext .js,.vue src --fix"</span>
+<p>package.json的script添加修复指令，修改检查指令。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"lint"</span><span class="token keyword">:</span> <span class="token string">"eslint --ext .js,.vue src"</span>
+<span class="token string">"fix"</span><span class="token keyword">:</span> <span class="token string">"eslint --ext .js,.vue src --fix"</span>
 </code></pre>
-<p>终端运行指令，批量修复代码格式</p>
+<p>终端运行检查指令，检测项目文件格式问题：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> run lint
+</code></pre>
+<p>终端运行修复指令，批量修复代码格式:</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> run fix
 </code></pre>
 <h2 id="四、配置目录结构"><a href="#四、配置目录结构" class="headerlink" title="四、配置目录结构"></a>四、配置目录结构</h2><p>目录结构本着“约定优于配置”的原则，约定目录名称和嵌套结构，尽量缩小自由发挥空间！</p>
@@ -1170,7 +1007,7 @@ ElFormDialog</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">21.3k</span>
+                <span class="white-color">20.8k</span>
             
 
             

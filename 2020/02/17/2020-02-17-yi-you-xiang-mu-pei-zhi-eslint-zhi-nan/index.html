@@ -4,14 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="js运算精度_decimal插件, xmwarrior,xmsniper">
-    <meta name="description" content="收藏备用：
-&amp;lt;!DOCTYPE html&gt;
-&amp;lt;html&gt;
+    <meta name="keywords" content="已有项目配置eslint指南, xmwarrior,xmsniper">
+    <meta name="description" content="已有项目配置eslint指南一、项目文件夹下下载eslintnpm install eslint --save-dev
 
-    &amp;lt;head&gt;
-        &amp;lt;meta charset=&#34;UTF-8&#34;&gt;
-        &amp;lt;title&gt;解决JS运算和精度问题-decima">
+二、eslint初始化1、package.json文件scripts下添加指令&#34;init&#34;: &#34;./node_modu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js运算精度_decimal插件 | XMwarrior</title>
+    <title>已有项目配置eslint指南 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +259,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js运算精度_decimal插件
+                        已有项目配置eslint指南
                     </div>
                 </div>
             </div>
@@ -380,8 +376,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/vue/" target="_blank">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/npm/" target="_blank">
+                                <span class="chip bg-color">npm</span>
+                            </a>
+                        
+                            <a href="/tags/element-ui/" target="_blank">
+                                <span class="chip bg-color">element-ui</span>
                             </a>
                         
                     </div>
@@ -392,8 +396,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/npm/" class="post-category" target="_blank">
+                                npm
                             </a>
                         
                     </div>
@@ -404,14 +408,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-19
+                    2020-02-17
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        134
+                        169
                     </div>
                     
 
@@ -434,40 +438,29 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>收藏备用：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
-<span class="token operator">&lt;</span>html<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>head<span class="token operator">></span>
-        <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>title<span class="token operator">></span>解决JS运算和精度问题-decimal.js<span class="token operator">&lt;</span>/title<span class="token operator">></span>
-        <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"../js/decimal.min.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span> charset<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/head<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>body<span class="token operator">></span>
-        <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
-            /*示例*/
-            var dc<span class="token operator">=</span>function <span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> new Decimal<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            //加法 add
-            var a <span class="token operator">=</span> dc<span class="token punctuation">(</span>0.1<span class="token punctuation">)</span>.add<span class="token punctuation">(</span>dc<span class="token punctuation">(</span>0.2<span class="token punctuation">))</span><span class="token punctuation">;</span>
-            //减法 sub
-            var b <span class="token operator">=</span> dc<span class="token punctuation">(</span>0.3<span class="token punctuation">)</span>.sub<span class="token punctuation">(</span>dc<span class="token punctuation">(</span>0.1<span class="token punctuation">))</span><span class="token punctuation">;</span>
-            //乘法 mul
-            var c <span class="token operator">=</span> dc<span class="token punctuation">(</span>37.5<span class="token punctuation">)</span>.mul<span class="token punctuation">(</span>dc<span class="token punctuation">(</span>5.5<span class="token punctuation">))</span><span class="token punctuation">;</span>
-            //除法 div
-            var d <span class="token operator">=</span> dc<span class="token punctuation">(</span>10<span class="token punctuation">)</span>.div<span class="token punctuation">(</span>dc<span class="token punctuation">(</span>3<span class="token punctuation">))</span><span class="token punctuation">;</span>
-            console.log<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            console.log<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            console.log<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            console.log<span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&lt;</span>/script<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/body<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>/html<span class="token operator">></span>
+                <h1 id="已有项目配置eslint指南"><a href="#已有项目配置eslint指南" class="headerlink" title="已有项目配置eslint指南"></a>已有项目配置eslint指南</h1><h2 id="一、项目文件夹下下载eslint"><a href="#一、项目文件夹下下载eslint" class="headerlink" title="一、项目文件夹下下载eslint"></a>一、项目文件夹下下载eslint</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> eslint --save-dev
 </code></pre>
-<p><a href="https://codepen.io/xmwarrior/pen/yLyqpJe?editors=1010" target="_blank" rel="noopener">运行一下</a></p>
+<h2 id="二、eslint初始化"><a href="#二、eslint初始化" class="headerlink" title="二、eslint初始化"></a>二、eslint初始化</h2><h3 id="1、package-json文件scripts下添加指令"><a href="#1、package-json文件scripts下添加指令" class="headerlink" title="1、package.json文件scripts下添加指令"></a>1、package.json文件scripts下添加指令</h3><pre class=" language-bash"><code class="language-bash"><span class="token string">"init"</span><span class="token keyword">:</span> <span class="token string">"./node_modules/.bin/eslint --init"</span>
+</code></pre>
+<h3 id="2、运行指令"><a href="#2、运行指令" class="headerlink" title="2、运行指令"></a>2、运行指令</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> run init
+</code></pre>
+<h3 id="3、选择eslint配置，如下图"><a href="#3、选择eslint配置，如下图" class="headerlink" title="3、选择eslint配置，如下图"></a>3、选择eslint配置，如下图</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/793981/1581863680805-66ce2d62-a7bb-42a2-aeff-32d4fd65a306.png#align=left&amp;display=inline&amp;height=332&amp;name=1.png&amp;originHeight=332&amp;originWidth=938&amp;size=50874&amp;status=done&amp;style=none&amp;width=938" alt="1.png"></p>
+<h2 id="三、配置格式化工具"><a href="#三、配置格式化工具" class="headerlink" title="三、配置格式化工具"></a>三、配置格式化工具</h2><h3 id="1、下载babel-eslint"><a href="#1、下载babel-eslint" class="headerlink" title="1、下载babel-eslint"></a>1、下载babel-eslint</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> babel-eslint
+</code></pre>
+<h3 id="2、配置-eslintrc-js"><a href="#2、配置-eslintrc-js" class="headerlink" title="2、配置.eslintrc.js"></a>2、配置.eslintrc.js</h3><p>parserOptions添加配置</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"parser"</span><span class="token keyword">:</span> <span class="token string">"babel-eslint"</span>
+</code></pre>
+<h3 id="3、下载prettier"><a href="#3、下载prettier" class="headerlink" title="3、下载prettier"></a>3、下载prettier</h3><p>下载添加依赖：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @vue/eslint-config-prettier eslint-plugin-prettier@latest --save-dev
+</code></pre>
+<h3 id="4、配置-eslintrc-js"><a href="#4、配置-eslintrc-js" class="headerlink" title="4、配置.eslintrc.js"></a>4、配置.eslintrc.js</h3><p>extends添加拓展：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"@vue/prettier"</span>
+</code></pre>
+<h2 id="四、配置批量修复指令"><a href="#四、配置批量修复指令" class="headerlink" title="四、配置批量修复指令"></a>四、配置批量修复指令</h2><h3 id="1、下载批量修复插件eslint-plugin-vuefix"><a href="#1、下载批量修复插件eslint-plugin-vuefix" class="headerlink" title="1、下载批量修复插件eslint-plugin-vuefix"></a>1、下载批量修复插件eslint-plugin-vuefix</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> eslint-plugin-vuefix
+</code></pre>
+<h3 id="2、添加检查指令、修复指令"><a href="#2、添加检查指令、修复指令" class="headerlink" title="2、添加检查指令、修复指令"></a>2、添加检查指令、修复指令</h3><pre class=" language-bash"><code class="language-bash"><span class="token string">"lint"</span><span class="token keyword">:</span> <span class="token string">"eslint --ext .js,.vue src"</span>
+<span class="token string">"fix"</span><span class="token keyword">:</span> <span class="token string">"eslint --ext .js,.vue src --fix"</span>
+</code></pre>
 
             </div>
             <hr>
@@ -615,7 +608,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/19/js-yun-suan-jing-du-decimal-cha-jian/" class="b-link-green">js运算精度_decimal插件</a>
+                    <a href="/2020/02/17/2020-02-17-yi-you-xiang-mu-pei-zhi-eslint-zhi-nan/" class="b-link-green">已有项目配置eslint指南</a>
                 </p>
             </div>
         </div>
@@ -637,7 +630,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-02-19T15-16-19',
+        id: '2020-02-17T22-37-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -660,45 +653,52 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/25/title-mei-hua-ti-shi-kuang/">
+                <a href="/2020/02/17/2020-02-17-yi-you-xiang-mu-pei-zhi-eslint-zhi-nan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="title美化提示框">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="已有项目配置eslint指南">
                         
-                        <span class="card-title">title美化提示框</span>
+                        <span class="card-title">已有项目配置eslint指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">&lt;!DOCTYPE HTML>
-&lt;html>
+                    <div class="summary block-with-text">已有项目配置eslint指南一、项目文件夹下下载eslintnpm install eslint --save-dev
 
-    &lt;head>
-        &lt;meta charset="utf-8">
-        &lt;meta name="renderer" content="</div>
+二、eslint初始化1、package.json文件scripts下添加指令"init": "./node_modu</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/npm/" class="post-category" target="_blank">
+                                    npm
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/npm/" target="_blank">
+                        <span class="chip bg-color">npm</span>
+                    </a>
+                    
+                    <a href="/tags/element-ui/" target="_blank">
+                        <span class="chip bg-color">element-ui</span>
                     </a>
                     
                 </div>
@@ -712,32 +712,29 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/01/input-range-zi-ding-yi/">
+                <a href="/2020/02/10/2020-02-10-element-plugin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="input-range自定义">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="npm组件发布之element-plugin">
                         
-                        <span class="card-title">input-range自定义</span>
+                        <span class="card-title">npm组件发布之element-plugin</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">input-range自定义样式
-&lt;!DOCTYPE html>
-&lt;html lang="zh">
-    &lt;head>
-        &lt;meta charset="UTF-8" />
-        &lt;me</div>
+                    <div class="summary block-with-text">element-pluginelement-plugin 是基于element-ui开发的一个以提高编码效率、简化调用方式、提高代码维护性、适配屏幕分辨率、聚合基础组件为宗旨的“中间件”组件。现已开放的可用组件：
+
+ElFormDialog</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/npm/" class="post-category" target="_blank">
+                                    npm
                                 </a>
                             
                             
@@ -747,12 +744,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/npm/" target="_blank">
+                        <span class="chip bg-color">npm</span>
+                    </a>
+                    
+                    <a href="/tags/element-ui/" target="_blank">
+                        <span class="chip bg-color">element-ui</span>
                     </a>
                     
                 </div>
