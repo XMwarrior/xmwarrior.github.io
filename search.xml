@@ -4,6 +4,93 @@
   
     
     <entry>
+      <title>前端架构-业务回补期</title>
+      <link href="/2020/02/19/2020-02-18-qian-duan-jia-gou-ji-zhu-jia-gou-shi-shi-ye-wu-hui-bu-qi/"/>
+      <url>/2020/02/19/2020-02-18-qian-duan-jia-gou-ji-zhu-jia-gou-shi-shi-ye-wu-hui-bu-qi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="业务回补期"><a href="#业务回补期" class="headerlink" title="业务回补期"></a>业务回补期</h1><h2 id="一、追补业务"><a href="#一、追补业务" class="headerlink" title="一、追补业务"></a>一、追补业务</h2><h2 id="二、测试：实践测试策略"><a href="#二、测试：实践测试策略" class="headerlink" title="二、测试：实践测试策略"></a>二、测试：实践测试策略</h2><h2 id="三、上线准备"><a href="#三、上线准备" class="headerlink" title="三、上线准备"></a>三、上线准备</h2><h2 id="四、第一次部署：验证部署架构"><a href="#四、第一次部署：验证部署架构" class="headerlink" title="四、第一次部署：验证部署架构"></a>四、第一次部署：验证部署架构</h2><h2 id="五、提升团队能力"><a href="#五、提升团队能力" class="headerlink" title="五、提升团队能力"></a>五、提升团队能力</h2><p>输出是最好的输入方式。在输出的过程中，需要重新梳理知识体系，也因此输入编程了一个输入过程。这种重新输入的输出，可分为对内输出和对外输出。</p><h3 id="对内输出"><a href="#对内输出" class="headerlink" title="对内输出"></a>对内输出</h3><h4 id="1、技术分享"><a href="#1、技术分享" class="headerlink" title="1、技术分享"></a>1、技术分享</h4><p>能力提升使用最多的方式。</p><ul><li>项目相关技术分享</li><li>非项目相关技术分享</li></ul><h4 id="2、工作坊"><a href="#2、工作坊" class="headerlink" title="2、工作坊"></a>2、工作坊</h4><p>工作坊是一个以练习为主，以理论为辅的掌握新技术的方式。指介绍新技术的过程中，让参与者现场进行大量练习。在练习过程中，互相帮助解决问题。能更快速的掌握相关技能。</p><h4 id="3、面向新人的结对编程"><a href="#3、面向新人的结对编程" class="headerlink" title="3、面向新人的结对编程"></a>3、面向新人的结对编程</h4><p>结对编程的几种方式：</p><ol><li>Navigator-Driver。Navigator关注如何实现功能，Driver负责实现。并由Navigator告诉Driver如何实现相关代码。提供思路与具体实现。</li><li>Ping-Pong模式。A写功能，B测试。随后反过来，B写功能，A测试。</li><li>键鼠模式。</li></ol><p>项目实施过程中，相关能力的提升方式如图：</p><p><img src="https://cdn.img.wenhairu.com/images/2020/02/18/mu06U.jpg" alt="能力提升方式"></p><h3 id="对外输出"><a href="#对外输出" class="headerlink" title="对外输出"></a>对外输出</h3><p>对外输出的目的有两个：</p><ol><li>练习技术上的技能，提升相应的软技能。</li><li>扩大团队的影响力，以便未来招聘到更多人才。</li></ol><p>输出方式多种多样，有翻译、写作、开源项目、技术分享等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端架构 </tag>
+            
+            <tag> 读书 </tag>
+            
+            <tag> 复盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>前端架构-技术准备期</title>
+      <link href="/2020/02/18/2020-02-18-qian-duan-jia-gou-ji-zhu-jia-gou-shi-shi-ji-zhu-zhun-bei-qi/"/>
+      <url>/2020/02/18/2020-02-18-qian-duan-jia-gou-ji-zhu-jia-gou-shi-shi-ji-zhu-zhun-bei-qi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="技术准备期"><a href="#技术准备期" class="headerlink" title="技术准备期"></a>技术准备期</h1><h2 id="一、架构设计"><a href="#一、架构设计" class="headerlink" title="一、架构设计"></a>一、架构设计</h2><p>即设计系统的架构。相应的步骤如下：</p><ol><li>收集利益相关者的需求。倾听业务人员、项目负责人等相关者的需求,进行用户访谈,收集相关的需求。</li><li>确定架构模式。与相应的技术人员(如开发人员试人员)讨论,了解架构上的潜在限制。</li><li>架构设计方法。寻找潜在的可行性技术方案。</li><li>生成架构产物。整理出功能列表中的功能性需求和跨功能性需求。</li><li>找出会严重影响开发的风险点。</li><li>和技术委员会、利益相关者反复确认方案(可选)。</li><li>对架构设计进行概念证明。</li><li>细化架构的部分实施细节。</li><li>结合技术和业务,进行需求排期。</li></ol><p>架构设计的总体方向：</p><ol><li>收集利益相关者的需求。</li><li>确定架构模式。</li><li>架构设计方法。</li><li>生成架构产物。</li></ol><p>架构设计原则：</p><ol><li>不多也不少：不做多余设计，也不缺少关键部分。</li><li>演进式：不断地演进以使框架适应当前环境。</li><li>持续性：长期的架构改进比什么都重要。</li></ol><h2 id="二、架构设计概念验证"><a href="#二、架构设计概念验证" class="headerlink" title="二、架构设计概念验证"></a>二、架构设计概念验证</h2><p>验证先前设计的架构是否可行。使用新技术编写一个简单的demo，将所设计的各个部分串联到一起。</p><h2 id="三、迭代0，搭建完整环境"><a href="#三、迭代0，搭建完整环境" class="headerlink" title="三、迭代0，搭建完整环境"></a>三、迭代0，搭建完整环境</h2><p>搭建系统的基础设施，最终实现项目人员熟悉实际开发方式，可以进行项目开发的目标。</p><h3 id="基本事项"><a href="#基本事项" class="headerlink" title="基本事项"></a>基本事项</h3><ol><li>创建应用脚手架。</li><li>创建项目的代码库。</li><li>搭建持续集成、持续交付。</li><li>进行各种权限配置,如各种不同的环境账号准备、开发人员的账号配置等。</li><li>配置配套的工具,如代码审查、自动化原生应用上传等。</li><li>更细粒度的技术选型。</li></ol><h3 id="其他事项"><a href="#其他事项" class="headerlink" title="其他事项"></a>其他事项</h3><ul><li>内部技术培训：介绍系统架构，开发注意事项。</li><li>准备基础架构文档、技术规范。</li></ul><h2 id="四、示例项目代码：体现规范与原则"><a href="#四、示例项目代码：体现规范与原则" class="headerlink" title="四、示例项目代码：体现规范与原则"></a>四、示例项目代码：体现规范与原则</h2><p>由经验丰富的开发人员编写示例代码。通过示例代码，展现好的编程模式、范式。<br>示例尽量完整，如登录功能，涉及一系列与前端相关的内容：状态管理、网络请求、数据模式、表单提交、UI交互等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端架构 </tag>
+            
+            <tag> 读书 </tag>
+            
+            <tag> 复盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>前端架构-技术负责人与架构</title>
+      <link href="/2020/02/18/2020-02-18-qian-duan-jia-gou-ji-zhu-fu-ze-ren-yu-jia-gou/"/>
+      <url>/2020/02/18/2020-02-18-qian-duan-jia-gou-ji-zhu-fu-ze-ren-yu-jia-gou/</url>
+      
+        <content type="html"><![CDATA[<h1 id="技术负责人与架构"><a href="#技术负责人与架构" class="headerlink" title="技术负责人与架构"></a>技术负责人与架构</h1><h2 id="一、日常工作方向"><a href="#一、日常工作方向" class="headerlink" title="一、日常工作方向"></a>一、日常工作方向</h2><ol><li>适当地平衡业务的进度与技术方案。</li><li>解决重要、复杂的技术问题。</li><li>帮助团队的其他成员成长。</li><li>从全局考虑整个项目的技术和业务问题</li></ol><h2 id="二、技术架构考虑方面"><a href="#二、技术架构考虑方面" class="headerlink" title="二、技术架构考虑方面"></a>二、技术架构考虑方面</h2><p>设计软件架构的时候,考虑的不仅是架构技术的方案,还需要包含如下内容：</p><ol><li>技术方案的设计。</li><li>技术方案的落地。</li><li>保证技术方案的实施。</li><li>确保技术方案的上线。</li><li>关注技术方案的后续维护。</li></ol><h2 id="三、保证技术架构实施的三要素"><a href="#三、保证技术架构实施的三要素" class="headerlink" title="三、保证技术架构实施的三要素"></a>三、保证技术架构实施的三要素</h2><ol><li>保证项目在开发过程中的质量。</li><li>提升人员的能力。</li><li>第三,确保功能和应用上线。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端架构 </tag>
+            
+            <tag> 读书 </tag>
+            
+            <tag> 复盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>已有项目配置eslint指南</title>
       <link href="/2020/02/17/2020-02-17-yi-you-xiang-mu-pei-zhi-eslint-zhi-nan/"/>
       <url>/2020/02/17/2020-02-17-yi-you-xiang-mu-pei-zhi-eslint-zhi-nan/</url>

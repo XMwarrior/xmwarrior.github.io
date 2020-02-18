@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-02-17T14:38:15.674Z</updated>
+  <updated>2020-02-18T14:11:55.451Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,96 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端架构-业务回补期</title>
+    <link href="http://xmwarrior.github.io/2020/02/19/2020-02-18-qian-duan-jia-gou-ji-zhu-jia-gou-shi-shi-ye-wu-hui-bu-qi/"/>
+    <id>http://xmwarrior.github.io/2020/02/19/2020-02-18-qian-duan-jia-gou-ji-zhu-jia-gou-shi-shi-ye-wu-hui-bu-qi/</id>
+    <published>2020-02-19T14:39:00.000Z</published>
+    <updated>2020-02-18T14:11:55.451Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;业务回补期&quot;&gt;&lt;a href=&quot;#业务回补期&quot; class=&quot;headerlink&quot; title=&quot;业务回补期&quot;&gt;&lt;/a&gt;业务回补期&lt;/h1&gt;&lt;h2 id=&quot;一、追补业务&quot;&gt;&lt;a href=&quot;#一、追补业务&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端架构-技术准备期</title>
+    <link href="http://xmwarrior.github.io/2020/02/18/2020-02-18-qian-duan-jia-gou-ji-zhu-jia-gou-shi-shi-ji-zhu-zhun-bei-qi/"/>
+    <id>http://xmwarrior.github.io/2020/02/18/2020-02-18-qian-duan-jia-gou-ji-zhu-jia-gou-shi-shi-ji-zhu-zhun-bei-qi/</id>
+    <published>2020-02-18T14:38:00.000Z</published>
+    <updated>2020-02-18T14:11:52.850Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;技术准备期&quot;&gt;&lt;a href=&quot;#技术准备期&quot; class=&quot;headerlink&quot; title=&quot;技术准备期&quot;&gt;&lt;/a&gt;技术准备期&lt;/h1&gt;&lt;h2 id=&quot;一、架构设计&quot;&gt;&lt;a href=&quot;#一、架构设计&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端架构-技术负责人与架构</title>
+    <link href="http://xmwarrior.github.io/2020/02/18/2020-02-18-qian-duan-jia-gou-ji-zhu-fu-ze-ren-yu-jia-gou/"/>
+    <id>http://xmwarrior.github.io/2020/02/18/2020-02-18-qian-duan-jia-gou-ji-zhu-fu-ze-ren-yu-jia-gou/</id>
+    <published>2020-02-18T14:37:00.000Z</published>
+    <updated>2020-02-18T14:11:46.076Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;技术负责人与架构&quot;&gt;&lt;a href=&quot;#技术负责人与架构&quot; class=&quot;headerlink&quot; title=&quot;技术负责人与架构&quot;&gt;&lt;/a&gt;技术负责人与架构&lt;/h1&gt;&lt;h2 id=&quot;一、日常工作方向&quot;&gt;&lt;a href=&quot;#一、日常工作方向&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>已有项目配置eslint指南</title>
@@ -494,92 +584,6 @@
     
     
       <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>position-sticky</title>
-    <link href="http://xmwarrior.github.io/2019/03/14/position-sticky/"/>
-    <id>http://xmwarrior.github.io/2019/03/14/position-sticky/</id>
-    <published>2019-03-14T02:56:00.000Z</published>
-    <updated>2020-02-01T08:46:06.239Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;position-sticky简介&quot;&gt;&lt;a href=&quot;#position-sticky简介&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
-    
-      <category term="css3" scheme="http://xmwarrior.github.io/tags/css3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css变量</title>
-    <link href="http://xmwarrior.github.io/2019/03/13/css-bian-liang/"/>
-    <id>http://xmwarrior.github.io/2019/03/13/css-bian-liang/</id>
-    <published>2019-03-13T07:58:00.000Z</published>
-    <updated>2020-02-01T08:46:06.239Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;CSS变量var-语法&quot;&gt;&lt;a href=&quot;#CSS变量var-语法&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于CSS3 column多栏布局实现水平滑页翻页交互</title>
-    <link href="http://xmwarrior.github.io/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/"/>
-    <id>http://xmwarrior.github.io/2019/03/12/ji-yu-css3column-duo-lan-bu-ju-shi-xian-shui-ping-hua-ye-fan-ye-jiao-hu/</id>
-    <published>2019-03-12T09:18:00.000Z</published>
-    <updated>2020-02-01T08:46:06.250Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;今天看大神张鑫旭的文章，有一篇  &lt;a href=&quot;https://www.zhangxinxu.com/wordpress/2017/02/css3-multiple-column-layout-read-horizontal/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
-    
-      <category term="css3" scheme="http://xmwarrior.github.io/tags/css3/"/>
     
   </entry>
   
