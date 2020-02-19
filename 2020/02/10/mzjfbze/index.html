@@ -1,0 +1,1477 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="npm组件发布之element-plugin, xmwarrior,xmsniper">
+    <meta name="description" content="element-pluginelement-plugin 是基于element-ui开发的一个以提高编码效率、简化调用方式、提高代码维护性、适配屏幕分辨率、聚合基础组件为宗旨的“中间件”组件。现已开放的可用组件：
+
+ElFormDialog">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>npm组件发布之element-plugin | XMwarrior</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">XMwarrior</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">XMwarrior</div>
+        <div class="logo-desc">
+            
+            Success is the sum of small efforts, repeated day in and day out.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/XMwarrior/xmwarrior.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/XMwarrior/xmwarrior.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        npm组件发布之element-plugin
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/" target="_blank">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/npm/" target="_blank">
+                                <span class="chip bg-color">npm</span>
+                            </a>
+                        
+                            <a href="/tags/element-ui/" target="_blank">
+                                <span class="chip bg-color">element-ui</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/npm/" class="post-category" target="_blank">
+                                npm
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-10
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.5k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        7 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="element-plugin"><a href="#element-plugin" class="headerlink" title="element-plugin"></a>element-plugin</h1><p>element-plugin 是基于element-ui开发的一个以提高编码效率、简化调用方式、提高代码维护性、适配屏幕分辨率、聚合基础组件为宗旨的“中间件”组件。<br>现已开放的可用组件：</p>
+<blockquote>
+<p>ElFormDialog-表单弹窗组件<br>ElTableColumnPro-表格表头筛选组件<br>ElInfo-详情展示组件</p>
+</blockquote>
+<h2 id="dependencies"><a href="#dependencies" class="headerlink" title="dependencies"></a>dependencies</h2><pre class=" language-bash"><code class="language-bash">element-ui
+vue
+</code></pre>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i elementplugin
+</code></pre>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>1.整体导入：main.js文件里</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> ElementPlugin from <span class="token string">'elementplugin'</span><span class="token punctuation">;</span>
+Vue.use<span class="token punctuation">(</span>ElementPlugin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>2.按需导入</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> <span class="token punctuation">{</span>ElFormDialog, ElTableColumnPro<span class="token punctuation">}</span> from <span class="token string">'elementplugin'</span><span class="token punctuation">;</span>
+Vue.use<span class="token punctuation">(</span>ElFormDialog<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vue.use<span class="token punctuation">(</span>ElTableColumnPro<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>3.组件内导入</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> <span class="token punctuation">{</span>ElFormDialog, ElTableColumnPro<span class="token punctuation">}</span> from <span class="token string">'elementplugin'</span><span class="token punctuation">;</span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  components: <span class="token punctuation">{</span>
+    ElFormDialog,
+    ElTableColumnPro
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">..</span>.
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><h3 id="1-ElFormDialog-表单弹窗组件"><a href="#1-ElFormDialog-表单弹窗组件" class="headerlink" title="1.ElFormDialog 表单弹窗组件"></a>1.ElFormDialog 表单弹窗组件</h3><p>应用示例：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el-button @click<span class="token operator">=</span><span class="token string">"elDialog.visible = true"</span><span class="token operator">></span>打开弹窗<span class="token operator">&lt;</span>/el-button<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el-form-dialog v-if<span class="token operator">=</span><span class="token string">"elDialog.visible"</span> :options<span class="token operator">=</span><span class="token string">"elDialog"</span> ref<span class="token operator">=</span><span class="token string">"formDialog"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>template <span class="token comment" spellcheck="true">#footerButtons="scope"></span>
+        <span class="token operator">&lt;</span>el-button type<span class="token operator">=</span><span class="token string">"primary"</span> @click<span class="token operator">=</span><span class="token string">"saveEdit(scope.form)"</span><span class="token operator">></span>确定<span class="token operator">&lt;</span>/el-button<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-button @click<span class="token operator">=</span><span class="token string">"elDialog.visible = false"</span><span class="token operator">></span>取消<span class="token operator">&lt;</span>/el-button<span class="token operator">></span>
+      <span class="token operator">&lt;</span>/template<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/el-form-dialog<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      elDialog: <span class="token punctuation">{</span>
+        title: <span class="token string">""</span>,             //标题
+        id: <span class="token string">""</span>,                //编辑id
+        width: <span class="token string">"800px"</span>,        //弹窗宽度
+        formLayout: <span class="token punctuation">{</span>
+          span: 12,            //布局采用 24 分栏
+          labelPosition: <span class="token string">"top"</span>,//label对齐方式
+          labelWidth: <span class="token string">"80px"</span>   //label宽度
+        <span class="token punctuation">}</span>,
+        form: <span class="token punctuation">{</span><span class="token punctuation">}</span>,              //表单内容
+        formOptions: <span class="token punctuation">{</span><span class="token punctuation">}</span>,       //表单内容配置
+        rules: <span class="token punctuation">{</span><span class="token punctuation">}</span>,             //表单验证配置
+        visible: <span class="token boolean">false</span>         //弹窗显示
+      <span class="token punctuation">}</span>,
+      // filter 字典类动态获取
+      activityType:<span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>,
+  methods: <span class="token punctuation">{</span>
+    // 添加或编辑
+    addOrEdit<span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token function">id</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Project.GetProjectInfoByFwId<span class="token punctuation">(</span>id<span class="token punctuation">)</span>.then<span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>res.success<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          this.initForm<span class="token punctuation">(</span>res.data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          this.elDialog.title <span class="token operator">=</span> <span class="token string">"项目编辑"</span><span class="token punctuation">;</span>
+          this.elDialog.id <span class="token operator">=</span> <span class="token function">id</span><span class="token punctuation">;</span>
+          this.elDialog.visible <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    // 生成表单
+    initForm<span class="token punctuation">(</span>formData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      const form <span class="token operator">=</span> <span class="token punctuation">{</span>
+        id: <span class="token string">""</span>,
+        name: <span class="token string">""</span>,
+        price: <span class="token string">""</span>,
+        type: <span class="token string">""</span>,
+        cascader:<span class="token string">""</span>,
+        date: <span class="token string">""</span>,
+        time: <span class="token string">""</span>,
+        delivery: false,
+        sex: <span class="token string">""</span>,
+        activityType: <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+        file1: <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+        file2: <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+        remark: <span class="token string">""</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      const formOptions <span class="token operator">=</span> <span class="token punctuation">{</span>
+        id: <span class="token punctuation">{</span>
+          label: <span class="token string">"id"</span>,
+          type: <span class="token string">"input"</span>,//input类型
+          placeholder: <span class="token string">""</span>,
+          disabled: <span class="token boolean">true</span> //不显示
+        <span class="token punctuation">}</span>,
+        name: <span class="token punctuation">{</span>
+          label: <span class="token string">"名称"</span>,
+          type: <span class="token string">"input"</span>,
+          placeholder: <span class="token string">""</span>,
+          readonly: <span class="token boolean">true</span> //显示但不可编辑
+        <span class="token punctuation">}</span>,
+        price: <span class="token punctuation">{</span>
+          label: <span class="token string">"价格(元)"</span>,
+          type: <span class="token string">"number"</span>,//数字类型
+          placeholder: <span class="token string">""</span>
+        <span class="token punctuation">}</span>,
+        type: <span class="token punctuation">{</span>
+          label: <span class="token string">"类型"</span>,
+          type: <span class="token string">"select"</span>,//select类型
+          placeholder: <span class="token string">"请选择类型"</span>,
+          options: <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> name: <span class="token string">"食品"</span>, value: <span class="token string">"0"</span> <span class="token punctuation">}</span>,
+            <span class="token punctuation">{</span> name: <span class="token string">"电器"</span>, value: <span class="token string">"1"</span> <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>,
+        cascader: <span class="token punctuation">{</span>
+          label: <span class="token string">"级联选择器"</span>,
+          type: <span class="token string">"cascader"</span>,//级联选择器
+          placeholder: <span class="token string">"请选择类型"</span>,
+          options: <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              Id: <span class="token string">"zhinan"</span>,
+              TypeName: <span class="token string">"指南"</span>,
+              Children: <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                  Id: <span class="token string">"shejiyuanze"</span>,
+                  TypeName: <span class="token string">"设计原则"</span>,
+                  Children: <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                      Id: <span class="token string">"yizhi"</span>,
+                      TypeName: <span class="token string">"一致"</span>
+                    <span class="token punctuation">}</span>,
+                    <span class="token punctuation">{</span>
+                      Id: <span class="token string">"fankui"</span>,
+                      TypeName: <span class="token string">"反馈"</span>
+                    <span class="token punctuation">}</span>
+                  <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>,
+          defaultProps: <span class="token punctuation">{</span>
+            children: <span class="token string">"Children"</span>,
+            label: <span class="token string">"TypeName"</span>,
+            value: <span class="token string">"Id"</span>,
+            emitPath: <span class="token boolean">false</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>,
+        date: <span class="token punctuation">{</span>
+          label: <span class="token string">"日期"</span>,
+          type: <span class="token string">"date"</span>,//date类型
+          placeholder: <span class="token string">"YYYY-MM-DD"</span>
+        <span class="token punctuation">}</span>,
+        time: <span class="token punctuation">{</span>
+          label: <span class="token string">"时间"</span>,
+          type: <span class="token string">"time"</span>,//time类型
+          placeholder: <span class="token string">"HH:MM:SS"</span>
+        <span class="token punctuation">}</span>,
+        delivery: <span class="token punctuation">{</span>
+          label: <span class="token string">"即时配送"</span>,
+          type: <span class="token string">"switch"</span>//switch类型
+        <span class="token punctuation">}</span>,
+        sex: <span class="token punctuation">{</span>
+          label: <span class="token string">"性别"</span>,
+          type: <span class="token string">"radio"</span>,//radio类型
+          options: <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> name: <span class="token string">"男"</span>, value: <span class="token string">"0"</span> <span class="token punctuation">}</span>,
+            <span class="token punctuation">{</span> name: <span class="token string">"女"</span>, value: <span class="token string">"1"</span> <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>,
+        activityType: <span class="token punctuation">{</span>
+          label: <span class="token string">"活动类型"</span>,
+          type: <span class="token string">"checkbox"</span>,//checkbox类型
+          options: this.activityType.options //字典-类型
+        <span class="token punctuation">}</span>,
+        file1: <span class="token punctuation">{</span>
+          label: <span class="token string">"附件类型1"</span>,
+          type: <span class="token string">"file"</span>,//file类型
+          uploadUrl: <span class="token string">"https://jsonplaceholder.typicode.com/posts/"</span>,
+          span: 17
+        <span class="token punctuation">}</span>,
+        file2: <span class="token punctuation">{</span>
+          label: <span class="token string">"可研报告"</span>,
+          type: <span class="token string">"file"</span>,
+          uploadUrl: <span class="token string">"https://jsonplaceholder.typicode.com/posts/"</span>,
+          span: 17
+        <span class="token punctuation">}</span>,
+        remark: <span class="token punctuation">{</span>
+          label: <span class="token string">"备注"</span>,
+          type: <span class="token string">"textarea"</span>,//textarea类型
+          placeholder: <span class="token string">"..."</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      // 表单赋值
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>formData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>const key <span class="token keyword">in</span> form<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          form<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> formData<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      // 表单内容
+      this.elDialog.form <span class="token operator">=</span> form<span class="token punctuation">;</span>
+      // 表单配置
+      this.elDialog.formOptions <span class="token operator">=</span> formOptions<span class="token punctuation">;</span>
+      // 表单验证
+      this.elDialog.rules <span class="token operator">=</span> <span class="token punctuation">{</span>
+        price: <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> required: true, message: <span class="token string">"控制价不能为空"</span> <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span> type: <span class="token string">"number"</span>, message: <span class="token string">"控制价必须为数字值"</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>,
+        type: <span class="token punctuation">{</span>
+          required: true,
+          message: <span class="token string">"请选择项目类型"</span>,
+          trigger: <span class="token string">"blur"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    // 保存或添加
+    saveEdit<span class="token punctuation">(</span>form<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      this.<span class="token variable">$refs</span>.formDialog.validateForm<span class="token punctuation">(</span><span class="token punctuation">)</span>.then<span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> params <span class="token operator">=</span> form<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>this.elDialog.id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          params <span class="token operator">=</span> Object.assign<span class="token punctuation">(</span><span class="token punctuation">{</span> Id: this.elDialog.id <span class="token punctuation">}</span>, form<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        Project.SaveProject<span class="token punctuation">(</span>params<span class="token punctuation">)</span>.then<span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+          this.<span class="token variable">$message</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            message: res.msg,
+            type: <span class="token string">"success"</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          this.elDialog.visible <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+          // 更新列表
+          this.getProjectList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    // 字典-活动类型
+    getActivityType<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Common.GetEnumList<span class="token punctuation">(</span><span class="token string">"ProjectType"</span><span class="token punctuation">)</span>.then<span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        this.activityType.options <span class="token operator">=</span> res.data<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  mounted<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this.getActivityType<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
+</code></pre>
+<p><a href="https://codepen.io/xmwarrior/pen/ExaoXZR?editors=1010" target="_blank" rel="noopener">在线运行</a></p>
+<h3 id="2-ElTableColumnPro-表头筛选组件"><a href="#2-ElTableColumnPro-表头筛选组件" class="headerlink" title="2.ElTableColumnPro 表头筛选组件"></a>2.ElTableColumnPro 表头筛选组件</h3><p>示例：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"table-container"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>el-table
+        :data<span class="token operator">=</span><span class="token string">"tableData"</span>
+        style<span class="token operator">=</span><span class="token string">"width: 100%;"</span>
+        :height<span class="token operator">=</span><span class="token string">"tableHeight"</span>
+        @sort-change<span class="token operator">=</span><span class="token string">"handleSortChange"</span>
+      <span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-table-column
+          align<span class="token operator">=</span><span class="token string">"center"</span>
+          prop<span class="token operator">=</span><span class="token string">"bh"</span>
+          label<span class="token operator">=</span><span class="token string">"项目编码"</span>
+          width<span class="token operator">=</span><span class="token string">"200"</span>
+        <span class="token operator">></span><span class="token operator">&lt;</span>/el-table-column<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-table-column-pro
+          prop<span class="token operator">=</span><span class="token string">"xmmc"</span>
+          label<span class="token operator">=</span><span class="token string">"项目名称"</span>
+          align<span class="token operator">=</span><span class="token string">"center"</span>
+          header-align<span class="token operator">=</span><span class="token string">"center"</span>
+          placeholder<span class="token operator">=</span><span class="token string">"请输入项目名称"</span>
+          :callback<span class="token operator">=</span><span class="token string">"getTableData"</span>
+          renderType<span class="token operator">=</span><span class="token string">"input"</span>
+          :param.sync<span class="token operator">=</span><span class="token string">"PrjName"</span>
+        <span class="token operator">></span>
+        <span class="token operator">&lt;</span>/el-table-column-pro<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-table-column-pro
+          prop<span class="token operator">=</span><span class="token string">"PrjType"</span>
+          label<span class="token operator">=</span><span class="token string">"项目类型"</span>
+          placeholder<span class="token operator">=</span><span class="token string">"请选择项目类型"</span>
+          :selectList<span class="token operator">=</span><span class="token string">"PrjType.options"</span>
+          :callback<span class="token operator">=</span><span class="token string">"getTableData"</span>
+          renderType<span class="token operator">=</span><span class="token string">"select"</span>
+          :param.sync<span class="token operator">=</span><span class="token string">"PrjType.value"</span>
+          :width<span class="token operator">=</span><span class="token string">"140"</span>
+          :filterIcon<span class="token operator">=</span><span class="token string">"'iconfont icon-filter'"</span>
+          :isClear<span class="token operator">=</span><span class="token string">"true"</span>
+        <span class="token operator">></span>
+        <span class="token operator">&lt;</span>/el-table-column-pro<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-table-column
+          align<span class="token operator">=</span><span class="token string">"center"</span>
+          prop<span class="token operator">=</span><span class="token string">"ContractAmount"</span>
+          label<span class="token operator">=</span><span class="token string">"合同价"</span>
+          sortable<span class="token operator">=</span><span class="token string">"custom"</span>
+        <span class="token operator">></span><span class="token operator">&lt;</span>/el-table-column<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-table-column
+          align<span class="token operator">=</span><span class="token string">"center"</span>
+          prop<span class="token operator">=</span><span class="token string">"PaymentAmount"</span>
+          label<span class="token operator">=</span><span class="token string">"已付款金额"</span>
+          sortable<span class="token operator">=</span><span class="token string">"custom"</span>
+        <span class="token operator">></span><span class="token operator">&lt;</span>/el-table-column<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-table-column-pro
+          prop<span class="token operator">=</span><span class="token string">"PaymentAmount"</span>
+          label<span class="token operator">=</span><span class="token string">"起止日期"</span>
+          align<span class="token operator">=</span><span class="token string">"center"</span>
+          header-align<span class="token operator">=</span><span class="token string">"center"</span>
+          placeholder<span class="token operator">=</span><span class="token string">"请选择时间范围"</span>
+          :callback<span class="token operator">=</span><span class="token string">"getTableData"</span>
+          renderType<span class="token operator">=</span><span class="token string">"datetimerange"</span>
+          :param.sync<span class="token operator">=</span><span class="token string">"PaymentAmount"</span>
+        <span class="token operator">></span>
+        <span class="token operator">&lt;</span>/el-table-column-pro<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-table-column-pro
+          prop<span class="token operator">=</span><span class="token string">"StatusName"</span>
+          align<span class="token operator">=</span><span class="token string">"center"</span>
+          label<span class="token operator">=</span><span class="token string">"项目状态"</span>
+          placeholder<span class="token operator">=</span><span class="token string">"请选择项目状态"</span>
+          :selectList<span class="token operator">=</span><span class="token string">"Status.options"</span>
+          :callback<span class="token operator">=</span><span class="token string">"getTableData"</span>
+          renderType<span class="token operator">=</span><span class="token string">"select"</span>
+          :param.sync<span class="token operator">=</span><span class="token string">"Status.value"</span>
+          :width<span class="token operator">=</span><span class="token string">"140"</span>
+          :filterIcon<span class="token operator">=</span><span class="token string">"'iconfont icon-filter'"</span>
+          :isClear<span class="token operator">=</span><span class="token string">"true"</span>
+        <span class="token operator">></span>
+        <span class="token operator">&lt;</span>/el-table-column-pro<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el-table-column align<span class="token operator">=</span><span class="token string">"center"</span> prop<span class="token operator">=</span><span class="token string">"FWPrjId"</span> label<span class="token operator">=</span><span class="token string">"操作"</span> width<span class="token operator">=</span><span class="token string">"180"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>template v-slot<span class="token operator">=</span><span class="token string">"scope"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>el-button
+              type<span class="token operator">=</span><span class="token string">"primary"</span>
+              :size<span class="token operator">=</span><span class="token string">"size"</span>
+              @click<span class="token operator">=</span><span class="token string">"toEdit({ id: scope.row.FWPrjId })"</span>
+              <span class="token operator">></span>编辑<span class="token operator">&lt;</span>/el-button
+            <span class="token operator">></span>
+          <span class="token operator">&lt;</span>/template<span class="token operator">></span>
+        <span class="token operator">&lt;</span>/el-table-column<span class="token operator">></span>
+      <span class="token operator">&lt;</span>/el-table<span class="token operator">></span>
+      <span class="token operator">&lt;</span>el-pagination
+        class<span class="token operator">=</span><span class="token string">"pt-3 text-right"</span>
+        @size-change<span class="token operator">=</span><span class="token string">"handleSizeChange"</span>
+        @current-change<span class="token operator">=</span><span class="token string">"handleCurrentChange"</span>
+        :current-page<span class="token operator">=</span><span class="token string">"currentPage"</span>
+        :page-sizes<span class="token operator">=</span><span class="token string">"[10, 20, 30, 40]"</span>
+        :page-size<span class="token operator">=</span><span class="token string">"pageSize"</span>
+        layout<span class="token operator">=</span><span class="token string">"total, sizes, prev, pager, next, jumper"</span>
+        :total<span class="token operator">=</span><span class="token string">"total"</span>
+      <span class="token operator">></span><span class="token operator">&lt;</span>/el-pagination<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">!</span>-- 表单弹窗 --<span class="token operator">></span>
+      <span class="token operator">&lt;</span>ElFormDialog
+        v-if<span class="token operator">=</span><span class="token string">"elDialog.visible"</span>
+        :options<span class="token operator">=</span><span class="token string">"elDialog"</span>
+        ref<span class="token operator">=</span><span class="token string">"formDialog"</span>
+      <span class="token operator">></span>
+        <span class="token operator">&lt;</span>template <span class="token comment" spellcheck="true">#footerButtons="scope"></span>
+          <span class="token operator">&lt;</span>el-button type<span class="token operator">=</span><span class="token string">"primary"</span> @click<span class="token operator">=</span><span class="token string">"saveEdit(scope.form)"</span>
+            <span class="token operator">></span>确定<span class="token operator">&lt;</span>/el-button
+          <span class="token operator">></span>
+          <span class="token operator">&lt;</span>el-button @click<span class="token operator">=</span><span class="token string">"elDialog.visible = false"</span><span class="token operator">></span>取消<span class="token operator">&lt;</span>/el-button<span class="token operator">></span>
+        <span class="token operator">&lt;</span>/template<span class="token operator">></span>
+      <span class="token operator">&lt;</span>/ElFormDialog<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      size: <span class="token string">"mini"</span>,
+      tableHeight: window.innerHeight - 50,
+      tableData: <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+      // page
+      currentPage: 1,
+      total: 1,
+      pageSize: 10,
+      // filter
+      PrjName: <span class="token string">"456465"</span>,
+      PaymentAmount:<span class="token string">""</span>,
+      PrjType: <span class="token punctuation">{</span>
+        value: <span class="token string">""</span>,
+        options: <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> value: 1, name: <span class="token string">"维修项目"</span>, tagType: <span class="token string">"danger"</span> <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span> value: 2, name: <span class="token string">"新建项目"</span>, tagType: <span class="token string">"wanning"</span> <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span> value: 3, name: <span class="token string">"技改项目"</span>, tagType: <span class="token string">"info"</span> <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span> value: 4, name: <span class="token string">"拆除项目"</span>, tagType: <span class="token string">"success"</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      Status: <span class="token punctuation">{</span>
+        value: <span class="token string">""</span>,
+        options: <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> value: 1, name: <span class="token string">"项目准备"</span> <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span> value: 2, name: <span class="token string">"项目招标"</span> <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span> value: 3, name: <span class="token string">"项目招标"</span> <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span> value: 4, name: <span class="token string">"项目完成"</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      Sort: <span class="token string">""</span>,
+      Order: <span class="token string">""</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  methods: <span class="token punctuation">{</span>
+    // change每页显示条数
+    handleSizeChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      this.pageSize <span class="token operator">=</span> val<span class="token punctuation">;</span>
+      this.getTableData<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    // 翻页
+    handleCurrentChange<span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      this.currentPage <span class="token operator">=</span> val<span class="token punctuation">;</span>
+      this.getTableData<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    //排序
+    handleSortChange<span class="token punctuation">(</span><span class="token punctuation">{</span> column, prop, order <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      const sortMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+        ascending: <span class="token string">"ASC"</span>,
+        descending: <span class="token string">"DESC"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      this.Sort <span class="token operator">=</span> prop<span class="token punctuation">;</span>
+      this.Order <span class="token operator">=</span> order ? sortMap<span class="token punctuation">[</span>order<span class="token punctuation">]</span> <span class="token keyword">:</span> order<span class="token punctuation">;</span>
+      this.getTableData<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    // 获取表格数据
+    getTableData<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Project.GetProjectList<span class="token punctuation">(</span><span class="token punctuation">{</span>
+        Year: <span class="token string">""</span>,
+        PrjName: this.PrjName,
+        PrjType: this.PrjType.value,
+        Status: this.Status.value,
+        Sort: this.Sort,
+        Order: this.Order,
+        PageIndex: this.currentPage,
+        PageSize: this.pageSize
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>.then<span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        this.total <span class="token operator">=</span> res.data.Pager.PageCount<span class="token punctuation">;</span>
+        this.tableData <span class="token operator">=</span> res.data.PageTable<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="3-ElInfo-详情组件"><a href="#3-ElInfo-详情组件" class="headerlink" title="3.ElInfo 详情组件"></a>3.ElInfo 详情组件</h3><p>此组件默认支持图片预览插件<a href="https://github.com/826327700/vue-photo-preview" target="_blank" rel="noopener">vue-photo-preview</a>，如果你想进行图片预览，只需项目中引用vue-photo-preview。<br>示例：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">!</span>-- 详情弹窗 --<span class="token operator">></span>
+  <span class="token operator">&lt;</span>el-dialog
+    title<span class="token operator">=</span><span class="token string">"查看"</span>
+    :visible.sync<span class="token operator">=</span><span class="token string">"elInfo.visible"</span>
+    width<span class="token operator">=</span><span class="token string">"80%"</span>
+    class<span class="token operator">=</span><span class="token string">"text-left"</span>
+  <span class="token operator">></span>
+    <span class="token operator">&lt;</span>el-info labelClass<span class="token operator">=</span><span class="token string">"text-justify"</span> labelWidth<span class="token operator">=</span><span class="token string">"80px"</span> :datas<span class="token operator">=</span><span class="token string">"elInfo.datas"</span><span class="token operator">></span><span class="token operator">&lt;</span>/  el-info<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/el-dialog<span class="token operator">></span>
+<span class="token operator">&lt;</span>/template<span class="token operator">></span>
+<span class="token function">export</span> default <span class="token punctuation">{</span>
+  data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        elInfo: <span class="token punctuation">{</span>
+           visible: false,
+           datas: <span class="token punctuation">[</span>
+             <span class="token punctuation">{</span>
+               label: <span class="token string">"姓名"</span>,
+               value: <span class="token string">"小明"</span>
+             <span class="token punctuation">}</span>,
+             <span class="token punctuation">{</span>
+               label: <span class="token string">"性别"</span>,
+               value: <span class="token string">"男"</span>
+             <span class="token punctuation">}</span>,
+             <span class="token punctuation">{</span>
+               label: <span class="token string">"年龄"</span>,
+               value: <span class="token string">"18"</span>
+             <span class="token punctuation">}</span>,
+             <span class="token punctuation">{</span>
+               label: <span class="token string">"单身"</span>,
+               value: <span class="token string">"否"</span>
+             <span class="token punctuation">}</span>,
+             <span class="token punctuation">{</span>
+               label: <span class="token string">"备注"</span>,
+               value: <span class="token string">"小明"</span>
+             <span class="token punctuation">}</span>,
+             <span class="token punctuation">{</span>
+               type: <span class="token string">"images"</span>,
+               label: <span class="token string">"图片列表"</span>,
+               value: <span class="token punctuation">[</span><span class="token string">"https://upload.jianshu.io/users/upload_avatars/19764802/        d192f539-1942-4504-aadd-9d6bcd34ed33?imageMogr2/auto-orient/strip|imageView2/        1/w/240/h/240"</span>,<span class="token string">"https://upload.jianshu.io/users/upload_avatars/19764802/        d192f539-1942-4504-aadd-9d6bcd34ed33?imageMogr2/auto-orient/strip|imageView2/        1/w/240/h/240"</span><span class="token punctuation">]</span>,
+             <span class="token punctuation">}</span>,
+             <span class="token punctuation">{</span>
+               type: <span class="token string">"list"</span>,
+               label: <span class="token string">"附件列表"</span>,
+               value: <span class="token punctuation">[</span><span class="token string">"附件1.doc"</span>,<span class="token string">"附件2.xlxs"</span>,<span class="token string">"附件3.jpg"</span>,<span class="token string">"附件4.pdf"</span><span class="token punctuation">]</span>,
+             <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2020/02/10/mzjfbze/" class="b-link-green">npm组件发布之element-plugin</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'c11edbde7b88bb3022a7',
+        clientSecret: 'fb551660318eb10078205223c25066f7469f68cf',
+        repo: 'xmwarrior.github.io',
+        owner: 'XMwarrior',
+        admin: ["XMwarrior"],
+        id: '2020-02-10T12-21-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/02/17/yyxmpzezn/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="已有项目配置eslint指南">
+                        
+                        <span class="card-title">已有项目配置eslint指南</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">已有项目配置eslint指南一、项目文件夹下下载eslintnpm install eslint --save-dev
+
+二、eslint初始化1、package.json文件scripts下添加指令"init": "./node_modu</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/npm/" class="post-category" target="_blank">
+                                    npm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/npm/" target="_blank">
+                        <span class="chip bg-color">npm</span>
+                    </a>
+                    
+                    <a href="/tags/element-ui/" target="_blank">
+                        <span class="chip bg-color">element-ui</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/09/smsdnsyvdjqdkfhj/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="手摸手带你使用Vue-Cli3搭建前端开发环境">
+                        
+                        <span class="card-title">手摸手带你使用Vue-Cli3搭建前端开发环境</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">vue-cli搭建前端开发环境指南一、vscode编辑器配置1、ESLint拓展安装ESLint
+应用商店搜索安装ESLint
+添加保存文件时自动修复代码格式功能
+
+// 文件->首选项->设置->在setting.json中编辑 添加代码</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/环境搭建-工具分享/" class="post-category" target="_blank">
+                                    环境搭建&工具分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue-Cli3/" target="_blank">
+                        <span class="chip bg-color">Vue-Cli3</span>
+                    </a>
+                    
+                    <a href="/tags/环境搭建/" target="_blank">
+                        <span class="chip bg-color">环境搭建</span>
+                    </a>
+                    
+                    <a href="/tags/eslint/" target="_blank">
+                        <span class="chip bg-color">eslint</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: XMwarrior<br />'
+            + '作者: XMwarrior<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者xmwarrior所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://xmwarrior.github.io/" target="_blank">XMwarrior</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">22k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/XMwarrior" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:644210375@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=644210375" class="tooltipped" data-tooltip="QQ联系我: 644210375" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
