@@ -33,6 +33,31 @@
     
     
     <entry>
+      <title>每日复盘</title>
+      <link href="/2020/02/19/revieweveryday/"/>
+      <url>/2020/02/19/revieweveryday/</url>
+      
+        <content type="html"><![CDATA[<h2 id="2020-02-20"><a href="#2020-02-20" class="headerlink" title="2020-02-20"></a>2020-02-20</h2><p>（一）回顾目标:</p><ul><li><p>年度目标：</p><ol><li>养成良好的作息习惯；成为一名文采飞扬的技术分享小编。</li><li>成为一名经验丰富的前端架构师</li><li>学会c#</li><li>熟练SQL语句</li></ol></li><li><p>今日目标：</p><ol><li>早上上班前读书学习，博客发表文章。</li><li>整理更新作息时间至备忘录。</li></ol></li></ul><p>（二）结果对比</p><ul><li style="list-style: none"><input type="checkbox"> 结果和目标一致</li><li style="list-style: none"><input type="checkbox" checked> 结果不如目标</li><li style="list-style: none"><input type="checkbox"> 结果超越了目标</li><li style="list-style: none"><input type="checkbox"> 结果中出现了目标里没出现的项目</li><li style="list-style: none"><input type="checkbox"> 结果中缺失了目标中该出现的项目</li></ul><p>（三）叙述过程</p><p>客观的陈述今天的行动。</p><pre class=" language-bash"><code class="language-bash"></code></pre><p>（四）自我剖析</p><p>今日认知、想法问题：</p><pre class=" language-bash"><code class="language-bash"></code></pre><p>今日行动、实践问题：</p><pre class=" language-bash"><code class="language-bash"></code></pre><p>（五）总结规律</p><p>针对以上问题，以后该怎么做：</p><pre class=" language-bash"><code class="language-bash"></code></pre><p> （六）案例佐证</p><p>举例证明总结的规律：</p><pre class=" language-bash"><code class="language-bash"></code></pre><h2 id="2020-02-19"><a href="#2020-02-19" class="headerlink" title="2020-02-19"></a>2020-02-19</h2><p>（一）回顾目标:</p><ul><li><p>年度目标：</p><ol><li>养成良好的作息习惯；成为一名文采飞扬的技术分享小编。</li><li>成为一名经验丰富的前端架构师</li><li>学会c#</li><li>熟练SQL语句</li></ol></li><li><p>今日目标：</p><ol><li>优化个人博客加载速度，修改过长的html文件名。</li><li>制定每日复盘模板。</li><li>合理制定月目标。</li><li>制定并尝试自己的每日作息计划。</li></ol></li></ul><p>（二）结果对比</p><ul><li style="list-style: none"><input type="checkbox"> 结果和目标一致</li><li style="list-style: none"><input type="checkbox" checked> 结果不如目标</li><li style="list-style: none"><input type="checkbox"> 结果超越了目标</li><li style="list-style: none"><input type="checkbox"> 结果中出现了目标里没出现的项目</li><li style="list-style: none"><input type="checkbox"> 结果中缺失了目标中该出现的项目</li></ul><p>（三）叙述过程</p><p>客观的陈述今天的行动。</p><pre class=" language-bash"><code class="language-bash">1. 早上7点起床跑步一圈。2. 10点半左右优化完博客加载速度问题，更改了文章名称。占用了工作时间。3. 工作时间完成了能源地图网页布局样式的编写。4. 9:00通过手机便签，制定思考月目标。5. 晚上9:48开始整理每日复盘模板。</code></pre><p>（四）自我剖析</p><p>今日认知、想法问题：</p><pre class=" language-bash"><code class="language-bash">1. 网页加载速度问题，还没优化到极致。有了侥幸心理，也没去深度思考自己需要更深入的研究下静态资源加载机制。2. 晚上萌生了拖延心理。</code></pre><p>今日行动、实践问题：</p><pre class=" language-bash"><code class="language-bash">1. 因晚上睡不好，早上爬不起来 - 作息时间还需要调整3. 并没有按照先易后难的顺序完成工作计划。4. 月目标的制定，不太确定能不能完成。</code></pre><p>（五）总结规律</p><p>针对以上问题，以后该怎么做：</p><pre class=" language-bash"><code class="language-bash">1. 坚持按照作息时间行动。2. 网页加载速度问题。明天晚上抽时间继续研究。3. 思考好次日工作计划和工作顺序，按计划行事。4. 先按目标，开始几日的复盘尝试，确定自己的速度，修改月目标。5. 再有拖延心理萌生时，先让腿动起来。</code></pre><p> （六）案例佐证</p><p>举例证明总结的规律：</p><pre class=" language-bash"><code class="language-bash">自律，谋定而后动，打破砂锅问到底</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 复盘 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 复盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端架构-技术准备期</title>
       <link href="/2020/02/18/qdjgjszbq/"/>
       <url>/2020/02/18/qdjgjszbq/</url>

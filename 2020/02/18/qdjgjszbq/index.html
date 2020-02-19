@@ -258,6 +258,19 @@
 </header>
 
 
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -674,18 +687,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/19/qdjgywhbq/">
+                <a href="/2020/02/19/revieweveryday/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="前端架构-业务回补期">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="每日复盘">
                         
-                        <span class="card-title">前端架构-业务回补期</span>
+                        <span class="card-title">每日复盘</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">业务回补期一、追补业务二、测试：实践测试策略三、上线准备四、第一次部署：验证部署架构五、提升团队能力输出是最好的输入方式。在输出的过程中，需要重新梳理知识体系，也因此输入编程了一个输入过程。这种重新输入的输出，可分为对内输出和对外输出。
-对</div>
+                    <div class="summary block-with-text">2020-02-20（一）回顾目标:
+
+年度目标：
+
+养成良好的作息习惯；成为一名文采飞扬的技术分享小编。
+成为一名经验丰富的前端架构师
+学会c#
+熟练SQL语句
+
+
+今日目标：
+
+早上上班前读书学习，博客发表文章。
+整理更新作息时间至备忘</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-19
@@ -694,8 +719,8 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端架构/" class="post-category" target="_blank">
-                                    前端架构
+                            <a href="/categories/复盘/" class="post-category" target="_blank">
+                                    复盘
                                 </a>
                             
                             
@@ -704,14 +729,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/前端架构/" target="_blank">
-                        <span class="chip bg-color">前端架构</span>
-                    </a>
-                    
-                    <a href="/tags/读书/" target="_blank">
-                        <span class="chip bg-color">读书</span>
-                    </a>
                     
                     <a href="/tags/复盘/" target="_blank">
                         <span class="chip bg-color">复盘</span>
@@ -930,7 +947,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">22k</span>
+                <span class="white-color">22.7k</span>
             
 
             

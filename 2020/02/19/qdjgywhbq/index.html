@@ -255,6 +255,19 @@
 </header>
 
 
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -708,31 +721,40 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/18/qdjgjszbq/">
+                <a href="/2020/02/19/revieweveryday/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="前端架构-技术准备期">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="每日复盘">
                         
-                        <span class="card-title">前端架构-技术准备期</span>
+                        <span class="card-title">每日复盘</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">技术准备期一、架构设计即设计系统的架构。相应的步骤如下：
+                    <div class="summary block-with-text">2020-02-20（一）回顾目标:
 
-收集利益相关者的需求。倾听业务人员、项目负责人等相关者的需求,进行用户访谈,收集相关的需求。
-确定架构模式。与相应的技术人员(如开发人员试人员)讨论,了解架构上的潜在限制。
-架构设</div>
+年度目标：
+
+养成良好的作息习惯；成为一名文采飞扬的技术分享小编。
+成为一名经验丰富的前端架构师
+学会c#
+熟练SQL语句
+
+
+今日目标：
+
+早上上班前读书学习，博客发表文章。
+整理更新作息时间至备忘</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端架构/" class="post-category" target="_blank">
-                                    前端架构
+                            <a href="/categories/复盘/" class="post-category" target="_blank">
+                                    复盘
                                 </a>
                             
                             
@@ -741,14 +763,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/前端架构/" target="_blank">
-                        <span class="chip bg-color">前端架构</span>
-                    </a>
-                    
-                    <a href="/tags/读书/" target="_blank">
-                        <span class="chip bg-color">读书</span>
-                    </a>
                     
                     <a href="/tags/复盘/" target="_blank">
                         <span class="chip bg-color">复盘</span>
@@ -908,7 +922,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">22k</span>
+                <span class="white-color">22.7k</span>
             
 
             
