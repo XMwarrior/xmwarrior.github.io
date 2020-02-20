@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-02-19T01:23:26.746Z</updated>
+  <updated>2020-02-20T00:43:40.633Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端架构-成长优化期</title>
+    <link href="http://xmwarrior.github.io/2020/02/20/growthoptimization/"/>
+    <id>http://xmwarrior.github.io/2020/02/20/growthoptimization/</id>
+    <published>2020-02-20T00:43:00.000Z</published>
+    <updated>2020-02-20T00:43:40.633Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;成长优化期：技术债务与演进&quot;&gt;&lt;a href=&quot;#成长优化期：技术债务与演进&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日复盘</title>
+    <link href="http://xmwarrior.github.io/2020/02/20/revieweveryday/"/>
+    <id>http://xmwarrior.github.io/2020/02/20/revieweveryday/</id>
+    <published>2020-02-19T23:51:00.000Z</published>
+    <updated>2020-02-19T23:52:51.656Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;2020-02-20&quot;&gt;&lt;a href=&quot;#2020-02-20&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/categories/%E5%A4%8D%E7%9B%98/"/>
+    
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>前端架构-业务回补期</title>
@@ -41,32 +97,6 @@
       <category term="前端架构" scheme="http://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
     
       <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
-      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日复盘</title>
-    <link href="http://xmwarrior.github.io/2020/02/19/revieweveryday/"/>
-    <id>http://xmwarrior.github.io/2020/02/19/revieweveryday/</id>
-    <published>2020-02-19T14:39:00.000Z</published>
-    <updated>2020-02-19T15:51:52.125Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;2020-02-20&quot;&gt;&lt;a href=&quot;#2020-02-20&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="复盘" scheme="http://xmwarrior.github.io/categories/%E5%A4%8D%E7%9B%98/"/>
-    
     
       <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
     
@@ -552,38 +582,6 @@
     
     
       <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>色调旋转滤镜按钮-在线生成</title>
-    <link href="http://xmwarrior.github.io/2019/03/18/sdxzljzxsc/"/>
-    <id>http://xmwarrior.github.io/2019/03/18/sdxzljzxsc/</id>
-    <published>2019-03-18T09:41:00.000Z</published>
-    <updated>2020-02-19T01:25:59.030Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本例应用颜色拾取插件 &lt;a href=&quot;https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-      <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
-    
-      <category term="bootstrap" scheme="http://xmwarrior.github.io/tags/bootstrap/"/>
-    
-      <category term="css3" scheme="http://xmwarrior.github.io/tags/css3/"/>
     
   </entry>
   

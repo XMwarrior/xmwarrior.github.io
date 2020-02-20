@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>前端架构-业务回补期</title>
-      <link href="/2020/02/19/qdjgywhbq/"/>
-      <url>/2020/02/19/qdjgywhbq/</url>
+      <title>前端架构-成长优化期</title>
+      <link href="/2020/02/20/growthoptimization/"/>
+      <url>/2020/02/20/growthoptimization/</url>
       
-        <content type="html"><![CDATA[<h1 id="业务回补期"><a href="#业务回补期" class="headerlink" title="业务回补期"></a>业务回补期</h1><h2 id="一、追补业务"><a href="#一、追补业务" class="headerlink" title="一、追补业务"></a>一、追补业务</h2><h2 id="二、测试：实践测试策略"><a href="#二、测试：实践测试策略" class="headerlink" title="二、测试：实践测试策略"></a>二、测试：实践测试策略</h2><h2 id="三、上线准备"><a href="#三、上线准备" class="headerlink" title="三、上线准备"></a>三、上线准备</h2><h2 id="四、第一次部署：验证部署架构"><a href="#四、第一次部署：验证部署架构" class="headerlink" title="四、第一次部署：验证部署架构"></a>四、第一次部署：验证部署架构</h2><h2 id="五、提升团队能力"><a href="#五、提升团队能力" class="headerlink" title="五、提升团队能力"></a>五、提升团队能力</h2><p>输出是最好的输入方式。在输出的过程中，需要重新梳理知识体系，也因此输入编程了一个输入过程。这种重新输入的输出，可分为对内输出和对外输出。</p><h3 id="对内输出"><a href="#对内输出" class="headerlink" title="对内输出"></a>对内输出</h3><h4 id="1、技术分享"><a href="#1、技术分享" class="headerlink" title="1、技术分享"></a>1、技术分享</h4><p>能力提升使用最多的方式。</p><ul><li>项目相关技术分享</li><li>非项目相关技术分享</li></ul><h4 id="2、工作坊"><a href="#2、工作坊" class="headerlink" title="2、工作坊"></a>2、工作坊</h4><p>工作坊是一个以练习为主，以理论为辅的掌握新技术的方式。指介绍新技术的过程中，让参与者现场进行大量练习。在练习过程中，互相帮助解决问题。能更快速的掌握相关技能。</p><h4 id="3、面向新人的结对编程"><a href="#3、面向新人的结对编程" class="headerlink" title="3、面向新人的结对编程"></a>3、面向新人的结对编程</h4><p>结对编程的几种方式：</p><ol><li>Navigator-Driver。Navigator关注如何实现功能，Driver负责实现。并由Navigator告诉Driver如何实现相关代码。提供思路与具体实现。</li><li>Ping-Pong模式。A写功能，B测试。随后反过来，B写功能，A测试。</li><li>键鼠模式。</li></ol><p>项目实施过程中，相关能力的提升方式如图：</p><p><img src="https://cdn.img.wenhairu.com/images/2020/02/18/mu06U.jpg" alt="能力提升方式"></p><h3 id="对外输出"><a href="#对外输出" class="headerlink" title="对外输出"></a>对外输出</h3><p>对外输出的目的有两个：</p><ol><li>练习技术上的技能，提升相应的软技能。</li><li>扩大团队的影响力，以便未来招聘到更多人才。</li></ol><p>输出方式多种多样，有翻译、写作、开源项目、技术分享等。</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="成长优化期：技术债务与演进"><a href="#成长优化期：技术债务与演进" class="headerlink" title="成长优化期：技术债务与演进"></a>成长优化期：技术债务与演进</h3><blockquote><p>当项目经历了一两次上线后，项目进入一个稳定的上线交付阶段。…我们可以抽时间来解决各种各样的问题。</p></blockquote><p>设计架构和完善业务阶段暴露的诸多问题。像技术准备期、业务回补期，我们或多或少会采取一些<code>妥协方案</code>，为的是能加快速度开发流程。</p><p>这些问题，终究会随时间的推移和业务代码的堆砌变得越来越严峻。</p><h4 id="一、偿还技术债"><a href="#一、偿还技术债" class="headerlink" title="一、偿还技术债"></a>一、偿还技术债</h4><p>技术债包含的内容有如下几方面：</p><ol><li>代码质量。<br>如：接口、函数的重复实现，实现方式或模式的不统一，未按规范实践的代码，未被检视过的代码。</li><li>测试覆盖率。<br>被抛弃的<code>UI自动化测试</code>、<code>单元测试</code>。</li><li>依赖问题。<br>大量的依赖过旧问题，会导致我们难以对代码进行重构。</li></ol><blockquote><p>与日常的业务代码编写相比，改进过去的二代码会带来更多的成长和技术挑战——我们更容易从错误的代码中学习，而不是从成功的经验中学习。</p></blockquote><h4 id="二、优化开发体验"><a href="#二、优化开发体验" class="headerlink" title="二、优化开发体验"></a>二、优化开发体验</h4><p>日常工作中，有很多手动完成的工作，可以通过自动化来减少。</p><p>如：UI界面拖拽生成工具。</p><h4 id="三、带来技术挑战"><a href="#三、带来技术挑战" class="headerlink" title="三、带来技术挑战"></a>三、带来技术挑战</h4><p>不论怎样的项目，技术人员都需要获得一定的能力增长。</p><blockquote><p>在保证进度的情况下，也需要适当的带来一些成长的机会。</p></blockquote><p>常见做法如：</p><ul><li>引入新的技术栈</li><li>尝试使用新的框架</li><li>尝试一些小型的模拟项目，为以后的架构演进做准备；跟进主流技术的发展。</li></ul><h4 id="四、架构完善与演进"><a href="#四、架构完善与演进" class="headerlink" title="四、架构完善与演进"></a>四、架构完善与演进</h4><blockquote><p>经过大量的业务沉淀，我们会发现架构存在的一些问题。<br>新的业务变化时，演进系统的架构是一种正常形态。</p></blockquote><p>在更低级的代码层里，存在的一些复杂、混乱的相互调用，偏离架构风格的代码。</p><p>此阶段需要相应的实施者，重构代码，改进架构。</p>]]></content>
       
       
       <categories>
@@ -34,8 +34,8 @@
     
     <entry>
       <title>每日复盘</title>
-      <link href="/2020/02/19/revieweveryday/"/>
-      <url>/2020/02/19/revieweveryday/</url>
+      <link href="/2020/02/20/revieweveryday/"/>
+      <url>/2020/02/20/revieweveryday/</url>
       
         <content type="html"><![CDATA[<h2 id="2020-02-20"><a href="#2020-02-20" class="headerlink" title="2020-02-20"></a>2020-02-20</h2><p>（一）回顾目标:</p><ul><li><p>年度目标：</p><ol><li>养成良好的作息习惯；成为一名文采飞扬的技术分享小编。</li><li>成为一名经验丰富的前端架构师</li><li>学会c#</li><li>熟练SQL语句</li></ol></li><li><p>今日目标：</p><ol><li>早上上班前读书学习，博客发表文章。</li><li>整理更新作息时间至备忘录。</li></ol></li></ul><p>（二）结果对比</p><ul><li style="list-style: none"><input type="checkbox"> 结果和目标一致</li><li style="list-style: none"><input type="checkbox" checked> 结果不如目标</li><li style="list-style: none"><input type="checkbox"> 结果超越了目标</li><li style="list-style: none"><input type="checkbox"> 结果中出现了目标里没出现的项目</li><li style="list-style: none"><input type="checkbox"> 结果中缺失了目标中该出现的项目</li></ul><p>（三）叙述过程</p><p>客观的陈述今天的行动。</p><pre class=" language-bash"><code class="language-bash"></code></pre><p>（四）自我剖析</p><p>今日认知、想法问题：</p><pre class=" language-bash"><code class="language-bash"></code></pre><p>今日行动、实践问题：</p><pre class=" language-bash"><code class="language-bash"></code></pre><p>（五）总结规律</p><p>针对以上问题，以后该怎么做：</p><pre class=" language-bash"><code class="language-bash"></code></pre><p> （六）案例佐证</p><p>举例证明总结的规律：</p><pre class=" language-bash"><code class="language-bash"></code></pre><h2 id="2020-02-19"><a href="#2020-02-19" class="headerlink" title="2020-02-19"></a>2020-02-19</h2><p>（一）回顾目标:</p><ul><li><p>年度目标：</p><ol><li>养成良好的作息习惯；成为一名文采飞扬的技术分享小编。</li><li>成为一名经验丰富的前端架构师</li><li>学会c#</li><li>熟练SQL语句</li></ol></li><li><p>今日目标：</p><ol><li>优化个人博客加载速度，修改过长的html文件名。</li><li>制定每日复盘模板。</li><li>合理制定月目标。</li><li>制定并尝试自己的每日作息计划。</li></ol></li></ul><p>（二）结果对比</p><ul><li style="list-style: none"><input type="checkbox"> 结果和目标一致</li><li style="list-style: none"><input type="checkbox" checked> 结果不如目标</li><li style="list-style: none"><input type="checkbox"> 结果超越了目标</li><li style="list-style: none"><input type="checkbox"> 结果中出现了目标里没出现的项目</li><li style="list-style: none"><input type="checkbox"> 结果中缺失了目标中该出现的项目</li></ul><p>（三）叙述过程</p><p>客观的陈述今天的行动。</p><pre class=" language-bash"><code class="language-bash">1. 早上7点起床跑步一圈。2. 10点半左右优化完博客加载速度问题，更改了文章名称。占用了工作时间。3. 工作时间完成了能源地图网页布局样式的编写。4. 9:00通过手机便签，制定思考月目标。5. 晚上9:48开始整理每日复盘模板。</code></pre><p>（四）自我剖析</p><p>今日认知、想法问题：</p><pre class=" language-bash"><code class="language-bash">1. 网页加载速度问题，还没优化到极致。有了侥幸心理，也没去深度思考自己需要更深入的研究下静态资源加载机制。2. 晚上萌生了拖延心理。</code></pre><p>今日行动、实践问题：</p><pre class=" language-bash"><code class="language-bash">1. 因晚上睡不好，早上爬不起来 - 作息时间还需要调整3. 并没有按照先易后难的顺序完成工作计划。4. 月目标的制定，不太确定能不能完成。</code></pre><p>（五）总结规律</p><p>针对以上问题，以后该怎么做：</p><pre class=" language-bash"><code class="language-bash">1. 坚持按照作息时间行动。2. 网页加载速度问题。明天晚上抽时间继续研究。3. 思考好次日工作计划和工作顺序，按计划行事。4. 先按目标，开始几日的复盘尝试，确定自己的速度，修改月目标。5. 再有拖延心理萌生时，先让腿动起来。</code></pre><p> （六）案例佐证</p><p>举例证明总结的规律：</p><pre class=" language-bash"><code class="language-bash">自律，谋定而后动，打破砂锅问到底</code></pre>]]></content>
       
@@ -48,6 +48,35 @@
       
       
         <tags>
+            
+            <tag> 复盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>前端架构-业务回补期</title>
+      <link href="/2020/02/19/qdjgywhbq/"/>
+      <url>/2020/02/19/qdjgywhbq/</url>
+      
+        <content type="html"><![CDATA[<h1 id="业务回补期"><a href="#业务回补期" class="headerlink" title="业务回补期"></a>业务回补期</h1><h2 id="一、追补业务"><a href="#一、追补业务" class="headerlink" title="一、追补业务"></a>一、追补业务</h2><h2 id="二、测试：实践测试策略"><a href="#二、测试：实践测试策略" class="headerlink" title="二、测试：实践测试策略"></a>二、测试：实践测试策略</h2><h2 id="三、上线准备"><a href="#三、上线准备" class="headerlink" title="三、上线准备"></a>三、上线准备</h2><h2 id="四、第一次部署：验证部署架构"><a href="#四、第一次部署：验证部署架构" class="headerlink" title="四、第一次部署：验证部署架构"></a>四、第一次部署：验证部署架构</h2><h2 id="五、提升团队能力"><a href="#五、提升团队能力" class="headerlink" title="五、提升团队能力"></a>五、提升团队能力</h2><p>输出是最好的输入方式。在输出的过程中，需要重新梳理知识体系，也因此输入编程了一个输入过程。这种重新输入的输出，可分为对内输出和对外输出。</p><h3 id="对内输出"><a href="#对内输出" class="headerlink" title="对内输出"></a>对内输出</h3><h4 id="1、技术分享"><a href="#1、技术分享" class="headerlink" title="1、技术分享"></a>1、技术分享</h4><p>能力提升使用最多的方式。</p><ul><li>项目相关技术分享</li><li>非项目相关技术分享</li></ul><h4 id="2、工作坊"><a href="#2、工作坊" class="headerlink" title="2、工作坊"></a>2、工作坊</h4><p>工作坊是一个以练习为主，以理论为辅的掌握新技术的方式。指介绍新技术的过程中，让参与者现场进行大量练习。在练习过程中，互相帮助解决问题。能更快速的掌握相关技能。</p><h4 id="3、面向新人的结对编程"><a href="#3、面向新人的结对编程" class="headerlink" title="3、面向新人的结对编程"></a>3、面向新人的结对编程</h4><p>结对编程的几种方式：</p><ol><li>Navigator-Driver。Navigator关注如何实现功能，Driver负责实现。并由Navigator告诉Driver如何实现相关代码。提供思路与具体实现。</li><li>Ping-Pong模式。A写功能，B测试。随后反过来，B写功能，A测试。</li><li>键鼠模式。</li></ol><p>项目实施过程中，相关能力的提升方式如图：</p><p><img src="https://cdn.img.wenhairu.com/images/2020/02/18/mu06U.jpg" alt="能力提升方式"></p><h3 id="对外输出"><a href="#对外输出" class="headerlink" title="对外输出"></a>对外输出</h3><p>对外输出的目的有两个：</p><ol><li>练习技术上的技能，提升相应的软技能。</li><li>扩大团队的影响力，以便未来招聘到更多人才。</li></ol><p>输出方式多种多样，有翻译、写作、开源项目、技术分享等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端架构 </tag>
+            
+            <tag> 读书 </tag>
             
             <tag> 复盘 </tag>
             
