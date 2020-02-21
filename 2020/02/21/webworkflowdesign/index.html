@@ -4,12 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="canvas转换svg合成图片, xmwarrior,xmsniper">
-    <meta name="description" content="此函数应用场景为：百度地图生成自定义标志
-(function ($, document) {
-    $.extend({
-        //16进制颜色转换为rgba颜色
-        colorRgb: function (str,">
+    <meta name="keywords" content="前端架构-工作流设计, xmwarrior,xmsniper">
+    <meta name="description" content="3.1 代码之旅：基础规范
+规范代码组织结构
+统一代码风格，即源代码的书写风格
+组件、函数等命名规范
+开发工具规范
+
+3.2 代码组织决定应用架构确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>canvas转换svg合成图片 | XMwarrior</title>
+    <title>前端架构-工作流设计 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -274,13 +276,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        canvas转换svg合成图片
+                        前端架构-工作流设计
                     </div>
                 </div>
             </div>
@@ -391,12 +393,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/前端架构/" target="_blank">
+                                <span class="chip bg-color">前端架构</span>
                             </a>
                         
-                            <a href="/tags/jquery/" target="_blank">
-                                <span class="chip bg-color">jquery</span>
+                            <a href="/tags/读书/" target="_blank">
+                                <span class="chip bg-color">读书</span>
+                            </a>
+                        
+                            <a href="/tags/复盘/" target="_blank">
+                                <span class="chip bg-color">复盘</span>
                             </a>
                         
                     </div>
@@ -407,8 +413,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                前端架构
                             </a>
                         
                     </div>
@@ -419,21 +425,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-01
+                    2020-02-21
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        443
+                        448
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -449,70 +455,31 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>此函数应用场景为：百度地图生成自定义标志</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>function <span class="token punctuation">(</span>$, document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    $.extend<span class="token punctuation">(</span><span class="token punctuation">{</span>
-        //16进制颜色转换为rgba颜色
-        colorRgb: <span class="token keyword">function</span> <span class="token punctuation">(</span>str, opacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            var reg <span class="token operator">=</span> /^<span class="token comment" spellcheck="true">#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;</span>
-            var sColor <span class="token operator">=</span> str.toLowerCase<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>sColor <span class="token operator">&amp;&amp;</span> reg.test<span class="token punctuation">(</span>sColor<span class="token punctuation">))</span> <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>sColor.length <span class="token operator">==</span><span class="token operator">=</span> 4<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    var sColorNew <span class="token operator">=</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
-                    <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 1<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 4<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                        sColorNew +<span class="token operator">=</span> sColor.slice<span class="token punctuation">(</span>i, i + 1<span class="token punctuation">)</span>.concat<span class="token punctuation">(</span>sColor.slice<span class="token punctuation">(</span>i, i + 1<span class="token punctuation">))</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                    sColor <span class="token operator">=</span> sColorNew<span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                //处理六位的颜色值  
-                var sColorChange <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 1<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 7<span class="token punctuation">;</span> i +<span class="token operator">=</span> 2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    sColorChange.push<span class="token punctuation">(</span>parseInt<span class="token punctuation">(</span><span class="token string">"0x"</span> + sColor.slice<span class="token punctuation">(</span>i, i + 2<span class="token punctuation">))</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token keyword">return</span> <span class="token string">"rgba("</span> + sColorChange.join<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span> + <span class="token string">","</span> + opacity<span class="token punctuation">;</span> //透明度
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> sColor<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>,
-        svgToPng: <span class="token keyword">function</span> <span class="token punctuation">(</span>opts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            var options <span class="token operator">=</span> <span class="token punctuation">{</span>
-                color: opts.color <span class="token operator">||</span> <span class="token string">'#ff0000'</span>,
-                opacity: opts.opacity <span class="token operator">||</span> 0.3,
-                txt: opts.txt <span class="token operator">||</span> <span class="token string">'生'</span>,
-                width: opts.width <span class="token operator">||</span> 30,
-                height: opts.height <span class="token operator">||</span> 30,
-                fn: opts.fn <span class="token operator">||</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    console.log<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">;</span>
-            var svgArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            svgArr.push<span class="token punctuation">(</span><span class="token string">'&lt;svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="'</span> + options.width + <span class="token string">'" height="'</span> + options.height + <span class="token string">'" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            svgArr.push<span class="token punctuation">(</span><span class="token string">'    &lt;path fill="'</span> + $.colorRgb<span class="token punctuation">(</span>options.color, options.opacity<span class="token punctuation">)</span> + <span class="token string">'" d="M45.301,24.094c0,11.741-9.519,21.26-21.26,21.26c-11.741,0-21.26-9.519-21.26-21.26 c0-11.741,9.519-21.259,21.26-21.259C35.782,2.834,45.301,12.353,45.301,24.094z" />'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            svgArr.push<span class="token punctuation">(</span><span class="token string">'    &lt;path fill="'</span> + options.color + <span class="token string">'" d="M8.45,24.096c0,8.608,6.98,15.588,15.59,15.588c8.611,0,15.59-6.98,15.59-15.588 c0-8.612-6.979-15.592-15.59-15.592C15.43,8.504,8.45,15.484,8.45,24.096z" />'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            svgArr.push<span class="token punctuation">(</span><span class="token string">'&lt;/svg>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            var svgXml <span class="token operator">=</span> svgArr.join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            var img <span class="token operator">=</span> new Image<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            img.crossOrigin <span class="token operator">=</span> <span class="token string">'Anonymous'</span><span class="token punctuation">;</span>
-            //给图片对象写入base64编码的svg流
-            img.src <span class="token operator">=</span> <span class="token string">'data:image/svg+xml;base64,'</span> + window.btoa<span class="token punctuation">(</span>unescape<span class="token punctuation">(</span>encodeURIComponent<span class="token punctuation">(</span>svgXml<span class="token punctuation">))</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            img.onload <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                var canvas <span class="token operator">=</span> document.createElement<span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> //准备空画布
-                var context <span class="token operator">=</span> canvas.getContext<span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                canvas.width <span class="token operator">=</span> options.width<span class="token punctuation">;</span>
-                canvas.height <span class="token operator">=</span> options.height<span class="token punctuation">;</span>
-                context.drawImage<span class="token punctuation">(</span>img, 0, 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                context.fillStyle <span class="token operator">=</span> <span class="token string">'#fff'</span><span class="token punctuation">;</span>
-                context.font <span class="token operator">=</span> <span class="token string">"bold 13px '微软雅黑','宋体'"</span><span class="token punctuation">;</span>
-                context.textBaseline <span class="token operator">=</span> <span class="token string">'middle'</span><span class="token punctuation">;</span>
-                context.fillText<span class="token punctuation">(</span>options.txt, <span class="token punctuation">(</span>options.width - 13<span class="token punctuation">)</span> / 2, <span class="token punctuation">(</span>options.height / 2<span class="token punctuation">))</span><span class="token punctuation">;</span>
-                var imagePng <span class="token operator">=</span> canvas.toDataURL<span class="token punctuation">(</span><span class="token string">'image/png'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                options.fn <span class="token operator">&amp;&amp;</span> options.fn<span class="token punctuation">(</span>imagePng<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>jQuery, document<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>示例：<a href="https://codepen.io/xmwarrior/pen/ExavWNZ" target="_blank" rel="noopener">请点这里</a></p>
+                <h4 id="3-1-代码之旅：基础规范"><a href="#3-1-代码之旅：基础规范" class="headerlink" title="3.1 代码之旅：基础规范"></a>3.1 代码之旅：基础规范</h4><ul>
+<li>规范代码组织结构</li>
+<li>统一代码风格，即源代码的书写风格</li>
+<li>组件、函数等命名规范</li>
+<li>开发工具规范</li>
+</ul>
+<h4 id="3-2-代码组织决定应用架构"><a href="#3-2-代码组织决定应用架构" class="headerlink" title="3.2 代码组织决定应用架构"></a>3.2 代码组织决定应用架构</h4><p>确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方式。<br>比如vue-cli2架构升级至vue-cli3.0时的架构变化。</p>
+<h4 id="3-3-统一代码风格，避免架构腐烂"><a href="#3-3-统一代码风格，避免架构腐烂" class="headerlink" title="3.3 统一代码风格，避免架构腐烂"></a>3.3 统一代码风格，避免架构腐烂</h4><p>虽然每个人都有自己的口味，但是作为一名厨师，应该做出符合大众口味的菜。</p>
+<h4 id="3-4-使用Lint规范代码"><a href="#3-4-使用Lint规范代码" class="headerlink" title="3.4 使用Lint规范代码"></a>3.4 使用Lint规范代码</h4><p>比约定规则，靠自觉遵守更好的方式是，借助代码扫描工具检测、提示、修复代码风格。<br>诸如：TSLint、CSSLint、ESLint…</p>
+<h4 id="3-5-规范化命名，提升可读性"><a href="#3-5-规范化命名，提升可读性" class="headerlink" title="3.5 规范化命名，提升可读性"></a>3.5 规范化命名，提升可读性</h4><h5 id="3-5-1-命名法"><a href="#3-5-1-命名法" class="headerlink" title="3.5.1 命名法"></a>3.5.1 命名法</h5><p>常用的命名规则有以下几个:</p>
+<ul>
+<li>驼峰命名法。</li>
+<li>下划线命名法。Python语言中特别流行。</li>
+<li>匈牙利命名法：属性+类型+对象描述。如“strFristName”。</li>
+</ul>
+<p>对于前端团队来说，我们需要统一项目的命名规则，以降低项目的成本。</p>
+<h5 id="3-5-2-CSS及其预处理器命名规则"><a href="#3-5-2-CSS及其预处理器命名规则" class="headerlink" title="3.5.2 CSS及其预处理器命名规则"></a>3.5.2 CSS及其预处理器命名规则</h5><p>技术栈统一的前端团队，同样需要一套统一的css命名规则。</p>
+<h5 id="3-5-3-组件命名规则"><a href="#3-5-3-组件命名规则" class="headerlink" title="3.5.3 组件命名规则"></a>3.5.3 组件命名规则</h5><p>组件命名有如下几种方式：</p>
+<ul>
+<li>按照功能命名，如：SideBar就是一个侧边栏功能的组件。</li>
+<li>按页面来切分组件，如：NewsItem就是用于展示新闻的组件。</li>
+<li>按照上下文来命名组件，如：NewsChildItem体现了与上个组件的关系。</li>
+</ul>
+<hr>
+<p><strong>《前端架构：从入门到微前端》</strong>——知识点整理。</p>
 
             </div>
             <hr>
@@ -660,7 +627,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/01/canvas2svg/" class="b-link-green">canvas转换svg合成图片</a>
+                    <a href="/2020/02/21/webworkflowdesign/" class="b-link-green">前端架构-工作流设计</a>
                 </p>
             </div>
         </div>
@@ -682,7 +649,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-02-01T14-18-19',
+        id: '2020-02-21T08-43-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -705,49 +672,56 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/01/inputrange/">
+                <a href="/2020/02/21/webworkflowdesign/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="input-range自定义">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="前端架构-工作流设计">
                         
-                        <span class="card-title">input-range自定义</span>
+                        <span class="card-title">前端架构-工作流设计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">input-range自定义样式
-&lt;!DOCTYPE html>
-&lt;html lang="zh">
-    &lt;head>
-        &lt;meta charset="UTF-8" />
-        &lt;me</div>
+                    <div class="summary block-with-text">3.1 代码之旅：基础规范
+规范代码组织结构
+统一代码风格，即源代码的书写风格
+组件、函数等命名规范
+开发工具规范
+
+3.2 代码组织决定应用架构确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                    前端架构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/前端架构/" target="_blank">
+                        <span class="chip bg-color">前端架构</span>
                     </a>
                     
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/读书/" target="_blank">
+                        <span class="chip bg-color">读书</span>
+                    </a>
+                    
+                    <a href="/tags/复盘/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
                     </a>
                     
                 </div>
@@ -761,32 +735,40 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/12/05/qdsxljz/">
+                <a href="/2020/02/20/revieweveryday/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="前端实现懒加载">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="每日复盘">
                         
-                        <span class="card-title">前端实现懒加载</span>
+                        <span class="card-title">每日复盘</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">&lt;!DOCTYPE html>
-&lt;html lang="zh">
+                    <div class="summary block-with-text">2020-02-21（一）回顾目标:
 
-&lt;head>
-    &lt;meta charset="UTF-8" />
-    &lt;meta name="viewport" content="</div>
+年度目标：
+
+成为一名文采飞扬的技术分享小编。
+养成良好的作息习惯；
+成为一名经验丰富的前端架构师
+熟练SQL语句
+学会c#
+
+
+今日目标：
+
+早上上班前读书学习，博客发表文章《技术架构：从入门到微前</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/复盘/" class="post-category" target="_blank">
+                                    复盘
                                 </a>
                             
                             
@@ -796,12 +778,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
-                    </a>
-                    
-                    <a href="/tags/bootstrap/" target="_blank">
-                        <span class="chip bg-color">bootstrap</span>
+                    <a href="/tags/复盘/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
                     </a>
                     
                 </div>

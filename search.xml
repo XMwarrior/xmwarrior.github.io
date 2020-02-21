@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>前端架构-工作流设计</title>
+      <link href="/2020/02/21/webworkflowdesign/"/>
+      <url>/2020/02/21/webworkflowdesign/</url>
+      
+        <content type="html"><![CDATA[<h4 id="3-1-代码之旅：基础规范"><a href="#3-1-代码之旅：基础规范" class="headerlink" title="3.1 代码之旅：基础规范"></a>3.1 代码之旅：基础规范</h4><ul><li>规范代码组织结构</li><li>统一代码风格，即源代码的书写风格</li><li>组件、函数等命名规范</li><li>开发工具规范</li></ul><h4 id="3-2-代码组织决定应用架构"><a href="#3-2-代码组织决定应用架构" class="headerlink" title="3.2 代码组织决定应用架构"></a>3.2 代码组织决定应用架构</h4><p>确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方式。<br>比如vue-cli2架构升级至vue-cli3.0时的架构变化。</p><h4 id="3-3-统一代码风格，避免架构腐烂"><a href="#3-3-统一代码风格，避免架构腐烂" class="headerlink" title="3.3 统一代码风格，避免架构腐烂"></a>3.3 统一代码风格，避免架构腐烂</h4><p>虽然每个人都有自己的口味，但是作为一名厨师，应该做出符合大众口味的菜。</p><h4 id="3-4-使用Lint规范代码"><a href="#3-4-使用Lint规范代码" class="headerlink" title="3.4 使用Lint规范代码"></a>3.4 使用Lint规范代码</h4><p>比约定规则，靠自觉遵守更好的方式是，借助代码扫描工具检测、提示、修复代码风格。<br>诸如：TSLint、CSSLint、ESLint…</p><h4 id="3-5-规范化命名，提升可读性"><a href="#3-5-规范化命名，提升可读性" class="headerlink" title="3.5 规范化命名，提升可读性"></a>3.5 规范化命名，提升可读性</h4><h5 id="3-5-1-命名法"><a href="#3-5-1-命名法" class="headerlink" title="3.5.1 命名法"></a>3.5.1 命名法</h5><p>常用的命名规则有以下几个:</p><ul><li>驼峰命名法。</li><li>下划线命名法。Python语言中特别流行。</li><li>匈牙利命名法：属性+类型+对象描述。如“strFristName”。</li></ul><p>对于前端团队来说，我们需要统一项目的命名规则，以降低项目的成本。</p><h5 id="3-5-2-CSS及其预处理器命名规则"><a href="#3-5-2-CSS及其预处理器命名规则" class="headerlink" title="3.5.2 CSS及其预处理器命名规则"></a>3.5.2 CSS及其预处理器命名规则</h5><p>技术栈统一的前端团队，同样需要一套统一的css命名规则。</p><h5 id="3-5-3-组件命名规则"><a href="#3-5-3-组件命名规则" class="headerlink" title="3.5.3 组件命名规则"></a>3.5.3 组件命名规则</h5><p>组件命名有如下几种方式：</p><ul><li>按照功能命名，如：SideBar就是一个侧边栏功能的组件。</li><li>按页面来切分组件，如：NewsItem就是用于展示新闻的组件。</li><li>按照上下文来命名组件，如：NewsChildItem体现了与上个组件的关系。</li></ul><hr><p><strong>《前端架构：从入门到微前端》</strong>——知识点整理。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端架构 </tag>
+            
+            <tag> 读书 </tag>
+            
+            <tag> 复盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每日复盘</title>
       <link href="/2020/02/20/revieweveryday/"/>
       <url>/2020/02/20/revieweveryday/</url>
