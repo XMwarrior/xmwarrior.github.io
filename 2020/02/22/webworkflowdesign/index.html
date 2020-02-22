@@ -4,21 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="每日复盘, xmwarrior,xmsniper">
-    <meta name="description" content="2020-02-21（一）回顾目标:
+    <meta name="keywords" content="前端架构-工作流设计, xmwarrior,xmsniper">
+    <meta name="description" content="3.1 代码之旅：基础规范
+规范代码组织结构
+统一代码风格，即源代码的书写风格
+组件、函数等命名规范
+开发工具规范
 
-年度目标：
-
-成为一名文采飞扬的技术分享小编。
-养成良好的作息习惯；
-成为一名经验丰富的前端架构师
-熟练SQL语句
-学会c#
-
-
-今日目标：
-
-早上上班前读书学习，博客发表文章《技术架构：从入门到微前">
+3.2 代码组织决定应用架构确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>每日复盘 | XMwarrior</title>
+    <title>前端架构-工作流设计 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,7 +263,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '0edcd7f37d75330b1d55b3353fecdd73dcb60796669ba7f1a45c0985874d883f';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -283,13 +276,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        每日复盘
+                        前端架构-工作流设计
                     </div>
                 </div>
             </div>
@@ -400,6 +393,14 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/前端架构/" target="_blank">
+                                <span class="chip bg-color">前端架构</span>
+                            </a>
+                        
+                            <a href="/tags/读书/" target="_blank">
+                                <span class="chip bg-color">读书</span>
+                            </a>
+                        
                             <a href="/tags/复盘/" target="_blank">
                                 <span class="chip bg-color">复盘</span>
                             </a>
@@ -412,8 +413,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/复盘/" class="post-category" target="_blank">
-                                复盘
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                前端架构
                             </a>
                         
                     </div>
@@ -424,21 +425,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-20
+                    2020-02-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        4 分
                     </div>
                     
                 
@@ -454,158 +455,89 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="2020-02-21"><a href="#2020-02-21" class="headerlink" title="2020-02-21"></a>2020-02-21</h2><p>（一）回顾目标:</p>
-<ul>
-<li><p>年度目标：</p>
-<ol>
-<li>成为一名文采飞扬的技术分享小编。</li>
-<li>养成良好的作息习惯；</li>
-<li>成为一名经验丰富的前端架构师</li>
-<li>熟练SQL语句</li>
-<li>学会c#</li>
-</ol>
-</li>
-<li><p>今日目标：</p>
-<ol>
-<li>早上上班前读书学习，博客发表文章《技术架构：从入门到微前端》。</li>
-<li>晚上研究整理博客优化心得。</li>
-</ol>
-</li>
+                <h3 id="3-1-代码之旅：基础规范"><a href="#3-1-代码之旅：基础规范" class="headerlink" title="3.1 代码之旅：基础规范"></a>3.1 代码之旅：基础规范</h3><ul>
+<li>规范代码组织结构</li>
+<li>统一代码风格，即源代码的书写风格</li>
+<li>组件、函数等命名规范</li>
+<li>开发工具规范</li>
 </ul>
-<p>（二）结果对比</p>
+<h3 id="3-2-代码组织决定应用架构"><a href="#3-2-代码组织决定应用架构" class="headerlink" title="3.2 代码组织决定应用架构"></a>3.2 代码组织决定应用架构</h3><p>确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方式。<br>比如vue-cli2架构升级至vue-cli3.0时的架构变化。</p>
+<h3 id="3-3-统一代码风格，避免架构腐烂"><a href="#3-3-统一代码风格，避免架构腐烂" class="headerlink" title="3.3 统一代码风格，避免架构腐烂"></a>3.3 统一代码风格，避免架构腐烂</h3><p>虽然每个人都有自己的口味，但是作为一名厨师，应该做出符合大众口味的菜。</p>
+<h3 id="3-4-使用Lint规范代码"><a href="#3-4-使用Lint规范代码" class="headerlink" title="3.4 使用Lint规范代码"></a>3.4 使用Lint规范代码</h3><p>比约定规则，靠自觉遵守更好的方式是，借助代码扫描工具检测、提示、修复代码风格。<br>诸如：TSLint、CSSLint、ESLint…</p>
+<h3 id="3-5-规范化命名，提升可读性"><a href="#3-5-规范化命名，提升可读性" class="headerlink" title="3.5 规范化命名，提升可读性"></a>3.5 规范化命名，提升可读性</h3><h4 id="3-5-1-命名法"><a href="#3-5-1-命名法" class="headerlink" title="3.5.1 命名法"></a>3.5.1 命名法</h4><p>常用的命名规则有以下几个:</p>
 <ul>
-<li style="list-style: none"><input type="checkbox" checked> 结果和目标一致</li>
-<li style="list-style: none"><input type="checkbox"> 结果不如目标</li>
-<li style="list-style: none"><input type="checkbox"> 结果超越了目标</li>
-<li style="list-style: none"><input type="checkbox"> 结果中出现了目标里没出现的项目</li>
-<li style="list-style: none"><input type="checkbox"> 结果中缺失了目标中该出现的项目</li>
+<li>驼峰命名法。</li>
+<li>下划线命名法。Python语言中特别流行。</li>
+<li>匈牙利命名法：属性+类型+对象描述。如“strFristName”。</li>
 </ul>
-<p>（三）叙述过程</p>
-<p>客观的陈述今天的行动。</p>
-<pre class=" language-bash"><code class="language-bash">
-</code></pre>
-<p>（四）自我剖析</p>
-<p>今日认知、想法问题：</p>
-<pre class=" language-bash"><code class="language-bash">
-</code></pre>
-<p>今日行动、实践问题：</p>
-<pre class=" language-bash"><code class="language-bash">
-</code></pre>
-<p>（五）总结规律</p>
-<p>针对以上问题，以后该怎么做：</p>
-<pre class=" language-bash"><code class="language-bash">
-</code></pre>
-<p> （六）案例佐证</p>
-<p>举例证明总结的规律：</p>
-<pre class=" language-bash"><code class="language-bash">
-</code></pre>
-<h2 id="2020-02-20"><a href="#2020-02-20" class="headerlink" title="2020-02-20"></a>2020-02-20</h2><p>（一）回顾目标:</p>
+<p>对于前端团队来说，我们需要统一项目的命名规则，以降低项目的成本。</p>
+<h4 id="3-5-2-CSS及其预处理器命名规则"><a href="#3-5-2-CSS及其预处理器命名规则" class="headerlink" title="3.5.2 CSS及其预处理器命名规则"></a>3.5.2 CSS及其预处理器命名规则</h4><p>技术栈统一的前端团队，同样需要一套统一的css命名规则。</p>
+<h4 id="3-5-3-组件命名规则"><a href="#3-5-3-组件命名规则" class="headerlink" title="3.5.3 组件命名规则"></a>3.5.3 组件命名规则</h4><p>组件命名有如下几种方式：</p>
 <ul>
-<li><p>年度目标：</p>
+<li>按照功能命名，如：SideBar就是一个侧边栏功能的组件。</li>
+<li>按页面来切分组件，如：NewsItem就是用于展示新闻的组件。</li>
+<li>按照上下文来命名组件，如：NewsChildItem体现了与上个组件的关系。</li>
+</ul>
+<h3 id="3-6-规范开发工具，提升开发效率"><a href="#3-6-规范开发工具，提升开发效率" class="headerlink" title="3.6 规范开发工具，提升开发效率"></a>3.6 规范开发工具，提升开发效率</h3><p>以下适合在项目中使用的插件：</p>
+<ul>
+<li>EditorConfig，如：（EditorConfig for VS Code），可以读取项目中的.editorconfig配置，以遵循统一的编辑器规范。</li>
+<li>Lint插件,如：（ESLint、HTML Hint），显示Lint问题。</li>
+<li>单词拼写检测，如：（Code Spell Checker），提示代码中拼错的单词。</li>
+<li>路径补全，如：(Path Intellinsence)，提示可用资源路径。</li>
+<li>代码自动补全。</li>
+<li>Emmet插件，如：（JavaScript (ES6) code snippets），想要快速编写代码（砍柴），有时需要投入学习成本（磨刀）。</li>
+<li>代码格式化，如：（Prettier - Code formatter）。</li>
+</ul>
+<p>*注：括号内是相应的VSCode插件名。</p>
+<h3 id="3-7-项目的文档化：README搭建指南"><a href="#3-7-项目的文档化：README搭建指南" class="headerlink" title="3.7 项目的文档化：README搭建指南"></a>3.7 项目的文档化：README搭建指南</h3><p>一份好的搭建指南具有如下特点：</p>
+<ul>
+<li>支持运行的环境。</li>
+<li>必要的依赖准备，以及如何搭建。</li>
+<li>项目的安装指南。</li>
+<li>线上的示例或最后的运行环境。</li>
+<li>相关的文档链接。</li>
+<li>相关人员的联系方式，讨论群。</li>
+</ul>
+<p>README文档里包含这些必要的资源，能大大的提高开发人员的效率。</p>
+<h3 id="3-8-绘制架构图：减少沟通成本"><a href="#3-8-绘制架构图：减少沟通成本" class="headerlink" title="3.8 绘制架构图：减少沟通成本"></a>3.8 绘制架构图：减少沟通成本</h3><blockquote>
+<p>对于复杂项目的架构图主要展示各子系统之间如何通信。<br>对于简单的系统，架构图则可以是由项目的技术栈组成的。</p>
+</blockquote>
+<p>绘制架构图，既可以用代码生成，也可以使用专业工具绘制。</p>
+<ul>
+<li>代码生成工具，如：Graphvis</li>
+<li>专业工具，如：Dia</li>
+<li>软件附带工具，如：Office、SmartArt</li>
+<li>在线工具。</li>
+</ul>
+<h3 id="3-9-可编辑文档库：提升协作性"><a href="#3-9-可编辑文档库：提升协作性" class="headerlink" title="3.9 可编辑文档库：提升协作性"></a>3.9 可编辑文档库：提升协作性</h3><blockquote>
+<p>优先关注于其是否可以版本化、图形可视化，以及追踪历史修改。<br>它可以是：<br>——可以记录版本历史的维基(Wiki)软件。<br>——专业的协作工具,比如Atassian的Confluencea。<br>——基于Git+Markdown的代码管理工具。<br>它应该还能支持以下功能:实时多人编辑、内容索引、图形可视化、实时搜索、打标签、检查清单、导入导出等。</p>
+</blockquote>
+<h3 id="3-10-记录架构决策：轻量级架构决策记录"><a href="#3-10-记录架构决策：轻量级架构决策记录" class="headerlink" title="3.10 记录架构决策：轻量级架构决策记录"></a>3.10 记录架构决策：轻量级架构决策记录</h3><blockquote>
+<p>下面是一个由adr命令生成的adr0架构决策记录的示例，它由以下六部分组成：<br>◎ 标题。<br>◎ 日期<br>◎ 描述决策相关的状态,包含提议、通过、完成、已弃用、已取代等。<br>◎ 价值中立的、用于描述事实上下文的背景。<br>◎ 应对这种场景的相应的决策。<br>◎ 记录应用决策后产生的结果。</p>
+</blockquote>
+<h3 id="3-11-可视化文档：注重代码的可读性"><a href="#3-11-可视化文档：注重代码的可读性" class="headerlink" title="3.11 可视化文档：注重代码的可读性"></a>3.11 可视化文档：注重代码的可读性</h3><p>穿插生动形象的展示，代替文本文档，web交互演示、图表等。</p>
+<h3 id="3-12-看板工具：统一管理业务知识"><a href="#3-12-看板工具：统一管理业务知识" class="headerlink" title="3.12 看板工具：统一管理业务知识"></a>3.12 看板工具：统一管理业务知识</h3><p>方便追溯业务变更带来的代码修改。</p>
+<h3 id="3-13-提交信息：每次代码提交文档化"><a href="#3-13-提交信息：每次代码提交文档化" class="headerlink" title="3.13 提交信息：每次代码提交文档化"></a>3.13 提交信息：每次代码提交文档化</h3><ul>
+<li>项目方式，任务卡号与提交关联。</li>
+<li>开源项目方式，采用标准化的提交信息，自动生成ChANGELOG文件。<br>工具如：standard-version。</li>
+</ul>
+<p><img src="https://cdn.img.wenhairu.com/images/2020/02/21/m9vgK.jpg" alt="对比不同的文档方式"></p>
+<h3 id="3-14-通过流程提高代码质量"><a href="#3-14-通过流程提高代码质量" class="headerlink" title="3.14 通过流程提高代码质量"></a>3.14 通过流程提高代码质量</h3><h4 id="3-14-1-代码预处理"><a href="#3-14-1-代码预处理" class="headerlink" title="3.14.1 代码预处理"></a>3.14.1 代码预处理</h4><p>代码提交前常见操作：</p>
+<ul>
+<li>静态代码分析，如：TSLint、ESLint。</li>
+<li>运行测试。</li>
+</ul>
+<h4 id="3-14-2-手动检视代码"><a href="#3-14-2-手动检视代码" class="headerlink" title="3.14.2 手动检视代码"></a>3.14.2 手动检视代码</h4><blockquote>
+<p>这种方式带来一系列的好处：<br>(1)提高新成员的编程水平。<br>(2)保证代码规范得以实施。<br>(3)每个人对项目的代业务都会很熟悉。<br>(4)提供项目代码的质量<br>(5)帮助成员熟悉工具和快捷键的使用。</p>
+</blockquote>
+<p>代码检视，常见有两种方式：</p>
 <ol>
-<li>成为一名文采飞扬的技术分享小编。</li>
-<li>养成良好的作息习惯；</li>
-<li>成为一名经验丰富的前端架构师</li>
-<li>熟练SQL语句</li>
-<li>学会c#</li>
+<li>常规代码检视。每天固定时间讲解自己当天写的代码。</li>
+<li>阻塞式代码检视。git提交审批，前提是，其他检视者能够带责任感地去审视代码。</li>
+<li>其他。经常检视团队人员写的代码。</li>
 </ol>
-</li>
-<li><p>今日目标：</p>
-<ol>
-<li>早上上班前读书学习，博客发表文章。</li>
-<li>整理更新作息时间至备忘录。</li>
-</ol>
-</li>
-</ul>
-<p>（二）结果对比</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> 结果和目标一致</li>
-<li style="list-style: none"><input type="checkbox"> 结果不如目标</li>
-<li style="list-style: none"><input type="checkbox"> 结果超越了目标</li>
-<li style="list-style: none"><input type="checkbox"> 结果中出现了目标里没出现的项目</li>
-<li style="list-style: none"><input type="checkbox"> 结果中缺失了目标中该出现的项目</li>
-</ul>
-<p>（三）叙述过程</p>
-<p>客观的陈述今天的行动。</p>
-<pre class=" language-bash"><code class="language-bash">1、早上完成了《前端架构-成长优化期》发表。
-2、作息时间未整理至备忘录，
-</code></pre>
-<p>（四）自我剖析</p>
-<p>今日认知、想法问题：</p>
-<pre class=" language-bash"><code class="language-bash">当他人计划与自己计划冲突时，想完成自己计划的同时，也完成他人的诉求。
-当疲惫感产生时，萌生了放弃计划的想法。
-</code></pre>
-<p>今日行动、实践问题：</p>
-<pre class=" language-bash"><code class="language-bash">拖延到计划外时间，22:44还在复盘。
-</code></pre>
-<p>（五）总结规律</p>
-<p>针对以上问题，以后该怎么做：</p>
-<pre class=" language-bash"><code class="language-bash">选择最重要的事情先干。学会抉择。
-坚持。
-</code></pre>
-<p> （六）案例佐证</p>
-<p>举例证明总结的规律：</p>
-<pre class=" language-bash"><code class="language-bash">重要且紧急<span class="token operator">></span>重要不紧急<span class="token operator">></span>紧急不重要<span class="token operator">></span>不紧急不重要
-真正难以抉择的是 重要不紧急<span class="token operator">></span>紧急不重要的判断。
-</code></pre>
-<h2 id="2020-02-19"><a href="#2020-02-19" class="headerlink" title="2020-02-19"></a>2020-02-19</h2><p>（一）回顾目标:</p>
-<ul>
-<li><p>年度目标：</p>
-<ol>
-<li>养成良好的作息习惯；成为一名文采飞扬的技术分享小编。</li>
-<li>成为一名经验丰富的前端架构师</li>
-<li>学会c#</li>
-<li>熟练SQL语句</li>
-</ol>
-</li>
-<li><p>今日目标：</p>
-<ol>
-<li>优化个人博客加载速度，修改过长的html文件名。</li>
-<li>制定每日复盘模板。</li>
-<li>合理制定月目标。</li>
-<li>制定并尝试自己的每日作息计划。</li>
-</ol>
-</li>
-</ul>
-<p>（二）结果对比</p>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 结果和目标一致</li>
-<li style="list-style: none"><input type="checkbox" checked> 结果不如目标</li>
-<li style="list-style: none"><input type="checkbox"> 结果超越了目标</li>
-<li style="list-style: none"><input type="checkbox"> 结果中出现了目标里没出现的项目</li>
-<li style="list-style: none"><input type="checkbox"> 结果中缺失了目标中该出现的项目</li>
-</ul>
-<p>（三）叙述过程</p>
-<p>客观的陈述今天的行动。</p>
-<pre class=" language-bash"><code class="language-bash">1. 早上7点起床跑步一圈。
-2. 10点半左右优化完博客加载速度问题，更改了文章名称。占用了工作时间。
-3. 工作时间完成了能源地图网页布局样式的编写。
-4. 9:00通过手机便签，制定思考月目标。
-5. 晚上9:48开始整理每日复盘模板。
-
-</code></pre>
-<p>（四）自我剖析</p>
-<p>今日认知、想法问题：</p>
-<pre class=" language-bash"><code class="language-bash">1. 网页加载速度问题，还没优化到极致。有了侥幸心理，也没去深度思考自己需要更深入的研究下静态资源加载机制。
-2. 晚上萌生了拖延心理。
-</code></pre>
-<p>今日行动、实践问题：</p>
-<pre class=" language-bash"><code class="language-bash">1. 因晚上睡不好，早上爬不起来 - 作息时间还需要调整
-3. 并没有按照先易后难的顺序完成工作计划。
-4. 月目标的制定，不太确定能不能完成。
-</code></pre>
-<p>（五）总结规律</p>
-<p>针对以上问题，以后该怎么做：</p>
-<pre class=" language-bash"><code class="language-bash">1. 坚持按照作息时间行动。
-2. 网页加载速度问题。明天晚上抽时间继续研究。
-3. 思考好次日工作计划和工作顺序，按计划行事。
-4. 先按目标，开始几日的复盘尝试，确定自己的速度，修改月目标。
-5. 再有拖延心理萌生时，先让腿动起来。
-</code></pre>
-<p> （六）案例佐证</p>
-<p>举例证明总结的规律：</p>
-<pre class=" language-bash"><code class="language-bash">自律，谋定而后动，打破砂锅问到底
-</code></pre>
+<hr>
+<p><strong>《前端架构：从入门到微前端》</strong>——知识点整理。</p>
 
             </div>
             <hr>
@@ -753,7 +685,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/02/20/revieweveryday/" class="b-link-green">每日复盘</a>
+                    <a href="/2020/02/22/webworkflowdesign/" class="b-link-green">前端架构-工作流设计</a>
                 </p>
             </div>
         </div>
@@ -775,7 +707,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2020-02-20T22-52-00',
+        id: '2020-02-22T15-50-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -798,9 +730,10 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/21/webworkflowdesign/">
+                <a href="/2020/02/22/webworkflowdesign/">
                     <div class="card-image">
                         
                         
@@ -818,9 +751,9 @@
 
 3.2 代码组织决定应用架构确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -833,6 +766,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1060,7 +994,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">24.3k</span>
+                <span class="white-color">24.1k</span>
             
 
             
