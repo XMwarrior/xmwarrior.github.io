@@ -4,13 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="input-range自定义, xmwarrior,xmsniper">
-    <meta name="description" content="input-range自定义样式
-&amp;lt;!DOCTYPE html&gt;
-&amp;lt;html lang=&#34;zh&#34;&gt;
-    &amp;lt;head&gt;
-        &amp;lt;meta charset=&#34;UTF-8&#34; /&gt;
-        &amp;lt;me">
+    <meta name="keywords" content="前端架构-设计构建流, xmwarrior,xmsniper">
+    <meta name="description" content="4.1 依赖管理工具模块化方案：
+
+AMD
+CommonJS
+UMD
+
+现在主流的前端应用框架支持并采用的方式主要以编译构建为主，大都采用NPM+CommonJS的形式来管理依赖。
+4.2 软件包源管理软件包源有以下几种形式：
+
+公有/私有">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>input-range自定义 | XMwarrior</title>
+    <title>前端架构-设计构建流 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,13 +279,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        input-range自定义
+                        前端架构-设计构建流
                     </div>
                 </div>
             </div>
@@ -392,12 +396,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/jquery/" target="_blank">
-                                <span class="chip bg-color">jquery</span>
+                            <a href="/tags/前端架构/" target="_blank">
+                                <span class="chip bg-color">前端架构</span>
                             </a>
                         
-                            <a href="/tags/css/" target="_blank">
-                                <span class="chip bg-color">css</span>
+                            <a href="/tags/读书/" target="_blank">
+                                <span class="chip bg-color">读书</span>
+                            </a>
+                        
+                            <a href="/tags/复盘/" target="_blank">
+                                <span class="chip bg-color">复盘</span>
                             </a>
                         
                     </div>
@@ -408,8 +416,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                前端架构
                             </a>
                         
                     </div>
@@ -420,21 +428,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-01
+                    2020-02-25
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        454
+                        2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        7 分
                     </div>
                     
                 
@@ -450,96 +458,117 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>input-range自定义样式</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
-<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"zh"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>head<span class="token operator">></span>
-        <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span> /<span class="token operator">></span>
-        <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span> /<span class="token operator">></span>
-        <span class="token operator">&lt;</span>meta http-equiv<span class="token operator">=</span><span class="token string">"X-UA-Compatible"</span> content<span class="token operator">=</span><span class="token string">"ie=edge"</span> /<span class="token operator">></span>
-        <span class="token operator">&lt;</span>title<span class="token operator">></span>Document<span class="token operator">&lt;</span>/title<span class="token operator">></span>
-        <span class="token operator">&lt;</span>style type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token operator">></span>
-            /*去除默认样式*/
-            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span> <span class="token punctuation">{</span>
-                -webkit-appearance: none<span class="token punctuation">;</span>
-                width: 300px<span class="token punctuation">;</span>
-                background: -webkit-linear-gradient<span class="token punctuation">(</span><span class="token comment" spellcheck="true">#059CFA, #059CFA) no-repeat;</span>
-                background-size: 0% 100%<span class="token punctuation">;</span>
-                border-radius: 10px<span class="token punctuation">;</span>
-                /*这个属性设置使填充进度条时的图形为圆角*/
-            <span class="token punctuation">}</span>
-            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span>::-webkit-slider-thumb <span class="token punctuation">{</span>
-                -webkit-appearance: none<span class="token punctuation">;</span>
-                /*隐藏滑块*/
-            <span class="token punctuation">}</span>
-            /*轨道自定义样式*/
-            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span>::-webkit-slider-runnable-track <span class="token punctuation">{</span>
-                height: 15px<span class="token punctuation">;</span>
-                border-radius: 10px<span class="token punctuation">;</span>
-                /*将轨道设为圆角的*/
-                box-shadow: 0 1px 1px <span class="token comment" spellcheck="true">#def3f8, inset 0 .125em .125em #0d1112;</span>
-                /*轨道内置阴影效果*/
-            <span class="token punctuation">}</span>
-            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span>:focus <span class="token punctuation">{</span>
-                outline: none<span class="token punctuation">;</span>
-                /*原始的控件获取到焦点时，会显示包裹整个控件的边框，所以还需要把边框取消。*/
-            <span class="token punctuation">}</span>
-            /*滑块自定义样式*/
-            input<span class="token punctuation">[</span>type<span class="token operator">=</span>range<span class="token punctuation">]</span>::-webkit-slider-thumb <span class="token punctuation">{</span>
-                -webkit-appearance: none<span class="token punctuation">;</span>
-                height: 25px<span class="token punctuation">;</span>
-                width: 25px<span class="token punctuation">;</span>
-                margin-top: -5px<span class="token punctuation">;</span>
-                /*使滑块超出轨道部分的偏移量相等*/
-                background: <span class="token comment" spellcheck="true">#ffffff;</span>
-                border-radius: 50%<span class="token punctuation">;</span>
-                /*外观设置为圆形*/
-                border: solid 0.125em rgba<span class="token punctuation">(</span>205, 224, 230, 0.5<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                /*设置边框*/
-                box-shadow: 0 .125em .125em <span class="token comment" spellcheck="true">#3b4547;</span>
-                /*添加底部阴影*/
-            <span class="token punctuation">}</span>
-        <span class="token operator">&lt;</span>/style<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/head<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>body<span class="token operator">></span>
-        <span class="token operator">&lt;</span>input id<span class="token operator">=</span><span class="token string">"snrPollInterval"</span> type<span class="token operator">=</span><span class="token string">"range"</span> value<span class="token operator">=</span><span class="token string">"10"</span> min<span class="token operator">=</span><span class="token string">"1"</span> max<span class="token operator">=</span><span class="token string">"30"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"js/jquery-2.1.0.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span> charset<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
-        <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
-            //滑动时的样式
-            $.fn.RangeSlider <span class="token operator">=</span> function<span class="token punctuation">(</span>cfg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                this.sliderCfg <span class="token operator">=</span> <span class="token punctuation">{</span>
-                    min: cfg <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isNaN<span class="token punctuation">(</span>parseFloat<span class="token punctuation">(</span>cfg.min<span class="token punctuation">))</span> ? Number<span class="token punctuation">(</span>cfg.min<span class="token punctuation">)</span> <span class="token keyword">:</span> null,
-                    max: cfg <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isNaN<span class="token punctuation">(</span>parseFloat<span class="token punctuation">(</span>cfg.max<span class="token punctuation">))</span> ? Number<span class="token punctuation">(</span>cfg.max<span class="token punctuation">)</span> <span class="token keyword">:</span> null,
-                    step: cfg <span class="token operator">&amp;&amp;</span> Number<span class="token punctuation">(</span>cfg.step<span class="token punctuation">)</span> ? cfg.step <span class="token keyword">:</span> 1,
-                    callback: cfg <span class="token operator">&amp;&amp;</span> cfg.callback ? cfg.callback <span class="token keyword">:</span> null
-                <span class="token punctuation">}</span><span class="token punctuation">;</span>
-                var <span class="token variable">$input</span> <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>this<span class="token variable">)</span></span><span class="token punctuation">;</span>
-                var min <span class="token operator">=</span> this.sliderCfg.min<span class="token punctuation">;</span>
-                var max <span class="token operator">=</span> this.sliderCfg.max<span class="token punctuation">;</span>
-                var step <span class="token operator">=</span> this.sliderCfg.step<span class="token punctuation">;</span>
-                var callback <span class="token operator">=</span> this.sliderCfg.callback<span class="token punctuation">;</span>
-                <span class="token variable">$input</span>.attr<span class="token punctuation">(</span><span class="token string">'min'</span>, min<span class="token punctuation">)</span>.attr<span class="token punctuation">(</span><span class="token string">'max'</span>, max<span class="token punctuation">)</span>.attr<span class="token punctuation">(</span><span class="token string">'step'</span>, step<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token variable">$input</span>.on<span class="token punctuation">(</span><span class="token string">"input"</span>, function<span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    <span class="token variable">$input</span>.attr<span class="token punctuation">(</span><span class="token string">'value'</span>, this.value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token variable">$input</span>.css<span class="token punctuation">(</span><span class="token string">'background'</span>, <span class="token string">'linear-gradient(to right, #059CFA, #ebeff4 '</span> + this.value + <span class="token string">'%, #ebeff4)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    if<span class="token punctuation">(</span>$.isFunction<span class="token punctuation">(</span>callback<span class="token punctuation">))</span> <span class="token punctuation">{</span>
-                        callback<span class="token punctuation">(</span>this<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token variable">$input</span>.trigger<span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">;</span>
-            <span class="token punctuation">$(</span><span class="token string">'#snrPollInterval'</span><span class="token punctuation">)</span>.RangeSlider<span class="token punctuation">(</span><span class="token punctuation">{</span>
-                min: 0,
-                max: 100,
-                step: 1,
-                callback: <span class="token string">''</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&lt;</span>/script<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/body<span class="token operator">></span>
-<span class="token operator">&lt;</span>/html<span class="token operator">></span>
-</code></pre>
-<p>示例：<a href="https://codepen.io/xmwarrior/pen/dyPzvNJ" target="_blank" rel="noopener">请点这里</a></p>
+                <h3 id="4-1-依赖管理工具"><a href="#4-1-依赖管理工具" class="headerlink" title="4.1 依赖管理工具"></a>4.1 依赖管理工具</h3><p>模块化方案：</p>
+<ul>
+<li>AMD</li>
+<li>CommonJS</li>
+<li>UMD</li>
+</ul>
+<p>现在主流的前端应用框架支持并采用的方式主要以编译构建为主，大都采用NPM+CommonJS的形式来管理依赖。</p>
+<h3 id="4-2-软件包源管理"><a href="#4-2-软件包源管理" class="headerlink" title="4.2 软件包源管理"></a>4.2 软件包源管理</h3><p>软件包源有以下几种形式：</p>
+<ul>
+<li>公有/私有软件包源服务器。<ul>
+<li>npmj.org提供的官方源。</li>
+<li>淘宝的cnpm源。可用于搭建自己的私有化包服务器。</li>
+<li>搭建私有的NPM服务器。</li>
+</ul>
+</li>
+<li>基于源码版本管理服务器，比如直接使用Git服务器来管理和分布库的版本。</li>
+<li>本地的软件包，使用相对路径导入本地仓库。</li>
+</ul>
+<h4 id="1-基于源码版本管理服务器"><a href="#1-基于源码版本管理服务器" class="headerlink" title="1.基于源码版本管理服务器"></a>1.基于源码版本管理服务器</h4><p>对于一些内部的前端库，除了自己搭建NPM服务器，还可以通过Git服务器及Git Tag的方式进行管理。<br>即在package.json中通过<code>&quot;adr&quot;:&quot;git+http://github.com/xmwarrior/adr/#v1.0.0&quot;</code>的方式引入依赖。<br>这种方式需要将构建完的源码提交到代码库。此种方式会让代码库因版本的增多而愈发臃肿。</p>
+<h4 id="2-本地的软件依赖包"><a href="#2-本地的软件依赖包" class="headerlink" title="2. 本地的软件依赖包"></a>2. 本地的软件依赖包</h4><p>通过包管理工具来支持file协议并引入依赖，即在package.json中通过<code>&quot;adr&quot;:&quot;file:adr&quot;</code>的形式引入依赖。<br>这种方式的应用场景如下：</p>
+<ul>
+<li>构建的包过大，不适合Git下载。</li>
+<li>开发应用的同时开发依赖。</li>
+</ul>
+<h4 id="3-前端应用的编译"><a href="#3-前端应用的编译" class="headerlink" title="3.前端应用的编译"></a>3.前端应用的编译</h4><p>不论如何开发，最终需要打包成HTML+CSS+JavaScript的形式。</p>
+<h4 id="4-JavaScript的编译"><a href="#4-JavaScript的编译" class="headerlink" title="4. JavaScript的编译"></a>4. JavaScript的编译</h4><p>ES6、Typescript</p>
+<h4 id="5-CSS的编译"><a href="#5-CSS的编译" class="headerlink" title="5. CSS的编译"></a>5. CSS的编译</h4><p>CSS预处理器</p>
+<h4 id="6-CSS-In-JavaScript"><a href="#6-CSS-In-JavaScript" class="headerlink" title="6. CSS In JavaScript"></a>6. CSS In JavaScript</h4><p>CSS的继承与覆盖特性，促成了CSS In JavaScript的诞生。</p>
+<h4 id="7-模板编译"><a href="#7-模板编译" class="headerlink" title="7. 模板编译"></a>7. 模板编译</h4><p>前端框架，间接的通过js代码生成HTML DOM节点，来提高运行效率。</p>
+<h3 id="4-3-前端代码的打包"><a href="#4-3-前端代码的打包" class="headerlink" title="4.3 前端代码的打包"></a>4.3 前端代码的打包</h3><p>代码打包的最后一步就是，将代码“拼接”到一起，压缩并混淆代码，最后构建出目标代码文件。<br>期间，还会进行可选的摇树优化（Tree Shaking，去掉没用的代码），其主要依赖于ES6模板及其带来的静态分析。</p>
+<h3 id="4-4-设计构建流"><a href="#4-4-设计构建流" class="headerlink" title="4.4 设计构建流"></a>4.4 设计构建流</h3><h4 id="1-如何设计构建流"><a href="#1-如何设计构建流" class="headerlink" title="1. 如何设计构建流"></a>1. 如何设计构建流</h4><ul>
+<li>任务。通用流程、任务。命令一致，拆解背后对应的细节、任务。</li>
+<li>步骤拆解。命令一方面受前端框架的影响，另一方面受项目的复杂度影响。</li>
+<li>展现形式。不同类型的构建应用，展现形式有所不同。</li>
+<li>插件。当且仅当有多个插件时，我们才能打造更流畅的构建流。</li>
+</ul>
+<blockquote>
+<p>构建工具的选择，可以是Grunt、Gulp、webpack等中的一个，或者直接用NPM来完成。这些工具没有太大的区别，要做的事情的复杂性决定了使用的工具。</p>
+</blockquote>
+<h4 id="2-构建工具：自动化任务"><a href="#2-构建工具：自动化任务" class="headerlink" title="2. 构建工具：自动化任务"></a>2. 构建工具：自动化任务</h4><blockquote>
+<p>构建工具相当于是一个自动化任务工具，也可以称之为任务管理器。</p>
+</blockquote>
+<p>不同构建工具的适用场景：</p>
+<ul>
+<li>NPM脚本，适用于脚本简单的应用构建。</li>
+<li>Gulp/Grunt，适用于复杂的项目工作流构建。</li>
+<li>webpack，进行项目的模块化打包。</li>
+</ul>
+<h4 id="3-使用包管理工具构建NPM"><a href="#3-使用包管理工具构建NPM" class="headerlink" title="3. 使用包管理工具构建NPM"></a>3. 使用包管理工具构建NPM</h4><p>通过在package.json的script部分添加多个任务，进行简单的构建。<br>此种方式会随项目的复杂度提升，任务命令越来越长，使命令本身的可读性越来越差。</p>
+<p>使用JSON文件来管理任务，另一方面因其本身不能编写注释，也使任务很难文档化。</p>
+<p>此时可以考虑使用脚本文件的形式来管理。如<code>node build.js</code>。还有一种更实用的方式，结合NPM脚本与webpack或Gulp/Grunt使用，如<code>&quot;build&quot;:&quot;webpack --config webpack.dist.config.js&quot;</code></p>
+<h4 id="4-使用构建工具构建Grunt-Gulp"><a href="#4-使用构建工具构建Grunt-Gulp" class="headerlink" title="4. 使用构建工具构建Grunt/Gulp"></a>4. 使用构建工具构建Grunt/Gulp</h4><p>对于复杂的构建流，可以考虑Gulp/Grunt来完成构建。<br>编程的方式比配置的方式更能提高可管理性。这也是Gulp/Grunt越来越流行的原因。</p>
+<h4 id="5-使用打包工具构建webpack"><a href="#5-使用打包工具构建webpack" class="headerlink" title="5. 使用打包工具构建webpack"></a>5. 使用打包工具构建webpack</h4><blockquote>
+<p>本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p>
+</blockquote>
+<p>当前的主流框架都是用webpack来打包应用，除了承担打包工作，它还负责一部分常见的构建任务。对于前端框架来说，他们更倾向于屏蔽这些webpack的复杂的配置。</p>
+<h4 id="6-实现构建流"><a href="#6-实现构建流" class="headerlink" title="6. 实现构建流"></a>6. 实现构建流</h4><p>尽管应用的构建很重要，但是编写前端应用的时候，我们往往不会自己从头去编写构建代码。第一，它需要花费大量的时间。第二，现成的构建代码可以使用。</p>
+<h4 id="7-插件定义构建流"><a href="#7-插件定义构建流" class="headerlink" title="7. 插件定义构建流"></a>7. 插件定义构建流</h4><p>总有一些特殊情况，需要我们在构建脚本里添加命令。这时，尝试通过以下方式来解决问题。</p>
+<ol>
+<li>查找是否有对应的插件。</li>
+<li>对比不同插件的区别。</li>
+<li>创建插件的适配层。</li>
+<li>验证插件是否有效。</li>
+<li>重复2~4步骤。</li>
+<li>如果都不适用，编写新插件或改写原有插件。</li>
+</ol>
+<h4 id="8-框架定义构建流"><a href="#8-框架定义构建流" class="headerlink" title="8. 框架定义构建流"></a>8. 框架定义构建流</h4><blockquote>
+<p>流行的前端框架提供了完整的应用脚手架，脚手架中也提供了完整的构建流。<br>只有当应用和架构变得复杂时，我们才需要去了解它是如何构建的，才需要去修改构建脚本。</p>
+</blockquote>
+<h3 id="4-5-持续交付问题"><a href="#4-5-持续交付问题" class="headerlink" title="4.5 持续交付问题"></a>4.5 持续交付问题</h3><h4 id="1-部署方式"><a href="#1-部署方式" class="headerlink" title="1. 部署方式"></a>1. 部署方式</h4><ul>
+<li>持续部署，构建完成及部署，类似GItHub Pages，提交代码后自动上线。</li>
+<li>自动化部署，持续部署的前提下稍微弱化，需人为的介入。</li>
+<li>手动部署，全程人为操作。</li>
+</ul>
+<p>部署都需要一个确定的发布策略——不论是敏捷模式还是瀑布模式。<br>敏捷模式的上线发布计划是一个分布迭代（通常两周一次），随后不断地发布；<br>瀑布模式则是一次上线就完成大部分主要功能。</p>
+<h4 id="2-设计持续集成"><a href="#2-设计持续集成" class="headerlink" title="2. 设计持续集成"></a>2. 设计持续集成</h4><ul>
+<li>对应用进行构建。</li>
+<li>进行应用的测试，利用代码来完成测试有助于减少bug。</li>
+<li>部署应用到对应的环境，以提供一个联调和测试环境。<ul>
+<li>选择合适的持续集成工具：开源的Jenkins、GoCD；专业的收费工具Bamboo。</li>
+</ul>
+</li>
+<li>编写相应的部署脚本。</li>
+</ul>
+<h4 id="3-自动化部署"><a href="#3-自动化部署" class="headerlink" title="3. 自动化部署"></a>3. 自动化部署</h4><p>前端的自动化部署：</p>
+<ul>
+<li>静态文件部署到服务器上后，使用Nginx配置域名及相应的后台服务地址。</li>
+<li>然后搭配Docker，编写Dockerfile就能快速的应用部署。</li>
+<li>再编写一个相应的NPM脚本，配置到Jenkinsfile中，就完成了整个持续部署的的流程。</li>
+</ul>
+<p>还有Puppet、Chef等部署工具。</p>
+<blockquote>
+<p>尽管前端部署简单，还应适当考虑“回滚机制、蓝绿部署、灰度发布”等因素。并在应用部署后，使用UI自动化测试来测试部分功，以及测试对应的后端服务连接。这里不推荐人工测试。</p>
+</blockquote>
+<h4 id="4-环境配置"><a href="#4-环境配置" class="headerlink" title="4. 环境配置"></a>4. 环境配置</h4><blockquote>
+<p>不同的环境拥有不同的功能、代码及配置事项。当我们编写构建脚本的时候，还需要针对不同的环境（开发、线上）编写构建脚本。</p>
+</blockquote>
+<h4 id="5-开发环境配置"><a href="#5-开发环境配置" class="headerlink" title="5. 开发环境配置"></a>5. 开发环境配置</h4><p>需要考虑：</p>
+<ul>
+<li>构建配置。构建脚本时，考虑额外的配置与参数来针对不同的环境。</li>
+<li>代码配置。通过不同的环境变量来区分不同环境。如.env.development</li>
+<li>代理配置。</li>
+</ul>
+<h4 id="6-线上调试"><a href="#6-线上调试" class="headerlink" title="6. 线上调试"></a>6. 线上调试</h4><p>为了线上运行和调试代码，通常需要有一些额外的“开关”（toggle），如：</p>
+<ul>
+<li>在URL中添加一些参数。</li>
+<li>在LocalStorage中添加一些参数。</li>
+<li>对特定的账号进行权限管理，以获取调试功能。</li>
+</ul>
+<hr>
+<p><strong>《前端架构：从入门到微前端》</strong>——知识点整理。</p>
 
             </div>
             <hr>
@@ -687,7 +716,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/01/inputrange/" class="b-link-green">input-range自定义</a>
+                    <a href="/2020/02/25/buildflowdesign/" class="b-link-green">前端架构-设计构建流</a>
                 </p>
             </div>
         </div>
@@ -709,7 +738,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-02-01T15-11-19',
+        id: '2020-02-25T08-50-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -732,46 +761,59 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/19/decimal/">
+                <a href="/2020/02/25/buildflowdesign/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="js运算精度_decimal插件">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="前端架构-设计构建流">
                         
-                        <span class="card-title">js运算精度_decimal插件</span>
+                        <span class="card-title">前端架构-设计构建流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">收藏备用：
-&lt;!DOCTYPE html>
-&lt;html>
+                    <div class="summary block-with-text">4.1 依赖管理工具模块化方案：
 
-    &lt;head>
-        &lt;meta charset="UTF-8">
-        &lt;title>解决JS运算和精度问题-decima</div>
+AMD
+CommonJS
+UMD
+
+现在主流的前端应用框架支持并采用的方式主要以编译构建为主，大都采用NPM+CommonJS的形式来管理依赖。
+4.2 软件包源管理软件包源有以下几种形式：
+
+公有/私有</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                    前端架构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/前端架构/" target="_blank">
+                        <span class="chip bg-color">前端架构</span>
+                    </a>
+                    
+                    <a href="/tags/读书/" target="_blank">
+                        <span class="chip bg-color">读书</span>
+                    </a>
+                    
+                    <a href="/tags/复盘/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
                     </a>
                     
                 </div>
@@ -785,31 +827,33 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/01/canvas2svg/">
+                <a href="/2020/02/23/webworkflowdesign/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="canvas转换svg合成图片">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="前端架构-工作流设计">
                         
-                        <span class="card-title">canvas转换svg合成图片</span>
+                        <span class="card-title">前端架构-工作流设计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">此函数应用场景为：百度地图生成自定义标志
-(function ($, document) {
-    $.extend({
-        //16进制颜色转换为rgba颜色
-        colorRgb: function (str,</div>
+                    <div class="summary block-with-text">3.1 代码之旅：基础规范
+规范代码组织结构
+统一代码风格，即源代码的书写风格
+组件、函数等命名规范
+开发工具规范
+
+3.2 代码组织决定应用架构确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                    前端架构
                                 </a>
                             
                             
@@ -819,12 +863,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/前端架构/" target="_blank">
+                        <span class="chip bg-color">前端架构</span>
                     </a>
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/读书/" target="_blank">
+                        <span class="chip bg-color">读书</span>
+                    </a>
+                    
+                    <a href="/tags/复盘/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
                     </a>
                     
                 </div>

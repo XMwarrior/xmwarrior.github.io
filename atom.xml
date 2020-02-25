@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-02-23T15:16:41.834Z</updated>
+  <updated>2020-02-25T01:07:48.067Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端架构-设计构建流</title>
+    <link href="http://xmwarrior.github.io/2020/02/25/buildflowdesign/"/>
+    <id>http://xmwarrior.github.io/2020/02/25/buildflowdesign/</id>
+    <published>2020-02-25T00:50:00.000Z</published>
+    <updated>2020-02-25T01:07:48.067Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;4-1-依赖管理工具&quot;&gt;&lt;a href=&quot;#4-1-依赖管理工具&quot; class=&quot;headerlink&quot; title=&quot;4.1 依赖管理工具&quot;&gt;&lt;/a&gt;4.1
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>前端架构-工作流设计</title>
@@ -564,35 +594,6 @@
       <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
     
       <category term="jquery" scheme="http://xmwarrior.github.io/tags/jquery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高阶函数缓存应用之斐波那契数列</title>
-    <link href="http://xmwarrior.github.io/2019/04/02/gjhshcyyzfbnxsl/"/>
-    <id>http://xmwarrior.github.io/2019/04/02/gjhshcyyzfbnxsl/</id>
-    <published>2019-04-02T06:18:19.000Z</published>
-    <updated>2020-02-19T01:24:18.001Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;合理的利用js缓存，能有效提升复杂运算效率，此处有两种概念：&lt;br&gt;1.闭包-（指有权访问另一个函数作用域中的变量的函数）&lt;br&gt;2.高阶函数-（接受其他函数作为参数或返回其他函数的函数）&lt;br&gt;此处以斐波那契数列为例，演示了运用缓存与不运用缓存计算的效率差别。&lt;/p&gt;
-&lt;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-      <category term="算法" scheme="http://xmwarrior.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
