@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="清除cookie稳妥做法, xmwarrior,xmsniper">
-    <meta name="description" content="清除cookie稳妥做法就是设置cookie与清除cookie写法一致，cookie清除不了的问题，主要出现在设置与清除cookie并非一端操作的情况下，此时需要注意path、domain的设置必须保持一致，注意下文中注释//warning">
+    <meta name="keywords" content="写作原则-结构, xmwarrior,xmsniper">
+    <meta name="description" content="
+简短的展现以便他们阅读，清楚地展现以便他们欣赏，如画般的展现以便他们记忆，最重要的是，准确的展现以便他们被它的光明所指引。——约瑟夫·普利策（Joseph Pulitzer）
+
+6、支撑所说内容使用准确、具体的词汇支撑所说内容。
+7、让你">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>清除cookie稳妥做法 | XMwarrior</title>
+    <title>写作原则-结构 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +274,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        清除cookie稳妥做法
+                        写作原则-结构
                     </div>
                 </div>
             </div>
@@ -387,8 +391,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/读书/" target="_blank">
+                                <span class="chip bg-color">读书</span>
+                            </a>
+                        
+                            <a href="/tags/复盘/" target="_blank">
+                                <span class="chip bg-color">复盘</span>
+                            </a>
+                        
+                            <a href="/tags/写作原则/" target="_blank">
+                                <span class="chip bg-color">写作原则</span>
                             </a>
                         
                     </div>
@@ -399,8 +411,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/写作原则/" class="post-category" target="_blank">
+                                写作原则
                             </a>
                         
                     </div>
@@ -411,14 +423,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-27
+                    2020-02-27
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        273
+                        432
                     </div>
                     
 
@@ -441,69 +453,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>清除cookie稳妥做法就是设置cookie与清除cookie写法一致，cookie清除不了的问题，主要出现在设置与清除cookie并非一端操作的情况下，此时需要注意path、domain的设置必须保持一致，注意下文中注释<code>//warning</code>处代码，如下：</p>
-<pre class=" language-bash"><code class="language-bash">/*Days默认输入number或string格式数字<span class="token operator">=</span>day；s10、m10、h10、d10分别代表秒、分、小时、天*/
-<span class="token keyword">function</span> setCookie<span class="token punctuation">(</span>name, value, Days<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    var cookieString <span class="token operator">=</span> name + <span class="token string">'='</span> + escape<span class="token punctuation">(</span>value<span class="token punctuation">)</span>,
-        checkTime, checkMark<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isNaN<span class="token punctuation">(</span>+Days<span class="token punctuation">))</span> <span class="token punctuation">{</span>
-        checkTime <span class="token operator">=</span> +Days
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        checkTime <span class="token operator">=</span> Days.substr<span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        checkMark <span class="token operator">=</span> Days.substr<span class="token punctuation">(</span>0, 1<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>checkTime <span class="token operator">></span> 0<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        var setDate <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        setDate.setTime<span class="token punctuation">(</span>setDate.getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> + checkstr<span class="token punctuation">(</span>checkMark, checkTime<span class="token punctuation">))</span><span class="token punctuation">;</span>
-        cookieString <span class="token operator">=</span> name + <span class="token string">'='</span> + escape<span class="token punctuation">(</span>value<span class="token punctuation">)</span> + <span class="token string">'; expires='</span> + setDate.toGMTString<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">';path=/;domain='</span> + location.hostname
-    <span class="token punctuation">}</span>
-    document.cookie <span class="token operator">=</span> cookieString
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> getCookie<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    var strCookie <span class="token operator">=</span> document.cookie,
-        arrCookie <span class="token operator">=</span> strCookie.split<span class="token punctuation">(</span><span class="token string">';'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 0, len <span class="token operator">=</span> arrCookie.length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        var Arr_keyvalue <span class="token operator">=</span> arrCookie<span class="token punctuation">[</span>i<span class="token punctuation">]</span>.split<span class="token punctuation">(</span><span class="token string">'='</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>Arr_keyvalue<span class="token punctuation">[</span>0<span class="token punctuation">]</span>.replace<span class="token punctuation">(</span>/<span class="token punctuation">(</span>^\s*<span class="token punctuation">)</span><span class="token operator">|</span><span class="token punctuation">(</span>\s*$<span class="token punctuation">)</span>/g, <span class="token string">""</span><span class="token punctuation">)</span> <span class="token operator">==</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> unescape<span class="token punctuation">(</span>Arr_keyvalue<span class="token punctuation">[</span>1<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token string">''</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> deleteCookie<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    var setDate <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    setDate.setTime<span class="token punctuation">(</span>setDate.getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> - 10000<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    var value <span class="token operator">=</span> getCookie<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        document.cookie <span class="token operator">=</span> name + <span class="token string">'='</span> + value + <span class="token string">'; expires='</span> + setDate.toGMTString<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">';path=/;domain='</span> + location.hostname
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> checkstr<span class="token punctuation">(</span>mark, Time<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>mark<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> Time * 24 * 60 * 60 * 1000
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        switch <span class="token punctuation">(</span>mark<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">case</span> <span class="token string">'s'</span><span class="token keyword">:</span>
-                <span class="token keyword">return</span> Time * 1000<span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">case</span> <span class="token string">'m'</span><span class="token keyword">:</span>
-                <span class="token keyword">return</span> Time * 60 * 1000<span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">case</span> <span class="token string">'h'</span><span class="token keyword">:</span>
-                <span class="token keyword">return</span> Time * 60 * 60 * 1000<span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">case</span> <span class="token string">'d'</span><span class="token keyword">:</span>
-                <span class="token keyword">return</span> Time * 24 * 60 * 60 * 1000<span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            default:
-                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                <span class="token keyword">break</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+                <blockquote>
+<p>简短的展现以便他们阅读，清楚地展现以便他们欣赏，如画般的展现以便他们记忆，最重要的是，准确的展现以便他们被它的光明所指引。——约瑟夫·普利策（Joseph Pulitzer）</p>
+</blockquote>
+<h4 id="6、支撑所说内容"><a href="#6、支撑所说内容" class="headerlink" title="6、支撑所说内容"></a>6、支撑所说内容</h4><p>使用准确、具体的词汇支撑所说内容。</p>
+<h4 id="7、让你的例证个性化"><a href="#7、让你的例证个性化" class="headerlink" title="7、让你的例证个性化"></a>7、让你的例证个性化</h4><p>增加个性化的例子，使文章难忘。</p>
+<h3 id="8、保持简洁"><a href="#8、保持简洁" class="headerlink" title="8、保持简洁"></a>8、保持简洁</h3><p>用简单的词语表达你的观点。</p>
+<h4 id="9、砍断长句"><a href="#9、砍断长句" class="headerlink" title="9、砍断长句"></a>9、砍断长句</h4><p>通过拆分长句，使文章更清晰。</p>
+<h4 id="10、删除不必要的词"><a href="#10、删除不必要的词" class="headerlink" title="10、删除不必要的词"></a>10、删除不必要的词</h4><p>砍掉冗余语句、过多的限定和不必要的自指。</p>
+<h4 id="11、使用主动语态"><a href="#11、使用主动语态" class="headerlink" title="11、使用主动语态"></a>11、使用主动语态</h4><p>多用主动句，少用被动句。</p>
+<blockquote>
+<p>被动 - 公司派对由秘书组织。<br>  主动 - 秘书组织了公司派对。</p>
+</blockquote>
+<h4 id="12、多用动词，少用名词"><a href="#12、多用动词，少用名词" class="headerlink" title="12、多用动词，少用名词"></a>12、多用动词，少用名词</h4><p>不要把动词和形容词名词化</p>
+<blockquote>
+<p>“成本的减少”最好写作“减少成本”<br>  “测量的精确性”最好写作“精确测量”</p>
+</blockquote>
+<h4 id="13、使用平行句式"><a href="#13、使用平行句式" class="headerlink" title="13、使用平行句式"></a>13、使用平行句式</h4><p>用一致、平行的形式表达连串事物。</p>
+<h4 id="14、利用句式变化"><a href="#14、利用句式变化" class="headerlink" title="14、利用句式变化"></a>14、利用句式变化</h4><p>变换句子长度和开头。</p>
+<ul>
+<li>用主题开头。</li>
+<li>用短语开头。</li>
+<li>用从句开头。</li>
+<li>用冠词开头。</li>
+<li>用动词开头。</li>
+<li>用副词开头。</li>
+<li>用形容词开头。</li>
+<li>用动名词开头。</li>
+<li>用不定式开头。</li>
+<li>用关联词开头。</li>
+</ul>
+<h4 id="15、选择适当的语气"><a href="#15、选择适当的语气" class="headerlink" title="15、选择适当的语气"></a>15、选择适当的语气</h4><p>用积极、个性化的语气写作。</p>
+<ul>
+<li>积极语气和消极语气</li>
+<li>正式语气和非正式语气</li>
+</ul>
+<p><img src="https://cdn.img.wenhairu.com/images/2020/02/27/m5cOt.jpg" alt="正式"><br><img src="https://cdn.img.wenhairu.com/images/2020/02/27/m5S5D.jpg" alt="非正式"></p>
+<h4 id="16、保持文章性别中立"><a href="#16、保持文章性别中立" class="headerlink" title="16、保持文章性别中立"></a>16、保持文章性别中立</h4><p>避免使用阳性泛指指示两种性别。</p>
+<p>用“他或她”或“他们”代替他。</p>
+<hr>
+<p><strong>《一本小小的红色写作书》</strong>——知识点整理。</p>
 
             </div>
             <hr>
@@ -651,7 +640,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/27/qckwtzf/" class="b-link-green">清除cookie稳妥做法</a>
+                    <a href="/2020/02/27/grammarbookstyle/" class="b-link-green">写作原则-结构</a>
                 </p>
             </div>
         </div>
@@ -673,7 +662,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-03-27T14-16-00',
+        id: '2020-02-27T23-14-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -696,45 +685,54 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/02/gjhshcyyzfbnxsl/">
+                <a href="/2020/02/27/grammarbookstyle/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="高阶函数缓存应用之斐波那契数列">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="写作原则-结构">
                         
-                        <span class="card-title">高阶函数缓存应用之斐波那契数列</span>
+                        <span class="card-title">写作原则-结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">合理的利用js缓存，能有效提升复杂运算效率，此处有两种概念：1.闭包-（指有权访问另一个函数作用域中的变量的函数）2.高阶函数-（接受其他函数作为参数或返回其他函数的函数）此处以斐波那契数列为例，演示了运用缓存与不运用缓存计算的效率差别。
-</div>
+                    <div class="summary block-with-text">
+简短的展现以便他们阅读，清楚地展现以便他们欣赏，如画般的展现以便他们记忆，最重要的是，准确的展现以便他们被它的光明所指引。——约瑟夫·普利策（Joseph Pulitzer）
+
+6、支撑所说内容使用准确、具体的词汇支撑所说内容。
+7、让你</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/写作原则/" class="post-category" target="_blank">
+                                    写作原则
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/读书/" target="_blank">
+                        <span class="chip bg-color">读书</span>
                     </a>
                     
-                    <a href="/tags/算法/" target="_blank">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/复盘/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
+                    </a>
+                    
+                    <a href="/tags/写作原则/" target="_blank">
+                        <span class="chip bg-color">写作原则</span>
                     </a>
                     
                 </div>
@@ -748,30 +746,36 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/18/sdxzljzxsc/">
+                <a href="/2020/02/25/buildflowdesign/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="色调旋转滤镜按钮-在线生成">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="前端架构-设计构建流">
                         
-                        <span class="card-title">色调旋转滤镜按钮-在线生成</span>
+                        <span class="card-title">前端架构-设计构建流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">本例应用颜色拾取插件 https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html直接放源码，有兴趣的点击例子查看：
-&lt;html lang="zh">
+                    <div class="summary block-with-text">4.1 依赖管理工具模块化方案：
 
-&lt;hea</div>
+AMD
+CommonJS
+UMD
+
+现在主流的前端应用框架支持并采用的方式主要以编译构建为主，大都采用NPM+CommonJS的形式来管理依赖。
+4.2 软件包源管理软件包源有以下几种形式：
+
+公有/私有</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                    前端架构
                                 </a>
                             
                             
@@ -781,20 +785,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/前端架构/" target="_blank">
+                        <span class="chip bg-color">前端架构</span>
                     </a>
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/读书/" target="_blank">
+                        <span class="chip bg-color">读书</span>
                     </a>
                     
-                    <a href="/tags/bootstrap/" target="_blank">
-                        <span class="chip bg-color">bootstrap</span>
-                    </a>
-                    
-                    <a href="/tags/css3/" target="_blank">
-                        <span class="chip bg-color">css3</span>
+                    <a href="/tags/复盘/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
                     </a>
                     
                 </div>
