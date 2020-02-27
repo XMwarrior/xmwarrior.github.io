@@ -476,7 +476,10 @@ UMD
 <li>基于源码版本管理服务器，比如直接使用Git服务器来管理和分布库的版本。</li>
 <li>本地的软件包，使用相对路径导入本地仓库。</li>
 </ul>
-<h4 id="1-基于源码版本管理服务器"><a href="#1-基于源码版本管理服务器" class="headerlink" title="1.基于源码版本管理服务器"></a>1.基于源码版本管理服务器</h4><p>对于一些内部的前端库，除了自己搭建NPM服务器，还可以通过Git服务器及Git Tag的方式进行管理。<br>即在package.json中通过<code>&quot;adr&quot;:&quot;git+http://github.com/xmwarrior/adr/#v1.0.0&quot;</code>的方式引入依赖。<br>这种方式需要将构建完的源码提交到代码库。此种方式会让代码库因版本的增多而愈发臃肿。</p>
+<h4 id="1-基于源码版本管理服务器"><a href="#1-基于源码版本管理服务器" class="headerlink" title="1.基于源码版本管理服务器"></a>1.基于源码版本管理服务器</h4><p>对于一些内部的前端库，除了自己搭建NPM服务器，还可以通过Git服务器及Git Tag的方式进行管理。<br>即在package.json中通过</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"adr"</span><span class="token keyword">:</span><span class="token string">"git+http://github.com/xmwarrior/adr/#v1.0.0"</span>
+</code></pre>
+<p>的方式引入依赖。<br>这种方式需要将构建完的源码提交到代码库。此种方式会让代码库因版本的增多而愈发臃肿。</p>
 <h4 id="2-本地的软件依赖包"><a href="#2-本地的软件依赖包" class="headerlink" title="2. 本地的软件依赖包"></a>2. 本地的软件依赖包</h4><p>通过包管理工具来支持file协议并引入依赖，即在package.json中通过<code>&quot;adr&quot;:&quot;file:adr&quot;</code>的形式引入依赖。<br>这种方式的应用场景如下：</p>
 <ul>
 <li>构建的包过大，不适合Git下载。</li>
@@ -508,7 +511,9 @@ UMD
 </ul>
 <h4 id="3-使用包管理工具构建NPM"><a href="#3-使用包管理工具构建NPM" class="headerlink" title="3. 使用包管理工具构建NPM"></a>3. 使用包管理工具构建NPM</h4><p>通过在package.json的script部分添加多个任务，进行简单的构建。<br>此种方式会随项目的复杂度提升，任务命令越来越长，使命令本身的可读性越来越差。</p>
 <p>使用JSON文件来管理任务，另一方面因其本身不能编写注释，也使任务很难文档化。</p>
-<p>此时可以考虑使用脚本文件的形式来管理。如<code>node build.js</code>。还有一种更实用的方式，结合NPM脚本与webpack或Gulp/Grunt使用，如<code>&quot;build&quot;:&quot;webpack --config webpack.dist.config.js&quot;</code></p>
+<p>此时可以考虑使用脚本文件的形式来管理。如<code>node build.js</code>。还有一种更实用的方式，结合NPM脚本与webpack或Gulp/Grunt使用，如</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"build"</span><span class="token keyword">:</span><span class="token string">"webpack --config webpack.dist.config.js"</span>
+</code></pre>
 <h4 id="4-使用构建工具构建Grunt-Gulp"><a href="#4-使用构建工具构建Grunt-Gulp" class="headerlink" title="4. 使用构建工具构建Grunt/Gulp"></a>4. 使用构建工具构建Grunt/Gulp</h4><p>对于复杂的构建流，可以考虑Gulp/Grunt来完成构建。<br>编程的方式比配置的方式更能提高可管理性。这也是Gulp/Grunt越来越流行的原因。</p>
 <h4 id="5-使用打包工具构建webpack"><a href="#5-使用打包工具构建webpack" class="headerlink" title="5. 使用打包工具构建webpack"></a>5. 使用打包工具构建webpack</h4><blockquote>
 <p>本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p>
@@ -1022,7 +1027,7 @@ UMD
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">26.6k</span>
+                <span class="white-color">26.8k</span>
             
 
             

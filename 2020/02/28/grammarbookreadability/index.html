@@ -4,12 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="canvas转换svg合成图片, xmwarrior,xmsniper">
-    <meta name="description" content="此函数应用场景为：百度地图生成自定义标志
-(function ($, document) {
-    $.extend({
-        //16进制颜色转换为rgba颜色
-        colorRgb: function (str,">
+    <meta name="keywords" content="写作原则-可读性, xmwarrior,xmsniper">
+    <meta name="description" content="
+第一稿的愉悦部分，源于欺骗自己它离真正的作品已经相当接近了；其后稿的愉悦部分，源于意识到自己没有被第一稿蒙骗。——朱利安·巴斯恩（Julian Barnes）
+
+17、利用排版和设计在文字周围添加更多空间，以增强可读性。
+18、运用可读性">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>canvas转换svg合成图片 | XMwarrior</title>
+    <title>写作原则-可读性 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -274,13 +274,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        canvas转换svg合成图片
+                        写作原则-可读性
                     </div>
                 </div>
             </div>
@@ -391,12 +391,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/" target="_blank">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/读书/" target="_blank">
+                                <span class="chip bg-color">读书</span>
                             </a>
                         
-                            <a href="/tags/jquery/" target="_blank">
-                                <span class="chip bg-color">jquery</span>
+                            <a href="/tags/复盘/" target="_blank">
+                                <span class="chip bg-color">复盘</span>
+                            </a>
+                        
+                            <a href="/tags/写作原则/" target="_blank">
+                                <span class="chip bg-color">写作原则</span>
                             </a>
                         
                     </div>
@@ -407,8 +411,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                前端
+                            <a href="/categories/写作原则/" class="post-category" target="_blank">
+                                写作原则
                             </a>
                         
                     </div>
@@ -419,21 +423,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-01
+                    2020-02-28
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        443
+                        201
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -449,70 +453,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>此函数应用场景为：百度地图生成自定义标志</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>function <span class="token punctuation">(</span>$, document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    $.extend<span class="token punctuation">(</span><span class="token punctuation">{</span>
-        //16进制颜色转换为rgba颜色
-        colorRgb: <span class="token keyword">function</span> <span class="token punctuation">(</span>str, opacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            var reg <span class="token operator">=</span> /^<span class="token comment" spellcheck="true">#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;</span>
-            var sColor <span class="token operator">=</span> str.toLowerCase<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>sColor <span class="token operator">&amp;&amp;</span> reg.test<span class="token punctuation">(</span>sColor<span class="token punctuation">))</span> <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>sColor.length <span class="token operator">==</span><span class="token operator">=</span> 4<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    var sColorNew <span class="token operator">=</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
-                    <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 1<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 4<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                        sColorNew +<span class="token operator">=</span> sColor.slice<span class="token punctuation">(</span>i, i + 1<span class="token punctuation">)</span>.concat<span class="token punctuation">(</span>sColor.slice<span class="token punctuation">(</span>i, i + 1<span class="token punctuation">))</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                    sColor <span class="token operator">=</span> sColorNew<span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                //处理六位的颜色值  
-                var sColorChange <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> 1<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> 7<span class="token punctuation">;</span> i +<span class="token operator">=</span> 2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    sColorChange.push<span class="token punctuation">(</span>parseInt<span class="token punctuation">(</span><span class="token string">"0x"</span> + sColor.slice<span class="token punctuation">(</span>i, i + 2<span class="token punctuation">))</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token keyword">return</span> <span class="token string">"rgba("</span> + sColorChange.join<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span> + <span class="token string">","</span> + opacity<span class="token punctuation">;</span> //透明度
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> sColor<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>,
-        svgToPng: <span class="token keyword">function</span> <span class="token punctuation">(</span>opts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            var options <span class="token operator">=</span> <span class="token punctuation">{</span>
-                color: opts.color <span class="token operator">||</span> <span class="token string">'#ff0000'</span>,
-                opacity: opts.opacity <span class="token operator">||</span> 0.3,
-                txt: opts.txt <span class="token operator">||</span> <span class="token string">'生'</span>,
-                width: opts.width <span class="token operator">||</span> 30,
-                height: opts.height <span class="token operator">||</span> 30,
-                fn: opts.fn <span class="token operator">||</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    console.log<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">;</span>
-            var svgArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            svgArr.push<span class="token punctuation">(</span><span class="token string">'&lt;svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="'</span> + options.width + <span class="token string">'" height="'</span> + options.height + <span class="token string">'" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            svgArr.push<span class="token punctuation">(</span><span class="token string">'    &lt;path fill="'</span> + $.colorRgb<span class="token punctuation">(</span>options.color, options.opacity<span class="token punctuation">)</span> + <span class="token string">'" d="M45.301,24.094c0,11.741-9.519,21.26-21.26,21.26c-11.741,0-21.26-9.519-21.26-21.26 c0-11.741,9.519-21.259,21.26-21.259C35.782,2.834,45.301,12.353,45.301,24.094z" />'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            svgArr.push<span class="token punctuation">(</span><span class="token string">'    &lt;path fill="'</span> + options.color + <span class="token string">'" d="M8.45,24.096c0,8.608,6.98,15.588,15.59,15.588c8.611,0,15.59-6.98,15.59-15.588 c0-8.612-6.979-15.592-15.59-15.592C15.43,8.504,8.45,15.484,8.45,24.096z" />'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            svgArr.push<span class="token punctuation">(</span><span class="token string">'&lt;/svg>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            var svgXml <span class="token operator">=</span> svgArr.join<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            var img <span class="token operator">=</span> new Image<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            img.crossOrigin <span class="token operator">=</span> <span class="token string">'Anonymous'</span><span class="token punctuation">;</span>
-            //给图片对象写入base64编码的svg流
-            img.src <span class="token operator">=</span> <span class="token string">'data:image/svg+xml;base64,'</span> + window.btoa<span class="token punctuation">(</span>unescape<span class="token punctuation">(</span>encodeURIComponent<span class="token punctuation">(</span>svgXml<span class="token punctuation">))</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            img.onload <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                var canvas <span class="token operator">=</span> document.createElement<span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> //准备空画布
-                var context <span class="token operator">=</span> canvas.getContext<span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                canvas.width <span class="token operator">=</span> options.width<span class="token punctuation">;</span>
-                canvas.height <span class="token operator">=</span> options.height<span class="token punctuation">;</span>
-                context.drawImage<span class="token punctuation">(</span>img, 0, 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                context.fillStyle <span class="token operator">=</span> <span class="token string">'#fff'</span><span class="token punctuation">;</span>
-                context.font <span class="token operator">=</span> <span class="token string">"bold 13px '微软雅黑','宋体'"</span><span class="token punctuation">;</span>
-                context.textBaseline <span class="token operator">=</span> <span class="token string">'middle'</span><span class="token punctuation">;</span>
-                context.fillText<span class="token punctuation">(</span>options.txt, <span class="token punctuation">(</span>options.width - 13<span class="token punctuation">)</span> / 2, <span class="token punctuation">(</span>options.height / 2<span class="token punctuation">))</span><span class="token punctuation">;</span>
-                var imagePng <span class="token operator">=</span> canvas.toDataURL<span class="token punctuation">(</span><span class="token string">'image/png'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                options.fn <span class="token operator">&amp;&amp;</span> options.fn<span class="token punctuation">(</span>imagePng<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>jQuery, document<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>示例：<a href="https://codepen.io/xmwarrior/pen/ExavWNZ" target="_blank" rel="noopener">请点这里</a></p>
+                <blockquote>
+<p>第一稿的愉悦部分，源于欺骗自己它离真正的作品已经相当接近了；其后稿的愉悦部分，源于意识到自己没有被第一稿蒙骗。——朱利安·巴斯恩（Julian Barnes）</p>
+</blockquote>
+<h4 id="17、利用排版和设计"><a href="#17、利用排版和设计" class="headerlink" title="17、利用排版和设计"></a>17、利用排版和设计</h4><p>在文字周围添加更多空间，以增强可读性。</p>
+<h4 id="18、运用可读性工具"><a href="#18、运用可读性工具" class="headerlink" title="18、运用可读性工具"></a>18、运用可读性工具</h4><p>突出关键字和短语。</p>
+<ul>
+<li><strong>粗体</strong></li>
+<li><em>斜体</em></li>
+<li>破折号“——”</li>
+<li>项目编号“·”</li>
+<li>列举“1. 2. …，（1）（2）…”</li>
+<li>阴影“背景色”</li>
+</ul>
+<h4 id="19、使用标题或摘要"><a href="#19、使用标题或摘要" class="headerlink" title="19、使用标题或摘要"></a>19、使用标题或摘要</h4><p>用标题或摘要拆分或归纳文章。</p>
+<ul>
+<li>有效运用标题</li>
+<li>有效运用摘要</li>
+</ul>
+<h4 id="20、回顾和修改文章"><a href="#20、回顾和修改文章" class="headerlink" title="20、回顾和修改文章"></a>20、回顾和修改文章</h4><p>直到你的文章改到无可修改，否则不能说已经完成了。</p>
+<h4 id="（完）"><a href="#（完）" class="headerlink" title="（完）"></a>（完）</h4><hr>
+<p><strong>《一本小小的红色写作书》</strong>——知识点整理。</p>
 
             </div>
             <hr>
@@ -660,7 +621,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/01/canvas2svg/" class="b-link-green">canvas转换svg合成图片</a>
+                    <a href="/2020/02/28/grammarbookreadability/" class="b-link-green">写作原则-可读性</a>
                 </p>
             </div>
         </div>
@@ -682,7 +643,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-02-01T14-18-19',
+        id: '2020-02-28T07-52-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -705,49 +666,54 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/01/inputrange/">
+                <a href="/2020/02/28/grammarbookreadability/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="input-range自定义">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="写作原则-可读性">
                         
-                        <span class="card-title">input-range自定义</span>
+                        <span class="card-title">写作原则-可读性</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">input-range自定义样式
-&lt;!DOCTYPE html>
-&lt;html lang="zh">
-    &lt;head>
-        &lt;meta charset="UTF-8" />
-        &lt;me</div>
+                    <div class="summary block-with-text">
+第一稿的愉悦部分，源于欺骗自己它离真正的作品已经相当接近了；其后稿的愉悦部分，源于意识到自己没有被第一稿蒙骗。——朱利安·巴斯恩（Julian Barnes）
+
+17、利用排版和设计在文字周围添加更多空间，以增强可读性。
+18、运用可读性</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/写作原则/" class="post-category" target="_blank">
+                                    写作原则
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/读书/" target="_blank">
+                        <span class="chip bg-color">读书</span>
                     </a>
                     
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/复盘/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
+                    </a>
+                    
+                    <a href="/tags/写作原则/" target="_blank">
+                        <span class="chip bg-color">写作原则</span>
                     </a>
                     
                 </div>
@@ -761,32 +727,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/12/05/qdsxljz/">
+                <a href="/2020/02/27/grammarbookstyle/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="前端实现懒加载">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="写作原则-风格">
                         
-                        <span class="card-title">前端实现懒加载</span>
+                        <span class="card-title">写作原则-风格</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">&lt;!DOCTYPE html>
-&lt;html lang="zh">
+                    <div class="summary block-with-text">
+简短的展现以便他们阅读，清楚地展现以便他们欣赏，如画般的展现以便他们记忆，最重要的是，准确的展现以便他们被它的光明所指引。——约瑟夫·普利策（Joseph Pulitzer）
 
-&lt;head>
-    &lt;meta charset="UTF-8" />
-    &lt;meta name="viewport" content="</div>
+6、支撑所说内容使用准确、具体的词汇支撑所说内容。
+7、让你</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/写作原则/" class="post-category" target="_blank">
+                                    写作原则
                                 </a>
                             
                             
@@ -796,12 +761,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/读书/" target="_blank">
+                        <span class="chip bg-color">读书</span>
                     </a>
                     
-                    <a href="/tags/bootstrap/" target="_blank">
-                        <span class="chip bg-color">bootstrap</span>
+                    <a href="/tags/复盘/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
+                    </a>
+                    
+                    <a href="/tags/写作原则/" target="_blank">
+                        <span class="chip bg-color">写作原则</span>
                     </a>
                     
                 </div>

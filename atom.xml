@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-02-27T15:18:08.320Z</updated>
+  <updated>2020-02-27T23:54:07.682Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写作原则-可读性</title>
+    <link href="http://xmwarrior.github.io/2020/02/28/grammarbookreadability/"/>
+    <id>http://xmwarrior.github.io/2020/02/28/grammarbookreadability/</id>
+    <published>2020-02-27T23:52:00.000Z</published>
+    <updated>2020-02-27T23:54:07.682Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;第一稿的愉悦部分，源于欺骗自己它离真正的作品已经相当接近了；其后稿的愉悦部分，源于意识到自己没有被第一稿蒙骗。——朱利安·巴斯恩（Julian Barnes）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;17、利用排版和设计&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="写作原则" scheme="http://xmwarrior.github.io/categories/%E5%86%99%E4%BD%9C%E5%8E%9F%E5%88%99/"/>
+    
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+      <category term="写作原则" scheme="http://xmwarrior.github.io/tags/%E5%86%99%E4%BD%9C%E5%8E%9F%E5%88%99/"/>
+    
+  </entry>
   
   <entry>
     <title>写作原则-风格</title>
@@ -54,7 +87,7 @@
     <link href="http://xmwarrior.github.io/2020/02/25/buildflowdesign/"/>
     <id>http://xmwarrior.github.io/2020/02/25/buildflowdesign/</id>
     <published>2020-02-25T00:50:00.000Z</published>
-    <updated>2020-02-27T14:21:18.286Z</updated>
+    <updated>2020-02-27T15:25:07.866Z</updated>
     
     <summary type="html">
     
@@ -567,34 +600,6 @@
     </summary>
     
       <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
-    
-    
-      <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>观点与感想</title>
-    <link href="http://xmwarrior.github.io/2019/04/17/gdygx/"/>
-    <id>http://xmwarrior.github.io/2019/04/17/gdygx/</id>
-    <published>2019-04-17T09:54:55.000Z</published>
-    <updated>2020-02-19T01:24:28.281Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000018868172&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;必须知道的程序员思维&lt;/a&gt; -2019年04月15日&lt;/li&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="日常优质文章收录" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%B8%B8%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
     
     
       <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
