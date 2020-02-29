@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-02-27T23:54:07.682Z</updated>
+  <updated>2020-02-29T16:31:07.099Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wap监听键盘事件</title>
+    <link href="http://xmwarrior.github.io/2020/02/29/waplistenkeyboard/"/>
+    <id>http://xmwarrior.github.io/2020/02/29/waplistenkeyboard/</id>
+    <published>2020-02-29T15:59:00.000Z</published>
+    <updated>2020-02-29T16:31:07.099Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;wap监听虚拟键盘的弹出、收起时，IOS与Android系统手机需要分别处理。&lt;/p&gt;
+&lt;h4 id=&quot;IOS&quot;&gt;&lt;a href=&quot;#IOS&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
+    
+      <category term="wap" scheme="http://xmwarrior.github.io/tags/wap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css左右布局-左适应内容、右自适应</title>
+    <link href="http://xmwarrior.github.io/2020/02/29/csslayout/"/>
+    <id>http://xmwarrior.github.io/2020/02/29/csslayout/</id>
+    <published>2020-02-29T15:23:00.000Z</published>
+    <updated>2020-02-29T16:07:27.516Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;左右自适应布局，此处仅列举三种常用的方式：grid、flex、float。&lt;/p&gt;
+&lt;h4 id=&quot;grid&quot;&gt;&lt;a href=&quot;#grid&quot; class=&quot;headerlink&quot; title=&quot;grid&quot;&gt;&lt;/a&gt;grid&lt;/h4&gt;&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>写作原则-可读性</title>
@@ -54,7 +110,7 @@
     <link href="http://xmwarrior.github.io/2020/02/27/grammarbookstyle/"/>
     <id>http://xmwarrior.github.io/2020/02/27/grammarbookstyle/</id>
     <published>2020-02-27T15:14:00.000Z</published>
-    <updated>2020-02-27T15:18:08.320Z</updated>
+    <updated>2020-02-29T09:00:07.023Z</updated>
     
     <summary type="html">
     
@@ -147,7 +203,7 @@
     <link href="http://xmwarrior.github.io/2020/02/20/grammarbooklayout/"/>
     <id>http://xmwarrior.github.io/2020/02/20/grammarbooklayout/</id>
     <published>2020-02-20T13:37:00.000Z</published>
-    <updated>2020-02-27T14:34:47.369Z</updated>
+    <updated>2020-02-29T01:53:50.270Z</updated>
     
     <summary type="html">
     
@@ -551,58 +607,6 @@
       <category term="html" scheme="http://xmwarrior.github.io/tags/html/"/>
     
       <category term="优秀文章收录" scheme="http://xmwarrior.github.io/tags/%E4%BC%98%E7%A7%80%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue组件传值</title>
-    <link href="http://xmwarrior.github.io/2019/04/29/vzucz/"/>
-    <id>http://xmwarrior.github.io/2019/04/29/vzucz/</id>
-    <published>2019-04-29T15:03:55.000Z</published>
-    <updated>2020-02-19T01:19:46.515Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、父子传值&quot;&gt;&lt;a href=&quot;#一、父子传值&quot; class=&quot;headerlink&quot; title=&quot;一、父子传值&quot;&gt;&lt;/a&gt;一、父子传值&lt;/h2&gt;&lt;h3 id=&quot;1-props传递单个参数&quot;&gt;&lt;a href=&quot;#1-props传递单个参数&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
-    
-    
-      <category term="vue" scheme="http://xmwarrior.github.io/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建hexo博客体会</title>
-    <link href="http://xmwarrior.github.io/2019/04/18/djhbkth/"/>
-    <id>http://xmwarrior.github.io/2019/04/18/djhbkth/</id>
-    <published>2019-04-17T16:29:55.000Z</published>
-    <updated>2020-02-19T01:19:34.270Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;发现问题&quot;&gt;&lt;a href=&quot;#发现问题&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
-    
-    
-      <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
     
   </entry>
   
