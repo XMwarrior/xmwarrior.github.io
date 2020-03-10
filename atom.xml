@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-02-29T16:31:07.099Z</updated>
+  <updated>2020-03-10T00:52:18.972Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《原则》读书笔记</title>
+    <link href="http://xmwarrior.github.io/2020/03/10/principlebookreadingnotes/"/>
+    <id>http://xmwarrior.github.io/2020/03/10/principlebookreadingnotes/</id>
+    <published>2020-03-10T00:04:00.000Z</published>
+    <updated>2020-03-10T00:52:18.972Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文从原则、思维模型、管理工具、经验&amp;amp;认知4个维度总结书中的知识点。&lt;/p&gt;
+&lt;h4 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://xmwarrior.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="观点与感想" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E7%82%B9%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>wap监听键盘事件</title>
@@ -574,39 +603,6 @@
       <category term="node" scheme="http://xmwarrior.github.io/tags/node/"/>
     
       <category term="express" scheme="http://xmwarrior.github.io/tags/express/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>优秀文章收录</title>
-    <link href="http://xmwarrior.github.io/2019/05/15/yxwzsl/"/>
-    <id>http://xmwarrior.github.io/2019/05/15/yxwzsl/</id>
-    <published>2019-05-15T13:35:00.000Z</published>
-    <updated>2020-02-19T01:26:45.557Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;安全&quot;&gt;&lt;a href=&quot;#安全&quot; class=&quot;headerlink&quot; title=&quot;安全&quot;&gt;&lt;/a&gt;安全&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000019176325&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="日常优质文章收录" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%B8%B8%E4%BC%98%E8%B4%A8%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-      <category term="css" scheme="http://xmwarrior.github.io/tags/css/"/>
-    
-      <category term="html" scheme="http://xmwarrior.github.io/tags/html/"/>
-    
-      <category term="优秀文章收录" scheme="http://xmwarrior.github.io/tags/%E4%BC%98%E7%A7%80%E6%96%87%E7%AB%A0%E6%94%B6%E5%BD%95/"/>
     
   </entry>
   
