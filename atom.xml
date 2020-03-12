@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-03-10T00:52:18.972Z</updated>
+  <updated>2020-03-12T01:01:59.936Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式-中介者模式</title>
+    <link href="http://xmwarrior.github.io/2020/03/12/mediatorpattern/"/>
+    <id>http://xmwarrior.github.io/2020/03/12/mediatorpattern/</id>
+    <published>2020-03-12T00:10:00.000Z</published>
+    <updated>2020-03-12T01:01:59.936Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;中介者模式（Mediator
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://xmwarrior.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="中介者模式" scheme="http://xmwarrior.github.io/tags/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式</title>
+    <link href="http://xmwarrior.github.io/2020/03/12/designpatterns/"/>
+    <id>http://xmwarrior.github.io/2020/03/12/designpatterns/</id>
+    <published>2020-03-12T00:00:00.000Z</published>
+    <updated>2020-03-12T01:39:47.799Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://xmwarrior.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端架构-多页面应用</title>
+    <link href="http://xmwarrior.github.io/2020/03/11/multipageapplication/"/>
+    <id>http://xmwarrior.github.io/2020/03/11/multipageapplication/</id>
+    <published>2020-03-11T01:00:00.000Z</published>
+    <updated>2020-03-12T01:38:13.294Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;5-1-为什么不需要单页面应用&quot;&gt;&lt;a href=&quot;#5-1-为什么不需要单页面应用&quot; class=&quot;headerlink&quot; title=&quot;5.1 为什么不需要单页面应用&quot;&gt;&lt;/a&gt;5.1
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>《原则》读书笔记</title>
@@ -172,7 +256,7 @@
     <link href="http://xmwarrior.github.io/2020/02/25/buildflowdesign/"/>
     <id>http://xmwarrior.github.io/2020/02/25/buildflowdesign/</id>
     <published>2020-02-25T00:50:00.000Z</published>
-    <updated>2020-02-27T15:25:07.866Z</updated>
+    <updated>2020-03-11T00:33:33.707Z</updated>
     
     <summary type="html">
     
@@ -519,90 +603,6 @@
     
     
       <category term="vue" scheme="http://xmwarrior.github.io/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>reduce方法应用技巧</title>
-    <link href="http://xmwarrior.github.io/2019/10/09/rffyyjq/"/>
-    <id>http://xmwarrior.github.io/2019/10/09/rffyyjq/</id>
-    <published>2019-10-09T14:29:55.000Z</published>
-    <updated>2020-02-19T01:20:45.570Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;定义和用法&quot;&gt;&lt;a href=&quot;#定义和用法&quot; class=&quot;headerlink&quot; title=&quot;定义和用法&quot;&gt;&lt;/a&gt;定义和用法&lt;/h2&gt;&lt;p&gt;reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。&lt;br&gt;注意:
-        
-      
-    
-    </summary>
-    
-      <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
-    
-    
-      <category term="js" scheme="http://xmwarrior.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于elementUI表头筛选组件封装</title>
-    <link href="http://xmwarrior.github.io/2019/09/30/jyebtsxzjfz/"/>
-    <id>http://xmwarrior.github.io/2019/09/30/jyebtsxzjfz/</id>
-    <published>2019-09-30T14:29:55.000Z</published>
-    <updated>2020-02-19T01:20:32.054Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;引用方式&quot;&gt;&lt;a href=&quot;#引用方式&quot; class=&quot;headerlink&quot; title=&quot;引用方式&quot;&gt;&lt;/a&gt;引用方式&lt;/h2&gt;&lt;p&gt;推荐&lt;code&gt;main.js&lt;/code&gt;里全局引用：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import
-        
-      
-    
-    </summary>
-    
-      <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
-    
-    
-      <category term="vue" scheme="http://xmwarrior.github.io/tags/vue/"/>
-    
-      <category term="elementUI" scheme="http://xmwarrior.github.io/tags/elementUI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>express搭建增删改查本地JSON后台(示例)</title>
-    <link href="http://xmwarrior.github.io/2019/05/27/edjzsgcbdjht/"/>
-    <id>http://xmwarrior.github.io/2019/05/27/edjzsgcbdjht/</id>
-    <published>2019-05-27T14:29:55.000Z</published>
-    <updated>2020-02-19T01:20:08.748Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;文件结构&quot;&gt;&lt;a href=&quot;#文件结构&quot; class=&quot;headerlink&quot; title=&quot;文件结构&quot;&gt;&lt;/a&gt;文件结构&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/express.png&quot; alt=&quot;avatar&quot;&gt;&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="日志" scheme="http://xmwarrior.github.io/categories/%E6%97%A5%E5%BF%97/"/>
-    
-    
-      <category term="node" scheme="http://xmwarrior.github.io/tags/node/"/>
-    
-      <category term="express" scheme="http://xmwarrior.github.io/tags/express/"/>
     
   </entry>
   
