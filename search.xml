@@ -4,9 +4,9 @@
   
     
     <entry>
-      <title>MVC与MVVM</title>
-      <link href="/2020/03/13/mvcvsmvvm/"/>
-      <url>/2020/03/13/mvcvsmvvm/</url>
+      <title>MVC架构</title>
+      <link href="/2020/03/13/mvc/"/>
+      <url>/2020/03/13/mvc/</url>
       
         <content type="html"><![CDATA[<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>好的MVC架构，能实现View与Model层的分离、可替代。拥有条理、逻辑清晰的代码结构。</p><h3 id="简介与架构理念"><a href="#简介与架构理念" class="headerlink" title="简介与架构理念"></a>简介与架构理念</h3><blockquote><p>MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计创建 Web 应用程序的模式。使用MVC的目的是 <strong>将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式</strong>。</p></blockquote><p>核心理念：<strong>分离</strong></p><h3 id="前端领域的理解"><a href="#前端领域的理解" class="headerlink" title="前端领域的理解"></a>前端领域的理解</h3><p>当理解MVC的三个组成部分时，只有抓住核心理念，才能深刻的理解其中的含义，并实际应用。</p><h4 id="View"><a href="#View" class="headerlink" title="View"></a>View</h4><p>view层的主要作用是：实现DOM元素与Controller之间的 <strong>“绑定”</strong>。</p><p>因此view的主要内容则是：</p><ul><li>事件绑定Controller方法</li><li>方法绑定Controller方法</li></ul><pre class=" language-bash"><code class="language-bash">document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.addEventListener<span class="token punctuation">(</span><span class="token string">'eventName'</span>,controller<span class="token punctuation">)</span><span class="token punctuation">;</span>document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.innerText <span class="token operator">=</span> Controller.getModelByKey<span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>Model层的主要作用是：保证数据的 <strong>“纯净”</strong> 存储。</p><p>如果你以前对Ajax数据请求属于哪部分有疑问，那么从纯净角度来看，它并不应该属于Model部分。</p><h4 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h4><p>Controller层的主要作用是：<strong>“联接”</strong> View层与Model层。</p><p>因此Controller的主要内容则是：</p><ul><li>View的事件绑定函数</li><li>Model的数据的获取、处理函数</li></ul><p>要做好MVC架构，一定要把握好各个层的侧重方向，划分好功能区域，保证功能区的<strong>分离</strong>。</p>]]></content>
       
@@ -23,8 +23,6 @@
             <tag> 设计模式 </tag>
             
             <tag> mvc </tag>
-            
-            <tag> mvvm </tag>
             
         </tags>
       

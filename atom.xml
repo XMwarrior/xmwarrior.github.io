@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-03-13T02:13:19.184Z</updated>
+  <updated>2020-03-13T02:16:34.841Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MVC与MVVM</title>
-    <link href="http://xmwarrior.github.io/2020/03/13/mvcvsmvvm/"/>
-    <id>http://xmwarrior.github.io/2020/03/13/mvcvsmvvm/</id>
+    <title>MVC架构</title>
+    <link href="http://xmwarrior.github.io/2020/03/13/mvc/"/>
+    <id>http://xmwarrior.github.io/2020/03/13/mvc/</id>
     <published>2020-03-13T00:16:00.000Z</published>
-    <updated>2020-03-13T02:13:19.184Z</updated>
+    <updated>2020-03-13T02:16:34.841Z</updated>
     
     <summary type="html">
     
@@ -42,8 +42,6 @@
       <category term="设计模式" scheme="http://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
       <category term="mvc" scheme="http://xmwarrior.github.io/tags/mvc/"/>
-    
-      <category term="mvvm" scheme="http://xmwarrior.github.io/tags/mvvm/"/>
     
   </entry>
   
