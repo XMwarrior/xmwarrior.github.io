@@ -4,13 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="观点与感想, xmwarrior,xmsniper">
-    <meta name="description" content="
-必须知道的程序员思维 -2019年04月15日
-写给工程师的十条精进原则 -2018年09月13日
-《未来世界的幸存者》 -2018年07月09日
-
-">
+    <meta name="keywords" content="MVC与MVVM, xmwarrior,xmsniper">
+    <meta name="description" content="MVC好的MVC架构，能实现View与Model层的分离、可替代。拥有条理、逻辑清晰的代码结构。
+简介与架构理念
+MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计创建 Web 应用程序的模式。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>观点与感想 | XMwarrior</title>
+    <title>MVC与MVVM | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -275,13 +272,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        观点与感想
+                        MVC与MVVM
                     </div>
                 </div>
             </div>
@@ -392,8 +389,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/观点与感想/" target="_blank">
-                                <span class="chip bg-color">观点与感想</span>
+                            <a href="/tags/设计模式/" target="_blank">
+                                <span class="chip bg-color">设计模式</span>
+                            </a>
+                        
+                            <a href="/tags/mvc/" target="_blank">
+                                <span class="chip bg-color">mvc</span>
+                            </a>
+                        
+                            <a href="/tags/mvvm/" target="_blank">
+                                <span class="chip bg-color">mvvm</span>
                             </a>
                         
                     </div>
@@ -404,8 +409,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/日常优质文章收录/" class="post-category" target="_blank">
-                                日常优质文章收录
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                前端架构
                             </a>
                         
                     </div>
@@ -416,14 +421,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-17
+                    2020-03-13
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        42
+                        341
                     </div>
                     
 
@@ -446,11 +451,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li><a href="https://segmentfault.com/a/1190000018868172" target="_blank" rel="noopener">必须知道的程序员思维</a> -2019年04月15日</li>
-<li><a href="https://blog.fundebug.com/2018/09/13/10-principle-for-programer/" target="_blank" rel="noopener">写给工程师的十条精进原则</a> -2018年09月13日</li>
-<li><a href="http://www.ruanyifeng.com/survivor/" target="_blank" rel="noopener">《未来世界的幸存者》</a> -2018年07月09日</li>
+                <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>好的MVC架构，能实现View与Model层的分离、可替代。拥有条理、逻辑清晰的代码结构。</p>
+<h3 id="简介与架构理念"><a href="#简介与架构理念" class="headerlink" title="简介与架构理念"></a>简介与架构理念</h3><blockquote>
+<p>MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计创建 Web 应用程序的模式。使用MVC的目的是 <strong>将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式</strong>。</p>
+</blockquote>
+<p>核心理念：<strong>分离</strong></p>
+<h3 id="前端领域的理解"><a href="#前端领域的理解" class="headerlink" title="前端领域的理解"></a>前端领域的理解</h3><p>当理解MVC的三个组成部分时，只有抓住核心理念，才能深刻的理解其中的含义，并实际应用。</p>
+<h4 id="View"><a href="#View" class="headerlink" title="View"></a>View</h4><p>view层的主要作用是：实现DOM元素与Controller之间的 <strong>“绑定”</strong>。</p>
+<p>因此view的主要内容则是：</p>
+<ul>
+<li>事件绑定Controller方法</li>
+<li>方法绑定Controller方法</li>
 </ul>
+<pre class=" language-bash"><code class="language-bash">document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.addEventListener<span class="token punctuation">(</span><span class="token string">'eventName'</span>,controller<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.innerText <span class="token operator">=</span> Controller.getModelByKey<span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>Model层的主要作用是：保证数据的 <strong>“纯净”</strong> 存储。</p>
+<p>如果你以前对Ajax数据请求属于哪部分有疑问，那么从纯净角度来看，它并不应该属于Model部分。</p>
+<h4 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h4><p>Controller层的主要作用是：<strong>“联接”</strong> View层与Model层。</p>
+<p>因此Controller的主要内容则是：</p>
+<ul>
+<li>View的事件绑定函数</li>
+<li>Model的数据的获取、处理函数</li>
+</ul>
+<p>要做好MVC架构，一定要把握好各个层的侧重方向，划分好功能区域，保证功能区的<strong>分离</strong>。</p>
 
             </div>
             <hr>
@@ -598,7 +622,7 @@
                     </span>
                     <a href="http://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/17/gdygx/" class="b-link-green">观点与感想</a>
+                    <a href="/2020/03/13/mvcvsmvvm/" class="b-link-green">MVC与MVVM</a>
                 </p>
             </div>
         </div>
@@ -620,7 +644,7 @@
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2019-04-17T17-54-55',
+        id: '2020-03-13T08-16-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -643,42 +667,52 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/18/djhbkth/">
+                <a href="/2020/03/13/mvcvsmvvm/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="搭建hexo博客体会">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="MVC与MVVM">
                         
-                        <span class="card-title">搭建hexo博客体会</span>
+                        <span class="card-title">MVC与MVVM</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">发现问题虽然此前也搭建过博客，并且尝试写过markdown博客文章，但也没有深入了解过hexo博客的搭建。一切只能从一个合并博客内容的想法开始…因为本人日前做过两个博客，XMwarrior跟xmsniper。
-
-XMwarrior是纯手撸的</div>
+                    <div class="summary block-with-text">MVC好的MVC架构，能实现View与Model层的分离、可替代。拥有条理、逻辑清晰的代码结构。
+简介与架构理念
+MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计创建 Web 应用程序的模式。</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/日志/" class="post-category" target="_blank">
-                                    日志
+                            <a href="/categories/前端架构/" class="post-category" target="_blank">
+                                    前端架构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/观点与感想/" target="_blank">
-                        <span class="chip bg-color">观点与感想</span>
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
+                    </a>
+                    
+                    <a href="/tags/mvc/" target="_blank">
+                        <span class="chip bg-color">mvc</span>
+                    </a>
+                    
+                    <a href="/tags/mvvm/" target="_blank">
+                        <span class="chip bg-color">mvvm</span>
                     </a>
                     
                 </div>
@@ -692,28 +726,31 @@ XMwarrior是纯手撸的</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/11/tqcjzfree/">
+                <a href="/2020/03/12/mediatorpattern/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="天气插件改造之Free初探">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="设计模式-中介者模式">
                         
-                        <span class="card-title">天气插件改造之Free初探</span>
+                        <span class="card-title">设计模式-中介者模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">此处不宜多说（露出一个高深莫测的微笑！），精华自取：
-(function (window, document, scriptName, wigetname, url, jsonurl, scriptNode, originalNode) {</div>
+                    <div class="summary block-with-text">定义中介者模式（Mediator Pattern）：定义一个中介对象来封装一系列对象之间的交互。中介者使各个对象不需要显示地相互引用，从而使其耦合性松散，而且可以独立地改变他们之间的交互。
+优缺点优点
+松散耦合
+集中控制交互
+多对多变为一对</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/设计模式/" class="post-category" target="_blank">
+                                    设计模式
                                 </a>
                             
                             
@@ -723,12 +760,12 @@ XMwarrior是纯手撸的</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
-                    <a href="/tags/jquery/" target="_blank">
-                        <span class="chip bg-color">jquery</span>
+                    <a href="/tags/中介者模式/" target="_blank">
+                        <span class="chip bg-color">中介者模式</span>
                     </a>
                     
                 </div>

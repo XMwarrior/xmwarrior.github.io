@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-03-12T01:01:59.936Z</updated>
+  <updated>2020-03-13T02:13:19.184Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MVC与MVVM</title>
+    <link href="http://xmwarrior.github.io/2020/03/13/mvcvsmvvm/"/>
+    <id>http://xmwarrior.github.io/2020/03/13/mvcvsmvvm/</id>
+    <published>2020-03-13T00:16:00.000Z</published>
+    <updated>2020-03-13T02:13:19.184Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;MVC&quot;&gt;&lt;a href=&quot;#MVC&quot; class=&quot;headerlink&quot; title=&quot;MVC&quot;&gt;&lt;/a&gt;MVC&lt;/h2&gt;&lt;p&gt;好的MVC架构，能实现View与Model层的分离、可替代。拥有条理、逻辑清晰的代码结构。&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="设计模式" scheme="http://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="mvc" scheme="http://xmwarrior.github.io/tags/mvc/"/>
+    
+      <category term="mvvm" scheme="http://xmwarrior.github.io/tags/mvvm/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-中介者模式</title>
@@ -577,32 +608,6 @@
     
     
       <category term="Eslint效验工具" scheme="http://xmwarrior.github.io/tags/Eslint%E6%95%88%E9%AA%8C%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue规范</title>
-    <link href="http://xmwarrior.github.io/2020/01/14/vgf/"/>
-    <id>http://xmwarrior.github.io/2020/01/14/vgf/</id>
-    <published>2020-01-14T15:03:55.000Z</published>
-    <updated>2020-02-19T01:20:52.954Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-组件选项顺序&quot;&gt;&lt;a href=&quot;#1-组件选项顺序&quot; class=&quot;headerlink&quot; title=&quot;1.组件选项顺序&quot;&gt;&lt;/a&gt;1.组件选项顺序&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="vue" scheme="http://xmwarrior.github.io/tags/vue/"/>
     
   </entry>
   
