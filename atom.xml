@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-03-13T02:16:34.841Z</updated>
+  <updated>2020-03-15T15:43:46.406Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -17,11 +17,71 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MVC架构</title>
+    <title>架构模式-MVVM</title>
+    <link href="http://xmwarrior.github.io/2020/03/15/mvvm/"/>
+    <id>http://xmwarrior.github.io/2020/03/15/mvvm/</id>
+    <published>2020-03-15T15:43:00.000Z</published>
+    <updated>2020-03-15T15:43:46.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;MVVM&quot;&gt;&lt;a href=&quot;#MVVM&quot; class=&quot;headerlink&quot; title=&quot;MVVM&quot;&gt;&lt;/a&gt;MVVM&lt;/h2&gt;&lt;p&gt;MVVM是Model-View-ViewModel的简写。&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="设计模式" scheme="http://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="mvvm" scheme="http://xmwarrior.github.io/tags/mvvm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式-观察者模式&amp;发布订阅模式</title>
+    <link href="http://xmwarrior.github.io/2020/03/15/observerpattern/"/>
+    <id>http://xmwarrior.github.io/2020/03/15/observerpattern/</id>
+    <published>2020-03-15T06:56:00.000Z</published>
+    <updated>2020-03-15T11:55:49.982Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;观察者模式&lt;/strong&gt;定义了对象间的一种一对多的依赖关系。而&lt;strong&gt;发布订阅模式&lt;/strong&gt;是观察者模式的衍生模式，它进一步解耦了发布者与观察者的依赖关系，并且能够更细粒度的控制依赖关系。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://xmwarrior.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="观察者模式" scheme="http://xmwarrior.github.io/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="发布订阅模式" scheme="http://xmwarrior.github.io/tags/%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>架构模式-MVC</title>
     <link href="http://xmwarrior.github.io/2020/03/13/mvc/"/>
     <id>http://xmwarrior.github.io/2020/03/13/mvc/</id>
     <published>2020-03-13T00:16:00.000Z</published>
-    <updated>2020-03-13T02:16:34.841Z</updated>
+    <updated>2020-03-15T11:56:37.215Z</updated>
     
     <summary type="html">
     
@@ -50,7 +110,7 @@
     <link href="http://xmwarrior.github.io/2020/03/12/mediatorpattern/"/>
     <id>http://xmwarrior.github.io/2020/03/12/mediatorpattern/</id>
     <published>2020-03-12T00:10:00.000Z</published>
-    <updated>2020-03-12T01:01:59.936Z</updated>
+    <updated>2020-03-15T07:06:45.969Z</updated>
     
     <summary type="html">
     
@@ -550,62 +610,6 @@
       <category term="npm" scheme="http://xmwarrior.github.io/tags/npm/"/>
     
       <category term="element-ui" scheme="http://xmwarrior.github.io/tags/element-ui/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>手摸手带你使用Vue-Cli3搭建前端开发环境</title>
-    <link href="http://xmwarrior.github.io/2020/02/09/smsdnsyvdjqdkfhj/"/>
-    <id>http://xmwarrior.github.io/2020/02/09/smsdnsyvdjqdkfhj/</id>
-    <published>2020-02-09T04:21:00.000Z</published>
-    <updated>2020-02-19T01:21:31.081Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;vue-cli搭建前端开发环境指南&quot;&gt;&lt;a href=&quot;#vue-cli搭建前端开发环境指南&quot; class=&quot;headerlink&quot; title=&quot;vue-cli搭建前端开发环境指南&quot;&gt;&lt;/a&gt;vue-cli搭建前端开发环境指南&lt;/h1&gt;&lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="环境搭建&amp;工具分享" scheme="http://xmwarrior.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="Vue-Cli3" scheme="http://xmwarrior.github.io/tags/Vue-Cli3/"/>
-    
-      <category term="环境搭建" scheme="http://xmwarrior.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    
-      <category term="eslint" scheme="http://xmwarrior.github.io/tags/eslint/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Eslint rules字典</title>
-    <link href="http://xmwarrior.github.io/2020/02/08/erzd/"/>
-    <id>http://xmwarrior.github.io/2020/02/08/erzd/</id>
-    <published>2020-02-08T04:21:00.000Z</published>
-    <updated>2020-02-19T01:21:06.856Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Eslint-rules字典&quot;&gt;&lt;a href=&quot;#Eslint-rules字典&quot; class=&quot;headerlink&quot; title=&quot;Eslint rules字典&quot;&gt;&lt;/a&gt;Eslint rules字典&lt;/h1&gt;&lt;h2 id=&quot;规则级别&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="环境搭建&amp;工具分享" scheme="http://xmwarrior.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="Eslint效验工具" scheme="http://xmwarrior.github.io/tags/Eslint%E6%95%88%E9%AA%8C%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
