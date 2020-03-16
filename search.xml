@@ -118,7 +118,7 @@
       <link href="/2020/03/12/designpatterns/"/>
       <url>/2020/03/12/designpatterns/</url>
       
-        <content type="html"><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>设计模式是为特定场景下的问题而定制的解决方案。特定场景指问题所在的重复出现的场景，问题指特定环境下你想达成的目标。同样的问题在不同的环境下会有不同的限制和挑战。定制的解决方案是指在特定环境下克服了问题的限制条件而达成目标的一种设计。</p><h3 id="分类大纲"><a href="#分类大纲" class="headerlink" title="分类大纲"></a>分类大纲</h3><p>设计模式分为三种类型，共23种。</p><ul><li>创建型模式<ul><li>单例模式</li><li>抽象工厂模式</li><li>建造者模式</li><li>工厂模式</li><li>原型模式</li></ul></li><li>结构型模式<ul><li>适配器模式</li><li>桥接模式</li><li>装饰模式</li><li>组合模式</li><li>外观模式</li><li>享元模式</li><li>代理模式</li></ul></li><li>行为型模式<ul><li>模版方法模式</li><li>命令模式</li><li>迭代器模式</li><li>观察者模式</li><li><a href="/2020/03/12/mediatorpattern/">中介者模式</a></li><li>备忘录模式</li><li>解释器模式（Interpreter模式）</li><li>状态模式</li><li>策略模式</li><li>职责链模式(责任链模式)</li><li>访问者模式</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>设计模式是为特定场景下的问题而定制的解决方案。特定场景指问题所在的重复出现的场景，问题指特定环境下你想达成的目标。同样的问题在不同的环境下会有不同的限制和挑战。定制的解决方案是指在特定环境下克服了问题的限制条件而达成目标的一种设计。</p><h3 id="分类大纲"><a href="#分类大纲" class="headerlink" title="分类大纲"></a>分类大纲</h3><p>设计模式分为三种类型，共23种。</p><ul><li>创建型模式<ul><li>单例模式</li><li>抽象工厂模式</li><li>建造者模式</li><li>工厂模式</li><li>原型模式</li></ul></li><li>结构型模式<ul><li>适配器模式</li><li>桥接模式</li><li>装饰模式</li><li>组合模式</li><li>外观模式</li><li>享元模式</li><li>代理模式</li></ul></li><li>行为型模式<ul><li>模版方法模式</li><li>命令模式</li><li>迭代器模式</li><li><a href="/2020/03/15/ObserverPattern">观察者模式</a></li><li><a href="/2020/03/12/mediatorpattern/">中介者模式</a></li><li>备忘录模式</li><li>解释器模式（Interpreter模式）</li><li>状态模式</li><li>策略模式</li><li>职责链模式(责任链模式)</li><li>访问者模式</li></ul></li></ul>]]></content>
       
       
       <categories>
