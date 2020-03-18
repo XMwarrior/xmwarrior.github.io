@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmwarrior.github.io/"/>
-  <updated>2020-03-15T15:43:46.406Z</updated>
+  <updated>2020-03-18T00:46:40.340Z</updated>
   <id>http://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端架构-单页面应用</title>
+    <link href="http://xmwarrior.github.io/2020/03/18/singlepageapplication/"/>
+    <id>http://xmwarrior.github.io/2020/03/18/singlepageapplication/</id>
+    <published>2020-03-18T00:46:00.000Z</published>
+    <updated>2020-03-18T00:46:40.340Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前端架构原理&quot;&gt;&lt;a href=&quot;#前端架构原理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="前端架构" scheme="http://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="读书" scheme="http://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="复盘" scheme="http://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+      <category term="单页面应用" scheme="http://xmwarrior.github.io/tags/%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>架构模式-MVVM</title>
@@ -81,7 +113,7 @@
     <link href="http://xmwarrior.github.io/2020/03/13/mvc/"/>
     <id>http://xmwarrior.github.io/2020/03/13/mvc/</id>
     <published>2020-03-13T00:16:00.000Z</published>
-    <updated>2020-03-15T11:56:37.215Z</updated>
+    <updated>2020-03-17T00:38:52.197Z</updated>
     
     <summary type="html">
     
@@ -567,36 +599,6 @@
         
         
           &lt;h1 id=&quot;已有项目配置eslint指南&quot;&gt;&lt;a href=&quot;#已有项目配置eslint指南&quot; class=&quot;headerlink&quot; title=&quot;已有项目配置eslint指南&quot;&gt;&lt;/a&gt;已有项目配置eslint指南&lt;/h1&gt;&lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="npm" scheme="http://xmwarrior.github.io/categories/npm/"/>
-    
-    
-      <category term="vue" scheme="http://xmwarrior.github.io/tags/vue/"/>
-    
-      <category term="npm" scheme="http://xmwarrior.github.io/tags/npm/"/>
-    
-      <category term="element-ui" scheme="http://xmwarrior.github.io/tags/element-ui/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>npm组件发布之element-plugin</title>
-    <link href="http://xmwarrior.github.io/2020/02/10/mzjfbze/"/>
-    <id>http://xmwarrior.github.io/2020/02/10/mzjfbze/</id>
-    <published>2020-02-10T04:21:00.000Z</published>
-    <updated>2020-02-19T01:21:50.391Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;element-plugin&quot;&gt;&lt;a href=&quot;#element-plugin&quot; class=&quot;headerlink&quot; title=&quot;element-plugin&quot;&gt;&lt;/a&gt;element-plugin&lt;/h1&gt;&lt;p&gt;element-plugin
         
       
     

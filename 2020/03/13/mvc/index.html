@@ -424,7 +424,7 @@ MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        341
+                        359
                     </div>
                     
 
@@ -453,7 +453,7 @@ MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计
 </blockquote>
 <p>核心理念：<strong>分离</strong></p>
 <h3 id="前端领域的理解"><a href="#前端领域的理解" class="headerlink" title="前端领域的理解"></a>前端领域的理解</h3><p>当理解MVC的三个组成部分时，只有抓住核心理念，才能深刻的理解其中的含义，并实际应用。</p>
-<h4 id="View"><a href="#View" class="headerlink" title="View"></a>View</h4><p>view层的主要作用是：实现DOM元素与Controller之间的 <strong>“绑定”</strong>。</p>
+<h4 id="View（表现层）"><a href="#View（表现层）" class="headerlink" title="View（表现层）"></a>View（表现层）</h4><p>view层的主要作用是：实现DOM元素与Controller之间的 <strong>“绑定”</strong>。</p>
 <p>因此view的主要内容则是：</p>
 <ul>
 <li>事件绑定Controller方法</li>
@@ -462,9 +462,9 @@ MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计
 <pre class=" language-bash"><code class="language-bash">document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.addEventListener<span class="token punctuation">(</span><span class="token string">'eventName'</span>,controller<span class="token punctuation">)</span><span class="token punctuation">;</span>
 document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.innerText <span class="token operator">=</span> Controller.getModelByKey<span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>Model层的主要作用是：保证数据的 <strong>“纯净”</strong> 存储。</p>
+<h4 id="Model（数据层-模型层）"><a href="#Model（数据层-模型层）" class="headerlink" title="Model（数据层|模型层）"></a>Model（数据层|模型层）</h4><p>Model层的主要作用是：保证数据的 <strong>“纯净”</strong> 存储。</p>
 <p>如果你以前对Ajax数据请求属于哪部分有疑问，那么从纯净角度来看，它并不应该属于Model部分。</p>
-<h4 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h4><p>Controller层的主要作用是：<strong>“联接”</strong> View层与Model层。</p>
+<h4 id="Controller（领域层-控制层）"><a href="#Controller（领域层-控制层）" class="headerlink" title="Controller（领域层|控制层）"></a>Controller（领域层|控制层）</h4><p>Controller层的主要作用是：<strong>“联接”</strong> View层与Model层。</p>
 <p>因此Controller的主要内容则是：</p>
 <ul>
 <li>View的事件绑定函数</li>
@@ -916,7 +916,7 @@ Medi</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">30.5k</span>
+                <span class="white-color">31.1k</span>
             
 
             

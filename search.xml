@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>前端架构-单页面应用</title>
+      <link href="/2020/03/18/singlepageapplication/"/>
+      <url>/2020/03/18/singlepageapplication/</url>
+      
+        <content type="html"><![CDATA[<h3 id="前端架构原理"><a href="#前端架构原理" class="headerlink" title="前端架构原理"></a>前端架构原理</h3><p>本章前半部分讲解了MVC、MVVM架构的原理，针对此部分内容，我整理了两篇文章：</p><ul><li><a href="/2020/03/13/mvc">架构模式-MVC</a></li><li><a href="/2020/03/15/mvvm">架构模式-MVVVM</a></li></ul><h3 id="前端架构选型"><a href="#前端架构选型" class="headerlink" title="前端架构选型"></a>前端架构选型</h3><p>框架选型需要考虑的因素：</p><ol><li>框架情况调研<ul><li>是否能满足大部分应用的需求？</li><li>是否有丰富的组件库？</li><li>社区支持怎么样？</li><li>替换成本</li></ul></li><li>团队是否能快速的掌握框架。<ul><li>根据不同基础的团队，降低学习成本。</li></ul></li><li>框架的生态系统。<ul><li>足够的功能组件、库支持，保证开发专注于业务。</li></ul></li><li>浏览器的兼容性。<ul><li>业务方向限定选择范围。</li></ul></li><li>后期维护成本和难度。<ul><li>越大型的项目，越需要大而全的框架。</li></ul></li><li>最小的迁移代价。<ul><li>框架间迁移项目</li><li>框架的向下兼容性。</li></ul></li></ol><h4 id="大而全还是小而美"><a href="#大而全还是小而美" class="headerlink" title="大而全还是小而美"></a>大而全还是小而美</h4><ol><li>大而全。（例如：Angular）<ul><li>优点：功能全，开箱即用，文档详细，规范准则多，代码质量高。</li><li>缺点：体积大，上手成本、难度高，规范准则多。</li></ul></li><li>小而美。（例如：React）<ul><li>优点：灵活性高，可定制度高，上手成本、难度底。</li><li>缺点：维护成本高，代码质量低。</li></ul></li></ol><h4 id="React"><a href="#React" class="headerlink" title="React"></a>React</h4><p>优点：不需要DOM操作、组件化思想、JSX模板、多平台领域支持。<br>缺点：为优化DOM操作而生，需要依赖其他库完成项目搭建。</p><h4 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h4><p>优点：开箱即用，自带完整应用所需要的所有要素；完善的开发规范、指南。<br>缺点：需严格按照规范编码，相应的框架问题不易修改。</p><h4 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h4><p>优点：上手难度低，可轻量化引用，<br>缺点：多依赖，维护成本高</p><h3 id="启动前端应用"><a href="#启动前端应用" class="headerlink" title="启动前端应用"></a>启动前端应用</h3><p>通用流程：</p><ul><li>寻找合适的脚手架（star）</li><li>选择合适的UI框架/组件库。创建自己的组件库</li><li>确认浏览器支持范围</li><li>明确响应式设计需求</li><li>服务端渲染。（作用：SEO、更快的页面渲染速度）</li></ul><hr><p><strong>《前端架构：从入门到微前端》</strong>——知识点整理。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端架构 </tag>
+            
+            <tag> 读书 </tag>
+            
+            <tag> 复盘 </tag>
+            
+            <tag> 单页面应用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>架构模式-MVVM</title>
       <link href="/2020/03/15/mvvm/"/>
       <url>/2020/03/15/mvvm/</url>
@@ -64,7 +95,7 @@
       <link href="/2020/03/13/mvc/"/>
       <url>/2020/03/13/mvc/</url>
       
-        <content type="html"><![CDATA[<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>好的MVC架构，能实现View与Model层的分离、可替代。拥有条理、逻辑清晰的代码结构。</p><h3 id="简介与架构理念"><a href="#简介与架构理念" class="headerlink" title="简介与架构理念"></a>简介与架构理念</h3><blockquote><p>MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计创建 Web 应用程序的模式。使用MVC的目的是 <strong>将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式</strong>。</p></blockquote><p>核心理念：<strong>分离</strong></p><h3 id="前端领域的理解"><a href="#前端领域的理解" class="headerlink" title="前端领域的理解"></a>前端领域的理解</h3><p>当理解MVC的三个组成部分时，只有抓住核心理念，才能深刻的理解其中的含义，并实际应用。</p><h4 id="View"><a href="#View" class="headerlink" title="View"></a>View</h4><p>view层的主要作用是：实现DOM元素与Controller之间的 <strong>“绑定”</strong>。</p><p>因此view的主要内容则是：</p><ul><li>事件绑定Controller方法</li><li>方法绑定Controller方法</li></ul><pre class=" language-bash"><code class="language-bash">document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.addEventListener<span class="token punctuation">(</span><span class="token string">'eventName'</span>,controller<span class="token punctuation">)</span><span class="token punctuation">;</span>document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.innerText <span class="token operator">=</span> Controller.getModelByKey<span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>Model层的主要作用是：保证数据的 <strong>“纯净”</strong> 存储。</p><p>如果你以前对Ajax数据请求属于哪部分有疑问，那么从纯净角度来看，它并不应该属于Model部分。</p><h4 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h4><p>Controller层的主要作用是：<strong>“联接”</strong> View层与Model层。</p><p>因此Controller的主要内容则是：</p><ul><li>View的事件绑定函数</li><li>Model的数据的获取、处理函数</li></ul><p>要做好MVC架构，一定要把握好各个层的侧重方向，划分好功能区域，保证功能区的<strong>分离</strong>。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>好的MVC架构，能实现View与Model层的分离、可替代。拥有条理、逻辑清晰的代码结构。</p><h3 id="简介与架构理念"><a href="#简介与架构理念" class="headerlink" title="简介与架构理念"></a>简介与架构理念</h3><blockquote><p>MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计创建 Web 应用程序的模式。使用MVC的目的是 <strong>将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式</strong>。</p></blockquote><p>核心理念：<strong>分离</strong></p><h3 id="前端领域的理解"><a href="#前端领域的理解" class="headerlink" title="前端领域的理解"></a>前端领域的理解</h3><p>当理解MVC的三个组成部分时，只有抓住核心理念，才能深刻的理解其中的含义，并实际应用。</p><h4 id="View（表现层）"><a href="#View（表现层）" class="headerlink" title="View（表现层）"></a>View（表现层）</h4><p>view层的主要作用是：实现DOM元素与Controller之间的 <strong>“绑定”</strong>。</p><p>因此view的主要内容则是：</p><ul><li>事件绑定Controller方法</li><li>方法绑定Controller方法</li></ul><pre class=" language-bash"><code class="language-bash">document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.addEventListener<span class="token punctuation">(</span><span class="token string">'eventName'</span>,controller<span class="token punctuation">)</span><span class="token punctuation">;</span>document.getElementId<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span>.innerText <span class="token operator">=</span> Controller.getModelByKey<span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h4 id="Model（数据层-模型层）"><a href="#Model（数据层-模型层）" class="headerlink" title="Model（数据层|模型层）"></a>Model（数据层|模型层）</h4><p>Model层的主要作用是：保证数据的 <strong>“纯净”</strong> 存储。</p><p>如果你以前对Ajax数据请求属于哪部分有疑问，那么从纯净角度来看，它并不应该属于Model部分。</p><h4 id="Controller（领域层-控制层）"><a href="#Controller（领域层-控制层）" class="headerlink" title="Controller（领域层|控制层）"></a>Controller（领域层|控制层）</h4><p>Controller层的主要作用是：<strong>“联接”</strong> View层与Model层。</p><p>因此Controller的主要内容则是：</p><ul><li>View的事件绑定函数</li><li>Model的数据的获取、处理函数</li></ul><p>要做好MVC架构，一定要把握好各个层的侧重方向，划分好功能区域，保证功能区的<strong>分离</strong>。</p>]]></content>
       
       
       <categories>
