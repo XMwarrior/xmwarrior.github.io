@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>闭包引起内存泄漏了么</title>
+  </head>
+
+  <body>
+    <h1>闭包引起内存泄漏了么</h1>
+    <button id="btn" onclick="stop()">打断定时器</button>
+    <script type="text/javascript">
+      var debounce = function (fn, wait) {
+        var timer = null;
+        return function (...args) {
+          clearTimeout(timer);
+          var self = this;
+          timer = setTimeout(function () {
+            fn.apply(self, args);
+          }, wait);
+        };
+      };
+      var throttle = function (fn, delay) {
+        let timer = null;
+        return function () {
+          if (timer) return;
+          timer = setTimeout(() => {
+            fn.apply(this, arguments);
+            clearTimeout(timer);
+            timer = null;
+          }, delay);
+        };
+      };
+      var i = 0;
+      var fn = function () {
+        i++;
+      };
+      var a = throttle(fn, 300);
+      var interval = null;
+      interval = setInterval(a, 200);
+      var stop = function () {
+        console.log(111);
+        clearInterval(interval);
+        interval = null;
+        a = null;
+        return false;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.container {
+				font-size: 0;
+				width: 360px;
+			}
+			
+			.item {
+				font-size: 16px;
+				width: 40px;
+				height: 40px;
+				border: 1px solid;
+				display: inline-block;
+				box-sizing: border-box;
+				text-align: center;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="gameContainer" class="container"></div>
+		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var gameMap = function() {
+				var numStr = '123456789'.split('');
+				var obj = {};
+				for(var x = 0; x < 9; x++) {
+					for(var y = 0; y < 9; y++) {
+						obj[numStr[x] + numStr[y]] = 0;
+					}
+				}
+				return obj;
+			}();
+			var render = function(map) {
+				var res = [];
+				for(var key in map) {
+					res.push('<div class="item" data-id="' + key + '">' + (map[key] ? map[key] : '') + '</div>');
+				}
+				$('#gameContainer').html(res.join(''));
+			}
+			var unSetArray = ['14', '15', '16', '17', '18', '19', '24', '25', '26', '27', '28', '29', '34', '35', '36', '37', '38', '39', '41', '42', '43', '47', '48', '49', '51', '52', '53', '57', '58', '59', '61', '62', '63', '67', '68', '69', '71', '72', '73', '74', '75', '76', '81', '82', '83', '84', '85', '86', '91', '92', '93', '94', '95', '96'];
+			var i = 0;
+			var queue = new Map();
+			var totalQueue = {};
+			var initNum = function(i, isReturn) {
+				if(i > 53) return;
+				var nPossibleNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+				var regionMap = {
+					'1': [1, 2, 3],
+					'2': [1, 2, 3],
+					'3': [1, 2, 3],
+					'4': [4, 5, 6],
+					'5': [4, 5, 6],
+					'6': [4, 5, 6],
+					'7': [7, 8, 9],
+					'8': [7, 8, 9],
+					'9': [7, 8, 9]
+				}
+				for(var j in gameMap) {
+					if(j[0] === unSetArray[i][0] && gameMap[j]) {
+						var spliceIndex = nPossibleNumbers.indexOf(gameMap[j]);
+						spliceIndex >= 0 && nPossibleNumbers.splice(spliceIndex, 1);
+					}
+					if(j[1] === unSetArray[i][1] && gameMap[j]) {
+						var spliceIndex = nPossibleNumbers.indexOf(gameMap[j]);
+						spliceIndex >= 0 && nPossibleNumbers.splice(spliceIndex, 1);
+					}
+				}
+				var regionKeys = regionMap[unSetArray[i][0]].map(function(k) {
+					return regionMap[unSetArray[i][1]].map(function(l) {
+						return k + '' + l;
+					});
+				}).flat();
+				regionKeys.forEach(function(key, index) {
+					if(gameMap[key]) {
+						var spliceIndex = nPossibleNumbers.indexOf(gameMap[key]);
+						spliceIndex >= 0 && nPossibleNumbers.splice(spliceIndex, 1);
+					}
+				});
+				queue.set(unSetArray[i], nPossibleNumbers);
+				i++;
+				initNum(i);
+			}
+
+			function randomAdd(arrx, arry) {
+				var randomArr = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(function() {
+					return Math.random() - 0.5;
+				});
+				var i = 0;
+				arrx.forEach(function(x) {
+					arry.forEach(function(y) {
+						gameMap[x + y] = randomArr[i];
+						i++
+					});
+				});
+			}
+			randomAdd(['1', '2', '3'], ['1', '2', '3']);
+			randomAdd(['4', '5', '6'], ['4', '5', '6']);
+			randomAdd(['7', '8', '9'], ['7', '8', '9']);
+			initNum(i);
+			console.log(queue);
+			var j = 0;
+			addNum();
+			//init
+			render(gameMap);
+
+			function addNum(prevQueue) {
+				if(j < 53) {
+					var _queue = prevQueue || queue;
+					gameMap[unSetArray[j]] = _queue.get(unSetArray[j])[0];
+					i = j + 1;
+					queue = new Map();
+					initNum(i);
+					totalQueue[j] = queue;
+					console.log(totalQueue)
+					if(isValidate()) {
+						j++;
+						addNum();
+					} else {
+						debugger
+						//						j--;
+						var spliceIndex = totalQueue[j - 1].get(unSetArray[j]).indexOf(gameMap[unSetArray[j]]);
+						spliceIndex >= 0 && totalQueue[j - 1].get(unSetArray[j]).splice(spliceIndex, 1);
+						if(totalQueue[j - 1].get(unSetArray[j]).length) {
+							gameMap[unSetArray[j]] = 0;
+							j--;
+							addNum(totalQueue[j - 1]);
+						}
+					}
+				}
+			}
+			//验证
+			function isValidate() {
+				return ![...queue.values()].filter(item => !item.length).length;
+			}
+		</script>
+	</body>
+
+</html>
