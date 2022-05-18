@@ -1,0 +1,1099 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="前端架构-工作流设计, xmwarrior,xmsniper">
+    <meta name="description" content="3.1 代码之旅：基础规范
+规范代码组织结构
+统一代码风格，即源代码的书写风格
+组件、函数等命名规范
+开发工具规范
+
+3.2 代码组织决定应用架构确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>前端架构-工作流设计 | XMwarrior</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">XMwarrior</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">XMwarrior</div>
+        <div class="logo-desc">
+            
+            Success is the sum of small efforts, repeated day in and day out.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/XMwarrior/xmwarrior.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/XMwarrior/xmwarrior.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        前端架构-工作流设计
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/" target="_blank">
+                                <span class="chip bg-color">前端架构</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AF%BB%E4%B9%A6/" target="_blank">
+                                <span class="chip bg-color">读书</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%A4%8D%E7%9B%98/" target="_blank">
+                                <span class="chip bg-color">复盘</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/" class="post-category" target="_blank">
+                                前端架构
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-23
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.5k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        5 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="3-1-代码之旅：基础规范"><a href="#3-1-代码之旅：基础规范" class="headerlink" title="3.1 代码之旅：基础规范"></a>3.1 代码之旅：基础规范</h3><ul>
+<li>规范代码组织结构</li>
+<li>统一代码风格，即源代码的书写风格</li>
+<li>组件、函数等命名规范</li>
+<li>开发工具规范</li>
+</ul>
+<h3 id="3-2-代码组织决定应用架构"><a href="#3-2-代码组织决定应用架构" class="headerlink" title="3.2 代码组织决定应用架构"></a>3.2 代码组织决定应用架构</h3><p>确定应用架构时，应该按照与架构相似的方式来编写。并在架构未来发生变化时，相应的更改代码的组织方式。<br>比如vue-cli2架构升级至vue-cli3.0时的架构变化。</p>
+<h3 id="3-3-统一代码风格，避免架构腐烂"><a href="#3-3-统一代码风格，避免架构腐烂" class="headerlink" title="3.3 统一代码风格，避免架构腐烂"></a>3.3 统一代码风格，避免架构腐烂</h3><p>虽然每个人都有自己的口味，但是作为一名厨师，应该做出符合大众口味的菜。</p>
+<h3 id="3-4-使用Lint规范代码"><a href="#3-4-使用Lint规范代码" class="headerlink" title="3.4 使用Lint规范代码"></a>3.4 使用Lint规范代码</h3><p>比约定规则，靠自觉遵守更好的方式是，借助代码扫描工具检测、提示、修复代码风格。<br>诸如：TSLint、CSSLint、ESLint…</p>
+<h3 id="3-5-规范化命名，提升可读性"><a href="#3-5-规范化命名，提升可读性" class="headerlink" title="3.5 规范化命名，提升可读性"></a>3.5 规范化命名，提升可读性</h3><h4 id="3-5-1-命名法"><a href="#3-5-1-命名法" class="headerlink" title="3.5.1 命名法"></a>3.5.1 命名法</h4><p>常用的命名规则有以下几个:</p>
+<ul>
+<li>驼峰命名法。</li>
+<li>下划线命名法。Python语言中特别流行。</li>
+<li>匈牙利命名法：属性+类型+对象描述。如“strFristName”。</li>
+</ul>
+<p>对于前端团队来说，我们需要统一项目的命名规则，以降低项目的成本。</p>
+<h4 id="3-5-2-CSS及其预处理器命名规则"><a href="#3-5-2-CSS及其预处理器命名规则" class="headerlink" title="3.5.2 CSS及其预处理器命名规则"></a>3.5.2 CSS及其预处理器命名规则</h4><p>技术栈统一的前端团队，同样需要一套统一的css命名规则。</p>
+<h4 id="3-5-3-组件命名规则"><a href="#3-5-3-组件命名规则" class="headerlink" title="3.5.3 组件命名规则"></a>3.5.3 组件命名规则</h4><p>组件命名有如下几种方式：</p>
+<ul>
+<li>按照功能命名，如：SideBar就是一个侧边栏功能的组件。</li>
+<li>按页面来切分组件，如：NewsItem就是用于展示新闻的组件。</li>
+<li>按照上下文来命名组件，如：NewsChildItem体现了与上个组件的关系。</li>
+</ul>
+<h3 id="3-6-规范开发工具，提升开发效率"><a href="#3-6-规范开发工具，提升开发效率" class="headerlink" title="3.6 规范开发工具，提升开发效率"></a>3.6 规范开发工具，提升开发效率</h3><p>以下适合在项目中使用的插件：</p>
+<ul>
+<li>EditorConfig，如：（EditorConfig for VS Code），可以读取项目中的.editorconfig配置，以遵循统一的编辑器规范。</li>
+<li>Lint插件,如：（ESLint、HTML Hint），显示Lint问题。</li>
+<li>单词拼写检测，如：（Code Spell Checker），提示代码中拼错的单词。</li>
+<li>路径补全，如：(Path Intellinsence)，提示可用资源路径。</li>
+<li>代码自动补全。</li>
+<li>Emmet插件，如：（JavaScript (ES6) code snippets），想要快速编写代码（砍柴），有时需要投入学习成本（磨刀）。</li>
+<li>代码格式化，如：（Prettier - Code formatter）。</li>
+</ul>
+<p>*注：括号内是相应的VSCode插件名。</p>
+<h3 id="3-7-项目的文档化：README搭建指南"><a href="#3-7-项目的文档化：README搭建指南" class="headerlink" title="3.7 项目的文档化：README搭建指南"></a>3.7 项目的文档化：README搭建指南</h3><p>一份好的搭建指南具有如下特点：</p>
+<ul>
+<li>支持运行的环境。</li>
+<li>必要的依赖准备，以及如何搭建。</li>
+<li>项目的安装指南。</li>
+<li>线上的示例或最后的运行环境。</li>
+<li>相关的文档链接。</li>
+<li>相关人员的联系方式，讨论群。</li>
+</ul>
+<p>README文档里包含这些必要的资源，能大大的提高开发人员的效率。</p>
+<h3 id="3-8-绘制架构图：减少沟通成本"><a href="#3-8-绘制架构图：减少沟通成本" class="headerlink" title="3.8 绘制架构图：减少沟通成本"></a>3.8 绘制架构图：减少沟通成本</h3><blockquote>
+<p>对于复杂项目的架构图主要展示各子系统之间如何通信。<br>对于简单的系统，架构图则可以是由项目的技术栈组成的。</p>
+</blockquote>
+<p>绘制架构图，既可以用代码生成，也可以使用专业工具绘制。</p>
+<ul>
+<li>代码生成工具，如：Graphvis</li>
+<li>专业工具，如：Dia</li>
+<li>软件附带工具，如：Office、SmartArt</li>
+<li>在线工具。</li>
+</ul>
+<h3 id="3-9-可编辑文档库：提升协作性"><a href="#3-9-可编辑文档库：提升协作性" class="headerlink" title="3.9 可编辑文档库：提升协作性"></a>3.9 可编辑文档库：提升协作性</h3><blockquote>
+<p>优先关注于其是否可以版本化、图形可视化，以及追踪历史修改。<br>它可以是：<br>——可以记录版本历史的维基(Wiki)软件。<br>——专业的协作工具,比如Atassian的Confluencea。<br>——基于Git+Markdown的代码管理工具。<br>它应该还能支持以下功能:实时多人编辑、内容索引、图形可视化、实时搜索、打标签、检查清单、导入导出等。</p>
+</blockquote>
+<h3 id="3-10-记录架构决策：轻量级架构决策记录"><a href="#3-10-记录架构决策：轻量级架构决策记录" class="headerlink" title="3.10 记录架构决策：轻量级架构决策记录"></a>3.10 记录架构决策：轻量级架构决策记录</h3><blockquote>
+<p>下面是一个由adr命令生成的adr0架构决策记录的示例，它由以下六部分组成：<br>◎ 标题。<br>◎ 日期<br>◎ 描述决策相关的状态,包含提议、通过、完成、已弃用、已取代等。<br>◎ 价值中立的、用于描述事实上下文的背景。<br>◎ 应对这种场景的相应的决策。<br>◎ 记录应用决策后产生的结果。</p>
+</blockquote>
+<h3 id="3-11-可视化文档：注重代码的可读性"><a href="#3-11-可视化文档：注重代码的可读性" class="headerlink" title="3.11 可视化文档：注重代码的可读性"></a>3.11 可视化文档：注重代码的可读性</h3><p>穿插生动形象的展示，代替文本文档，web交互演示、图表等。</p>
+<h3 id="3-12-看板工具：统一管理业务知识"><a href="#3-12-看板工具：统一管理业务知识" class="headerlink" title="3.12 看板工具：统一管理业务知识"></a>3.12 看板工具：统一管理业务知识</h3><p>方便追溯业务变更带来的代码修改。</p>
+<h3 id="3-13-提交信息：每次代码提交文档化"><a href="#3-13-提交信息：每次代码提交文档化" class="headerlink" title="3.13 提交信息：每次代码提交文档化"></a>3.13 提交信息：每次代码提交文档化</h3><ul>
+<li>项目方式，任务卡号与提交关联。</li>
+<li>开源项目方式，采用标准化的提交信息，自动生成ChANGELOG文件。<br>工具如：standard-version。</li>
+</ul>
+<p><img src="https://cdn.img.wenhairu.com/images/2020/02/21/m9vgK.jpg" alt="对比不同的文档方式"></p>
+<h3 id="3-14-通过流程提高代码质量"><a href="#3-14-通过流程提高代码质量" class="headerlink" title="3.14 通过流程提高代码质量"></a>3.14 通过流程提高代码质量</h3><h4 id="3-14-1-代码预处理"><a href="#3-14-1-代码预处理" class="headerlink" title="3.14.1 代码预处理"></a>3.14.1 代码预处理</h4><p>代码提交前常见操作：</p>
+<ul>
+<li>静态代码分析，如：TSLint、ESLint。</li>
+<li>运行测试。</li>
+</ul>
+<h4 id="3-14-2-手动检视代码"><a href="#3-14-2-手动检视代码" class="headerlink" title="3.14.2 手动检视代码"></a>3.14.2 手动检视代码</h4><blockquote>
+<p>这种方式带来一系列的好处：<br>(1)提高新成员的编程水平。<br>(2)保证代码规范得以实施。<br>(3)每个人对项目的代业务都会很熟悉。<br>(4)提供项目代码的质量<br>(5)帮助成员熟悉工具和快捷键的使用。</p>
+</blockquote>
+<p>代码检视，常见有两种方式：</p>
+<ol>
+<li>常规代码检视。每天固定时间讲解自己当天写的代码。</li>
+<li>阻塞式代码检视。git提交审批，前提是，其他检视者能够带责任感地去审视代码。</li>
+<li>其他。经常检视团队人员写的代码。</li>
+</ol>
+<h3 id="3-15-使用工具提升代码质量"><a href="#3-15-使用工具提升代码质量" class="headerlink" title="3.15 使用工具提升代码质量"></a>3.15 使用工具提升代码质量</h3><ul>
+<li>利用代码扫描工具，如<code>Sonar</code>，检测编程语言上的错误、代码的坏味道和安全漏洞。</li>
+<li>利用IDE，通过快捷键重构代码。</li>
+</ul>
+<h3 id="3-16-测试策略"><a href="#3-16-测试策略" class="headerlink" title="3.16 测试策略"></a>3.16 测试策略</h3><p><img src="https://cdn.img.wenhairu.com/images/2020/02/23/mGDwh.png" alt="测试金字塔"></p>
+<hr>
+<p><strong>《前端架构：从入门到微前端》</strong>——知识点整理。</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2020/02/23/webworkflowdesign/" class="b-link-green">前端架构-工作流设计</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'c11edbde7b88bb3022a7',
+        clientSecret: 'fb551660318eb10078205223c25066f7469f68cf',
+        repo: 'xmwarrior.github.io',
+        owner: 'XMwarrior',
+        admin: ["XMwarrior"],
+        id: '2020-02-23T23-16-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/02/25/buildflowdesign/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="前端架构-设计构建流">
+                        
+                        <span class="card-title">前端架构-设计构建流</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">4.1 依赖管理工具模块化方案：
+
+AMD
+CommonJS
+UMD
+
+现在主流的前端应用框架支持并采用的方式主要以编译构建为主，大都采用NPM+CommonJS的形式来管理依赖。
+4.2 软件包源管理软件包源有以下几种形式：
+
+公有/私有</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/" class="post-category" target="_blank">
+                                    前端架构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/" target="_blank">
+                        <span class="chip bg-color">前端架构</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6/" target="_blank">
+                        <span class="chip bg-color">读书</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%8D%E7%9B%98/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/20/grammarbooklayout/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="写作原则-结构">
+                        
+                        <span class="card-title">写作原则-结构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+当你说一件事情的时候，确保你说清楚了。如此，你言说的机会才合理。——E.B.White
+
+1、运用“自上而下”的写作法先写总结，开门见山。
+2、分解事物把主题分解成二到四个主要部分，然后运用引导句。
+3、使用转折词使用转折词提示写作方向。</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%86%99%E4%BD%9C%E5%8E%9F%E5%88%99/" class="post-category" target="_blank">
+                                    写作原则
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6/" target="_blank">
+                        <span class="chip bg-color">读书</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%8D%E7%9B%98/" target="_blank">
+                        <span class="chip bg-color">复盘</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%86%99%E4%BD%9C%E5%8E%9F%E5%88%99/" target="_blank">
+                        <span class="chip bg-color">写作原则</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: XMwarrior<br />'
+            + '作者: XMwarrior<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者xmwarrior所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://xmwarrior.github.io/" target="_blank">XMwarrior</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">31.4k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/XMwarrior" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:644210375@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=644210375" class="tooltipped" data-tooltip="QQ联系我: 644210375" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
