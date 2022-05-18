@@ -863,7 +863,7 @@
 						svgHtml.push(26 * i + 12 + 44);
 						svgHtml.push('"width="');
 						svgHtml.push(timeSlot_actDateLength);
-						svgHtml.push('"height="10"style="fill:rgba(255,0,0,1);stroke-width:1;"/>');
+						svgHtml.push('"height="10"style="fill:rgba(255,0,0,0.4);stroke-width:1;"/>');
 					}
 				}
 			}

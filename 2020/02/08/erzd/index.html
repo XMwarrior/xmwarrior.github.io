@@ -1,0 +1,1168 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Eslint rules字典, xmwarrior,xmsniper">
+    <meta name="description" content="Eslint rules字典规则级别
+“off” 或 0 - 关闭规则
+“warn” 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
+“error” 或 2 - 开启规则，使用错误级别的错误：error (当被触发">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Eslint rules字典 | XMwarrior</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">XMwarrior</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">XMwarrior</div>
+        <div class="logo-desc">
+            
+            Success is the sum of small efforts, repeated day in and day out.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/XMwarrior/xmwarrior.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/XMwarrior/xmwarrior.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Eslint rules字典
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Eslint%E6%95%88%E9%AA%8C%E5%B7%A5%E5%85%B7/" target="_blank">
+                                <span class="chip bg-color">Eslint效验工具</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="post-category" target="_blank">
+                                环境搭建&工具分享
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-08
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        2.5k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        10 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Eslint-rules字典"><a href="#Eslint-rules字典" class="headerlink" title="Eslint rules字典"></a>Eslint rules字典</h1><h2 id="规则级别"><a href="#规则级别" class="headerlink" title="规则级别"></a>规则级别</h2><ul>
+<li>“off” 或 0 - 关闭规则</li>
+<li>“warn” 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)</li>
+<li>“error” 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)</li>
+</ul>
+<h2 id="规则说明"><a href="#规则说明" class="headerlink" title="规则说明"></a>规则说明</h2><p><a target="_blank" rel="noopener" href="https://eslint.org/docs/rules/">eslint官网-rules</a></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"no-alert"</span><span class="token keyword">:</span> 0,//禁止使用alert confirm prompt
+<span class="token string">"no-array-constructor"</span><span class="token keyword">:</span> 2,//禁止使用数组构造器
+<span class="token string">"no-bitwise"</span><span class="token keyword">:</span> 0,//禁止使用按位运算符
+<span class="token string">"no-caller"</span><span class="token keyword">:</span> 1,//禁止使用arguments.caller或arguments.callee
+<span class="token string">"no-catch-shadow"</span><span class="token keyword">:</span> 2,//禁止catch子句参数与外部作用域变量同名
+<span class="token string">"no-class-assign"</span><span class="token keyword">:</span> 2,//禁止给类赋值
+<span class="token string">"no-cond-assign"</span><span class="token keyword">:</span> 2,//禁止在条件表达式中使用赋值语句
+<span class="token string">"no-console"</span><span class="token keyword">:</span> 0,//禁止使用console
+<span class="token string">"no-const-assign"</span><span class="token keyword">:</span> 2,//禁止修改const声明的变量
+<span class="token string">"no-constant-condition"</span><span class="token keyword">:</span> 2,//禁止在条件中使用常量表达式 if<span class="token punctuation">(</span>true<span class="token punctuation">)</span> if<span class="token punctuation">(</span>1<span class="token punctuation">)</span>
+<span class="token string">"no-continue"</span><span class="token keyword">:</span> 0,//禁止使用continue
+<span class="token string">"no-control-regex"</span><span class="token keyword">:</span> 2,//禁止在正则表达式中使用控制字符
+<span class="token string">"no-debugger"</span><span class="token keyword">:</span> 2,//禁止使用debugger
+<span class="token string">"no-delete-var"</span><span class="token keyword">:</span> 2,//不能对var声明的变量使用delete操作符
+<span class="token string">"no-div-regex"</span><span class="token keyword">:</span> 1,//不能使用看起来像除法的正则表达式/<span class="token operator">=</span>foo/
+<span class="token string">"no-dupe-keys"</span><span class="token keyword">:</span> 2,//在创建对象字面量时不允许键重复 <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;a:1,a:1&amp;#125;</span>
+<span class="token string">"no-dupe-args"</span><span class="token keyword">:</span> 2,//函数参数不能重复
+<span class="token string">"no-duplicate-case"</span><span class="token keyword">:</span> 2,//switch中的case标签不能重复
+<span class="token string">"no-else-return"</span><span class="token keyword">:</span> 2,//如果if语句里面有return,后面不能跟else语句
+<span class="token string">"no-empty"</span><span class="token keyword">:</span> 2,//块语句中的内容不能为空
+<span class="token string">"no-empty-character-class"</span><span class="token keyword">:</span> 2,//正则表达式中的<span class="token punctuation">[</span><span class="token punctuation">]</span>内容不能为空
+<span class="token string">"no-empty-label"</span><span class="token keyword">:</span> 2,//禁止使用空label
+<span class="token string">"no-eq-null"</span><span class="token keyword">:</span> 2,//禁止对null使用<span class="token operator">==</span>或<span class="token operator">!=</span>运算符
+<span class="token string">"no-eval"</span><span class="token keyword">:</span> 1,//禁止使用eval
+<span class="token string">"no-ex-assign"</span><span class="token keyword">:</span> 2,//禁止给catch语句中的异常参数赋值
+<span class="token string">"no-extend-native"</span><span class="token keyword">:</span> 2,//禁止扩展native对象
+<span class="token string">"no-extra-bind"</span><span class="token keyword">:</span> 2,//禁止不必要的函数绑定
+<span class="token string">"no-extra-boolean-cast"</span><span class="token keyword">:</span> 2,//禁止不必要的bool转换
+<span class="token string">"no-extra-parens"</span><span class="token keyword">:</span> 2,//禁止非必要的括号
+<span class="token string">"no-extra-semi"</span><span class="token keyword">:</span> 2,//禁止多余的冒号
+<span class="token string">"no-fallthrough"</span><span class="token keyword">:</span> 1,//禁止switch穿透
+<span class="token string">"no-floating-decimal"</span><span class="token keyword">:</span> 2,//禁止省略浮点数中的0 .5 3.
+<span class="token string">"no-func-assign"</span><span class="token keyword">:</span> 2,//禁止重复的函数声明
+<span class="token string">"no-implicit-coercion"</span><span class="token keyword">:</span> 1,//禁止隐式转换
+<span class="token string">"no-implied-eval"</span><span class="token keyword">:</span> 2,//禁止使用隐式eval
+<span class="token string">"no-inline-comments"</span><span class="token keyword">:</span> 0,//禁止行内备注
+<span class="token string">"no-inner-declarations"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"functions"</span><span class="token punctuation">]</span>,//禁止在块语句中使用声明（变量或函数）
+<span class="token string">"no-invalid-regexp"</span><span class="token keyword">:</span> 2,//禁止无效的正则表达式
+<span class="token string">"no-invalid-this"</span><span class="token keyword">:</span> 2,//禁止无效的this，只能用在构造器，类，对象字面量
+<span class="token string">"no-irregular-whitespace"</span><span class="token keyword">:</span> 2,//不能有不规则的空格
+<span class="token string">"no-iterator"</span><span class="token keyword">:</span> 2,//禁止使用__iterator__ 属性
+<span class="token string">"no-label-var"</span><span class="token keyword">:</span> 2,//label名不能与var声明的变量名相同
+<span class="token string">"no-labels"</span><span class="token keyword">:</span> 2,//禁止标签声明
+<span class="token string">"no-lone-blocks"</span><span class="token keyword">:</span> 2,//禁止不必要的嵌套块
+<span class="token string">"no-lonely-if"</span><span class="token keyword">:</span> 2,//禁止else语句内只有if语句
+<span class="token string">"no-loop-func"</span><span class="token keyword">:</span> 1,//禁止在循环中使用函数（如果没有引用外部变量不形成闭包就可以）
+<span class="token string">"no-mixed-requires"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, false<span class="token punctuation">]</span>,//声明时不能混用声明类型
+<span class="token string">"no-mixed-spaces-and-tabs"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, false<span class="token punctuation">]</span>,//禁止混用tab和空格
+<span class="token string">"linebreak-style"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"windows"</span><span class="token punctuation">]</span>,//换行风格
+<span class="token string">"no-multi-spaces"</span><span class="token keyword">:</span> 0,//不能用多余的空格
+<span class="token string">"no-multi-str"</span><span class="token keyword">:</span> 2,//字符串不能用\换行
+<span class="token string">"no-multiple-empty-lines"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>1, <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"max": 3&amp;#125;],//空行最多不能超过2行</span>
+<span class="token string">"no-native-reassign"</span><span class="token keyword">:</span> 2,//不能重写native对象
+<span class="token string">"no-negated-in-lhs"</span><span class="token keyword">:</span> 2,//in 操作符的左边不能有<span class="token operator">!</span>
+<span class="token string">"no-nested-ternary"</span><span class="token keyword">:</span> 0,//禁止使用嵌套的三目运算
+<span class="token string">"no-new"</span><span class="token keyword">:</span> 1,//禁止在使用new构造一个实例后不赋值
+<span class="token string">"no-new-func"</span><span class="token keyword">:</span> 1,//禁止使用new Function
+<span class="token string">"no-new-object"</span><span class="token keyword">:</span> 2,//禁止使用new Object<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">"no-new-require"</span><span class="token keyword">:</span> 2,//禁止使用new require
+<span class="token string">"no-new-wrappers"</span><span class="token keyword">:</span> 2,//禁止使用new创建包装实例，new String new Boolean new Number
+<span class="token string">"no-obj-calls"</span><span class="token keyword">:</span> 2,//不能调用内置的全局对象，比如Math<span class="token punctuation">(</span><span class="token punctuation">)</span> JSON<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">"no-octal"</span><span class="token keyword">:</span> 2,//禁止使用八进制数字
+<span class="token string">"no-octal-escape"</span><span class="token keyword">:</span> 2,//禁止使用八进制转义序列
+<span class="token string">"no-param-reassign"</span><span class="token keyword">:</span> 2,//禁止给参数重新赋值
+<span class="token string">"no-path-concat"</span><span class="token keyword">:</span> 0,//node中不能使用__dirname或__filename做路径拼接
+<span class="token string">"no-plusplus"</span><span class="token keyword">:</span> 0,//禁止使用++，--
+<span class="token string">"no-process-env"</span><span class="token keyword">:</span> 0,//禁止使用process.env
+<span class="token string">"no-process-exit"</span><span class="token keyword">:</span> 0,//禁止使用process.exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">"no-proto"</span><span class="token keyword">:</span> 2,//禁止使用__proto__属性
+<span class="token string">"no-redeclare"</span><span class="token keyword">:</span> 2,//禁止重复声明变量
+<span class="token string">"no-regex-spaces"</span><span class="token keyword">:</span> 2,//禁止在正则表达式字面量中使用多个空格 /foo bar/
+<span class="token string">"no-restricted-modules"</span><span class="token keyword">:</span> 0,//如果禁用了指定模块，使用就会报错
+<span class="token string">"no-return-assign"</span><span class="token keyword">:</span> 1,//return 语句中不能有赋值表达式
+<span class="token string">"no-script-url"</span><span class="token keyword">:</span> 0,//禁止使用javascript:void<span class="token punctuation">(</span>0<span class="token punctuation">)</span>
+<span class="token string">"no-self-compare"</span><span class="token keyword">:</span> 2,//不能比较自身
+<span class="token string">"no-sequences"</span><span class="token keyword">:</span> 0,//禁止使用逗号运算符
+<span class="token string">"no-shadow"</span><span class="token keyword">:</span> 2,//外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
+<span class="token string">"no-shadow-restricted-names"</span><span class="token keyword">:</span> 2,//严格模式中规定的限制标识符不能作为声明时的变量名使用
+<span class="token string">"no-spaced-func"</span><span class="token keyword">:</span> 2,//函数调用时 函数名与<span class="token punctuation">(</span><span class="token punctuation">)</span>之间不能有空格
+<span class="token string">"no-sparse-arrays"</span><span class="token keyword">:</span> 2,//禁止稀疏数组， <span class="token punctuation">[</span>1,,2<span class="token punctuation">]</span>
+<span class="token string">"no-sync"</span><span class="token keyword">:</span> 0,//nodejs 禁止同步方法
+<span class="token string">"no-ternary"</span><span class="token keyword">:</span> 0,//禁止使用三目运算符
+<span class="token string">"no-trailing-spaces"</span><span class="token keyword">:</span> 1,//一行结束后面不要有空格
+<span class="token string">"no-this-before-super"</span><span class="token keyword">:</span> 0,//在调用super<span class="token punctuation">(</span><span class="token punctuation">)</span>之前不能使用this或super
+<span class="token string">"no-throw-literal"</span><span class="token keyword">:</span> 2,//禁止抛出字面量错误 throw <span class="token string">"error"</span><span class="token punctuation">;</span>
+<span class="token string">"no-undef"</span><span class="token keyword">:</span> 2,//不能有未定义的变量
+<span class="token string">"no-undef-init"</span><span class="token keyword">:</span> 2,//变量初始化时不能直接给它赋值为undefined
+<span class="token string">"no-undefined"</span><span class="token keyword">:</span> 2,//不能使用undefined
+<span class="token string">"no-unexpected-multiline"</span><span class="token keyword">:</span> 2,//避免多行表达式
+<span class="token string">"no-underscore-dangle"</span><span class="token keyword">:</span> 1,//标识符不能以_开头或结尾
+<span class="token string">"no-unneeded-ternary"</span><span class="token keyword">:</span> 2,//禁止不必要的嵌套 var isYes <span class="token operator">=</span> answer <span class="token operator">==</span><span class="token operator">=</span> 1 ? <span class="token boolean">true</span> <span class="token keyword">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token string">"no-unreachable"</span><span class="token keyword">:</span> 2,//不能有无法执行的代码
+<span class="token string">"no-unused-expressions"</span><span class="token keyword">:</span> 2,//禁止无用的表达式
+<span class="token string">"no-unused-vars"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"vars": "all", "args": "after-used"&amp;#125;],//不能有声明后未被使用的变量或参数</span>
+<span class="token string">"no-use-before-define"</span><span class="token keyword">:</span> 2,//未定义前不能使用
+<span class="token string">"no-useless-call"</span><span class="token keyword">:</span> 2,//禁止不必要的call和apply
+<span class="token string">"no-void"</span><span class="token keyword">:</span> 2,//禁用void操作符
+<span class="token string">"no-var"</span><span class="token keyword">:</span> 0,//禁用var，用let和const代替
+<span class="token string">"no-warning-comments"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>1, <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "terms": ["todo", "fixme", "xxx"], "location": "start" &amp;#125;],//不能有警告备注</span>
+<span class="token string">"no-with"</span><span class="token keyword">:</span> 2,//禁用with
+<span class="token string">"array-bracket-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"never"</span><span class="token punctuation">]</span>,//是否允许非空数组里面有多余的空格
+<span class="token string">"arrow-parens"</span><span class="token keyword">:</span> 0,//箭头函数用小括号括起来
+<span class="token string">"arrow-spacing"</span><span class="token keyword">:</span> 0,//<span class="token operator">=</span><span class="token operator">></span>的前/后括号
+<span class="token string">"accessor-pairs"</span><span class="token keyword">:</span> 0,//在对象中使用getter/setter
+<span class="token string">"block-scoped-var"</span><span class="token keyword">:</span> 0,//块语句中使用var
+<span class="token string">"brace-style"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>1, <span class="token string">"1tbs"</span><span class="token punctuation">]</span>,//大括号风格
+<span class="token string">"callback-return"</span><span class="token keyword">:</span> 1,//避免多次调用回调什么的
+<span class="token string">"camelcase"</span><span class="token keyword">:</span> 2,//强制驼峰法命名
+<span class="token string">"comma-dangle"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"never"</span><span class="token punctuation">]</span>,//对象字面量项尾不能有逗号
+<span class="token string">"comma-spacing"</span><span class="token keyword">:</span> 0,//逗号前后的空格
+<span class="token string">"comma-style"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"last"</span><span class="token punctuation">]</span>,//逗号风格，换行时在行首还是行尾
+<span class="token string">"complexity"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, 11<span class="token punctuation">]</span>,//循环复杂度
+<span class="token string">"computed-property-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"never"</span><span class="token punctuation">]</span>,//是否允许计算后的键名什么的
+<span class="token string">"consistent-return"</span><span class="token keyword">:</span> 0,//return 后面是否允许省略
+<span class="token string">"consistent-this"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"that"</span><span class="token punctuation">]</span>,//this别名
+<span class="token string">"constructor-super"</span><span class="token keyword">:</span> 0,//非派生类不能调用super，派生类必须调用super
+<span class="token string">"curly"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"all"</span><span class="token punctuation">]</span>,//必须使用 if<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125; 中的&amp;#123;&amp;#125;</span>
+<span class="token string">"default-case"</span><span class="token keyword">:</span> 2,//switch语句最后必须有default
+<span class="token string">"dot-location"</span><span class="token keyword">:</span> 0,//对象访问符的位置，换行的时候在行首还是行尾
+<span class="token string">"dot-notation"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "allowKeywords": true &amp;#125;],//避免不必要的方括号</span>
+<span class="token string">"eol-last"</span><span class="token keyword">:</span> 0,//文件以单一的换行符结束
+<span class="token string">"eqeqeq"</span><span class="token keyword">:</span> 0,//必须使用全等
+<span class="token string">"func-names"</span><span class="token keyword">:</span> 0,//函数表达式必须有名字
+<span class="token string">"func-style"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"declaration"</span><span class="token punctuation">]</span>,//函数风格，规定只能使用函数声明/函数表达式
+<span class="token string">"generator-star-spacing"</span><span class="token keyword">:</span> 0,//生成器函数*的前后空格
+<span class="token string">"guard-for-in"</span><span class="token keyword">:</span> 0,//for in循环要用if语句过滤
+<span class="token string">"handle-callback-err"</span><span class="token keyword">:</span> 0,//nodejs 处理错误
+<span class="token string">"id-length"</span><span class="token keyword">:</span> 0,//变量名长度
+<span class="token string">"indent"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, 2<span class="token punctuation">]</span>,//缩进风格
+<span class="token string">"init-declarations"</span><span class="token keyword">:</span> 0,//声明时必须赋初值
+<span class="token string">"key-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "beforeColon": false, "afterColon": true &amp;#125;],//对象字面量中冒号的前后空格</span>
+<span class="token string">"lines-around-comment"</span><span class="token keyword">:</span> 0,//行前/行后备注
+<span class="token string">"max-depth"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, 4<span class="token punctuation">]</span>,//嵌套块深度
+<span class="token string">"max-len"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, 80, 4<span class="token punctuation">]</span>,//字符串最大长度
+<span class="token string">"max-nested-callbacks"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, 2<span class="token punctuation">]</span>,//回调嵌套深度
+<span class="token string">"max-params"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, 3<span class="token punctuation">]</span>,//函数最多只能有3个参数
+<span class="token string">"max-statements"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, 10<span class="token punctuation">]</span>,//函数内最多有几个声明
+<span class="token string">"new-cap"</span><span class="token keyword">:</span> 2,//函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用
+<span class="token string">"new-parens"</span><span class="token keyword">:</span> 2,//new时必须加小括号
+<span class="token string">"newline-after-var"</span><span class="token keyword">:</span> 2,//变量声明后是否需要空一行
+<span class="token string">"object-curly-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"never"</span><span class="token punctuation">]</span>,//大括号内是否允许不必要的空格
+<span class="token string">"object-shorthand"</span><span class="token keyword">:</span> 0,//强制对象字面量缩写语法
+<span class="token string">"one-var"</span><span class="token keyword">:</span> 1,//连续声明
+<span class="token string">"operator-assignment"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"always"</span><span class="token punctuation">]</span>,//赋值运算符 +<span class="token operator">=</span> -<span class="token operator">=</span>什么的
+<span class="token string">"operator-linebreak"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"after"</span><span class="token punctuation">]</span>,//换行时运算符在行尾还是行首
+<span class="token string">"padded-blocks"</span><span class="token keyword">:</span> 0,//块语句内行首行尾是否要空行
+<span class="token string">"prefer-const"</span><span class="token keyword">:</span> 0,//首选const
+<span class="token string">"prefer-spread"</span><span class="token keyword">:</span> 0,//首选展开运算
+<span class="token string">"prefer-reflect"</span><span class="token keyword">:</span> 0,//首选Reflect的方法
+<span class="token string">"quotes"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>1, <span class="token string">"single"</span><span class="token punctuation">]</span>,//引号类型 `` <span class="token string">""</span> <span class="token string">''</span>
+<span class="token string">"quote-props"</span>:<span class="token punctuation">[</span>2, <span class="token string">"always"</span><span class="token punctuation">]</span>,//对象字面量中的属性名是否强制双引号
+<span class="token string">"radix"</span><span class="token keyword">:</span> 2,//parseInt必须指定第二个参数
+<span class="token string">"id-match"</span><span class="token keyword">:</span> 0,//命名检测
+<span class="token string">"require-yield"</span><span class="token keyword">:</span> 0,//生成器函数必须有yield
+<span class="token string">"semi"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"always"</span><span class="token punctuation">]</span>,//语句强制分号结尾
+<span class="token string">"semi-spacing"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"before": false, "after": true&amp;#125;],//分号前后空格</span>
+<span class="token string">"sort-vars"</span><span class="token keyword">:</span> 0,//变量声明时排序
+<span class="token string">"space-after-keywords"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"always"</span><span class="token punctuation">]</span>,//关键字后面是否要空一格
+<span class="token string">"space-before-blocks"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"always"</span><span class="token punctuation">]</span>,//不以新行开始的块<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;前面要不要有空格</span>
+<span class="token string">"space-before-function-paren"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"always"</span><span class="token punctuation">]</span>,//函数定义时括号前面要不要有空格
+<span class="token string">"space-in-parens"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token string">"never"</span><span class="token punctuation">]</span>,//小括号里面要不要有空格
+<span class="token string">"space-infix-ops"</span><span class="token keyword">:</span> 0,//中缀操作符周围要不要有空格
+<span class="token string">"space-return-throw-case"</span><span class="token keyword">:</span> 2,//return throw case后面要不要加空格
+<span class="token string">"space-unary-ops"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>0, <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "words": true, "nonwords": false &amp;#125;],//一元运算符的前/后要不要加空格</span>
+<span class="token string">"spaced-comment"</span><span class="token keyword">:</span> 0,//注释风格要不要有空格什么的
+<span class="token string">"strict"</span><span class="token keyword">:</span> 2,//使用严格模式
+<span class="token string">"use-isnan"</span><span class="token keyword">:</span> 2,//禁止比较时使用NaN，只能用isNaN<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">"valid-jsdoc"</span><span class="token keyword">:</span> 0,//jsdoc规则
+<span class="token string">"valid-typeof"</span><span class="token keyword">:</span> 2,//必须使用合法的typeof的值
+<span class="token string">"vars-on-top"</span><span class="token keyword">:</span> 2,//var必须放在作用域顶部
+<span class="token string">"wrap-iife"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"inside"</span><span class="token punctuation">]</span>,//立即执行函数表达式的小括号风格
+<span class="token string">"wrap-regex"</span><span class="token keyword">:</span> 0,//正则表达式字面量用小括号包起来
+<span class="token string">"yoda"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>2, <span class="token string">"never"</span><span class="token punctuation">]</span>//禁止尤达条件
+</code></pre>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2020/02/08/erzd/" class="b-link-green">Eslint rules字典</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'c11edbde7b88bb3022a7',
+        clientSecret: 'fb551660318eb10078205223c25066f7469f68cf',
+        repo: 'xmwarrior.github.io',
+        owner: 'XMwarrior',
+        admin: ["XMwarrior"],
+        id: '2020-02-08T12-21-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/02/09/smsdnsyvdjqdkfhj/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="手摸手带你使用Vue-Cli3搭建前端开发环境">
+                        
+                        <span class="card-title">手摸手带你使用Vue-Cli3搭建前端开发环境</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">vue-cli搭建前端开发环境指南一、vscode编辑器配置1、ESLint拓展安装ESLint
+应用商店搜索安装ESLint
+添加保存文件时自动修复代码格式功能
+
+// 文件->首选项->设置->在setting.json中编辑 添加代码</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="post-category" target="_blank">
+                                    环境搭建&工具分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue-Cli3/" target="_blank">
+                        <span class="chip bg-color">Vue-Cli3</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_blank">
+                        <span class="chip bg-color">环境搭建</span>
+                    </a>
+                    
+                    <a href="/tags/eslint/" target="_blank">
+                        <span class="chip bg-color">eslint</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/14/vgf/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="vue规范">
+                        
+                        <span class="card-title">vue规范</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">1.组件选项顺序&lt;!-- component name -->
+&lt;template>
+  &lt;div>&lt;/div>
+&lt;/template>
+
+&lt;script>
+export default &amp;#12</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: XMwarrior<br />'
+            + '作者: XMwarrior<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者xmwarrior所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://xmwarrior.github.io/" target="_blank">XMwarrior</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">34k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/XMwarrior" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:644210375@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=644210375" class="tooltipped" data-tooltip="QQ联系我: 644210375" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

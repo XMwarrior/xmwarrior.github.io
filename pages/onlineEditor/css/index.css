@@ -1,0 +1,245 @@
+html,
+body {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+.monaco {
+	height: 100%;
+	padding: 10px;
+	/*padding-left: 0;*/
+	background-color: #F0F3F4;
+	font-size: 0;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.monaco>div[class^='x-col'] {
+	height: 100%;
+	margin-left: 10px;
+	background-color: #F6F6F6;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	border: 1px solid #dee5e7;
+	position: relative;
+	-webkit-user-select: none;
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+.monaco>div[class^='x-col']:first-child {
+    margin-left: 0;
+}
+/*.monaco .x-col2 {
+	width: 290px;
+}*/
+
+/*.monaco .x-col4 {
+	width: 600px;
+}*/
+.item-editor .x-col6{
+    width: calc(50% - 20px);
+    padding: 10px;
+}
+.page-editor .x-col2:last-child{
+    width: calc(16.66% - 20px);
+    padding: 10px;
+}
+
+.m-toolbar {
+	margin: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #dee5e7;
+	font-size: 24px;
+	line-height: 30px;
+	padding-left: 10px;
+    color: #00b8ff;
+    text-shadow: 2px 2px 2px #b1b1b1;
+    font-weight: bold;
+}
+
+.m-toolbar .iconfont {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	background: #02A1F5;
+	border-radius: 30px;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	color: white;
+	box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+	cursor: pointer;
+	margin-left: 5px;
+    text-shadow: none;
+}
+.m-toolbar .iconfont.active{
+	color: #02A1F5;
+	background-color: white;
+}
+.m-menulist {
+	padding: 0 10px;
+	height: calc(100% - 71px);
+	overflow-y: auto;
+	overflow-x: visible;
+}
+
+.m-menulist li {
+	margin-bottom: 5px;
+	background-color: #F6F8F8;
+	border-radius: 2px;
+	padding: 10px 25px;
+	position: relative;
+	color: #333;
+	border: 1px solid #dee5e7;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	transition: all .2s ease-in-out;
+	transform-origin: top;
+	transform: scaleY(1);
+}
+.m-menulist li.showing {
+	transform: scaleY(0);
+}
+.m-menulist li.hiding {
+	transform: translateX(-120%);
+}
+.m-menulist li.scaling {
+	height: 0;
+	padding: 0;
+	margin: 0;
+}
+.m-menulist li.selected{
+	background-color: #D9EDF7;	 
+    border-color: #bce8f1;
+    z-index: 100;
+}
+.m-menulist li.selected input{
+	 color: #31708f;
+	 font-weight: bold;
+}
+.m-menulist a{
+	font-size: 14px;
+	display: block;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	border: none !important;
+	white-space: nowrap;
+}
+.m-menulist li input {
+	/*border: 0;*/
+	height: 30px;
+	/*width: 100%;*/
+	font-size: 14px;
+	color: #676a6c;
+	background-color: inherit;
+	padding-left: 10px;
+	border-radius: 2px;
+	cursor: default;
+}
+.m-menulist li .iconfont {
+	position: absolute;
+	top: 17px;
+	right: 10px;
+	transform: scale(0);
+	transition: all 0.2s;
+	cursor: pointer;
+	color: #59676F;
+}
+.m-menulist li .icon-edit {
+	right: 28px;
+}
+.m-menulist li .icon-edit.active {
+	color: #02A1F5;
+}
+.m-menulist.active .selected .iconfont {
+	transform: scale(1);
+}
+.m-menulist input.active {
+	background-color: white;
+	border:1px solid #bce8f1;
+	cursor: text;
+}
+.m-menulist input.active:focus{
+	border-color: #23b7e5;
+}
+.m-editbox {
+	height: 100%;
+}
+
+.m-editbox li {
+	height: calc(33.33% - 4px);
+	padding: 10px 10px 0;
+	position: relative;
+}
+.m-editbox li:hover>span{
+	opacity: 0;
+	transform: scaleY(0);
+}
+.m-editbox li>span{
+	position: absolute;
+	right: 28px;
+	top: 14px;
+	color: white;
+	display: block;
+	width: 30px;
+	font-size: 10px;
+	line-height: 20px;
+	border: 1px solid #737373;
+	text-align: center;
+	line-height: 16px;
+	transition: all 0.2s;
+	transform: scaleY(1);
+	transform-origin: top;
+}
+.m-textarea {
+	width: 100%;
+	height: 100%;
+	border: 1px solid grey;
+}
+.presentation .slider{
+	width: 6px;
+	background: gray !important;
+}
+.m-run{
+	height: 40px;
+	line-height: 40px;
+	font-size: 0;
+	padding: 10px;
+}
+.m-run .iconfont{
+	background-color: #02A1F5;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 4px;
+	height: 30px;
+	line-height: 21px;
+	cursor: pointer;
+	width: auto;
+}
+.m-viewContainer{
+	width: 100%;
+    margin-top: 0;
+	height: calc(100% - 40px);
+	-webkit-user-select: none;
+	border: 0;
+	padding: 5px;
+}
+.m-viewContainer .m-viewContainer{
+	height: 100%;
+}
+.m-handler{
+	position: absolute;
+	width: 10px;
+	height: 100%;
+	top: 0;
+	left: -11px;
+}
+.m-handler:hover{
+	cursor: col-resize;
+}
