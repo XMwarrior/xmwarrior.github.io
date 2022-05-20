@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xmwarrior.github.io/"/>
-  <updated>2022-05-17T12:46:59.919Z</updated>
+  <updated>2022-05-20T07:52:57.278Z</updated>
   <id>https://xmwarrior.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>前端性能优化-内存泄漏、防抖、节流</title>
-    <link href="https://xmwarrior.github.io/2022/05/17/performanceoptimization/"/>
-    <id>https://xmwarrior.github.io/2022/05/17/performanceoptimization/</id>
-    <published>2022-05-17T12:46:00.000Z</published>
-    <updated>2022-05-17T12:46:59.919Z</updated>
+    <title>前端性能优化-内存泄漏问题分析</title>
+    <link href="https://xmwarrior.github.io/2022/05/20/performanceoptimization/"/>
+    <id>https://xmwarrior.github.io/2022/05/20/performanceoptimization/</id>
+    <published>2022-05-20T04:00:00.000Z</published>
+    <updated>2022-05-20T07:52:57.278Z</updated>
     
     <summary type="html">
     
