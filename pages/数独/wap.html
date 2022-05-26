@@ -128,6 +128,10 @@
         animation: hithere 0.8s ease infinite;
         border-radius: 1vw;
       }
+      .hithere::before,
+      .hithere::after {
+        display: none !important;
+      }
       @keyframes hithere {
         30% {
           transform: scale(1.2);
