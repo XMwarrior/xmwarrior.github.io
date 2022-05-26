@@ -126,9 +126,9 @@
       <category term="前端架构" scheme="https://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
     
     
-      <category term="设计模式" scheme="https://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
       <category term="mvvm" scheme="https://xmwarrior.github.io/tags/mvvm/"/>
+    
+      <category term="设计模式" scheme="https://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -186,9 +186,9 @@
       <category term="前端架构" scheme="https://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
     
     
-      <category term="mvc" scheme="https://xmwarrior.github.io/tags/mvc/"/>
-    
       <category term="设计模式" scheme="https://xmwarrior.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="mvc" scheme="https://xmwarrior.github.io/tags/mvc/"/>
     
   </entry>
   

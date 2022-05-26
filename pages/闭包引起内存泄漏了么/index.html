@@ -2,23 +2,80 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>闭包引起内存泄漏了么</title>
+    <title>垃圾回收测试</title>
   </head>
 
   <body>
-    <h1>闭包引起内存泄漏了么</h1>
+    <h1>垃圾回收测试</h1>
     <button id="btn" onclick="stop()">打断定时器</button>
     <script type="text/javascript">
-      var debounce = function (fn, wait) {
-        var timer = null;
-        return function (...args) {
-          clearTimeout(timer);
-          var self = this;
-          timer = setTimeout(function () {
-            fn.apply(self, args);
-          }, wait);
+      // 简单
+      /*
+      var str = new Array(100000000).join("*");
+      var interval = setInterval(() => {
+        console.log(str[0]);
+      }, 200);
+      var timeout= setTimeout(() => {
+        clearInterval(interval);
+      }, 2000);
+      */
+      // 1. 内存溢出了么？
+      // var outerFunction = function (n) {
+      //   var counter = 0;
+      //   var bigStr = new Array(100000000).join("*");
+      //   return function () {
+      //     bigStr += n;
+      //   };
+      // };
+      // 2. 内存溢出了么？
+      // var outerFunction = function (n) {
+      //   var counter = 0;
+      //   var bigStr = 0;
+      //   return function () {
+      //     bigStr = new Array(100000000).join("*");
+      //     bigStr += n;
+      //   };
+      // };
+      // var add = outerFunction(555);
+      // var interval = setInterval(add, 10);
+
+      // var timeout = setTimeout(() => {
+      //   clearInterval(interval);
+      //   interval = null;
+      //   add = null;
+      // }, 20000);
+      // 节流函数1测试
+      /*
+      var throttle1 = function (fn, wait) {
+        var lastTime = 0;
+        var obj = {};
+        return function () {
+          var nowTime = new Date().getTime();
+          if (nowTime - lastTime > wait) {
+            // fn.bind(obj);
+            fn.apply(this, arguments);
+            lastTime = nowTime;
+          }
         };
       };
+      var fn = function (index) {
+        var str = index;
+        console.log(index);
+      };
+      var t = throttle1(fn, 300);
+      var index = 300;
+      var interval = setInterval(function () {
+        if (index > 0) {
+          index--;
+          t(index);
+        } else {
+          clearInterval(interval); // 2304024
+          // t = null; // 2303960 + 64
+        }
+      }, 20);
+      */
+      // // 节流函数2测试
+      /*
       var throttle = function (fn, delay) {
         let timer = null;
         return function () {
@@ -30,20 +87,49 @@
           }, delay);
         };
       };
-      var i = 0;
-      var fn = function () {
-        i++;
+      var fn = function (index) {
+        var str = index;
+        console.log(index);
       };
-      var a = throttle(fn, 300);
-      var interval = null;
-      interval = setInterval(a, 200);
-      var stop = function () {
-        console.log(111);
-        clearInterval(interval);
-        interval = null;
-        a = null;
-        return false;
+      var t = throttle(fn, 300);
+      var index = 300;
+      var interval = setInterval(function () {
+        if (index > 0) {
+          index--;
+          t(index);
+        } else {
+          clearInterval(interval); // 2304264
+          // t = null; // 230412 + 52
+        }
+      }, 20);
+      */
+      // // 防抖函数测试
+      var debounce = function (fn, wait) {
+        var timer = null;
+        return function (...args) {
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            fn.apply(this, args);
+          }, wait);
+        };
       };
+      var fn = function (index) {
+        var str = index;
+        console.log(index);
+      };
+      var t = debounce(fn, 300);
+      var index = 300;
+      var interval = setInterval(function () {
+        if (index > 0) {
+          index--;
+          t(index);
+        } else {
+          clearInterval(interval); // 2304220
+          // t = null; // 2304168 + 52
+        }
+      }, 20);
+      /*
+       */
     </script>
   </body>
 </html>
