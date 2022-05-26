@@ -110,6 +110,29 @@
       .number-button.hidden {
         font-size: 0;
       }
+      .hithere {
+        border: 0 !important;
+        animation: hithere 0.8s ease infinite;
+        border-radius: 3px;
+      }
+      @keyframes hithere {
+        30% {
+          transform: scale(1.2);
+        }
+        40%,
+        60% {
+          transform: rotate(-20deg) scale(1.2);
+        }
+        50% {
+          transform: rotate(20deg) scale(1.2);
+        }
+        70% {
+          transform: rotate(0deg) scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
     </style>
   </head>
 
@@ -122,15 +145,15 @@
     </div>
     <div id="gameContainer" class="container"></div>
     <div id="number-board" class="button-container" style="width: 360px">
-      <button class="number-button" disabled onclick="enter(1)">1</button>
-      <button class="number-button" disabled onclick="enter(2)">2</button>
-      <button class="number-button" disabled onclick="enter(3)">3</button>
-      <button class="number-button" disabled onclick="enter(4)">4</button>
-      <button class="number-button" disabled onclick="enter(5)">5</button>
-      <button class="number-button" disabled onclick="enter(6)">6</button>
-      <button class="number-button" disabled onclick="enter(7)">7</button>
-      <button class="number-button" disabled onclick="enter(8)">8</button>
-      <button class="number-button" disabled onclick="enter(9)">9</button>
+      <button id="n1" class="number-button" disabled onclick="enter(1)">1</button>
+      <button id="n2" class="number-button" disabled onclick="enter(2)">2</button>
+      <button id="n3" class="number-button" disabled onclick="enter(3)">3</button>
+      <button id="n4" class="number-button" disabled onclick="enter(4)">4</button>
+      <button id="n5" class="number-button" disabled onclick="enter(5)">5</button>
+      <button id="n6" class="number-button" disabled onclick="enter(6)">6</button>
+      <button id="n7" class="number-button" disabled onclick="enter(7)">7</button>
+      <button id="n8" class="number-button" disabled onclick="enter(8)">8</button>
+      <button id="n9" class="number-button" disabled onclick="enter(9)">9</button>
     </div>
     <div class="button-container">
       <button id="tip" class="button" disabled onclick="showTip()">提示</button>
@@ -317,6 +340,7 @@
         board = null;
         selectedCell = null;
         tips = [];
+        resetNumberButton();
         removeCellListeners();
         // 初始表盘
         board = createBoard();
@@ -416,7 +440,9 @@
         } else {
           document.getElementById("tip").removeAttribute("disabled");
           [...document.querySelectorAll(".number-button")].forEach((item) => {
-            item.removeAttribute("disabled");
+            if (!item.classList.contains("hidden")) {
+              item.removeAttribute("disabled");
+            }
           });
         }
       }
@@ -441,10 +467,21 @@
             selectedCell = null;
             toggleNumberButtons(true);
             toggleCancelButton(true);
+            setNumberButtonHide("" + number);
+            // 获取value值相同的格，高亮样式
+            const sameValueCells = getSameValueCells("" + number);
+            sameValueCells.forEach((id) => {
+              document.getElementById(id).classList.add("same");
+            });
           } else {
             currentDOM.classList.remove("same");
             currentDOM.classList.add("empty", "error");
             toggleCancelButton(false);
+            currentDOM.classList.add("hithere");
+            timeout = setTimeout(() => {
+              currentDOM.classList.remove("hithere");
+              clearTimeout(timeout);
+            }, 800);
           }
         }
       }
@@ -457,6 +494,12 @@
           currentDOM.classList.add("same");
           board[selectedCell[0]][selectedCell[1]] = "" + rightValue?.value;
           selectedCell = null;
+          // 获取value值相同的格，高亮样式
+          const sameValueCells = getSameValueCells("" + rightValue?.value);
+          sameValueCells.forEach((id) => {
+            document.getElementById(id).classList.add("same");
+          });
+          setNumberButtonHide("" + rightValue?.value);
           toggleNumberButtons(true);
           toggleCancelButton(true);
           currentDOM.innerHTML = rightValue?.value;
@@ -470,9 +513,25 @@
           currentDOM.classList.remove("error");
         }
       }
+      // reset number-button
+      function resetNumberButton() {
+        [...document.querySelectorAll(".number-button")].forEach((item) => {
+          item.classList.remove("hidden");
+          item.removeAttribute("disabled");
+        });
+      }
+      // set NumberButton hidden
+      function setNumberButtonHide(number) {
+        const total = board.flat().filter((val) => val === number);
+        if (total.length === 9) {
+          document.getElementById("n" + number).setAttribute("disabled", true);
+          document.getElementById("n" + number).classList.add("hidden");
+        }
+      }
       let board = null;
       let selectedCell = null;
       let tips = [];
+      let timeout = null;
       initEmptyBoard();
     </script>
   </body>
