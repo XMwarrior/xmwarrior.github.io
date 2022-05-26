@@ -329,6 +329,8 @@
         // reset
         board = null;
         selectedCell = null;
+        tips = [];
+        removeCellListeners();
         // 初始表盘
         board = createBoard();
         // 设置初始值
@@ -381,8 +383,11 @@
       }
       // 绑定单元格事件
       function addCellListeners() {
-        document.getElementById("gameContainer").removeEventListener("click", func);
         document.getElementById("gameContainer").addEventListener("click", func);
+      }
+      // 解绑单元格事件
+      function removeCellListeners() {
+        document.getElementById("gameContainer").removeEventListener("click", func);
       }
       const func = function (e) {
         if (!e.target.classList.contains("item")) return;
