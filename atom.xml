@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xmwarrior.github.io/"/>
-  <updated>2022-05-20T07:52:57.278Z</updated>
+  <updated>2022-05-26T06:42:29.228Z</updated>
   <id>https://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js练习-手写数独</title>
+    <link href="https://xmwarrior.github.io/2022/05/26/sudoku/"/>
+    <id>https://xmwarrior.github.io/2022/05/26/sudoku/</id>
+    <published>2022-05-26T04:00:00.000Z</published>
+    <updated>2022-05-26T06:42:29.228Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;手写数独-步骤解析&quot;&gt;&lt;a href=&quot;#手写数独-步骤解析&quot; class=&quot;headerlink&quot; title=&quot;手写数独-步骤解析&quot;&gt;&lt;/a&gt;手写数独-步骤解析&lt;/h3&gt;&lt;h4 id=&quot;1-生成默认表盘&quot;&gt;&lt;a href=&quot;#1-生成默认表盘&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="js练习" scheme="https://xmwarrior.github.io/categories/js%E7%BB%83%E4%B9%A0/"/>
+    
+    
+      <category term="js练习" scheme="https://xmwarrior.github.io/tags/js%E7%BB%83%E4%B9%A0/"/>
+    
+      <category term="游戏" scheme="https://xmwarrior.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>前端性能优化-内存泄漏问题分析</title>
@@ -566,36 +594,6 @@
         
         
           &lt;h1 id=&quot;技术准备期&quot;&gt;&lt;a href=&quot;#技术准备期&quot; class=&quot;headerlink&quot; title=&quot;技术准备期&quot;&gt;&lt;/a&gt;技术准备期&lt;/h1&gt;&lt;h2 id=&quot;一、架构设计&quot;&gt;&lt;a href=&quot;#一、架构设计&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端架构" scheme="https://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
-    
-    
-      <category term="前端架构" scheme="https://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
-    
-      <category term="读书" scheme="https://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
-      <category term="复盘" scheme="https://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端架构-技术负责人与架构</title>
-    <link href="https://xmwarrior.github.io/2020/02/18/qdjgjsfzryjg/"/>
-    <id>https://xmwarrior.github.io/2020/02/18/qdjgjsfzryjg/</id>
-    <published>2020-02-18T14:37:00.000Z</published>
-    <updated>2022-05-17T03:09:08.711Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;技术负责人与架构&quot;&gt;&lt;a href=&quot;#技术负责人与架构&quot; class=&quot;headerlink&quot; title=&quot;技术负责人与架构&quot;&gt;&lt;/a&gt;技术负责人与架构&lt;/h1&gt;&lt;h2 id=&quot;一、日常工作方向&quot;&gt;&lt;a href=&quot;#一、日常工作方向&quot;
         
       
     
