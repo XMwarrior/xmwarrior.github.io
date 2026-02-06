@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xmwarrior.github.io/"/>
-  <updated>2022-05-26T08:41:34.934Z</updated>
+  <updated>2026-02-06T01:20:31.209Z</updated>
   <id>https://xmwarrior.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS Grid 生成器</title>
+    <link href="https://xmwarrior.github.io/2026/02/06/undefined/"/>
+    <id>https://xmwarrior.github.io/2026/02/06/undefined/</id>
+    <published>2026-02-06T04:00:00.000Z</published>
+    <updated>2026-02-06T01:20:31.209Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CSS-Grid-生成器&quot;&gt;&lt;a href=&quot;#CSS-Grid-生成器&quot; class=&quot;headerlink&quot; title=&quot;CSS Grid 生成器&quot;&gt;&lt;/a&gt;CSS Grid 生成器&lt;/h1&gt;&lt;p&gt;CSS Grid Generator
+        
+      
+    
+    </summary>
+    
+      <category term="工具分享" scheme="https://xmwarrior.github.io/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="CSS" scheme="https://xmwarrior.github.io/tags/CSS/"/>
+    
+      <category term="Grid" scheme="https://xmwarrior.github.io/tags/Grid/"/>
+    
+      <category term="工具" scheme="https://xmwarrior.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>js练习-手写数独</title>
@@ -564,36 +594,6 @@
         
         
           &lt;h1 id=&quot;业务回补期&quot;&gt;&lt;a href=&quot;#业务回补期&quot; class=&quot;headerlink&quot; title=&quot;业务回补期&quot;&gt;&lt;/a&gt;业务回补期&lt;/h1&gt;&lt;h2 id=&quot;一、追补业务&quot;&gt;&lt;a href=&quot;#一、追补业务&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端架构" scheme="https://xmwarrior.github.io/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
-    
-    
-      <category term="前端架构" scheme="https://xmwarrior.github.io/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/"/>
-    
-      <category term="读书" scheme="https://xmwarrior.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
-      <category term="复盘" scheme="https://xmwarrior.github.io/tags/%E5%A4%8D%E7%9B%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端架构-技术准备期</title>
-    <link href="https://xmwarrior.github.io/2020/02/18/qdjgjszbq/"/>
-    <id>https://xmwarrior.github.io/2020/02/18/qdjgjszbq/</id>
-    <published>2020-02-18T14:38:00.000Z</published>
-    <updated>2022-05-17T03:09:08.710Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;技术准备期&quot;&gt;&lt;a href=&quot;#技术准备期&quot; class=&quot;headerlink&quot; title=&quot;技术准备期&quot;&gt;&lt;/a&gt;技术准备期&lt;/h1&gt;&lt;h2 id=&quot;一、架构设计&quot;&gt;&lt;a href=&quot;#一、架构设计&quot; class=&quot;headerlink&quot;
         
       
     

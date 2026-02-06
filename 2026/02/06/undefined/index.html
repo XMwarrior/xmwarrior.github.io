@@ -4,17 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="前端性能优化-内存泄漏问题分析, xmwarrior,xmsniper">
-    <meta name="description" content="排查内存泄漏方法（Chrome）
-利用 Chrome 调试工具的内存快照：
-F12 &amp;#x3D;&amp;gt; 内存 &amp;#x3D;&amp;gt; 拍摄堆快照
-&amp;#x3D;&amp;gt; 摘要、比较、控制、统计信息
-重点检查 VueComponent
-
-
-
-
-">
+    <meta name="keywords" content="CSS Grid 生成器, xmwarrior,xmsniper">
+    <meta name="description" content="CSS Grid 生成器CSS Grid Generator 是一个帮助用户快速创建 CSS Grid 布局的交互式 Web 应用。该项目提供了一个可视化界面，允许用户设置列和行的数量及单位，并通过拖拽在网格中创建 div 元素。生成的 C">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +13,7 @@ F12 &amp;#x3D;&amp;gt; 内存 &amp;#x3D;&amp;gt; 拍摄堆快照
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>前端性能优化-内存泄漏问题分析 | XMwarrior</title>
+    <title>CSS Grid 生成器 | XMwarrior</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -282,13 +273,13 @@ F12 &amp;#x3D;&amp;gt; 内存 &amp;#x3D;&amp;gt; 拍摄堆快照
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        前端性能优化-内存泄漏问题分析
+                        CSS Grid 生成器
                     </div>
                 </div>
             </div>
@@ -399,8 +390,16 @@ F12 &amp;#x3D;&amp;gt; 内存 &amp;#x3D;&amp;gt; 拍摄堆快照
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" target="_blank">
-                                <span class="chip bg-color">前端性能优化</span>
+                            <a href="/tags/CSS/" target="_blank">
+                                <span class="chip bg-color">CSS</span>
+                            </a>
+                        
+                            <a href="/tags/Grid/" target="_blank">
+                                <span class="chip bg-color">Grid</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B7%A5%E5%85%B7/" target="_blank">
+                                <span class="chip bg-color">工具</span>
                             </a>
                         
                     </div>
@@ -411,8 +410,8 @@ F12 &amp;#x3D;&amp;gt; 内存 &amp;#x3D;&amp;gt; 拍摄堆快照
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category" target="_blank">
-                                前端性能优化
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="post-category" target="_blank">
+                                工具分享
                             </a>
                         
                     </div>
@@ -423,21 +422,21 @@ F12 &amp;#x3D;&amp;gt; 内存 &amp;#x3D;&amp;gt; 拍摄堆快照
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-17
+                    2026-02-06
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.1k
+                        562
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        2 分
                     </div>
                     
                 
@@ -453,315 +452,54 @@ F12 &amp;#x3D;&amp;gt; 内存 &amp;#x3D;&amp;gt; 拍摄堆快照
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="排查内存泄漏方法（Chrome）"><a href="#排查内存泄漏方法（Chrome）" class="headerlink" title="排查内存泄漏方法（Chrome）"></a>排查内存泄漏方法（Chrome）</h3><ul>
-<li>利用 Chrome 调试工具的内存快照：<ul>
-<li>F12 &#x3D;&gt; 内存 &#x3D;&gt; 拍摄堆快照</li>
-<li>&#x3D;&gt; 摘要、比较、控制、统计信息</li>
-<li>重点检查 VueComponent</li>
+                <h1 id="CSS-Grid-生成器"><a href="#CSS-Grid-生成器" class="headerlink" title="CSS Grid 生成器"></a>CSS Grid 生成器</h1><p>CSS Grid Generator 是一个帮助用户快速创建 CSS Grid 布局的交互式 Web 应用。该项目提供了一个可视化界面，允许用户设置列和行的数量及单位，并通过拖拽在网格中创建 div 元素。生成的 CSS 代码可以直接复制使用。</p>
+<h2 id="在线体验"><a href="#在线体验" class="headerlink" title="在线体验"></a>在线体验</h2><p>你可以通过以下链接直接使用 CSS Grid 生成器：</p>
+<p><strong><a href="/pages/CSSGridGenerator/index.html">点击这里体验 CSS Grid Generator</a></strong></p>
+<h2 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h2><h3 id="1-网格配置"><a href="#1-网格配置" class="headerlink" title="1. 网格配置"></a>1. 网格配置</h3><ul>
+<li><strong>列数设置</strong>：自定义网格的列数</li>
+<li><strong>行数设置</strong>：自定义网格的行数</li>
+<li><strong>列间距</strong>：设置列与列之间的间距</li>
+<li><strong>行间距</strong>：设置行与行之间的间距</li>
+<li><strong>单位选择</strong>：支持多种 CSS 单位，包括 fr、px、%、em、rem、vw、vh、vmin 等</li>
 </ul>
-</li>
+<h3 id="2-交互式网格创建"><a href="#2-交互式网格创建" class="headerlink" title="2. 交互式网格创建"></a>2. 交互式网格创建</h3><ul>
+<li><strong>拖拽创建</strong>：通过鼠标拖拽在网格中直接创建 div 元素</li>
+<li><strong>触摸支持</strong>：支持触摸设备，可以在移动设备上使用</li>
+<li><strong>可视化反馈</strong>：实时预览网格布局效果</li>
+<li><strong>元素管理</strong>：可以删除已创建的网格元素</li>
 </ul>
-<p><img src="https://pic4.zhimg.com/80/v2-63ecccec3bacd2f15b1308f69101c9b7_720w.jpg" alt="内存"></p>
-<p><img src="https://pic4.zhimg.com/80/v2-5641590f57be973c96a55d123eebbdaf_720w.jpg" alt="内存"></p>
+<h3 id="3-CSS-代码生成"><a href="#3-CSS-代码生成" class="headerlink" title="3. CSS 代码生成"></a>3. CSS 代码生成</h3><ul>
+<li><strong>实时生成</strong>：自动生成完整的 CSS 代码</li>
+<li><strong>容器样式</strong>：包含网格容器的 grid-template-columns、grid-template-rows 等属性</li>
+<li><strong>子元素样式</strong>：生成每个子元素的 grid-area 定位属性</li>
+<li><strong>一键复制</strong>：方便直接复制生成的代码到项目中</li>
+</ul>
+<h3 id="4-支持的-CSS-单位"><a href="#4-支持的-CSS-单位" class="headerlink" title="4. 支持的 CSS 单位"></a>4. 支持的 CSS 单位</h3><p>CSS Grid Generator 支持以下 CSS 单位：</p>
 <ul>
-<li>利用 Chrome 调试工具的性能录制：<ul>
-<li>JS 堆、文档、节点、监听器、GPU 内存</li>
+<li>相对单位：fr、px、%、em、rem、ex、ch</li>
+<li>视口单位：vw、vh、vmin</li>
+<li>物理单位：q、mm、cm、in、pt、pc</li>
+<li>特殊值：auto、min-content、max-content、minmax()</li>
+<li>数字：0（无需单位）</li>
 </ul>
-</li>
+<h3 id="5-实时验证"><a href="#5-实时验证" class="headerlink" title="5. 实时验证"></a>5. 实时验证</h3><ul>
+<li>自动验证输入的 CSS 单位是否有效</li>
+<li>提供即时的视觉反馈</li>
+<li>确保生成的 CSS 代码的准确性</li>
 </ul>
-<p><img src="https://p3.itc.cn/images01/20210806/33156e89f7d44b60a756ce3754577a61.jpeg" alt="性能"></p>
-<p>注意： console 控制台信息造成的内存泄漏、注释大法好</p>
-<h3 id="闭包会造成内存泄漏？"><a href="#闭包会造成内存泄漏？" class="headerlink" title="闭包会造成内存泄漏？"></a>闭包会造成内存泄漏？</h3><p><a href="/pages/%E9%97%AD%E5%8C%85%E5%BC%95%E8%B5%B7%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E4%BA%86%E4%B9%88/index.html">闭包垃圾回收测试</a></p>
-<ol>
-<li>测试 1：下面两种情况，函数执行时，造成内存溢出了么？</li>
-</ol>
-<pre><code>// 1.
-var outerFunction = function (n) &#123;
-  var counter = 0;
-  var bigStr = new Array(100000000).join(&quot;*&quot;);
-  return function () &#123;
-    bigStr += n;
-  &#125;;
-&#125;;
-var add = outerFunction(5);
-var interval = setInterval(add, 10);
-</code></pre>
-<pre><code>// 2.
-var outerFunction = function (n) &#123;
-  var counter = 0;
-  var bigStr = 0;
-  return function () &#123;
-    bigStr = new Array(100000000).join(&quot;*&quot;);
-    bigStr += n;
-  &#125;;
-&#125;;
-var add = outerFunction(5);
-var interval = setInterval(add, 10);
-</code></pre>
-<ol start="2">
-<li>测试 2：2 秒后，下面三种情况内存占用从小到大的顺序是？</li>
-</ol>
-<pre><code>// 1.
-var str = new Array(100000000).join(&quot;*&quot;);
-var interval = setInterval(() =&gt; &#123;
-  console.log(str[0]);
-&#125;, 200);
-var timeout= setTimeout(() =&gt; &#123;
-  clearInterval(interval);
-&#125;, 2000);
-</code></pre>
-<pre><code>// 2.
-var str = new Array(100000000).join(&quot;*&quot;);
-var interval = setInterval(() =&gt; &#123;
-  console.log(str[0]);
-&#125;, 200);
-var timeout= setTimeout(() =&gt; &#123;
-  clearInterval(interval);interval=null;
-&#125;, 2000);
-</code></pre>
-<pre><code>// 3.
-var str = new Array(100000000).join(&quot;*&quot;);
-var interval = setInterval(() =&gt; &#123;
-  console.log(str[0]);
-&#125;, 200);
-var timeout= setTimeout(() =&gt; &#123;
-  clearInterval(interval);interval=null;str=&quot;&quot;;
-&#125;, 2000);
-</code></pre>
-<ol start="3">
-<li>测试 3：节流函数 1、节流函数 2、防抖函数都是闭包函数;当其内部再嵌套闭包函数时；会影响闭包可被回收么？</li>
-</ol>
-<pre><code>// 节流函数1
-var throttle1 = function (fn, wait) &#123;
-  var lastTime = 0;
-  var obj = &#123;&#125;;
-  return function () &#123;
-    var nowTime = new Date().getTime();
-    if (nowTime - lastTime &gt; wait) &#123;
-      // fn.bind(obj);
-      fn.apply(this, arguments);
-      lastTime = nowTime;
-    &#125;
-  &#125;;
-&#125;;
-// 节流函数2
-var throttle = function (fn, delay) &#123;
-  let timer = null;
-  return function () &#123;
-    if (timer) return;
-    timer = setTimeout(() =&gt; &#123;
-      fn.apply(this, arguments);
-      clearTimeout(timer);
-      timer = null;
-    &#125;, delay);
-  &#125;;
-&#125;;
-// 防抖函数
-var debounce = function (fn, wait) &#123;
-  var timer = null;
-  return function (...args) &#123;
-    clearTimeout(timer);
-    timer = setTimeout(() =&gt; &#123;
-      fn.apply(this, args);
-    &#125;, wait);
-  &#125;;
-&#125;;
-// 执行测试
-var fn = function (index) &#123;
-  var str = index;
-  console.log(index);
-&#125;;
-var t = throttle1(fn, 300);//throttle、debounce
-var index = 300;
-var interval = setInterval(function () &#123;
-  if (index &gt; 0) &#123;
-    index--;
-    t(index);
-  &#125; else &#123;
-    clearInterval(interval);
-    // t = null;
-  &#125;
-&#125;, 20);
-</code></pre>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul>
+<li>快速原型设计</li>
+<li>学习 CSS Grid 布局</li>
+<li>调试复杂的网格布局</li>
+<li>生成标准化的 Grid 代码</li>
+<li>可视化理解和调整布局结构</li>
+</ul>
+<h2 id="相关学习资源"><a href="#相关学习资源" class="headerlink" title="相关学习资源"></a>相关学习资源</h2><p>如果你想深入学习 CSS Grid，可以参考以下资源：</p>
 <ul>
-<li>测试 1 结论：<ul>
-<li>闭包每执行一次都会造成内存增加</li>
-<li>当 V8 引擎内存达到 1464MB 时，会触发垃圾回收</li>
-<li>垃圾回收机制能正常回收闭包函数执行时累加的内存占用</li>
-<li>垃圾回收机制不能回收闭包函数作用域（堆空间）</li>
+<li><a target="_blank" rel="noopener" href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS-Tricks 完整 Grid 指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://cssgridgarden.com/">Grid Garden</a> - 通过游戏学习 CSS Grid</li>
 </ul>
-</li>
-<li>测试 2 结论：<ul>
-<li>打断闭包的引用能使闭包可被回收</li>
-<li>栈变量（全局变量属于栈变量）不会被回收</li>
-</ul>
-</li>
-<li>测试 3 结论：<ul>
-<li>闭包嵌套闭包也能正常回收</li>
-<li>闭包调用完毕后，将引用打断（置为 null），根据闭包实现方式不同，存在差异；但不置为 null 影响不大</li>
-<li>控制台内容、注释占用内存</li>
-<li>setInterval、setTimeout 第一个参数为匿名函数时,默认会造成闭包;bind 方法是闭包</li>
-</ul>
-</li>
-</ul>
-<p>注：为保证测试结果准确，使用浏览器无痕模式，步骤需清空 console、手动触发垃圾回收，然后开启新的录制&#x3D;&gt;刷新页面</p>
-<p><a href="/pages/ajax%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%A4%BA%E4%BE%8B/index.html">ajax 内存泄漏测试</a></p>
-<p>V8 引擎测试结论:</p>
-<ul>
-<li>Jquery 的 ajax 方法调用完毕后，残留引用 XMLHttprequest,置不置为 null，对垃圾回收无影响。</li>
-<li>随着循环调用 ajax，内存会缓慢溢出</li>
-<li>对于长期不刷新的网页应用，尽量避免定时不断调用闭包</li>
-</ul>
-<h3 id="项目内存泄漏问题分析："><a href="#项目内存泄漏问题分析：" class="headerlink" title="项目内存泄漏问题分析："></a>项目内存泄漏问题分析：</h3><p><a target="_blank" rel="noopener" href="http://192.168.0.30:44391/">水厂项目-内存泄漏问题</a></p>
-<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ol>
-<li>针对性配置菜单、权限（单独测试“设备运维-人工巡检-巡检任务页”）</li>
-<li>步骤：清空 GC &#x3D;&gt;截取初始堆快照&#x3D;&gt;操作&#x3D;&gt;截取堆快照&#x3D;&gt;对比分析（配合“注释大法”）</li>
-<li>排查顺序：VueComponent、Object.constructor、Array</li>
-</ol>
-<h4 id="泄漏问题记录"><a href="#泄漏问题记录" class="headerlink" title="泄漏问题记录"></a>泄漏问题记录</h4><ol>
-<li>VueComponent：aw-echarts 组件销毁前未销毁 echarts 实例（dispose 方法）</li>
-<li>Array：$backToLogin 方法引用</li>
-</ol>
-<pre><code>window.backToLogin = function () &#123;
-  location.href = &quot;/index.html#/login&quot;;
-&#125;;
-// 原写法
-Vue.prototype.$backToLogin = window.backToLogin;
-// 改后
-Vue.prototype.$backToLogin = function () &#123;
-  location.href = &quot;/index.html#/login&quot;;
-&#125;;
-</code></pre>
-<ol start="3">
-<li>svg-sprite-loader 拓展插件造成，需全局引入 svg</li>
-</ol>
-<pre><code>// 统一引入svg
-import &quot;@/assets/images/logo-l.svg&quot;;
-import &quot;@/assets/images/logo-r.svg&quot;;
-import &quot;@/assets/images/logoA.svg&quot;;
-import &quot;@/assets/images/e403.svg&quot;;
-import &quot;@/assets/images/noData.svg&quot;;
-import &quot;@/assets/images/noCP.svg&quot;;
-import &quot;@/assets/images/e404.svg&quot;;
-import &quot;@/assets/images/portaHome/play.svg&quot;;
-</code></pre>
-<ol start="4">
-<li>地图绘制点线组件 MapLineAndMarkers</li>
-</ol>
-<p>排查中…</p>
-<hr>
-<p><strong>参考文档</strong></p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000021927852">JavaScript 内存机制</a></p>
-<ul>
-<li>栈空间（stack）：原始数据类型、引用关系</li>
-<li>堆空间（heap）：引用数据类型</li>
-<li>垃圾回收机制：<ul>
-<li>引用计数算法</li>
-<li>标记清除算法（Mark-Sweep）</li>
-<li>标记合并算法（Mark-Compact）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000025129635">深入理解 Chrome V8 垃圾回收机制</a></p>
-<ul>
-<li>Chrome 垃圾回收算法：<ul>
-<li>副垃圾回收器（Scavenge）：新生代的垃圾回收–20%<ul>
-<li>Scavenge 执行频率快，会造成全停顿（stop-the-world）：暂停 JavaScript 应用、暂停主线程，造成卡顿&lt;并发、并行&gt;</li>
-</ul>
-</li>
-<li>主垃圾回收器（Mark-Sweep &amp; Mark-Compact）：老生代的垃圾回收–80%<ul>
-<li>堆中的内存大小超过某个阈值之后触发</li>
-</ul>
-</li>
-<li>针对卡顿问题， 衍生出 Orinoco - 项目代号的优化项目：<ul>
-<li>增量标记 （Incremental marking）：将原本的标记全堆对象拆分为一个一个任务，让其穿插在 JavaScript 应用逻辑之间执行，增量标记在堆的大小达到一定的阈值时启用</li>
-<li>懒性清理 （Lazy sweeping）：优先照顾 JavaScript 逻辑代码先执行，按增量标记顺序逐一清理非活动对象内存</li>
-<li>（增量标记&amp;懒性清理）- 逐一清理，衍生出“写屏障技术”：记录这些引用关系的变化</li>
-<li>（增量标记&amp;懒性清理）造成的问题：<ul>
-<li>并没有减少主线程的总暂停的时间，甚至会略微增加</li>
-<li>由于写屏障（Write-barrier）机制的成本，增量标记可能会降低应用程序的吞吐量</li>
-</ul>
-</li>
-<li>并发（Concurrent）：主线程与 GC 线程</li>
-<li>并行（Parallel）GC 线程再拆分辅助线程</li>
-</ul>
-</li>
-<li>副垃圾回收器、主垃圾回收器都采用并行+并发方式</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018161588?utm_source=sf-similar-article">GO GC 垃圾回收机制</a></p>
-<ul>
-<li>增量标记衍生“三色标记算法”：<ul>
-<li>白色：可回收</li>
-<li>灰色：待处理 存在栈引用的对象</li>
-<li>黑色：不可回收</li>
-</ul>
-</li>
-<li><img src="https://segmentfault.com/img/remote/1460000018161591" alt="三色标记算法"></li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000019828838">搞懂闭包</a></p>
-<ul>
-<li>执行上下文：函数每次执行，都会生成一个会创建一个称为执行上下文的内部对象（AO 对象，可理解为函数作用域），这个 AO 对象会保存这个函数中所有的变量值和该函数内部定义的函数的引用。</li>
-<li>作用域链：链状执行上下文集合</li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/22486908">JS 中的闭包是什么？</a></p>
-<ul>
-<li>内存泄露：是指你用不到（访问不到）的变量，依然占居着内存空间</li>
-<li>个人理解：被引用上下文作用域的作用域</li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/rubylouvre/p/3345294.html">js 闭包测试-司徒正美</a></p>
-<ul>
-<li>仅列举 V8：<ol>
-<li>闭包内未被引用变量 - 回收</li>
-<li>闭包内未被引用变量引用引用变量- 回收</li>
-<li>eval - 不回收</li>
-<li>间接调用（window.eval）回收</li>
-<li>多个匿名函数 不回收</li>
-<li>with 表达式 不回收</li>
-<li>catch 表达式 看原文 -_-|||</li>
-<li>嵌套函数中声明的同名变量 回收</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>Vue 项目内存泄漏分析：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/321380652">Vue 遇到的内存泄漏排查处理</a></p>
-<ul>
-<li>子组件嵌套组件避免太深，太多层级。</li>
-<li>作者未验证观点：<ul>
-<li>子组件 beforeDestroy 的时候，把变量置 null？</li>
-<li>IView 的 Modal 本身是有内存泄漏</li>
-<li>Ztree 本身有少许泄漏，需调用 API 手动销毁</li>
-<li>父组件要传值给子组件的 props 变量，在关闭时，能置空的尽量置空</li>
-<li>watch 部分，也会有可能导致父组件一直 watch 挂载着导致子组件没有被销毁</li>
-<li>v-show 控制子组件，要在它的外层 div 加个 v-if 控制。</li>
-</ul>
-</li>
-<li>递归渲染？</li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903761744265224?utm_source=wechat_session&utm_medium=social&utm_oi=1460458883211276289#heading-5">记一次网页内存溢出分析及解决实践</a></p>
-<ul>
-<li>集中在 beforeDestroy 解绑组件绑定事件<img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/1/14/168482c7f34ad167~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp"></li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d8068123278a">vuejs 切换路由导致内存泄漏（各种回答收集）</a></p>
-<ul>
-<li><img src="https://avatars.githubusercontent.com/u/499550?s=88&u=de41ec9325e8a92e281b96a1514a0fd1cd81ad4a&v=4" alt="yyx990803">2017 年解决过 v-model 内存泄漏问题</li>
-<li>如果数据庞大，不要用 vue 的双向绑定</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>现在就开始使用 CSS Grid Generator，让你的布局开发更高效！</p>
 
             </div>
             <hr/>
@@ -909,7 +647,7 @@ import &quot;@/assets/images/portaHome/play.svg&quot;;
                     </span>
                     <a href="https://xmwarrior.github.io" class="b-link-green">XMwarrior</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2022/05/17/performanceoptimization/" class="b-link-green">前端性能优化-内存泄漏问题分析</a>
+                    <a href="/2026/02/06/undefined/" class="b-link-green">CSS Grid 生成器</a>
                 </p>
             </div>
         </div>
@@ -931,7 +669,7 @@ import &quot;@/assets/images/portaHome/play.svg&quot;;
         repo: 'xmwarrior.github.io',
         owner: 'XMwarrior',
         admin: ["XMwarrior"],
-        id: '2022-05-17T20-46-00',
+        id: '2026-02-06T12-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -957,36 +695,27 @@ import &quot;@/assets/images/portaHome/play.svg&quot;;
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/05/17/performanceoptimization/">
+                <a href="/2026/02/06/undefined/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="前端性能优化-内存泄漏问题分析">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="CSS Grid 生成器">
                         
-                        <span class="card-title">前端性能优化-内存泄漏问题分析</span>
+                        <span class="card-title">CSS Grid 生成器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">排查内存泄漏方法（Chrome）
-利用 Chrome 调试工具的内存快照：
-F12 &#x3D;&gt; 内存 &#x3D;&gt; 拍摄堆快照
-&#x3D;&gt; 摘要、比较、控制、统计信息
-重点检查 VueComponent
-
-
-
-
-</div>
+                    <div class="summary block-with-text">CSS Grid 生成器CSS Grid Generator 是一个帮助用户快速创建 CSS Grid 布局的交互式 Web 应用。该项目提供了一个可视化界面，允许用户设置列和行的数量及单位，并通过拖拽在网格中创建 div 元素。生成的 C</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-05-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2026-02-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-category" target="_blank">
-                                    前端性能优化
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="post-category" target="_blank">
+                                    工具分享
                                 </a>
                             
                             
@@ -997,8 +726,16 @@ F12 &#x3D;&gt; 内存 &#x3D;&gt; 拍摄堆快照
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" target="_blank">
-                        <span class="chip bg-color">前端性能优化</span>
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                    <a href="/tags/Grid/" target="_blank">
+                        <span class="chip bg-color">Grid</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/" target="_blank">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
@@ -1012,36 +749,29 @@ F12 &#x3D;&gt; 内存 &#x3D;&gt; 拍摄堆快照
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/18/singlepageapplication/">
+                <a href="/2022/05/26/sudoku/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="前端架构-单页面应用">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="js练习-手写数独">
                         
-                        <span class="card-title">前端架构-单页面应用</span>
+                        <span class="card-title">js练习-手写数独</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">前端架构原理本章前半部分讲解了MVC、MVVM架构的原理，针对此部分内容，我整理了两篇文章：
-
-架构模式-MVC
-架构模式-MVVVM
-
-前端架构选型框架选型需要考虑的因素：
-
-框架情况调研
-是否能满足大部分应用的需求？
-是否有丰富的组件库</div>
+                    <div class="summary block-with-text">手写数独-步骤解析1. 生成默认表盘// 生成9*9宫格
+function createBoard() &#123;
+  return JSON.parse(JSON.stringify(new Array(9).fill(new Arra</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-05-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/" class="post-category" target="_blank">
-                                    前端架构
+                            <a href="/categories/js%E7%BB%83%E4%B9%A0/" class="post-category" target="_blank">
+                                    js练习
                                 </a>
                             
                             
@@ -1051,20 +781,12 @@ F12 &#x3D;&gt; 内存 &#x3D;&gt; 拍摄堆快照
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/" target="_blank">
-                        <span class="chip bg-color">前端架构</span>
+                    <a href="/tags/js%E7%BB%83%E4%B9%A0/" target="_blank">
+                        <span class="chip bg-color">js练习</span>
                     </a>
                     
-                    <a href="/tags/%E8%AF%BB%E4%B9%A6/" target="_blank">
-                        <span class="chip bg-color">读书</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%A4%8D%E7%9B%98/" target="_blank">
-                        <span class="chip bg-color">复盘</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8/" target="_blank">
-                        <span class="chip bg-color">单页面应用</span>
+                    <a href="/tags/%E6%B8%B8%E6%88%8F/" target="_blank">
+                        <span class="chip bg-color">游戏</span>
                     </a>
                     
                 </div>
@@ -1221,7 +943,7 @@ F12 &#x3D;&gt; 内存 &#x3D;&gt; 拍摄堆快照
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">35.7k</span>
+                <span class="white-color">37.5k</span>
             
 
             
